@@ -1,0 +1,727 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+
+\newcolumntype{L}{>{$}l<{$}}
+
+\title{1.2 Exercises}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{cor}{Corollary}
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+
+\maketitle
+
+\begin{enumerate}
+    \item
+      See 1.1, Theorem 2.
+
+    \item
+      We have the following system of linear equations:
+      \begin{align*}
+         x_1 - x_2 &= 0\\
+        2x_1 + x_2 &= 0.
+      \end{align*}
+      This immediately yields the linear combination
+      \begin{align*}
+        x_1 + 2x_1 - x_2 + x_2 &=\\
+        3x_1 &= 0,
+      \end{align*}
+      so
+      \begin{align*}
+        x_1 &= 0.
+      \end{align*}
+      If we multiply the top equation by $-2$, we get
+      \begin{align*}
+       -2x_1 + 2x_2 &= 0.
+      \end{align*}
+      This yields the linear combination
+      \begin{align*}
+        -2x_1 + 2x_1 + 2x_2 + x_2 &=\\
+        2x_2 + x_2 &=\\
+        3x_2 &= 0,
+      \end{align*}
+      which implies that
+      \begin{align*}
+         x_2 = 0
+      \end{align*}
+      as well.\\
+
+      We now consider the other system:
+      \begin{align*}
+        3x_1 + x_2 &= 0;\\
+        x_1 + x_2 &= 0.
+      \end{align*}
+      Subtracting the second equation from the first gives us
+      \begin{align*}
+        3x_1 - x_1 + x_2 - x_2 &=\\
+        2x_1 &= 0,
+      \end{align*}
+      so $x_1 = 0$ in this case as well. Multiplying the second
+      equation by $-3$ yields
+      \begin{align*}
+        -3x_1 - 3x_2 &= 0,
+      \end{align*}
+      which produces the linear combination
+      \begin{align*}
+        3x_1 - 3_x1 + x_2 - 3x_2 &=\\
+        x_2 - 3x_2 &=\\
+        -2x_2 &= 0,
+      \end{align*}
+      so $x_2 = 0$ here as well, and thus the two systems are
+      equivalent.\\\\
+      Since the only possible value for $x_1$ and $x_2$ in both
+      systems is $0$, expressing each equation in each system as
+      a linear combination of the equations in the other system
+      is trivial. We can simply take scalars $c_1, c_2 = 1$,
+      since every term evaluates to $0$.
+      \begin{align*}
+        (1(3x_1) + 1(x_2)) + (1(x_1) + 1(x_2)) &= 1(0) + 1(0)\\
+        &= 0\\
+        &= x_1 - x_2\\
+        &= 2x_1 + x_2.\\
+        \\
+        (1(x_1) - 1(x_2)) + (1(2x_1) + 1(x_2)) &= 1(0) + 1(0)\\
+        &= 0\\
+        &= 3x_1 + x_2\\
+        &= x_1 + x_2.
+      \end{align*}
+
+    \item
+      We consider the system
+      \[
+      \begin{array}{rcrcrcl}
+        -x_1           & + & x_2  & + & 4x_3           & = & 0\\
+         x_1           & + & 3x_2 & + & 8x_3           & = & 0\\
+        \frac{1}{2}x_1 & + & x_2  & + & \frac{5}{2}x_3 & = & 0.
+      \end{array}
+      \]
+      We multiply the first and third equations by $2$ to
+      eliminate $x_1$:
+      \[
+      \begin{array}{rcrcrcl}
+        -2x_1 & + & 2x_2 & + & 8x_3 & = & 0\\
+          x_1 & + & 3x_2 & + & 8x_3 & = & 0\\
+          x_1 & + & 2x_2 & + & 5x_3 & = & 0.
+      \end{array}
+      \]
+      \begin{align*}
+        2x_2 + 3x_2 + 2x_2 + 8x_3 + 8x_3 + 5x_3 &= 7x_2 + 21x_3\\
+        &= x_2 + 3x_3\\
+        &= 0,
+      \end{align*}
+      so $x_2 = -3x_3$.\\\\
+      Then we multiply the first equation by $3$ and the third
+      equation by $-6$ to eliminate $x_2$:
+      \[
+      \begin{array}{rcrcrcl}
+        -3x_1 & + & 3x_2 & + & 12x_3 & = & 0\\
+          x_1 & + & 3x_2 & + &  8x_3 & = & 0\\
+        -3x_1 & - & 6x_2 & - & 15x_3 & = & 0.
+      \end{array}
+      \]
+      \begin{align*}
+        -3x_1 + x_1 - 3x_1 + 12x_3 + 8x_3 - 15x_3 &= -5x_1 + 5x_3,\\
+        &= x_1 - x_3,\\
+        &= 0,
+      \end{align*}
+      so $x_1 = x_3$. This implies that $x_1 = -\frac{1}{3}x_2$,
+      and thus that if $(x_1,x_2,x_3)$ is a solution then $x_1 =
+      -\frac{1}{3}x_2 = x_3$.\\\\
+      We now turn to the other system. We have
+      \[
+      \begin{array}{rcrcrcl}
+        x_1 &   &     & - &  x_3 & = & 0\\
+            &   & x_2 & + & 3x_3 & = & 0.\\
+      \end{array}
+      \]
+      The equivalence of these systems is fairly obvious. If $x_1 - x_3
+      = 0$, then $x_1 = x_3$; likewise, if $x_2 + 3x_3 = 0$ then
+      $x_2 = -3x_3$.\\\\
+      We now turn to expressing each equation in each system as a
+      linear combination of the equations in the other
+      system. We start with the first system.\\\\
+      For $-x_1 + x_2 + 4x_3 = 0$, we use scalars $c_1, c_2, c_3
+      = -1, 1, 2$:
+      \begin{align*}
+        (-1)x_1 + (1)x_2 + (2\cdot-1 + 2\cdot3)x_3 &=\\
+        -x_1 + x_2 + (-2 + 6)x_3 &=\\
+        -x_1 + x_2 + 4x_3 &= 0.
+      \end{align*}
+      For $x_1 + 3x_2 + 8x_3 = 0$, we use scalars $c_1, c_2, c_3
+      = 1, 3, 4$:
+      \begin{align*}
+        (1)x_1 + (3)x_2 + (4\cdot-1 + 4\cdot3)x_3 &=\\
+        x_1 + 3x_2 + (-4 + 12)x_3 &=\\
+        x_1 + 3x_2 + 8x_3 &= 0.
+      \end{align*}
+      For $\frac{1}{2}x_1 + x_2 + \frac{5}{2}x_3 = 0$, we use scalars $c_1, c_2, c_3
+      = \frac{1}{2}, 1, \frac{5}{4}$:
+      \begin{align*}
+        (\frac{1}{2})x_1 + (1)x_2 + (\frac{5}{4}\cdot-1 + \frac{5}{4}\cdot3)x_3 &=\\
+        \frac{1}{2}x_1 + x_2 + (-\frac{5}{4} + \frac{15}{4})x_3 &=\\
+        \frac{1}{2}x_1 + x_2 + \frac{5}{2}x_3 &= 0.
+      \end{align*}
+      Now for the other system.\\\\
+      For $x_1 - x_3 = 0$, we use scalars $c_1, c_2, c_3
+      = 2, 0, -\frac{2}{29}$:
+      \begin{align*}
+        (2\cdot-1 + 2\cdot1 + 2\cdot\frac{1}{2})x_1 +
+        (0\cdot1 + 0\cdot3 + 0\cdot1)x_2 +
+        (-\frac{2}{29}\cdot4 - \frac{2}{29}\cdot8 - \frac{2}{29}\cdot\frac{5}{2})x_3 &=\\
+        (-2 + 2 + 1)x_1 + (0)x_2 + (-\frac{8}{29} - \frac{16}{29}
+        - \frac{10}{58})x_3 &=\\
+        x_1 + (-\frac{16}{58} - \frac{32}{29} - \frac{10}{58})x_3 &=\\
+        x_1 + (-\frac{58}{58})x_3 &=\\
+        x_1 - x_3 &= 0.
+      \end{align*}
+      For $x_2 + 3x_3 = 0$, we use scalars $c_1, c_2, c_3
+      = 0, \frac{1}{5}, \frac{6}{29}$:
+      \begin{align*}
+        (0\cdot-1 + 0\cdot1 + 0\cdot\frac{1}{2})x_1 +
+        (\frac{1}{5}\cdot1 + \frac{1}{5}\cdot3 + \frac{1}{5}\cdot1)x_2 +
+        (\frac{6}{29}\cdot4 + \frac{6}{29}\cdot8 + \frac{6}{29}\cdot\frac{5}{2})x_3 &=\\
+        (0)x_1 + (\frac{1}{5} + \frac{3}{5} + \frac{1}{5})x_2 +
+        (\frac{24}{29} + \frac{48}{29} + \frac{30}{58})x_3 &=\\
+        (\frac{5}{5})x_2 + (\frac{48}{58} + \frac{96}{58} + \frac{30}{58})x_3 &=\\
+        (1)x_2 + (\frac{174}{58})x_3 &=\\
+        x_2 + 3x_3 &= 0.
+      \end{align*}
+
+    \item
+      I'm fairly positive I could solve this if I kept working at
+      it, but it's really tedious, so I'm going to leave it for
+      now.
+
+      \noindent\rule{\textwidth}{1pt}
+
+      First let's find the solutions to
+      \begin{alignat*}{6}
+        2x_1 & {}+{} & (-1 + i)x_2 & {} {} &       & {}+{} &  x_4 & {}={} & 0 &\\
+             & {} {} &        3x_2 & {}-{} & 2ix_3 & {}+{} & 5x_4 & {}={} & 0 &.
+      \end{alignat*}
+
+      First we multiply the second equation by $(\frac{1}{3} -
+      \frac{1}{3}i)$:
+      \begin{align*}
+        (\frac{1}{3} - \frac{1}{3}i)3x_2
+          - (\frac{1}{3} - \frac{1}{3}i)2ix_3
+          + (\frac{1}{3} - \frac{1}{3}i)5x_4 =&\\
+        (1 - i)x_2
+          - (\frac{2}{3} + \frac{2}{3}i)x_3
+          + (\frac{5}{3} - \frac{5}{3}i)x_4.
+      \end{align*}
+
+      Then we add:
+      \begin{align*}
+        2x_1
+          + (-1 + i)x_2 + (1 - i)x_2
+          - (\frac{2}{3} + \frac{2}{3}i)x_3
+          + x_4 + (\frac{5}{3} - \frac{5}{3}i)x_4 &= \\
+        2x_1
+          - (\frac{2}{3} + \frac{2}{3}i)x_3
+          + (\frac{8}{3} - \frac{5}{3}i)x_4 &= 0.
+      \end{align*}
+
+      \noindent\rule{\textwidth}{1pt}
+
+      We have systems
+      \begin{alignat}{5}
+        2x_1 & {}+{} & (-1 + i)x_2 & {} {} &       & {}+{} &  x_4 & {}={} & 0 \label{eq:11}\\
+             & {} {} &        3x_2 & {}-{} & 2ix_3 & {}+{} & 5x_4 & {}={} & 0 \label{eq:12}
+      \end{alignat}
+      and
+      \begin{alignat}{6}
+        (1 + \frac{i}{2})x_1 & {}+{} &           8x_2 & {}-{} & ix_3 & {}-{} &  x_4 & {}={} & 0 & \label{eq:21} \\
+              \frac{2}{3}x_1 & {}-{} & \frac{1}{2}x_2 & {}+{} & x_3 & {}+{} & 7x_4 & {}={}  & 0 &.\label{eq:22}
+      \end{alignat}
+      We would like to know if they are equivalent.\\\\
+      This seems immediately unlikely. If we consider expressing
+      \eqref{eq:11} as a linear combination of \eqref{eq:21} and
+      \eqref{eq:22}, it's not clear that there is a way. For instance,
+      consider that we use the coefficients $(1,i)$ with
+      \eqref{eq:21} and \eqref{eq:22} respectively, i.e.
+      \[
+      \begin{array}{rcrcrcrcl}
+        (1 + \frac{i}{2})x_1 & + & 8x_2 & - & ix_3 & - & x_4 & = & 0\\
+        \frac{2}{3}ix_1 & - & \frac{1}{2}ix_2 & + & ix_3 & + & 7ix_4 & = & 0,
+      \end{array}
+      \]
+      to produce a linear combination of them in which $x_3$ takes
+      the coefficient $0$:
+      \begin{align*}
+        (1 + \frac{i}{2})x_1 + \frac{2}{3}ix_1 + 8x_2 - \frac{1}{2}ix_2 - ix_3 + ix_3 - x_4 + 7ix_4 &=\\
+        (1 + \frac{7}{6}i)x_1 + (8 - \frac{1}{2}i)x_2 + (-1 + 7i)x_4 &= 0.
+      \end{align*}
+      This is obviously not the same as \eqref{eq:11}, nor is it
+      obvious that we could adjust our coefficients to get there.
+
+      In a sense, what we are looking for is a set of scalars
+      $(c_1,c_2)$ such that
+      \begin{alignat*}{6}
+        (1 + \frac{i}{2})c_1 & {}+{} & \frac{2}{3}c_2 & {}={} &        2&\\
+                        8c_1 & {}-{} & \frac{1}{2}c_2 & {}={} & (-1 + i)&\\
+                       -ic_1 & {}+{} &            c_2 & {}={} &        0&\\
+                        -c_1 & {}+{} &           7c_2 & {}={} &        1&,
+      \end{alignat*}
+      or
+      \begin{alignat*}{7}
+        (1 + \frac{i}{2})c_1 & {}+{} & \frac{2}{3}c_2 & {}-{} &       2 & {}={} & 0&\\
+                        8c_1 & {}-{} & \frac{1}{2}c_2 & {}-{} &(-1 + i) & {}={} & 0&\\
+                       -ic_1 & {}+{} &            c_2 & {} {} &         & {}={} & 0&\\
+                        -c_1 & {}+{} &           7c_2 & {}-{} &       1 & {}={} & 0&.
+      \end{alignat*}
+      Now we have a new system of homogenous linear equations. We
+      can apply the coefficient $-\frac{43}{6}$ to the third
+      equation:
+      \begin{align*}
+        \frac{43}{6}ic_1 -\frac{43}{6}c_2 &= 0;
+      \end{align*}
+      this permits a linear combination of these equations in
+      which $c_2$ is eliminated:
+      \begin{align*}
+        (1 + \frac{i}{2})c_1 + 8c_1 + \frac{43}{6}ic_1 - c_1
+        + \frac{2}{3}c_2 - \frac{1}{2}c_2 - \frac{43}{6}c_2 + 7c_2
+        - 2 -(-1 + i) - 1 &=\\
+        (8 + \frac{46}{6}i)c_1
+        + \frac{23}{3}c_2 - \frac{23}{3}c_2
+        - (2 + i) &=\\
+        (8 + \frac{46}{6}i)c_1
+        - (2 + i) &=0.
+      \end{align*}
+      This permits us to solve for $c_1$:
+      \begin{align*}
+        c_1 &= (2 + i) \cdot (8 + i\frac{46}{6})^{-1}\\
+        &= (2 + i) \cdot (\frac{8}{8^2 + (\frac{46}{6})^2} - i\frac{\frac{46}{6}}{8^2 + (\frac{46}{6})^2})\\
+        &= (2 + i) \cdot (\frac{8}{64 + \frac{529}{9}} - i\frac{\frac{46}{6}}{64 + \frac{529}{9}})\\
+        &= (2 + i) \cdot (\frac{8}{\frac{1105}{9}} - i\frac{\frac{46}{6}}{\frac{1105}{9}})\\
+        &= (2 + i) \cdot (\frac{72}{1105} - i\frac{414}{6630})\\
+        &= (2 + i) \cdot (\frac{72}{1105} - i\frac{69}{1105})\\
+        &= (2\frac{72}{1105} + \frac{69}{1105} - i2\frac{69}{1105} + i\frac{72}{1105})\\
+        &= (\frac{213}{1105} - i\frac{66}{1105}).
+      \end{align*}
+      We can substitute this value for $c_1$ in our system:
+      \begin{alignat*}{7}
+        (1 + i\frac{1}{2})(\frac{213}{1105} - i\frac{66}{1105}) & {}+{} & \frac{2}{3}c_2 & {}-{} &       2 & {}={} & 0&\\
+                         8(\frac{213}{1105} - i\frac{66}{1105}) & {}-{} & \frac{1}{2}c_2 & {}-{} &(-1 + i) & {}={} & 0&\\
+                        -i(\frac{213}{1105} - i\frac{66}{1105}) & {}+{} &            c_2 & {} {} &         & {}={} & 0&\\
+                         -(\frac{213}{1105} - i\frac{66}{1105}) & {}+{} &           7c_2 & {}-{} &       1 & {}={} & 0&,
+      \end{alignat*}
+      i.e.
+      \begin{alignat*}{7}
+        (\frac{213}{1105} + \frac{66}{2210}- i\frac{66}{1105} + i\frac{213}{2210}) & {}+{} & \frac{2}{3}c_2 & {}-{} &       2 & {}={} & 0&\\
+        (\frac{1704}{1105} - i\frac{528}{1105}) & {}-{} & \frac{1}{2}c_2 & {}-{} &(-1 + i) & {}={} & 0&\\
+       (\frac{66}{1105} -i\frac{213}{1105}) & {}+{} &            c_2 & {} {} &         & {}={} & 0&\\
+        (-\frac{213}{1105} + i\frac{66}{1105}) & {}+{} &           7c_2 & {}-{} &       1 & {}={} & 0&,
+      \end{alignat*}
+      i.e.
+      \begin{alignat*}{7}
+        (\frac{492}{2210} + i\frac{81}{2210}) & {}+{} & \frac{2}{3}c_2 & {}-{} &       2 & {}={} & 0&\\
+        (\frac{3408}{2210} - i\frac{1056}{2210}) & {}-{} & \frac{1}{2}c_2 & {}-{} &(-1 + i) & {}={} & 0&\\
+       (\frac{132}{2210} -i\frac{426}{2210}) & {}+{} &            c_2 & {} {} &         & {}={} & 0&\\
+        (-\frac{426}{2210} + i\frac{132}{2210}) & {}+{} &           7c_2 & {}-{} &       1 & {}={} & 0&,
+      \end{alignat*}
+      i.e.
+      \begin{alignat*}{6}
+        (-\frac{3928}{2210} + i\frac{81}{2210}) & {}+{} & \frac{2}{3}c_2 & {}={} & 0&\\
+        (\frac{5618}{2210} - i\frac{3266}{2210}) & {}-{} & \frac{1}{2}c_2 & {}={} & 0&\\
+       (\frac{132}{2210} -i\frac{426}{2210}) & {}+{} &            c_2 & {}={} & 0&\\
+        (-\frac{2636}{2210} + i\frac{132}{2210}) & {}+{} &           7c_2 & {}={} & 0&,
+      \end{alignat*}
+      then find a value for $c_2$ via the implied linear
+      combination
+      \begin{align*}
+        \frac{49}{6}c_2 - (\frac{814}{2210} + i\frac{3479}{2210}) &= 0,
+      \end{align*}
+      i.e.
+      \begin{align*}
+        c_2 &= (\frac{814}{2210} + i\frac{3479}{2210}) \cdot \frac{6}{49}\\
+        &= (\frac{2242}{54145} + i\frac{10437}{54145}).
+      \end{align*}
+      We now have two coefficients, $((\frac{213}{1105} -
+      i\frac{66}{1105}), (\frac{2242}{54145} +
+      i\frac{10437}{54145}))$, that \textit{might} yield
+      \eqref{eq:11} via a linear combination of \eqref{eq:21} and
+      \eqref{eq:22}. We get the system
+      \begin{alignat*}{6}
+        (\frac{213}{1105} - i\frac{66}{1105})(1 + \frac{i}{2})x_1 & {}+{} &           (\frac{213}{1105} - i\frac{66}{1105})8x_2 & {}-{} & (\frac{213}{1105} - i\frac{66}{1105})ix_3 & {}-{} &  (\frac{213}{1105} - i\frac{66}{1105})x_4 & {}={} & 0 &\\
+              (\frac{2242}{54145} + i\frac{10437}{54145})\frac{2}{3}x_1 & {}-{} & (\frac{2242}{54145} + i\frac{10437}{54145})\frac{1}{2}x_2 & {}+{} & (\frac{2242}{54145} + i\frac{10437}{54145})x_3 & {}+{} & (\frac{2242}{54145} + i\frac{10437}{54145})7x_4 & {}={}  & 0 &,
+      \end{alignat*}
+      i.e.
+      \begin{alignat*}{6}
+        (\frac{246}{1105} + i\frac{81}{2210})x_1 & {}+{} &
+        (\frac{1704}{1105} - i\frac{528}{1105})x_2 & {}-{} &
+        (\frac{66}{1105} + i\frac{213}{1105})x_3 & {}-{} & 
+        (\frac{213}{1105} - i\frac{66}{1105})x_4 & {}={} & 0 &\\
+        (\frac{4484}{162435} + i\frac{142}{1105})x_1 & {}-{} &
+        (\frac{1121}{54145} + i\frac{213}{2210})x_2 & {}+{} &
+        (\frac{2242}{54145} + i\frac{10437}{54145})x_3 & {}+{} &
+        (\frac{2242}{7735}+i\frac{1491}{1105})x_4 & {}={}  & 0 &,
+      \end{alignat*}
+      which yields the linear combination
+      \begin{align*}
+        (\frac{492}{1105} + i\frac{81}{1105})x_1
+        + (\frac{22987}{54145} - i\frac{3}{130})x_2
+        - \frac{992}{54145}x_3
+        + (\frac{751}{7735} + i\frac{1557}{1105})x_4
+        &= 0.
+      \end{align*}
+      Obviously this is not \eqref{eq:11}. This casts further
+      doubt on the idea that the two systems we started with are
+      equivalent, although this may not be the only solution of
+      our new system.
+
+      In any case, doubt is not proof. What we would really like
+      is a way to say \textit{for sure} that they are not
+      equivalent.
+
+      One thing we could do is try finding solutions for both
+      systems and see if we find any that they don't share. But
+      this is ungraceful, and potentially laborious—one could
+      imagine a situation where two systems shared many solutions
+      and only differed on one each. What if you arrived at those
+      solutions last?
+
+      It would be nice to have a more efficient way to prove
+      this. We need a way to say something about all the
+      solutions of a system at once, or a more fleshed-out
+      definition of equivalence; in this case whatever we find
+      may turn out to be both.
+
+      A "naïve" linear combination of the second system yields
+      \begin{align*}
+        (1 + \frac{i}{2})x_1 + \frac{2}{3}x_1 + 8x_2 - \frac{1}{2}x_2 - ix_3 + x_3 - x_4 + 7x_4 &=\\
+        (\frac{5}{2} + \frac{i}{2})x_1 + \frac{15}{2}x_2 + (1 - i)x_3 + 6x_4 &= 0.
+      \end{align*}
+      If we multiply the first equation of the second system by
+      $(\frac{16}{15} - \frac{8}{15}i)$, we get
+      \begin{align*}
+        (1 + \frac{i}{2})(\frac{16}{15} - \frac{8}{15}i)x_1 + 8(\frac{16}{15} - \frac{8}{15}i)x_2 - i(\frac{16}{15} - \frac{8}{15}i)x_3 - (\frac{16}{15} - \frac{8}{15}i)x_4 &=\\
+        \frac{4}{3}x_1 + (\frac{128}{15} - \frac{64}{15}i)x_2 -
+        (\frac{8}{15} + \frac{16}{15}i)x_3 - (\frac{16}{15} -
+        \frac{8}{15}i)x_4 &= 0.
+      \end{align*}
+
+      $(1 + \frac{i}{2})x = \frac{4}{3}$\\
+      $x = \frac{4}{(3 + \frac{3i}{2})}$\\
+      $(3, \frac{3}{2})^{-1} = (\frac{3}{3^{2} + (\frac{3}{2})^2}, -\frac{\frac{3}{2}}{3^{2} + (\frac{3}{2})^2})$\\
+      $(\frac{3}{\frac{45}{4}}, -\frac{3}{2}(\frac{1}{\frac{45}{4}}))$\\
+      $(\frac{3(4)}{45}, -\frac{3}{2}(\frac{4}{45}))$\\
+      $(\frac{12}{45}, -\frac{12}{90})$\\
+      $(\frac{4}{15}, -\frac{2}{15})$\\
+
+      $4(\frac{4}{15} - \frac{2i}{15})(1 + \frac{i}{2})$\\
+      $4(\frac{4}{15}, -\frac{2}{15})(1, \frac{1}{2})$\\
+      $4(\frac{4}{15} + \frac{2}{30}, \frac{4}{30} - \frac{2}{15})$\\
+      $4(\frac{1}{3}, 0)$\\
+
+      $(\frac{16}{15} - \frac{8}{15}i)$
+
+      \noindent\rule{\textwidth}{1pt}
+
+      Multiplying the first equation by $-5$ gives
+      \[
+      \begin{array}{rcrcrcrcl}
+        -10x_1 & + & (5 - 5i)x_2 &   &       & - & 5x_4 & = & 0,
+      \end{array}
+      \]
+      which yields the linear combination
+      \begin{align*}
+        2x_1 + (5 - 5i)x_2 + 3x_2 - 2ix_3 - 5x_4 + 5x_4 &=\\
+        2x_1 + (8 - 5i)x_2 - 2ix_3 &= 0.
+      \end{align*}
+      Multiplying the first equation by $(\frac{3}{2} + \frac{3}{2}i)$ gives
+      \begin{align*}
+        (\frac{3}{2} + \frac{3}{2}i)2x_1 + (\frac{3}{2} + \frac{3}{2}i)(-1 + i)x_2 + (\frac{3}{2} + \frac{3}{2}i)x_4 &=\\
+        (3 + 3i)x_1 - 3x_2 + (\frac{3}{2} + \frac{3}{2}i)x_4 &= 0,
+      \end{align*}
+      which yields the linear combination
+      \begin{align*}
+        (3 + 3i)x_1 - 3x_2 + 3x_2 - 2ix_3 + (\frac{3}{2} + \frac{3}{2}i)x_4 + 5x_4 &=\\
+        (3 + 3i)x_1 - 2ix_3 + (\frac{13}{2} + \frac{3}{2}i)x_4 &= 0.
+      \end{align*}
+      This implies that
+      \begin{align*}
+        2x_1 + (8 - 5i)x_2 &= 2ix_3,
+      \end{align*}
+      and also that
+      \begin{align*}
+        (3 + 3i)x_1 + (\frac{13}{2} + \frac{3}{2}i)x_4 &= 2ix_3,
+      \end{align*}
+      which means that
+      \begin{align*}
+        2x_1 + (8 - 5i)x_2 &= (3 + 3i)x_1 + (\frac{13}{2} + \frac{3}{2}i)x_4.
+      \end{align*}
+
+  \item
+    I'm pretty sure I've done this one before, more or less.
+
+  \item
+    \begin{thm}
+      If two homogenous systems of linear equations in two
+      unknowns have the same solutions, then they are equivalent.
+      \begin{proof}
+        We have
+        \begin{equation} \label{eq:61}
+        \begin{array}{cccccccccc}
+          A_{11}x_1 & + & A_{12}x_2 & = & 0\\
+          A_{21}x_1 & + & A_{22}x_2 & = & 0\\
+          \vdots    & + & \vdots    & = & \vdots\\
+          A_{m1}x_1 & + & A_{m2}x_2 & = & 0
+        \end{array}
+        \end{equation}
+        and
+        \begin{equation} \label{eq:62}
+        \begin{array}{cccccccccc}
+          B_{11}y_1 & + & B_{12}y_2 & = & 0\\
+          B_{21}y_1 & + & B_{22}y_2 & = & 0\\
+          \vdots    & + & \vdots    & = & \vdots\\
+          B_{n1}y_1 & + & B_{n2}y_2 & = & 0.
+        \end{array}
+        \end{equation}
+        A solution for \eqref{eq:61} is a pair of numbers
+        $(x_1,x_2)$ such that
+        \begin{align*}
+        (A_{11} + \ldots + A_{m1})x_1
+          + (A_{12} + \ldots + A_{m2})x_2
+          &= 0,
+        \end{align*}
+        and solution for \eqref{eq:62} is a pair of numbers
+        $(y_1,y_2)$ such that
+        \begin{align*}
+        (B_{11} + \ldots + B_{n1})y_1
+          + (B_{12} + \ldots + B_{n2})y_2
+          &= 0.
+        \end{align*}
+        If \eqref{eq:61} and \eqref{eq:62} have the same
+        solutions, then the set of all $(x_1,x_2)$ is the same as
+        the set of all $(y_1,y_2)$. Let's indicate all the pairs
+        in this set by $(x_{1r},x_{2r})$. We can then say that
+        \begin{align*}
+          (A_{11} + \ldots + A_{m1})x_{1r}
+          + (A_{12} + \ldots + A_{m2})x_{2r}
+          &= 0
+        \end{align*}
+        and that
+        \begin{align*}
+        (B_{11} + \ldots + B_{n1})x_{1r}
+          + (B_{12} + \ldots + B_{n2})x_{2r}
+          &= 0.
+        \end{align*}
+        Let's denote $(A_{11} + \ldots + A_{m1})$ as $a_1$ and
+        $(A_{12} + \ldots + A_{m2})$ as $a_2$, and likewise for
+        the $B$s. We then have
+        \begin{equation*}
+        \begin{array}{cccccc}
+          a_{1}x_1 & + & a_{2}x_2 & = & 0 &\\
+          b_{1}x_1 & + & b_{2}x_2 & = & 0 &
+        \end{array}
+        \end{equation*}
+        for all $(x_{1r},x_{2r})$.
+
+        If we take an equation from \eqref{eq:61}
+        \begin{align*}
+          A_{i1}x_1 + A_{i2}x_2 = 0
+        \end{align*}
+        where $i$ is a number between $1$ and $m$, we know that
+        \begin{align*}
+          A_{i1}x_1 + A_{i2}x_2 = b_{1}x_1 + b_{2}x_2.
+        \end{align*}
+        This implies that
+        \begin{align*}
+          (b_{1} - A_{i1})x_1 + (b_{2} - A_{i2})x_2 = 0,
+        \end{align*}
+        which means there is some pair of coefficients $(c_1,c_2)
+        = (1 - \frac{A_{i1}}{b_{1}}, 1 - \frac{A_{i2}}{b_{2}})$
+        (presuming neither $b$ is $0$, in which case the entire
+        factor can be disregarded) such that
+        \begin{align*}
+          c_{1}b_{1}x_1 + c_{2}b_{2}x_2 = 0.
+        \end{align*}
+        We can thus conclude that there is a system of linear
+        equations
+        \begin{equation*}
+        \begin{array}{cccccccccc}
+          c_{1}B_{11}x_1 & + & c_{1}B_{12}x_2 & = & 0\\
+          c_{2}B_{21}x_1 & + & c_{2}B_{22}x_2 & = & 0\\
+          \vdots         & + & \vdots         & = & \vdots\\
+          c_{m}B_{n1}x_1 & + & c_{m}B_{n2}x_2 & = & 0
+        \end{array}
+        \end{equation*}
+        such that
+        \begin{equation*}
+          (c_{1}B_{11} + \ldots + c_{n}B_{n1})x_1 + (c_{1}B_{12}
+          + \ldots + c_{n}B_{n2})x_2 = A_{i1}x_1 + A_{i2}x_2,
+        \end{equation*}
+        which is the same as saying that $A_{i1}x_1 + A_{i2}x_2$
+        is a linear combination of the equations in
+        \eqref{eq:62}. Since we've shown this to be true for
+        every equation in \eqref{eq:61}, and we can apply the
+        same process in the other direction for \eqref{eq:62}, we
+        can now see that they must be equivalent.
+      \end{proof}
+    \end{thm}
+
+  \item
+    See 1.1.
+
+  \item
+    \begin{thm}
+      Each field of characteristic zero contains a copy of the
+      rational number field.
+      \begin{proof}
+        \begin{lemma}
+          Each field of characteristic zero contains a copy of
+          the natural numbers.
+          \begin{proof}
+            First, we briefly describe the natural numbers. We
+            consider $0$ as the empty set $\{\}$. We then define a
+            function $S(A) = A \cup \{A\}$ where $A$ is a set, i.e.
+            $S$ maps $A$ to the set that contains all the elements of
+            $A$ as well as $A$ itself. We say that the natural
+            numbers are the set of all sets formed by recursive
+            application of $S$ to $0$, and take it for granted that
+            this set is infinite: $1 = S(0) = \{\{\}\}$, $2 = S(1) =
+            \{\{\{\}\}\}$, and so on.
+
+            In this context, we can see that $A + 1$ in the natural
+            numbers can be satisfactorily defined as $S(A)$, and that
+            $A + N$ is then equivalent to applying $S$ to $A$
+            recursively a number of times equal to the number of sets
+            contained in $N$.  So, $A + 0 = A$, $A + 2 = S(S(A))$,
+            etc.
+
+            $NA$ in the natural numbers can then be defined as
+            recursively applying $S$ to $0$ for every member of $A$
+            for every member of $N$. So, $0A$ is $0$ with $S$ applied
+            to it no times i.e. $0$, $1A$ is $0$ with $S$ applied to
+            it number-of-elements-in-$A$ times i.e. $A$, etc.
+
+            In this manner we see that both addition and
+            multiplication in the natural numbers can be defined
+            based on $S$.
+
+            A field of characteristic zero is one such that $1 +
+            1 + \ldots + 1 \neq 0$ for any number of $1$s. We
+            represent the summation of $n$ $1$s here by
+            $\sum_{1}^{n}1$, so we could also say that a field of
+            characteristic zero is one in which $\sum_{1}^{n}1
+            \neq 0$ for any $n$.
+
+            In a field that is of characteristic $q \neq 0$, this
+            summation will cycle at $q$; in other words,
+            $\sum_{1}^{q}1 = \sum_{1}^{2q}1 = \ldots = \sum_{1}^{pq}1
+            = 0$ for any natural number $p$. $0$ is the additive
+            identity in any field, i.e. $x + 0 = x$ for any scalar
+            $x$. This implies that any field not of characteristic
+            zero cannot contain a copy of the natural numbers; the
+            range of a function like $S$ in that field will be
+            finite.
+
+            By the same token, this implies that any field of
+            characteristic zero \textit{will} contain a copy of
+            the natural numbers. If $\sum_{1}^{n}1 \neq 0$, every
+            scalar from $1$ up to $n$ must be unique for any
+            natural number $n$; if there was some $x \neq n$ such
+            that $\sum_{1}^{x}1 = \sum_{1}^{n}1$, it would imply
+            that this operation was cyclical and thus that the
+            field was not of characteristic zero. This means that
+            the natural numbers can be constructed in any field
+            of characteristic zero starting with that field's $0$
+            and using a definition of $S$ as $S(n) = n + 1$ in
+            that field.
+          \end{proof}
+        \end{lemma}
+
+        We consider $A - 1$ in the natural numbers as equal to
+        the set $N$ such that $S(N) = A$ in the above lemma, and
+        $A - N$ as equal to the set through which $A$ can be
+        obtained by number-of-elements-in-$N$ applications of
+        $S$. Based on this definition, the number of elements in
+        $A$ must be equal to or larger than the number of
+        elements in $N$ for the operation to make sense, as there
+        is no set $X$ such that $S(X) = 0$.
+
+        This restriction can be worked around in the set of all
+        pairs of natural numbers $(a,b)$. We can say in this
+        context that given two such pairs $(a,b)$ and $(c,d)$,
+        they are \textit{equal} if $a + d$ yields the same set as
+        $b + c$.
+
+        We can then define $(a,b) + (c,d)$ as $(a + c, b + d)$,
+        and $(a,b) - (c,d)$ as $(a,b) + (d,c)$ or $(a + d, b +
+        c)$. If we represent the natural number $0$ as $(0,0)$
+        and the natural number $a$ as $(a,0)$, we can see that
+        these operations work as we would expect: $(0,0) + (a,0)
+        = (0 + a, 0 + 0) = (a,0)$, and $(a,0) - (a,0) = (a + 0, 0
+        + a) = (a,a) = (0,0)$. $(a,a) = (0,0)$ because $a + 0 = a
+        + 0$. Since this definition relies only on the addition
+        of natural numbers, we don't have to worry about
+        subtraction taking us past $0$: $(0,0) - (a,0) = (0,a)$,
+        which is still a pair of natural numbers. Notably, we
+        have additive inverses in this context for all the
+        elements in the set: $(a,b) - (a,b) = (a + b, b + a) =
+        (0,0)$.
+
+        We can define $(a,b) \cdot (c,d)$ as $(ac + bd, ad +
+        bc)$. This also works as we would expect: $(a,a) \cdot
+        (1,0) = (a(1) + a(0), a(0) + a(1)) = (a,a)$ and so on.
+
+        As you may have suspected, this is a satisfactory
+        construction of the integers. One downside of this
+        system is that multiplicative inverses can be hard to
+        come by. For example, consider $2$—what integer $(a,b)$
+        is there such that $(2,0) \cdot (a,b) = (1,0)$? We would
+        want $(2a + 0b, 2b + 0a) = (2a,2b) = (1,0)$. There is no
+        natural number $a$ such that $2a = 1$, so we're out of
+        luck. In fact, the only numbers for which this will work
+        are $(1,0)$ and $(0,1)$, as you can easily see.
+
+        To get around \textit{this} problem, we can construct the
+        rational numbers. We say the rational numbers are the set
+        of all pairs of integers $(a,b)$ where $b \neq 0$. We
+        call two rational numbers $(a,b)$ and $(c,d)$ equal if
+        $ad = bc$. Addition is defined between rational numbers
+        $(x,y)$ and $(z,y)$ such that $(x,y) + (z,a) = (xa + yz,
+        ya)$.  Multiplication is defined such that $(x,y) \cdot
+        (z,a) = (xz,ya)$.
+
+        We can represent the integers in the rationals as all the
+        rational numbers $(n,1)$, where $n$ is an integer.
+        Additive inverses can thus be found for all the integers
+        in the rationals via $(1,n)$; $(n,1) \cdot (1,n) =
+        (1n,1n) = (n,n) = (1,1)$, because $n1 = n1$. In fact,
+        they can be found for any rational number $\neq 0$:
+        $(a,b) \cdot (b,a) = (ab,ba) = (1,1)$.
+
+        At this point, we can see that all the elements and
+        fundamental operations that we need to have the rational
+        number field can be constructed using only the natural
+        numbers and addition and multiplication over them. Since
+        any field of characteristic zero contains a copy of the
+        natural numbers that supports these operations by our
+        lemma, this implies that any such field also contains a
+        copy of the rational number field.
+      \end{proof}
+    \end{thm}
+\end{enumerate}
+
+\end{document}

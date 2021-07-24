@@ -1,0 +1,231 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\title{1.1}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{cor}{Corollary}
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{defn}
+  A \textbf{field} $F$ is a set of objects $x, y, z, …$ together
+  with two operations on the elements of $F$: \textbf{addition},
+  which associates each pair of elements $x, y$ in $F$ with an
+  element $x + y$ in $F$, and \textbf{multiplication}, which
+  associates each pair of elements $x, y$ with an element $xy$ in
+  $F$. Furthermore, these two operations should satisfy the
+  following conditions:
+
+  \begin{enumerate}
+      \item Addition is commutative: $x + y = y + x$ for all $x,
+        y$ in $F$.
+      \item Addition is associative: $x + (y + z) = (x + y) + z$
+        for all $x, y$ in $F$.
+      \item There is a unique element $0$ (zero) in $F$ such that
+        $x + 0 = x$ for every $x$ in $F$.
+      \item For every $x$ in $F$ there is a unique element $-x$
+        in $F$ such that $x + (-x) = 0$.
+      \item Multiplication is commutative: $xy = yx$ for all $x,
+        y$ in $F$.
+      \item Multiplication is associative: $x(yz) = (xy)z$ for
+        all $x, y, z$ in $F$.
+      \item There is a unique element $1$ (one) in $F$ such that
+        $1 \neq 0$ and $1x = x$ for every $x$ in $F$.
+      \item For each element $x \neq 0$ in $F$ there is a unique
+        element $x^{-1}$ (or $1/x$) in $F$ such that $xx^{-1} =
+        1$.
+      \item Multiplication distributes over addition: $x(y + z) =
+        xy + xz$ for all $x, y, z$ in $F$.
+  \end{enumerate}
+\end{defn}
+
+\begin{exm}
+  The set of natural numbers $\mathbb{N}$ is not a field. $0$ is
+  not a natural number, nor is $-n$ for any natural number $n$,
+  nor $1/n$ (except in the case of $1$).
+\end{exm}
+
+\begin{exm}
+  The set of integers $\mathbb{Z}$ is not a field. It comes
+  close, but for an integer $n$, $1/n$ is not an integer unless
+  $n = 1$ or $n = -1$.
+\end{exm}
+
+\begin{exm}
+  The set of rational numbers $\mathbb{Q}$ is a field.
+\end{exm}
+
+\begin{exm}
+  The set of real numbers $\mathbb{R}$ is a field.
+\end{exm}
+
+\begin{exm}
+  The set of complex numbers $\mathbb{C}$ is a field.
+\end{exm}
+
+\begin{defn}
+  A \textbf{subfield} of the field $F$ is a set $G \subseteq F$
+  such that $G$ is a field under the same definitions of addition
+  and mulitplication used with $F$.
+\end{defn}
+
+\begin{comm}
+  If $G$ is a subfield of $F$, $0$ and $1$ are in $G$, and if $x,
+  y$ are in $G$, then $(x + y)$, $xy$, $-x$, and $x^{-1}$ (if
+  $x \neq 0$) are also in $G$.
+\end{comm}
+
+\begin{exm}
+  The field $\mathbb{R}$ is a subfield of $\mathbb{C}$.
+
+  We can represent a real number $x$ as a complex number $(x +
+  0i)$. This means that the real numbers $1$ and $0$ are in
+  $\mathbb{C}$. It also means that if $x, y$ are real numbers,
+  $(x + y)$, $xy$, $-x$, and (if $x \neq 0$) $x^{-1}$ are in
+  $\mathbb{C}$.
+\end{exm}
+
+\begin{thm}
+  Any subfield of $\mathbb{C}$ must contain every rational
+  number.
+  \begin{proof}
+    By contradiction. Assume that $F$ is a subfield of
+    $\mathbb{C}$ which omits the rational number $p$, $p \neq 0$.
+    We know that for any rational number $q$, there is a rational
+    number $r$ such that $qr = p$. This is because $qq^{-1} = 1$,
+    and thus $qq^{-1}p = p$; therefore $r = q^{-1}p$. For $F$ to
+    be a field, $qr$ would need to produce a result in $F$; since
+    $F$ omits $p$, $q$ and $r$ must be omitted as well. But this
+    ultimately leaves no rational numbers in $F$ at all, and thus
+    $F$ cannot be a field in any sense, let alone a subfield of
+    $\mathbb{C}$.
+  \end{proof}
+\end{thm}
+
+\begin{thm}
+  The set of all complex numbers of the form $x + y\sqrt{2}$,
+  where $x$ and $y$ are rational, is a subfield of $\mathbb{C}$.
+
+  \begin{proof}
+    By lemmas 2.*.
+  \end{proof}
+\end{thm}
+
+\begin{lemma}
+  If $p,q,r,s$ are rational numbers, then $(p + q\sqrt{2}) + (r
+  + s\sqrt{2})$ is a complex number of the form $x +
+  y\sqrt{2}$ where $x, y$ are rational.
+  \begin{proof}
+    \begin{align*}
+      (p + q\sqrt{2}) + (r + s\sqrt{2}) &=\\
+      p + q\sqrt{2} + r + s\sqrt{2} &=\\
+      p + r + q\sqrt{2} + s\sqrt{2} &=\\
+      (p + r) + (q + s)\sqrt{2}&.
+    \end{align*}
+    Then $(p + q\sqrt{2}) + (r + s\sqrt{2})$ is a complex number
+    of the form $x + y\sqrt{2}$, $x = (p + q)$, $y = (r + s)$.
+  \end{proof}
+\end{lemma}
+
+\begin{lemma}
+  If $p,q,r,s$ are rational numbers, then $(p + q\sqrt{2})
+  \cdot (r + s\sqrt{2})$ is a complex number of the form $x +
+  y\sqrt{2}$ where $x, y$ are rational.
+  \begin{proof}
+    \begin{align*}
+      (p + q\sqrt{2}) \cdot (r + s\sqrt{2}) &=\\
+      pr + qr\sqrt{2} + ps\sqrt{2} + qs(\sqrt{2})^{2} &=\\
+      (pr + 2qs) + (qr + ps)\sqrt{2}&.
+    \end{align*}
+    Then $(p + q\sqrt{2}) \cdot (r + s\sqrt{2})$ is a complex
+    number of the form $x + y\sqrt{2}$, $x = (pr + 2qs)$, $y =
+    (qr + ps)$.
+  \end{proof}
+\end{lemma}
+
+\begin{lemma}
+  If $p,q$ are rational numbers, then $-(p + q\sqrt{2})$ is a
+  complex number of the form $x + y\sqrt{2}$ where $x, y$ are
+  rational.
+  \begin{proof}
+    $-(p + q\sqrt{2}) = -p + (-q)\sqrt{2}$. Then $-(p +
+    q\sqrt{2})$ is a complex number of the form $x + y\sqrt{2}$,
+    $x = -p$, $y = -q$.
+  \end{proof}
+\end{lemma}
+
+\begin{lemma}
+  If $p,q$ are rational numbers and $p + q\sqrt{2} \neq 0$, then
+  $(p + q\sqrt{2})^{-1}$ is a complex number of the form $x +
+  y\sqrt{2}$ where $x, y$ are rational.
+  \begin{proof}
+    \begin{align*}
+      (p + q\sqrt{2})^{-1} &=\\
+      \frac{1}{p + q\sqrt{2}} &=\\
+      \frac{p - q\sqrt{2}}{(p + q\sqrt{2})(p - q\sqrt{2})} &=\\
+      \frac{p - q\sqrt{2}}{p^{2} - 2q^{2}} &=\\
+      \frac{p}{p^{2} - 2q^{2}} - \frac{q}{p^{2} - 2q^{2}}\sqrt{2}&.
+    \end{align*}
+    Then $(p + q\sqrt{2})^{-1}$ is a complex number of the form
+    $x + y\sqrt{2}$, $x = \frac{p}{p^{2} - 2q^{2}}$, $y =
+    -\frac{q}{p^{2} - 2q^{2}}$.
+  \end{proof}
+\end{lemma}
+
+\begin{defn}
+  A \textbf{scalar} is an element of a field.
+\end{defn}
+
+\begin{comm}
+  If $x, y$ are scalars from a subfield $F$ of $\mathbb{C}$, then
+  the performance of addition, multiplication, subtraction, or
+  division with $x$ and $y$ does not leave $F$.
+\end{comm}
+
+\begin{comm}
+  In some fields, it is possible to add $1$ to itself a finite
+  number of times and obtain $0$, i.e.
+  \begin{center}
+    $1 + 1 + … + 1 = 0.$
+  \end{center}
+  However, this is not the case for $\mathbb{C}$, nor any
+  subfield of it.
+\end{comm}
+
+\begin{defn}
+  If a field $F$ has the property that it is possible to add $1$
+  to itself a finite number of times and obtain $0$ in it, the
+  least $n$ such that the sum of $n$ $1$s yields $0$ is called
+  the \textbf{characteristic} of $F$. If $F$ does not have this
+  property, it is said to be of \textbf{characteristic zero}.
+\end{defn}
+
+\begin{comm}
+  Often, when assuming that $F$ is a subfield of $\mathbb{C}$,
+  what is desired is to ensure that $F$ is a field of
+  characteristic zero.
+\end{comm}
+
+\end{document}

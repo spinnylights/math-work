@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\title{1.2}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{cor}{Corollary}
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{defn}
+  A \textbf{system of \textit{m} linear equations in \textit{n}
+  unknowns} is a set of equations such that
+  \begin{equation} \label{eq:syslin}
+  \begin{array}{ccccccccc}
+    A_{11}x_1 & + & A_{12}x_2 & + & \ldots & + & A_{1n}x_n & = & y_1\\
+    A_{21}x_1 & + & A_{22}x_2 & + & \ldots & + & A_{2n}x_n & = & y_2\\
+    \vdots    & + & \vdots    & + & \ldots & + & \vdots    & = & \vdots\\
+    A_{m1}x_1 & + & A_{m2}x_2 & + & \ldots & + & A_{mn}x_n & = & y_m,
+  \end{array}
+  \end{equation}
+  where $x_1,\ldots,x_n$, $y_1,\ldots,y_n$, and $A_{ij}, 1 \leq i
+  \leq m, 1 \leq j \leq n$ are elements of a field $F$. Any
+  $n$-tuple $x_1,\ldots,x_n$ of elements of $F$ which satisfies
+  each of the equations of such a system is called one of its
+  \textbf{solutions}. If $y_1 = y_2 = \ldots = y_n = 0$, the
+  system is said to be \textbf{homogenous}, or each of its
+  equations is said to be homogenous.
+\end{defn}
+
+\begin{defn}
+  If we select $m$ scalars $c_1,\ldots,c_m$ from $F$ and multiply
+  the $j$th equation in \eqref{eq:syslin} by $c_j$:
+  \[
+  \begin{array}{ccccccccc}
+    c_{1}A_{11}x_1 & + & c_{1}A_{12}x_2 & + & \ldots & + & c_{1}A_{1n}x_n & = & c_{1}y_1\\
+    c_{2}A_{21}x_1 & + & c_{2}A_{22}x_2 & + & \ldots & + & c_{2}A_{2n}x_n & = & c_{2}y_2\\
+    \vdots    & + & \vdots    & + & \ldots & + & \vdots    & = & \vdots\\
+    c_{m}A_{m1}x_1 & + & c_{m}A_{m2}x_2 & + & \ldots & + & c_{m}A_{mn}x_n & = & c_{m}y_m,
+  \end{array}
+  \]
+  we can add the equations together to obtain
+  \begin{equation} \label{eq:lincomb}
+    (c_{1}A_{11} + \ldots + c_{m}A_{m1})x_1 + \ldots +
+    (c_{1}A_{1n} + \ldots + c_{m}A_{mn})x_n = c_{1}y_1 + \ldots +
+    c_{m}y_m.
+  \end{equation}
+  \eqref{eq:lincomb} is called a \textbf{linear combination} of
+  the equations in \eqref{eq:syslin}. Given the way we arrived at
+  \eqref{eq:lincomb}, any solution of \eqref{eq:syslin} is
+  clearly a solution of \eqref{eq:lincomb} as well.
+\end{defn}
+
+\begin{defn}
+  If we have another system of linear equations
+  \begin{equation} \label{eq:syslin2}
+  \begin{array}{ccccccc}
+    B_{11}x_1 & + & \ldots & + & B_{1n}x_n & = & z_1\\
+    \vdots    & + & \ldots & + & \vdots    & = & \vdots\\
+    B_{k1}x_1 & + & \ldots & + & B_{kn}x_n & = & z_k
+  \end{array}
+  \end{equation}
+  such that all $k$ equations in \eqref{eq:syslin2} are linear
+  combinations of the equations in \eqref{eq:syslin}, it follows
+  that any solution of \eqref{eq:syslin} is also a solution of
+  \eqref{eq:syslin2}.
+
+  It may be the case that some of the solutions of
+  \eqref{eq:syslin2} are not solutions of \eqref{eq:syslin}.
+  However, if all of the equations in \eqref{eq:syslin} are also
+  linear combinations of the equations in \eqref{eq:syslin2},
+  then clearly all of the solutions of \eqref{eq:syslin2}
+  \textit{are} solutions of \eqref{eq:syslin}. If all of the
+  equations in \eqref{eq:syslin2} are linear combinations of the
+  equations in \eqref{eq:syslin} and vice versa,
+  \eqref{eq:syslin2} and \eqref{eq:syslin} are said to be
+  \textbf{equivalent}.
+\end{defn}
+
+\begin{thm}
+  Equivalent systems of linear equations have exactly the same
+  solutions.
+  \begin{proof}
+    Follows trivially from the definition of equivalence.
+  \end{proof}
+\end{thm}
+
+\begin{comm}
+  (Mine.) If we have a system
+  \[
+  \begin{array}{ccccccc}
+    B_{11}x_1 & + & \ldots & + & B_{1n}x_n & = & z_1\\
+    \vdots    & + & \ldots & + & \vdots    & = & \vdots\\
+    B_{k1}x_1 & + & \ldots & + & B_{kn}x_n & = & z_k,
+  \end{array}
+  \]
+  and all its equations are linear combinations of the equations
+  in
+  \[
+  \begin{array}{ccccccc}
+    A_{11}x_1 & + & \ldots & + & A_{1n}x_n & = & y_1\\
+    \vdots    & + & \ldots & + & \vdots    & = & \vdots\\
+    A_{k1}x_1 & + & \ldots & + & A_{kn}x_n & = & y_k,
+  \end{array}
+  \]
+  that implies that one of its equations
+  \begin{align*}
+    B_{i1}x_1 + \ldots + B_{in}x_n = z_i,
+  \end{align*}
+  where $i$ is a number between $1$ and $k$, could be expressed
+  as a linear combination of
+  \[
+  \begin{array}{ccccccc}
+    c_{i1}A_{11}x_1 & + & \ldots & + & c_{i1}A_{1n}x_n & = & c_{i1}y_1\\
+    \vdots    & + & \ldots & + & \vdots    & = & \vdots\\
+    c_{ik}A_{k1}x_1 & + & \ldots & + & c_{ik}A_{kn}x_n & = & c_{ik}y_k
+  \end{array}
+  \]
+  for some list of scalars $c_{i1}, ..., c_{ik}$. If $j$ is a
+  number between $1$ and $n$, this also implies that $B_{ij} =
+  c_{i1}A_{1j} + \ldots + c_{ik}A_{kj}$ and that $z_{i} =
+  c_{i1}y_{1} + \ldots + c_{ik}y_{k}$.
+
+  It's worth noting that the only new element which is introduced
+  here is the list of scalars $c_{i1}, \ldots, c_{ik}$; everything
+  else is given by the two systems of equations. For the whole of
+  both systems, we thus have a list of lists of scalars; we can
+  represent this as $c_{11}, \ldots, c_{kk}$:
+  \begin{align*}
+    \begin{bmatrix}
+      c_{11} & \cdots & c_{1k}\\
+      \vdots & \ddots & \vdots\\
+      c_{k1} & \cdots & c_{kk}
+    \end{bmatrix}
+  \end{align*}
+  Showing that the two systems are equivalent is the same as
+  showing that such a list of lists of scalars exists going in
+  both directions.
+\end{comm}
+
+\end{document}
