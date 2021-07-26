@@ -226,4 +226,40 @@
   \end{proof}
 \end{thm}
 
+\begin{defn}
+  We call an $m \times n$ matrix $R$ \textbf{row-reduced} if:
+  \begin{enumerate}
+      \item in each of $R$'s rows, the first non-zero element is
+        $1$, and
+      \item for a column $c$ of $R$, if $c$ contains the first
+        non-zero element of a row, all the other elements in $c$
+        are $0$.
+  \end{enumerate}
+\end{defn}
+
+\begin{comm}
+  Here are a few examples of row-reduced matrices:
+  \begin{align*}
+    \begin{bmatrix}
+      0 & 0 & 1 & 3\\
+      1 & 0 & 0 & i\\
+      0 & 1 & 0 & -2
+    \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & 1
+    \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & 1\\
+    \end{bmatrix}
+  \end{align*}
+\end{comm}
 \end{document}
