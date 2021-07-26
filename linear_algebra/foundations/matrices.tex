@@ -201,4 +201,29 @@
   \end{proof}
 \end{cor}
 
+\begin{thm}
+  If $A$ and $B$ are $m \times n$ row-equivalent matrices, then
+  for an $n \times 1$ matrix $X$, the homogeneous systems of
+  linear equations $AX = 0$ and $BX = 0$ have the same set of
+  solutions.
+  \begin{proof}
+    Each row of $A$ represents a linear equation utilizing the
+    coefficients provided by $X$ and equal to $0$.  Multiplying a
+    row of $A$ by a non-zero scalar $c$ doesn't change this—if
+    $A_{i1}x_1 + \cdots + A_{ij}x_j = 0$, then $c(A_{i1}x_1 +
+    \cdots + A_{ij}x_j) = 0$ as well. By the same token, if $r$
+    and $s$ are rows of $A$ and $c$ is any scalar, replacing $r$
+    with $r + cs$ won't change this either, because both $r$ and
+    $s$ equal $0$ with the coefficients in $X$. The same is true
+    for swapping two rows of $A$, for the same reason. As such,
+    for any composition of elementary row operations $e$, if $AX
+    = 0$, $e(A)X = 0$ as well and vice-versa, so any two
+    row-equivalent matrices with the same dimensions will have
+    the same solutions. Another way of putting this is that, if
+    $B$ is row-equivalent to $A$, all the equations in $AX = 0$
+    will be linear combinations of $BX = 0$ and vice versa,
+    because of the nature of elementary row operations.
+  \end{proof}
+\end{thm}
+
 \end{document}
