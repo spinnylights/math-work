@@ -21,7 +21,7 @@
 \newtheorem*{nthm}{Theorem}
 \newtheorem{sthm}{}[thm]
 \newtheorem{lemma}{Lemma}[thm]
-\newtheorem*{cor}{Corollary}
+\newtheorem{cor}{Corollary}[thm]
 \newtheorem*{prop}{Property}
 \newtheorem*{defn}{Definition}
 \newtheorem*{comm}{Comment}
@@ -115,7 +115,7 @@
   for any $n$ but a fixed $m$.
 \end{defn}
 
-\begin{thm}
+\begin{thm} \label{thm:elrowinv}
   To each elementary row operation $e$ there corresponds an
   elementary row operation $e_1$ of the same type as $e$ such
   that $e_1(e(A)) = e(e_1(A)) = A$ for each $A$. In other words,
@@ -159,10 +159,46 @@
     $e(e(A)_{sj}) = e(A_{rj}) = A_{sj}$, and otherwise
     $e_{1}(e(A))_{ij} = e(e_{1}(A))_{rj} = A_{ij}$.
   \end{proof}
+
 \end{thm}
 
 \begin{defn}
-
+  If we have matrices $A$ and $B$ that are both $m \times n$ and
+  over the same field, we say that $B$ is \textbf{row-equivalent}
+  to $A$ if $B$ can be produced by a finite series of elementary
+  row operations on $A$.
 \end{defn}
+
+\begin{defn}
+  An \textbf{equivalence relation} is one between two members of
+  a set that is \textbf{reflexive}, \textbf{transitive}, and
+  \textbf{symmetric}. In other words, if we have $a$, $b$, and
+  $c$ of the same set and we represent an equivalence relation by
+  $\equiv$, then
+  \begin{center}
+    $a \equiv a$,\\
+    $a \equiv b \iff b \equiv a$,\\
+    $a \equiv b \land b \equiv c \implies a \equiv c$.
+  \end{center}
+\end{defn}
+
+\begin{cor}
+  Row equivalence is an equivalence relation.
+  \begin{proof}
+    By theorem \ref{thm:elrowinv}, we know that any elementary
+    row operation has an inverse, which also implies that any
+    finite composition of elementary row operations has an
+    inverse; therefore we let $e$ stand for a finite composition
+    of one or more elementary row operations and $e_1$ for its
+    inverse.
+
+    Say we have $m \times n$ matrices $A$, $B$, and $C$ over the
+    same field, and we represent row equivalence by $\sim$. It's
+    trivially true that $A \sim A$ because $e(e_{1}(A)) = A$. If
+    $A \sim B$, and in particular $e(A) = B$, then $e_{1}(B) =
+    A$, so $B \sim A$. If also $B \sim C$, and in particular
+    $f(B) = C$, then $f(e(A)) = C$, so $A \sim C$.
+  \end{proof}
+\end{cor}
 
 \end{document}
