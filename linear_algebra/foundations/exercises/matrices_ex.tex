@@ -137,6 +137,97 @@
       \end{align*}
       So, the only solution of $AX = 0$ is $x_1 = x_2 = x_3 = 0$.
 
+    \item
+      For
+      \begin{align*}
+        A\ & =
+        \begin{bmatrix}
+          6 & -4 & 0\\
+          4 &  2 & 0\\
+         -1 &  0 & 3
+        \end{bmatrix},
+      \end{align*}
+      we would like to find all solutions in which $AX = 2X$ and
+      all solutions in which $AX = 3X$.
+
+      First we have
+      \begin{align*}
+        \begin{bmatrix}
+          6 & -4 & 0\\
+          4 &  2 & 0\\
+         -1 &  0 & 3
+        \end{bmatrix}
+        \begin{bmatrix}
+          x_1 \\
+          x_2 \\
+          x_3
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+          2x_1 \\
+          2x_2 \\
+          2x_3
+        \end{bmatrix}.
+      \end{align*}
+      This can also be represented as
+      \begin{align*}
+        6x_1 - 4x_2 =&\ 2x_1\\
+        4x_1 + 2x_2 =&\ 2x_2\\
+        -x_1 + 3x_3 =&\ 2x_3,
+      \end{align*}
+      which is equivalent to
+      \begin{align*}
+        6x_1 - 2x_1 - 4x_2 =&\ 0\\
+        4x_1 + 2x_2 - 2x_2 =&\ 0\\
+        -x_1 + 3x_3 - 2x_3 =&\ 0,
+      \end{align*}
+      i.e.
+      \begin{align*}
+        4x_1 - 4x_2 =&\ 0\\
+        4x_1        =&\ 0\\
+        -x_1 +  x_3 =&\ 0.
+      \end{align*}
+      This is only possible if $x_1 = x_2 = x_3 = 0$.\\
+
+      Next we have
+      \begin{align*}
+        \begin{bmatrix}
+          6 & -4 & 0\\
+          4 &  2 & 0\\
+         -1 &  0 & 3
+        \end{bmatrix}
+        \begin{bmatrix}
+          x_1 \\
+          x_2 \\
+          x_3
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+          3x_1 \\
+          3x_2 \\
+          3x_3
+        \end{bmatrix}.
+      \end{align*}
+      This can also be represented as
+      \begin{align*}
+        6x_1 - 4x_2 =&\ 3x_1\\
+        4x_1 + 2x_2 =&\ 3x_2\\
+        -x_1 + 3x_3 =&\ 3x_3,
+      \end{align*}
+      which is equivalent to
+      \begin{align*}
+        6x_1 - 3x_1 - 4x_2 =&\ 0\\
+        4x_1 + 2x_2 - 3x_2 =&\ 0\\
+        -x_1 + 3x_3 - 3x_3 =&\ 0,
+      \end{align*}
+      i.e.
+      \begin{align*}
+        3x_1 - 4x_2 =&\ 0\\
+        4x_1 -  x_2 =&\ 0\\
+        -x_1        =&\ 0.
+      \end{align*}
+      Again, this is only possible if $x_1 = x_2 = x_3 = 0$.
+
 \end{enumerate}
 
 \end{document}
