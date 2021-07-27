@@ -617,6 +617,164 @@
       \end{align*}
     This completes the proof.
 
+  \item
+    We consider the system of equations $AX = 0$ where
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+         a & b\\
+         c & d
+      \end{bmatrix}
+    \end{align*}
+    is a $2 \times 2$ matrix over a field.
+    \begin{enumerate}
+        \item
+          We would like to prove that if $a = b = c = d = 0$,
+          every pair $(x_1,\ x_2)$ is a solution of $AX = 0$.
+
+          This is fairly obvious.
+          \begin{align*}
+            \begin{bmatrix}
+               0 & 0\\
+               0 & 0
+            \end{bmatrix}
+            \begin{bmatrix}
+               x_1 \\
+               x_2
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+               0 \\
+               0
+            \end{bmatrix}
+          \end{align*}
+          can also be represented as
+          \begin{align*}
+            0x_1 + 0x_2 =&\ 0\\
+            0x_1 + 0x_2 =&\ 0,
+          \end{align*}
+          which is true regardless of the value of $x_1$ or
+          $x_2$.
+
+        \item
+          We would like to prove that if $ad - bc \neq 0$, the
+          system $AX = 0$ has only the trivial solution $x_1 =
+          x_2 = 0$.
+
+          We have
+          \begin{align*}
+            ax_1 + bx_2 =&\ 0\\
+            cx_1 + dx_2 =&\ 0.
+          \end{align*}
+
+          This implies that
+          \begin{align*}
+            adx_1 + bdx_2 =&\ 0\\
+            bcx_1 + bdx_2 =&\ 0,
+          \end{align*}
+          and thus that
+          \begin{align*}
+            adx_1 + bdx_2 - bcx_1 - bdx_2 =&\\
+            adx_1 - bcx_1 =&\\
+            (ad - bc)x_1 =&\ 0.
+          \end{align*}
+
+          We also have that
+          \begin{align*}
+            acx_1 + bcx_2 =&\ 0\\
+            acx_1 + adx_2 =&\ 0,
+          \end{align*}
+          and thus that
+          \begin{align*}
+            acx_1 + adx_2 - acx_1 - bcx_2 =&\\
+            adx_2 - bcx_2 =&\\
+            (ad - bc)x_2 =&\ 0.
+          \end{align*}
+
+          Therefore, if $AX = 0$,
+          \begin{align*}
+            (ad - bc)x_1 =&\ 0\\
+            (ad - bc)x_2 =&\ 0.
+          \end{align*}
+          Because the element $0$ such that $0x = 0$ is unique in
+          any field, the only way for these equations to hold if
+          $ad - bc \neq 0$ is if $x_1 = x_2 = 0$.
+
+        \item
+          We would like to prove that if $ad - bc$ does equal
+          $0$, and some entry of $A$ does not equal $0$, there is
+          a solution $(x_{1}^{0},\ x_{2}^{0})$, and futhermore
+          that any $(x_1,\ x_2)$ is a solution if and only if
+          there is some scalar $y$ such that $x_1 = yx_{1}^{0}$
+          and $x_2 = x_{2}^{0}$.
+
+          If $ad - bc = 0$, but at least one of $a,\ b,\ c,\ d
+          \neq 0$, a few possibilities exist.
+
+          Say that $a \neq 0$ but the other entries do; then this
+          equation still holds. In that case, our system boils
+          down to $ax_1 = 0$, so $x_1$ must be $0$ but $x_2$ can
+          take on any value in the field. So, $(x_{1}^{0},\
+          x_{2}^{0}) = (0,1)$ in this case. This is also true if
+          $c$ is the only non-zero entry. If $b$ or $d$ is the
+          only non-zero entry, $(x_{1}^{0},\ x_{2}^{0}) = (1,0)$
+          instead by the same line of reasoning.
+
+          If two or more elements $\neq 0$, then still $ad = bc$;
+          otherwise $ad - bc = 0$ wouldn't hold. Consider as we
+          showed earlier that there are five possible forms of
+          row-reduced $2 \times 2$ matrices over a field:
+          \begin{align*}
+            \begin{bmatrix}
+               1 & 0\\
+               0 & 1
+            \end{bmatrix},\ 
+            \begin{bmatrix}
+               0 & 1\\
+               1 & 0
+            \end{bmatrix},\ 
+            \begin{bmatrix}
+               1 & p\\
+               0 & 0
+            \end{bmatrix},\ 
+            \begin{bmatrix}
+               0 & 0\\
+               1 & q
+            \end{bmatrix},\ \text{and}\ 
+            \begin{bmatrix}
+               0 & 0\\
+               0 & 0
+            \end{bmatrix}.
+          \end{align*}
+          The last possibility was considered in $(a)$ and isn't
+          under consideration here. With the first two
+          possibilities, $x_1 = x_2 = 0$ is the only possible
+          solution, so $(x_{1}^{0},\ x_{2}^{0}) = (0,0)$ in that
+          case. That leaves two remaining, with which we either
+          have $ax_1 + bx_2 = 0$ or $cx_1 + dx_2 = 0$ and the
+          other equation in the system is trivially true. We
+          already covered the case in which only one entry is
+          $\neq 0$, so we presume that $p,\ q \neq 0$ at this
+          point.
+
+          In the first case, we have $ax_1 = -bx_2$, so $x_2 =
+          -\frac{a}{b}x_1$. Likewise, $x_1 = -\frac{b}{a}x_2$.
+          So, $(x_{1}^{0},\ x_{2}^{0}) = (1,-\frac{a}{b})$ will
+          work, as will $(x_{1}^{0},\ x_{2}^{0}) =
+          (-\frac{b}{a},1)$, which is equivalent. In the second
+          case, we have $(x_{1}^{0},\ x_{2}^{0}) =
+          (1,-\frac{c}{d})$ and $(x_{1}^{0},\ x_{2}^{0}) =
+          (-\frac{d}{c},1)$ by the same token.
+
+          So, if $ad - bc = 0$ and at least one of $a,\ b,\ c,\ d
+          \neq 0$, the possible values $(x_{1}^{0},\ x_{2}^{0})$
+          can take on (depending on the matrix in question) are
+          $(0,0)$, $(1,0)$, $(0,1)$, $(1,-\frac{a}{b})$, and
+          $(1,-\frac{c}{d})$. This concludes the proof.
+
+    \end{enumerate}
+
+
 \end{enumerate}
 
 \end{document}
