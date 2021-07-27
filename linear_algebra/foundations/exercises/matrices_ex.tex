@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\title{Matrices (exercises)}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{enumerate}
+    \item
+      We have
+      \begin{align*}
+        (1 - i)x_1 - ix_2 = &\ 0\\
+        2x_1 - (1 - i)x_2 = &\ 0.
+      \end{align*}
+      We would like to find the solutions. We know by theorem 3
+      that every $m \times n$ matrix over a field $F$ is
+      row-equivalent to a row-reduced matrix, and by theorem 2
+      that if $A$ and $B$ are $m \times n$ row-equivalent
+      matrices, $AX = 0$ and $BX = 0$ have exactly the same
+      solutions.  Therefore, this system of equations has the
+      same set of solutions as
+      \begin{align*}
+        x_1 = &\ 0\\
+        x_2 = &\ 0,
+      \end{align*}
+      meaning the only solution is $x_1 = x_2 = 0$.
+\end{document}
