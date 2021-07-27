@@ -228,6 +228,114 @@
       \end{align*}
       Again, this is only possible if $x_1 = x_2 = x_3 = 0$.
 
+    \item
+      We want to find a row-reduced matrix which is
+      row-equivalent to
+      \begin{align*}
+        A\ & =
+        \begin{bmatrix}
+          i & -(1 + i) &  0\\
+          1 &     -2   &  1\\
+          1 &     2i   & -i
+        \end{bmatrix}.
+      \end{align*}
+
+      \begin{align*}
+        \begin{bmatrix}
+          i - i & -(1 + i) + 2 & 0 + 1\\
+          1 &     -2   &  1\\
+          1 &     2i   & -i
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & (1 - i)  &  1\\
+          1 &     -2   &  1\\
+          1 &     2i   & -i
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          0 & (1 - i)  &  1\\
+          1 &     -2   &  1\\
+          1 - 1 & 2i + 2   & -i - 1
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & (1 - i)  &  1\\
+          1 &     -2   &  1\\
+          0 & (2 + 2i) & -(1 + i)
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          0 & (1 - i)  &  1\\
+          1 &     -2   &  1\\
+          0(\frac{1}{4} - \frac{1}{4}i) & (2 + 2i)(\frac{1}{4} - \frac{1}{4}i) & -(1 + i)(\frac{1}{4} - \frac{1}{4}i)
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & (1 - i)  &  1\\
+          1 &     -2   &  1\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          0 & (1 - i) &  1\\
+          1 & -2 + 2  &  1 - 1\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & (1 - i) &  1\\
+          1 & 0  &  0\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          0 & (1 - i) - (1 - i) & 1 + (\frac{1}{2} - \frac{1}{2}i)\\
+          1 & 0 & 0\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & 0 & (1\frac{1}{2} - \frac{1}{2}i)\\
+          1 & 0 & 0\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          0(\frac{3}{5} + \frac{1}{5}i) & 0(\frac{3}{5} + \frac{1}{5}i) & (1\frac{1}{2} - \frac{1}{2}i)(\frac{3}{5} + \frac{1}{5}i)\\
+          1 & 0 & 0\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & 0 & 1\\
+          1 & 0 & 0\\
+          0 & 1 & -\frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          0 & 0 & 1\\
+          1 & 0 & 0\\
+          0 + 0 & 1 + 0 & -\frac{1}{2} + \frac{1}{2}
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & 0 & 1\\
+          1 & 0 & 0\\
+          0 & 1 & 0
+        \end{bmatrix}.
+      \end{align*}
+
+      Of course, we can map this to
+      \begin{align*}
+        \begin{bmatrix}
+          1 & 0 & 0\\
+          0 & 1 & 0\\
+          0 & 0 & 1
+        \end{bmatrix}
+      \end{align*}
+      via elementary row operation (3) if we like.
+
 \end{enumerate}
 
 \end{document}
