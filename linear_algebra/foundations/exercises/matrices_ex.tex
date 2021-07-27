@@ -474,6 +474,68 @@
       1.1. Because $B'$ has more all-0 rows than $A'$, we know by
       theorem 4 that $A' \nsim B'$, so $A \nsim B$.
 
+    \item
+      We let
+      \begin{align*}
+        A =
+        \begin{bmatrix}
+           a & b\\
+           c & d
+        \end{bmatrix}
+      \end{align*}
+      be a $2 \times 2$ row-reduced matrix with complex entries
+      such that $a + b + c + d = 0$. We would like to prove that
+      there are exactly three such matrices.
+
+      The possible $2 \times 2$ row-reduced complex matrices are
+      \begin{align*}
+        \begin{bmatrix}
+           1 & 0\\
+           0 & 1
+        \end{bmatrix},\ 
+        \begin{bmatrix}
+           0 & 1\\
+           1 & 0
+        \end{bmatrix},\ 
+        \begin{bmatrix}
+           1 & p\\
+           0 & 0
+        \end{bmatrix},\ 
+        \begin{bmatrix}
+           0 & 0\\
+           1 & q
+        \end{bmatrix},\ \text{and}\ 
+        \begin{bmatrix}
+           0 & 0\\
+           0 & 0
+        \end{bmatrix},
+      \end{align*}
+      where $p$ and $q$ are complex numbers.
+
+      The first two matrices don't satisfy our condition because
+      $a + b + c + d = 2$ in their case. However, if we take $p =
+      q = -1$, those forms of the third and fourth matrices will
+      satisfy our condition. (However, no other forms of them
+      will, because the additive inverse is unique in any field.)
+      The last matrix also trivially satisfies our condition.
+
+      Therefore, the three matrices that satisfy our condition
+      are
+      \begin{align*}
+        \begin{bmatrix}
+           1 & -1\\
+           0 & 0
+        \end{bmatrix},\ 
+        \begin{bmatrix}
+           0 & 0\\
+           1 & -1
+        \end{bmatrix},\ \text{and}\ 
+        \begin{bmatrix}
+           0 & 0\\
+           0 & 0
+        \end{bmatrix}.
+      \end{align*}
+
 \end{enumerate}
 
 \end{document}
