@@ -37,18 +37,61 @@
         (1 - i)x_1 - ix_2 = &\ 0\\
         2x_1 - (1 - i)x_2 = &\ 0.
       \end{align*}
-      We would like to find the solutions. We know by theorem 3
-      that every $m \times n$ matrix over a field $F$ is
-      row-equivalent to a row-reduced matrix, and by theorem 2
-      that if $A$ and $B$ are $m \times n$ row-equivalent
-      matrices, $AX = 0$ and $BX = 0$ have exactly the same
-      solutions.  Therefore, this system of equations has the
-      same set of solutions as
+      We would like to find the solutions. We can represent this
+      system as
       \begin{align*}
-        x_1 = &\ 0\\
-        x_2 = &\ 0,
+        \begin{bmatrix}
+          (1 - i) & -i \\
+          2       & -(1 - i)
+        \end{bmatrix}
+        \begin{bmatrix}
+          x_1 \\
+          x_2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+          0 \\
+          0
+        \end{bmatrix}.
       \end{align*}
-      meaning the only solution is $x_1 = x_2 = 0$.
+
+      We row-reduce the first matrix.
+      \begin{align*}
+        \begin{bmatrix}
+          (1 - i) & -i \\
+          2       & -(1 - i)
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          (1 - i) & -i \\
+          1       & -(\frac{1}{2} - \frac{1}{2}i)
+        \end{bmatrix}
+        \xrightarrow{}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          (1 - i) - (1 - i) & -i -i \\
+          1       & -(\frac{1}{2} - \frac{1}{2}i)
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & -2i \\
+          1 & -(\frac{1}{2} - \frac{1}{2}i)
+        \end{bmatrix}
+        \xrightarrow{}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          0 & 1 \\
+          1 & -(\frac{1}{2} - \frac{1}{2}i)
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          0 & 1 \\
+          1 & 0
+        \end{bmatrix}.
+      \end{align*}
+      So, this system has only the solution $x_1 = x_2 = 0$.
 
     \item
       We want to row-reduce
@@ -92,8 +135,8 @@
           0 & 0 & 1
         \end{bmatrix}.
       \end{align*}
-      As expected, the solution of $AX = 0$ is $x_1 = x_2 = x_3 =
-      0$.
+      So, the only solution of $AX = 0$ is $x_1 = x_2 = x_3 = 0$.
+
 \end{enumerate}
 
 \end{document}
