@@ -299,7 +299,7 @@
   algebraic number theorist from Prussia.
 \end{defn}
 
-\begin{thm}
+\begin{thm} \label{thm:roweqrowred}
   Every $m \times n$ matrix over a field $F$ is row-equivalent to
   a row-reduced matrix.
   \begin{proof}
@@ -505,5 +505,56 @@
     $F$ is row-equivalent to a row-reduced matrix.
   \end{proof}
 \end{thm}
+
+\begin{thm} \label{thm:mzerononeq}
+  (mine.) We say that a row or column of an $m \times n$ matrix is
+  \say{all-0} to indicate that every element in the row or column
+  is $0$. If $A$ and $B$ are $m \times n$ row-reduced matrices
+  over a field and the number of all-0 rows in $B$ is greater
+  than in $A$, $A$ and $B$ are \textit{not} row-equivalent.
+  \begin{proof}
+    Consider the simplest case in which $A$ and $B$ are $1
+    \times 1$. We would then have $A = [1]$ and $B = [0]$. There
+    is no elementary row operation that will map $A$ to $B$ or
+    vice-versa; elementary row operation \eqref{ero1} requires a
+    non-zero coefficient, and \eqref{ero2} and \eqref{ero3} are
+    unusable because $A$ and $B$ both have only one row.
+
+    This situation holds even when $A$ and $B$ are $m \times 1$
+    for any $m \in \mathbb{N}_1$, as $A$ will have only one row
+    with an entry of $1$ and otherwise every row in $A$ and $B$
+    will have entries of $0$. Elementary row operations
+    \eqref{ero2} and \eqref{ero3} are usable in this case, but
+    are of no help; \eqref{ero2} can't map $A$'s $1$ entry to $0$
+    in this case as it can only add $0$ to it, nor will
+    \eqref{ero3} be able to map the $1$ entry to $0$, only move
+    it around.
+
+    If $A$ and $B$ are $m \times n$ for any $m,n \in
+    \mathbb{N}_1$, this situation still holds, as every row in
+    $A$ that is not all-0 will have a $1$ as its first entry, and
+    this entry will be in a column that would be all-0 if not for
+    this entry. $B$ will have at least one more all-zero row than
+    $A$, meaning that we would need a composition of elementary
+    row operations that could map one of $A$'s non-all-0 rows to
+    an all-0 row. As we have shown, no such composition exists,
+    as the case for the first non-0 entry in that row will be the
+    same as in the $m \times 1$ case. If $B$ has more than one
+    all-zero row than $A$ does, this situation does not change,
+    so $A$ and $B$ are not row-equivalent.
+  \end{proof}
+\end{thm}
+
+\begin{comm}
+  (mine.) Theorem \ref{thm:mzerononeq} shows that you should take
+  some care in what you assume about a given $m \times n$ matrix.
+  Although theorem \ref{thm:roweqrowred} shows that every $m
+  \times n$ matrix over a field is row-equivalent to a
+  row-reduced matrix, this does \textit{not} indicate that it is
+  row-equivalent to the $m \times n$ identity matrix for that
+  field. It may be row-equivalent to a row-reduced matrix with at
+  least one all-0 row, and this is \textit{not} row-equivalent to
+  an identity matrix.
+\end{comm}
 
 \end{document}
