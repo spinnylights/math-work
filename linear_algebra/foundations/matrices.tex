@@ -298,4 +298,211 @@
   algebraic number theorist from Prussia.
 \end{defn}
 
+\begin{thm}
+  Every $m \times n$ matrix over a field $F$ is row-equivalent to
+  a row-reduced matrix.
+  \begin{proof}
+    By repeated induction.
+
+    First, consider a scalar $c$ in $F$, which we could call a $1
+    \times 1$ matrix over $F$. If $c = 0$, then as a matrix $c$
+    is already row-reduced. Otherwise, in any field, there is a
+    multiplicative inverse for every element other than $0$.
+    Therefore, if $c \neq 0$, we can map $c$ to $cc^{-1} = 1$
+    according to elementary row operation \eqref{ero1}, and this
+    matrix is row-reduced. Therefore, any $1 \times 1$ matrix is
+    row-equivalent to a row-reduced matrix.
+
+    \begin{align*}
+      \begin{bmatrix}
+        c
+      \end{bmatrix}
+      \xrightarrow{\eqref{ero1}}
+      \begin{bmatrix}
+        cc^{-1}
+      \end{bmatrix}
+      \xrightarrow{}
+      \begin{bmatrix}
+        1
+      \end{bmatrix}
+    \end{align*}\\
+
+    Now consider an $r \times 1$ row-reduced matrix $A$. We call
+    $A_{i} = 1$ the only element of $A$ that is $\neq 0$. Then
+    consider an $(r + 1) \times 1$ matrix $A'$ with all rows
+    equal to those of $A$ except $A'_{r + 1}$ and such that
+    $A'_{r + 1} \neq 0$. In any field, there is an additive
+    inverse for every element. Therefore, we can map $A'_{r + 1}$
+    to $A'_{r + 1} - A'_{r + 1}A_{i} = 0$ according to elementary
+    row operation \eqref{ero2}; this maps $A'$ to a row-reduced
+    matrix. Therefore, any $m \times 1$ matrix is row-equivalent
+    to a row-reduced matrix.
+
+    \begin{align*}
+      \begin{bmatrix}
+        0\\
+        \vdots\\
+        1\\
+        0\\
+        \vdots\\
+        0\\
+        A_{r + 1}
+      \end{bmatrix}
+      \xrightarrow{\eqref{ero2}}
+      \begin{bmatrix}
+        0\\
+        \vdots\\
+        1\\
+        0\\
+        \vdots\\
+        0\\
+        A_{r + 1} - A_{r + 1}
+      \end{bmatrix}
+      \xrightarrow{}
+      \begin{bmatrix}
+        0\\
+        \vdots\\
+        1\\
+        0\\
+        \vdots\\
+        0\\
+        0\\
+      \end{bmatrix}
+    \end{align*}\\
+
+    Now consider an $r \times s$ row-reduced matrix $B$. Unless
+    $B$ has a row with all elements $0$, any $r \times (s + q)$
+    matrix $B'$ such that if $(i,j)$ indexes an element in $B$
+    then $B'_{ij} = B_{ij}$ will also be row-reduced. This is
+    because all the rows in both matrices will still satisfy the
+    conditions for row-reducedness, as their first non-zero
+    elements will all be present in $B$.
+
+    Now consider an $r \times s$ row-reduced matrix $B$ with $0 <
+    d < r$ rows with all elements $0$, and an $r \times (s + 1)$
+    matrix $B'$ with all elements $B'_{11}$ to $B'_{rs}$ equal to
+    those at the same indices in $B$ and that is not row-reduced.
+    For the column $(s + 1)$ in $B'$, we can pick at random an
+    element $p$ in $(s + 1)$ such that all the prior elements in
+    $p$'s row are $0$, multiply $p$'s row by $p^{-1}$ in
+    accordance with elementary row operation \eqref{ero1}, and
+    then repeatedly apply elementary row operation \eqref{ero2}
+    using $p$'s row to map all the other elements in $p$'s column
+    to $0$, as this will have no effect on the other columns.
+    This maps $B'$ to a row-reduced matrix.
+
+    \begin{align*}
+      &\begin{bmatrix}
+        1      & 0 & \cdots &   & 0 & B'_{1(s+1)}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots & 0 & 1 & B'_{k(s+1)}\\
+        0      &   & \cdots &   & 0 & B'_{(k+1)(s+1)}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots &   & 0 & p\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots &   & 0 & B'_{r(s+1)}
+      \end{bmatrix}
+      \xrightarrow{\eqref{ero1}}
+      \begin{bmatrix}
+        1      & 0 & \cdots &   & 0 & B'_{1(s+1)}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots & 0 & 1 & B'_{k(s+1)}\\
+        0      &   & \cdots &   & 0 & B'_{(k+1)(s+1)}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots &   & 0 & pp^{-1}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots &   & 0 & B'_{r(s+1)}
+      \end{bmatrix}
+      \xrightarrow{}\\\\
+      &\begin{bmatrix}
+        1      & 0 & \cdots &   & 0 & B'_{1(s+1)}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots & 0 & 1 & B'_{k(s+1)}\\
+        0      &   & \cdots &   & 0 & B'_{(k+1)(s+1)}\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots &   & 0 & 1\\
+        \vdots &   & \ddots &   &   & \vdots     \\
+        0      &   & \cdots &   & 0 & B'_{r(s+1)}
+      \end{bmatrix}
+      \xrightarrow{\eqref{ero2}}
+      \begin{bmatrix}
+        1 - 0  & 0 - 0 & \cdots &   & 0 - 0 & B'_{1(s+1)} - B'_{1(s+1)}\\
+        \vdots &       & \ddots &   &       & \vdots     \\
+        0      &       & \cdots & 0 & 1     & B'_{k(s+1)}\\
+        0      &       & \cdots &   & 0     & B'_{(k+1)(s+1)}\\
+        \vdots &       & \ddots &   &       & \vdots     \\
+        0      &       & \cdots &   & 0     & 1\\
+        \vdots &       & \ddots &   &       & \vdots     \\
+        0      &       & \cdots &   & 0     & B'_{r(s+1)}\\
+      \end{bmatrix}
+      \xrightarrow{}\\\\
+      &\begin{bmatrix}
+        1      & 0     & \cdots &   & 0     & 0\\
+        \vdots &       & \ddots &   &       & \vdots     \\
+        0      &       & \cdots & 0 & 1     & B'_{k(s+1)}\\
+        0      &       & \cdots &   & 0     & B'_{(k+1)(s+1)}\\
+        \vdots &       & \ddots &   &       & \vdots     \\
+        0      &       & \cdots &   & 0     & 1\\
+        \vdots &       & \ddots &   &       & \vdots     \\
+        0      &       & \cdots &   & 0     & B'_{r(s+1)}\\
+      \end{bmatrix}
+      \xrightarrow{\eqref{ero2}\ldots}
+      \begin{bmatrix}
+        1      & 0     & \cdots &   & 0     & 0\\
+        \vdots &       & \ddots &   &       & \vdots\\
+        0      &       & \cdots & 0 & 1     & 0\\
+        0      &       & \cdots &   & 0     & 0\\
+        \vdots &       & \ddots &   &       & \vdots\\
+        0      &       & \cdots &   & 0     & 1\\
+        \vdots &       & \ddots &   &       & \vdots\\
+        0      &       & \cdots &   & 0     & 0\\
+      \end{bmatrix}
+    \end{align*}\\
+
+    Now consider an $r \times s$ row-reduced matrix $C$ and an
+    $(r + 1) \times s$ matrix $C'$ such that all elements
+    $C'_{11}$ to $C'_{rs}$ are equal to those at the same indices
+    in $C$ and that is not row-reduced. Every element in the row
+    $(r + 1)$ can be mapped to $0$ without changing the other
+    elements in $C'$ by applying elementary row operation
+    \eqref{ero2}, as every other row will have a single $1$ with
+    $0$s in its column and row otherwise aside from the element
+    in row $(r + 1)$. Carried out in full, this maps $C'$ to a
+    row-reduced matrix.
+
+    \begin{align*}
+      \begin{bmatrix}
+        1          & 0 & \cdots &   & 0\\
+        \vdots     &   & \ddots &   &  \\
+        0          &   & \cdots & 0 & 1\\
+        C_{(r+1)1} &   & \cdots &   & C_{(r+1)s}
+      \end{bmatrix}
+      &\xrightarrow{\eqref{ero2}}
+      \begin{bmatrix}
+        1                       & 0 & \cdots &   & 0\\
+        \vdots                  &   & \ddots &   &  \\
+        0                       &   & \cdots & 0 & 1\\
+        C_{(r+1)1} - C_{(r+1)1} &   & \cdots &   & C_{(r+1)s} - 0
+      \end{bmatrix}
+      \xrightarrow{}\\\\
+      \begin{bmatrix}
+        1      & 0 & \cdots &   & 0\\
+        \vdots &   & \ddots &   &  \\
+        0      &   & \cdots & 0 & 1\\
+        0      & C_{(r+1)2} & \cdots &   & C_{(r+1)s}
+      \end{bmatrix}
+      &\xrightarrow{\eqref{ero2}\ldots}
+      \begin{bmatrix}
+        1      & 0 & \cdots &   & 0\\
+        \vdots &   & \ddots &   &  \\
+        0      &   & \cdots & 0 & 1\\
+        0      &   & \cdots &   & 0
+      \end{bmatrix}
+    \end{align*}\\
+
+    All together, this shows that any $m \times n$ matrix over
+    $F$ is row-equivalent to a row-reduced matrix.
+  \end{proof}
+\end{thm}
+
 \end{document}
