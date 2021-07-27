@@ -536,6 +536,87 @@
         \end{bmatrix}.
       \end{align*}
 
+    \item
+      We would like to prove that elementary row operation (3)
+      can be accomplished by a finite sequence of (1) and (2).
+
+      We have
+      \begin{align*}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          a_1 & \cdots & a_n\\
+          \vdots   & \ddots & \vdots\\
+          b_1 & \cdots & b_n\\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}.
+      \end{align*}
+
+      We can proceed as follows:
+      \begin{align*}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          a_1 & \cdots & a_n\\
+          \vdots   & \ddots & \vdots\\
+          b_1 & \cdots & b_n\\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}
+        \xrightarrow{(2)}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          a_1 & \cdots & a_n\\
+          \vdots   & \ddots & \vdots\\
+          b_1 - a_1 & \cdots & b_n - a_n\\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}
+        \xrightarrow{(2)}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          a_1 + (b_1 - a_1) & \cdots & a_n + (b_n - a_n)\\
+          \vdots   & \ddots & \vdots\\
+          b_1 - a_1 & \cdots & b_n - a_n\\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          b_1 & \cdots & b_n \\
+          \vdots   & \ddots & \vdots\\
+          b_1 - a_1 & \cdots & b_n - a_n\\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}
+        \xrightarrow{(2)}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          b_1 & \cdots & b_n \\
+          \vdots   & \ddots & \vdots\\
+          b_1 - a_1 - b_1 & \cdots & b_n - a_n - b_n\\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          b_1 & \cdots & b_n \\
+          \vdots   & \ddots & \vdots\\
+          - a_1 & \cdots & - a_n \\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}
+        \xrightarrow{(1)}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          \vdots   & \ddots & \vdots\\
+          b_1 & \cdots & b_n \\
+          \vdots   & \ddots & \vdots\\
+          a_1 & \cdots & a_n \\
+          \vdots   & \ddots & \vdots\\
+        \end{bmatrix}.
+      \end{align*}
+    This completes the proof.
+
 \end{enumerate}
 
 \end{document}
