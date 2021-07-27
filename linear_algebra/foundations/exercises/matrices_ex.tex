@@ -336,6 +336,144 @@
       \end{align*}
       via elementary row operation (3) if we like.
 
+    \item
+      We would like to prove that
+      \begin{align*}
+        \begin{bmatrix}
+          2 &  0 & 0\\
+          a & -1 & 0\\
+          b &  c & 3
+        \end{bmatrix}
+      \end{align*}
+      and
+      \begin{align*}
+        \begin{bmatrix}
+           1 &  1 &  2\\
+          -2 &  0 & -1\\
+           1 &  3 &  5
+        \end{bmatrix}
+      \end{align*}
+      are \textit{not} row-equivalent.
+
+      \begin{align*}
+        \begin{bmatrix}
+          2 &  0 & 0\\
+          a & -1 & 0\\
+          b &  c & 3
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 &  0 & 0\\
+          a & -1 & 0\\
+          b &  c & 3
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          1 &  0 & 0\\
+          0 & -1 & 0\\
+          0 &  c & 3
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 &  0 & 0\\
+          0 &  1 & 0\\
+          0 &  c & 3
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+          1 &  0 & 0\\
+          0 &  1 & 0\\
+          0 &  0 & 3
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 &  0 & 0\\
+          0 &  1 & 0\\
+          0 &  0 & 1
+        \end{bmatrix}.
+      \end{align*}
+
+      \begin{align*}
+        \begin{bmatrix}
+           1 &  1 &  2\\
+          -2 &  0 & -1\\
+           1 &  3 &  5
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+           1     &  1     &  2\\
+          -2 + 2 &  0 + 2 & -1 + 4\\
+           1     &  3     &  5
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+           1 &  1 &  2\\
+           0 &  2 &  3\\
+           1 &  3 &  5
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+           1     &  1     &  2\\
+           0     &  2     &  3\\
+           1 - 1 &  3 - 1 &  5 - 2
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+           1 &  1 &  2\\
+           0 &  2 &  3\\
+           0 &  2 &  3
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+           1 &  1 &  2\\
+           0 &  2 &  3\\
+           0 &  0 &  0
+        \end{bmatrix}
+        \xrightarrow{}\\\\
+        \begin{bmatrix}
+           1 &  1 &  2\\
+           0 &  1 &  1\frac{1}{2}\\
+           0 &  0 &  0
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+           1 &  1 - 1 &  2 - 1\frac{1}{2}\\
+           0 &  1     &  1\frac{1}{2}\\
+           0 &  0     &  0
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+           1 &  0 &  \frac{1}{2}\\
+           0 &  1 &  1\frac{1}{2}\\
+           0 &  0 &  0
+        \end{bmatrix}.
+      \end{align*}
+
+      We call
+      \begin{align*}
+        \begin{bmatrix}
+          1 &  0 & 0\\
+          0 &  1 & 0\\
+          0 &  0 & 1
+        \end{bmatrix}
+        = A'
+      \end{align*}
+      and
+      \begin{align*}
+        \begin{bmatrix}
+           1 &  0 &  \frac{1}{2}\\
+           0 &  1 &  1\frac{1}{2}\\
+           0 &  0 &  0
+        \end{bmatrix}
+        = B'.
+      \end{align*}
+      We indicate \say{is row-equivalent to} by $\sim$ and
+      \say{is not row-equivalent to} by $\nsim$. We've shown that
+      $A \sim A'$ and $B \sim B'$. Therefore, if $A' \sim B'$,
+      then $A \sim B$, and otherwise $A \nsim B$, by corollary
+      1.1. Because $B'$ has more all-0 rows than $A'$, we know by
+      theorem 4 that $A' \nsim B'$, so $A \nsim B$.
+
 \end{enumerate}
 
 \end{document}
