@@ -561,4 +561,80 @@
   an identity matrix.
 \end{comm}
 
+\begin{defn}
+  A \textbf{row-reduced echelon matrix} is an $m \times n$ matrix
+  $R$ such that
+  \begin{enumerate}
+      \item
+        $R$ is row-reduced,
+      \item
+        every all-0 row of $R$ comes after every non-all-0 row,
+        and
+      \item
+        if rows $1,\ \ldots,\ r$ are the non-all-0 rows of $R$,
+        and $k_i,\ i = 1, \ldots,\ r$ are the indices of the
+        first non-0 entry of the corresponding row $i$, $k_1$ has
+        the lowest value, $k_2$ the next-lowest, etc.
+  \end{enumerate}
+
+  \begin{exm}
+    This is a simple example of a row-reduced echelon matrix:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+      \end{bmatrix}.
+    \end{align*}
+    This, however, is not a row-reduced echelon matrix:
+    \begin{align*}
+      \begin{bmatrix}
+        0 & 1\\
+        1 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+    This is:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+        0 & 0\\
+      \end{bmatrix},
+    \end{align*}
+    but this is not:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 0\\
+        0 & 1\\
+      \end{bmatrix}.
+    \end{align*}
+    This is, though:
+    \begin{align*}
+      \begin{bmatrix}
+        0 & 0\\
+        0 & 0\\
+        0 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+    Here is a more complicated example of one:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 5i & 0 & 3\\
+        0 & 0  & 1 & -\frac{2}{3}\\
+        0 & 0  & 0 & 1\\
+        0 & 0  & 0 & 0\\
+        0 & 0  & 0 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+  \end{exm}
+
+  \begin{comm}
+    In military jargon, an \say{echelon} is \say{a formation of
+    troops, ships, aircraft, or vehicles in parallel rows with
+    the end of each row projecting further than the one in
+    front,} according to Oxford.
+  \end{comm}
+
+\end{defn}
+
 \end{document}
