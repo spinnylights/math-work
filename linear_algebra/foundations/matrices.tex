@@ -637,4 +637,23 @@
 
 \end{defn}
 
+\begin{thm}
+  Every row-reduced $m \times n$ matrix $A$ is row-equivalent to
+  a row-reduced echelon matrix.
+  \begin{proof}
+    Since $A$ is row-reduced, we know that every first-non-0
+    entry in a row of $A$ has a unique column index compared to
+    the other first-non-0 entries. This is because the first
+    non-0 entry in a row of a row-reduced matrix must be in a
+    column that would be all-0 if not for that entry.
+    Furthermore, the specific row indices of the all-0 rows of a
+    row-reduced echelon matrix are immaterial as long as they
+    come after the non-all-0 rows. Since column indices are in
+    $\mathbb{N}_1$, $\mathbb{N}_1$ is well-ordered, and there is
+    a finite number $n$ of columns, a finite number of
+    applications of elementary row operation \eqref{ero3} will
+    suffice to map $A$ to a row-reduced echelon matrix.
+  \end{proof}
+\end{thm}
+
 \end{document}
