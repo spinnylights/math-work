@@ -656,4 +656,58 @@
   \end{proof}
 \end{thm}
 
+\begin{comm}
+  If $R$ is an $m \times n$ row-reduced echelon matrix, the
+  system of linear equations $RX = 0$ is particularly easy to
+  solve.
+
+  Consider the last of the example row-reduced echelon
+  matrices above:
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 5i & 0 & 0 & 3\\
+      0 & 0  & 1 & 0 & -\frac{2}{3}\\
+      0 & 0  & 0 & 1 & -7\\
+      0 & 0  & 0 & 0 & 0\\
+      0 & 0  & 0 & 0 & 0\\
+    \end{bmatrix}.
+  \end{align*}
+  If we call this $R$, the system $RX = 0$ could be represented
+  as
+  \begin{alignat*}{6}
+     x_1\ &+&\ 5ix_2\ &+&\ 0x_3\ &+&\ 0x_4\ &+&\           3x_5\ &=&\ &0\\
+    0x_1\ &+&\  0x_2\ &+&\ 1x_3\ &+&\ 0x_4\ &-&\ \frac{2}{3}x_5\ &=&\ &0\\
+    0x_1\ &+&\  0x_2\ &+&\ 0x_3\ &+&\  x_4\ &-&\           7x_5\ &=&\ &0\\
+    0x_1\ &+&\  0x_2\ &+&\ 0x_3\ &+&\ 0x_4\ &+&\           0x_5\ &=&\ &0\\
+    0x_1\ &+&\  0x_2\ &+&\ 0x_3\ &+&\ 0x_4\ &+&\           0x_5\ &=&\ &0,
+  \end{alignat*}
+  or more simply as
+  \begin{alignat*}{6}
+     x_1\ &+&\ 5ix_2\ & &\      & & & &   &+&            3x_5\ &=&\ &0\\
+     & &  & &         & &  x_3\ & &       &-&  \frac{2}{3}x_5\ &=&\ &0\\
+     & &  & &         & &       & &\ x_4\ &-&\           7x_5\ &=&\ &0.
+  \end{alignat*}
+  In turn, this could be rewritten as
+  \begin{align*}
+    x_1 =&\ -5ix_2 - 3x_5\\
+    x_3 =&\ \frac{2}{3}x_5\\
+    x_4 =&\ 7x_5.
+  \end{align*}
+
+  Each of the unknowns in a system of linear equations
+  corresponding to a first-non-0 row entry in a row-reduced
+  matrix only occurs once, as with $x_1,\ x_3,\ x_4$ here. This
+  allows us to state the solutions in terms of the other
+  unknowns, which we can allow to vary freely, e.g. by assigning
+  variables such that $x_2 = a$ and $x_5 = b$; the solutions to
+  this system are then $(-5ia -3b,\ a,\ \frac{2}{3}b,\ 7b,\ b)$.
+
+  A significant thing to note about this is that if the number of
+  non-all-0 rows in $R$ is less than the number of columns, $RX =
+  0$ has at least one non-trivial solution, i.e. a solution in
+  which not all the unknowns are $0$. As we have shown, some of
+  the unknowns will vary freely in the set of solutions to $RX =
+  0$ under these conditions.
+\end{comm}
+
 \end{document}
