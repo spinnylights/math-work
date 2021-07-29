@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\title{Row-reduced echelon matrices (exercises)}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{enumerate}
+  \item
+    We would like to find all solutions to
+    \begin{alignat*}{8}
+      \frac{1}{3}x_1\  &+&\ 2x_2\ &-&\  6x_3\          &=&\ &0\\
+      -4x_1\           & &        &+&\  5x_3\          &=&\ &0\\
+      -3x_1\           &+&\ 6x_2\ &-&\ 13x_3\          &=&\ &0\\
+      -\frac{7}{3}x_1\ &+&\ 2x_2\ &-&\ \frac{8}{3}x_3\ &=&\ &0.
+    \end{alignat*}
+    We can proceed as follows:
+    \begin{align*}
+      \begin{bmatrix}
+        \frac{1}{3}  & 2 & -6          \\
+        -4           & 0 & 5           \\
+        -3           & 6 & -13         \\
+        -\frac{7}{3} & 2 & -\frac{8}{3}
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        \frac{1}{3}  & 2 & -6          \\
+        1            & 0 & -\frac{5}{4}\\
+        -3           & 6 & -13         \\
+        -\frac{7}{3} & 2 & -\frac{8}{3}
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        0            & 2 & -\frac{67}{12}\\
+        1            & 0 & -\frac{5}{4}  \\
+        -3           & 6 & -13           \\
+        -\frac{7}{3} & 2 & -\frac{8}{3}
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        0            & 2 & -\frac{67}{12}\\
+        1            & 0 & -\frac{5}{4}  \\
+        0            & 6 & -\frac{67}{4} \\
+        -\frac{7}{3} & 2 & -\frac{8}{3}
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        0 & 2 & -\frac{67}{12}\\
+        1 & 0 & -\frac{5}{4}  \\
+        0 & 6 & -\frac{67}{4} \\
+        0 & 2 & -\frac{67}{12}
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        0 & 2 & -\frac{67}{12}\\
+        1 & 0 & -\frac{5}{4}  \\
+        0 & 6 & -\frac{67}{4} \\
+        0 & 0 & 0
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        0 & 2 & -\frac{67}{12}\\
+        1 & 0 & -\frac{5}{4}  \\
+        0 & 0 & 0             \\
+        0 & 0 & 0
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        0 & 1 & -\frac{67}{24}\\
+        1 & 0 & -\frac{5}{4}  \\
+        0 & 0 & 0             \\
+        0 & 0 & 0
+      \end{bmatrix}
+      \xrightarrow{(3)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & -\frac{5}{4}  \\
+        0 & 1 & -\frac{67}{24}\\
+        0 & 0 & 0             \\
+        0 & 0 & 0
+      \end{bmatrix}.
+    \end{align*}
+    Therefore, if we say $x_3 = c$, the solutions are given by
+    \begin{align*}
+      x_1 =&\ \frac{5}{4}c\\
+      x_2 =&\ \frac{67}{24}c.
+    \end{align*}
+\end{enumerate}
+
+\end{document}
