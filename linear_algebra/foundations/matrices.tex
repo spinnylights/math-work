@@ -788,4 +788,160 @@
   \end{exm}
 \end{defn}
 
+\begin{comm}
+  By putting the augmented matrix of a system of linear equations
+  into row-reduced echelon form, it becomes straightforward both
+  to say whether or not solutions exist for the system and what
+  those solutions could be if they do exist. If we put $A'$ above
+  into row-reduced echelon form:
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & -3 & 7\\
+      0 & 3 &  2 & 8\\
+      5 & 0 &  9 & 0
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & 0 & -3 & 7\\
+      0 & 1 &  \frac{2}{3} & \frac{8}{3}\\
+      5 & 0 &  9 & 0
+    \end{bmatrix}
+    \xrightarrow{(2)}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & -3 & 7\\
+      0 & 1 &  \frac{2}{3} & \frac{8}{3}\\
+      0 & 0 & 24 & -35
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      1 & 0 & -3 & 7\\
+      0 & 1 &  \frac{2}{3} & \frac{8}{3}\\
+      0 & 0 & 1 & -\frac{35}{24}
+    \end{bmatrix}
+    \xrightarrow{(2)}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 0 & \frac{21}{8}\\
+      0 & 1 & 0 & \frac{131}{36}\\
+      0 & 0 & 1 & -\frac{35}{24}
+    \end{bmatrix},
+  \end{align*}
+  we can see that $AX = Y$ is equivalent to
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1\\
+      x_2\\
+      x_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{21}{8}\\
+      \frac{131}{36}\\
+      -\frac{35}{24}
+    \end{bmatrix},
+  \end{align*}
+  so $AX = Y$ has only the solution $(x_1,\ x_2,\ x_3) =
+  (\frac{21}{8},\ \frac{131}{36},\ -\frac{35}{24})$.
+
+  If $A'$ was instead
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 0 & \frac{21}{8}\\
+      0 & 1 & 0 & \frac{131}{36}\\
+      0 & 0 & 0 & 0
+    \end{bmatrix},
+  \end{align*}
+  we would instead have a set of solutions $(x_1,\ x_2,\ x_3) =
+  (\frac{21}{8},\ \frac{131}{36},\ a)$ in which $a$ could take on
+  any value in the field.
+
+  This procedure works to characterize the possible solutions of
+  the system even if the elements of $Y$ are unknown. For
+  example, if we want to describe the solutions of
+  \begin{align*}
+    \begin{bmatrix}
+      5  & 3  & -2\\
+      4  & 0  & 8 \\
+      -6 & -6 & 12
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1\\
+      x_2\\
+      x_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      y_1\\
+      y_2\\
+      y_3
+    \end{bmatrix},
+  \end{align*}
+  we can proceed in the same manner:
+  \begin{align*}
+    \begin{bmatrix}
+      5  & 3  & -2 & y_1\\
+      4  & 0  & 8  & y_2\\
+      -6 & -6 & 12 & y_3
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      5 & 3 & -2 & y_1\\
+      4 & 0 & 8  & y_2\\
+      4 & 0 & 8  & (y_3 + 2y_1)
+    \end{bmatrix}
+    \xrightarrow{(2)}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      5 & 3 & -2 & y_1\\
+      4 & 0 & 8  & y_2\\
+      0 & 0 & 0  & (y_3 + 2y_1 - y_2)
+    \end{bmatrix}
+    \xrightarrow{(1)}
+    \begin{bmatrix}
+      5 & 3 & -2 & y_1\\
+      1 & 0 & 2  & \frac{1}{4}y_2\\
+      0 & 0 & 0  & (y_3 + 2y_1 - y_2)
+    \end{bmatrix}
+    \xrightarrow{(1)}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      \frac{5}{3} & 1 & -\frac{2}{3} & \frac{1}{3}y_1\\
+      1 & 0 & 2  & \frac{1}{4}y_2\\
+      0 & 0 & 0  & (y_3 + 2y_1 - y_2)
+    \end{bmatrix}
+    \xrightarrow{(2)}
+    \begin{bmatrix}
+      0 & 1 & -4 & (\frac{1}{3}y_1 - \frac{5}{12}y_2)\\
+      1 & 0 & 2  & \frac{1}{4}y_2\\
+      0 & 0 & 0  & (y_3 + 2y_1 - y_2)
+    \end{bmatrix}
+    \xrightarrow{(3)}
+  \end{align*}
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 2  & \frac{1}{4}y_2\\
+      0 & 1 & -4 & (\frac{1}{3}y_1 - \frac{5}{12}y_2)\\
+      0 & 0 & 0  & (y_3 + 2y_1 - y_2)
+    \end{bmatrix}.
+  \end{align*}
+  This implies that the system has a solution if the given
+  scalars $(y_1,\ y_2,\ y_3)$ are such that $2y_1 - y_2 + y_3 =
+  0$. In that case, if we say $x_3 = c$, we can describe the
+  solutions by
+  \begin{align*}
+    x_1 =&\ -2c + \frac{1}{4}y_2\\
+    x_2 =&\ 4c + \frac{1}{3}y_1 - \frac{5}{12}y_2.
+  \end{align*}
+\end{comm}
+
 \end{document}
