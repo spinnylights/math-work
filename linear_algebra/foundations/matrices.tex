@@ -944,4 +944,43 @@
   \end{align*}
 \end{comm}
 
+\begin{comm}
+  We can see that whether or not a system $AX = Y$ has a solution
+  depends on whether or not the entries of $Y$ satisfy certain
+  relations between each other, relations that are determined by
+  the entries of $A$ and a composition of elementary row
+  operations. For this reason, if $AX = Y$ has a solution in a
+  field $F$, and the entries of both $A$ and $Y$ lie in a
+  subfield $F_1$ of $F$, $AX = Y$ has a solution in $F_1$.
+
+  For example, in the case of the system
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 0 & 2 \\
+      0 & 1 & -4\\
+      0 & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1\\
+      x_2\\
+      x_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{1}{4}y_2\\
+      (\frac{1}{3}y_1 - \frac{5}{12}y_2)\\
+      (y_3 + 2y_1 - y_2)
+    \end{bmatrix}
+  \end{align*}
+  above, if we describe this as $AX = Y$, the entries of $A$ and
+  $Y$ lie within $\mathbb{Q}^1$. We could find solutions in
+  $\mathbb{R}^1$ or $\mathbb{C}^1$ by assigning irrational or
+  imaginary values to $y_1$, $y_2$, or $y_3$ that fit the
+  constraints we found. However, since the elementary row
+  operations involve only addition, subtraction, multiplication,
+  and division, these constraints did not require a departure
+  from $\mathbb{Q}^1$, so solutions can be found in
+  $\mathbb{Q}^1$ by assigning rational values to the parameters.
+\end{comm}
+
 \end{document}
