@@ -749,4 +749,43 @@
   \end{proof}
 \end{thm}
 
+\begin{defn}
+  If $A$ is an $m \times n$ matrix, the \textbf{augmented matrix}
+  $A'$ of the system $AX = Y$ is the $m \times (n + 1)$ matrix
+  such that columns $1,\ \ldots,\ n$ of $A'$ are the same as
+  those of $A$ and column $(n + 1)$ of $A'$ is the same as that
+  of $Y$. To be precise, $A'$ is such that
+  \begin{align*}
+    A'_{ij} =&\ A_{ij}\ \text{if}\ j \leq n;\\
+    A'_{ij} =&\ Y_{1j}\ \text{if}\ j = n + 1.
+  \end{align*}
+
+  \begin{exm}
+    If
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        1 & 0 & -3\\
+        0 & 3 &  2\\
+        5 & 0 &  9\\
+      \end{bmatrix}\ \text{and}\ 
+      Y =
+      \begin{bmatrix}
+        7\\
+        8\\
+        0\\
+      \end{bmatrix},
+    \end{align*}
+    then
+    \begin{align*}
+      A' =
+      \begin{bmatrix}
+        1 & 0 & -3 & 7\\
+        0 & 3 &  2 & 8\\
+        5 & 0 &  9 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+  \end{exm}
+\end{defn}
+
 \end{document}
