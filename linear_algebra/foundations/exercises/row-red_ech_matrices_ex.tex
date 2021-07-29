@@ -117,6 +117,62 @@
       x_1 =&\ \frac{5}{4}c\\
       x_2 =&\ \frac{67}{24}c.
     \end{align*}
+
+  \item
+    We would like to find a row-reduced echelon matrix which is
+    row-equivalent to
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        1 & -i\\
+        2 & 2\\
+        i & (1 + i)
+      \end{bmatrix}.
+    \end{align*}
+    We can proceed as follows:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -i\\
+        2 & 2\\
+        i & (1 + i)
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & -i\\
+        0 & (2 + 2i)\\
+        i & (1 + i)
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -i\\
+        0 & (2 + 2i)\\
+        0 & i
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & -i\\
+        0 & 1\\
+        0 & i
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -i\\
+        0 & 1\\
+        0 & 0
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+        0 & 0
+      \end{bmatrix}.
+    \end{align*}
+    We would also like to know the solutions of $AX = 0$; this
+    shows they are $(x_1,\ x_2) = (0,0)$.
 \end{enumerate}
 
 \end{document}
