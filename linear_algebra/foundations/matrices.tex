@@ -710,4 +710,23 @@
   0$ under these conditions.
 \end{comm}
 
+\begin{thm} \label{thm:mltnnontriv}
+  If $A$ is an $m \times n$ matrix over the field $F$ such that
+  $m < n$, the homogeneous system of linear equations $AX = 0$
+  has a non-trivial solution.
+  \begin{proof}
+    By theorem \ref{thm:roweqrowred}, we know that $A$ is
+    row-equivalent to a row-reduced matrix $A'$, and we know by
+    theorem \ref{thm:roweqsamesol} that $AX = 0$ and $A'X = 0$
+    have the same solutions. Because $A'$ has less rows than
+    columns, there will be more unknowns in $A'X = 0$ than there
+    are first-non-0 entries in $A'$. In the set of solutions of
+    $A'X = 0$, there will be a solution for every element in $F$
+    for each unknown that does not correspond to a first-non-0
+    entry in $A'$. Since $F$ must have at least additive and
+    multiplicative identity elements, $A'X = 0$ will have a
+    non-trivial solution, and so $AX = 0$ will as well.
+  \end{proof}
+\end{thm}
+
 \end{document}
