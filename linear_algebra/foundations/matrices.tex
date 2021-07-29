@@ -729,4 +729,24 @@
   \end{proof}
 \end{thm}
 
+\begin{thm}
+  If $A$ is an $n \times n$ (i.e. square) matrix, $A$ is
+  row-equivalent to the $n \times n$ identity matrix if and only
+  if $AX = 0$ has only the trivial solution.
+  \begin{proof}
+    If $A$ is row-equivalent to the $n \times n$ identity matrix,
+    $AX = 0$ must have only the trivial solution, because every
+    unknown in $AX = 0$ will occur only once and be said to equal
+    $0$. If $A$ is not row-equivalent to the $n \times n$
+    identity matrix, then if $A'$ is $A$ in a row-reduced form,
+    $A'$ will have at least one all-0 row. An equation in $A'X =
+    0$ corresponding to an all-0 row in $A'$ will express a
+    tautology, i.e. that $0 = 0$, and thus the solution set of
+    $A'X = 0$ will be equivalent to that for an $m \times n,\ m <
+    n$ matrix $A''$ with rows equal to the non-all-0 rows of
+    $A'$. By theorem \ref{thm:mltnnontriv}, $A''X = 0$ will have
+    a non-trivial solution, and thus so will $AX = 0$.
+  \end{proof}
+\end{thm}
+
 \end{document}
