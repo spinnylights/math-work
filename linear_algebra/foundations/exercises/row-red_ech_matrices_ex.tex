@@ -195,6 +195,62 @@
         0 & 0
       \end{bmatrix}.
     \end{align*}
+
+  \item
+    We consider the system of equations
+    \begin{alignat*}{7}
+      x_1\ &-&\ x_2\ &+&\ 2x_3\ &=&\ &1\\
+      2x_1\ &&\ \ &+&\ 2x_3\ &=&\ &1\\
+      x_1\ &-&\ 3x_2\ &+&\ 4x_3\ &=&\ &2.
+    \end{alignat*}
+    We would like to know if it has a solution, and if so, what
+    its solutions are.
+
+    We proceed as follows:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2 & 1\\
+        2 & 0  & 2 & 1\\
+        1 & -3 & 4 & 2
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & -1 & 2  & 1\\
+        0 & 2  & -2 & -1\\
+        1 & -3 & 4  & 2
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2  & 1\\
+        0 & 2  & -2 & -1\\
+        0 & -2 & 2  & 0
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & -1 & 2  & 1\\
+        0 & 2  & -2 & -1\\
+        0 & 0  & 0  & -1
+      \end{bmatrix}
+      \xrightarrow{(1)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2  & 1\\
+        0 & 1  & -1 & -\frac{1}{2}\\
+        0 & 0  & 0  & -1
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0 & 1  & \frac{1}{2}\\
+        0 & 1 & -1 & -\frac{1}{2}\\
+        0 & 0 & 0  & -1
+      \end{bmatrix}.
+    \end{align*}
+    We can see here that this system has no solutions, as there
+    is no way for $0x_1 + 0x_2 + 0x_3$ to equal $-1$.
+
 \end{enumerate}
 
 \end{document}
