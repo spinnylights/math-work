@@ -509,6 +509,93 @@
       x_2 &=\ \frac{1}{12}(y_1 + 4y_2 - 14y_3)\\
       x_3 &=\ \frac{1}{6}(y_1 - 8y_2 + 19y_3).
     \end{align*}
+
+  \item
+    We would like to prove that, if $R$ and $R'$ are $2 \times 3$
+    row-reduced echelon matrices and the systems $RX = 0$ and
+    $R'X = 0$ have exactly the same solutions, $R = R'$.
+
+    The possible $2 \times 3$ row-reduced echelon matrices are:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & p\\
+        0 & 1 & q\\
+      \end{bmatrix},\ 
+      \begin{bmatrix}
+        0 & 1 & 0\\
+        0 & 0 & 1\\
+      \end{bmatrix},\ 
+      \begin{bmatrix}
+        1 & p & q\\
+        0 & 0 & 0\\
+      \end{bmatrix},\ 
+      \begin{bmatrix}
+        0 & 1 & q\\
+        0 & 0 & 0\\
+      \end{bmatrix},
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        0 & 0 & 1\\
+        0 & 0 & 0\\
+      \end{bmatrix},\ \text{and}\ 
+      \begin{bmatrix}
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+    If we treat any of these as $R$ and $p,\ q,\ \alpha,\ \beta,\
+    \gamma$ as any scalars in the field, the solutions in turn
+    would be:
+    \begin{align*}
+      x_1 =&\ -p\alpha\\
+      x_2 =&\ -q\alpha\\
+      x_3 =&\ \alpha;\\\\
+      x_1 =&\ \alpha\\
+      x_2 =&\ 0\\
+      x_3 =&\ 0;\\\\
+      x_1 =&\ -p\alpha -q\beta\\
+      x_2 =&\ \alpha\\
+      x_3 =&\ \beta;\\\\
+      x_1 =&\ \alpha\\
+      x_2 =&\ -q\beta\\
+      x_3 =&\ \beta;\\\\
+      x_1 =&\ \alpha\\
+      x_2 =&\ \beta\\
+      x_3 =&\ 0;\\\\
+      x_1 =&\ \alpha\\
+      x_2 =&\ \beta\\
+      x_3 =&\ \gamma.
+    \end{align*}
+    We can state the solution sets of these systems in a clearer
+    way as
+    \begin{align*}
+      (\alpha,&\ 0,\ 0),\\
+      (\alpha,&\ \beta,\ 0),\\
+      (\alpha,&\ \beta,\ -p\alpha),\\
+      (\alpha,&\ \beta,\ -q\beta),\\
+      (\alpha,&\ \beta,\ -p\alpha -q\beta),\\
+      (\alpha,&\ \beta,\ \gamma).
+    \end{align*}
+    In each of these sets, $\alpha,\ \beta,\ \gamma$ span the
+    whole field, whereas $p$ and $q$ are fixed for a given
+    solution set. As such, we can make the situation even clearer
+    by taking them out of the picture for a moment:
+    \begin{align*}
+      (\alpha,&\ 0,\ 0),\\
+      (\alpha,&\ \beta,\ 0),\\
+      (\alpha,&\ \beta,\ \alpha),\\
+      (\alpha,&\ \beta,\ \beta),\\
+      (\alpha,&\ \beta,\ \alpha + \beta),\\
+      (\alpha,&\ \beta,\ \gamma).
+    \end{align*}
+    Seen like this, it's clear that none of these solution set
+    \say{templates} could be equal to any of the others. In each
+    case, the \say{range of motion} available to each parameter
+    is different—in some cases fixed to $0$, in others determined
+    by one or more other parameters, and in others the parameter
+    is able to vary freely. As such, if $RX = 0$ and $R'X = 0$
+    have the same solutions, $R = R'$.
 \end{enumerate}
 
 \end{document}
