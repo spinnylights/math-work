@@ -1483,7 +1483,7 @@
   \end{exm}
 \end{defn}
 
-\begin{thm}
+\begin{thm} \label{thm:elrowelmat}
   If $e$ is an elementary row operation and we have an $m \times
   m$ elementary matrix $E = e(I)$, then for any $m \times n$
   matrix $A$,
@@ -1498,5 +1498,30 @@
     so $e(e^{-1}(e(A))) = e(e^{-1}(E))A$ and thus $e(A) = EA$.
   \end{proof}
 \end{thm}
+
+\begin{cor}
+  If $A$ and $B$ are $m \times n$ matrices over the same field,
+  $B$ is row-equivalent to $A$ if and only if there is an $m
+  \times m$ matrix $P$ such that $B = PA$ and $P$ is the product
+  of elementary matrices.
+
+  \begin{proof}
+    If $B$ is row-equivalent to $A$, there is a finite series of
+    elementary row operations that maps $A$ to $B$. We denote
+    this hypothetical series of elementary row operations by $f$,
+    such that $B = f(A)$. If $P$ is the product of elementary
+    matrices, we know by theorem \ref{thm:elrowelmat} that there
+    is a finite series of elementary row operations $f_1$ such
+    that $f_1(I) = P$. Then $PA = f_1(A)$, and if $B = PA$, $B =
+    f_1(A)$, so $f_1 = f$ and $B$ is row-equivalent to $A$.
+
+    Conversely, if there is no matrix like $P$, there is no
+    finite series of elementary row operations that will map $A$
+    to $B$, so $A$ and $B$ are not row-equivalent. As described,
+    $P$ is the matrix that would be obtained by applying this
+    series of elementary row operations to $I$, where $I$ is the
+    $m \times m$ identity matrix.
+  \end{proof}
+\end{cor}
 
 \end{document}
