@@ -1280,4 +1280,163 @@
   \end{align*}
 \end{comm}
 
+\begin{thm}
+  If $A,\ B,\ C$ are matrices over the same field and the
+  products $BC$ and $A(BC)$ are defined, then so are the products
+  $AB$ and $(AB)C$, and
+  \begin{align*}
+    A(BC) = (AB)C.
+  \end{align*}
+  In other words, although matrix multiplication is not
+  commutative, it is associative.
+  \begin{proof}
+    Say $B$ is an $m \times n$ matrix, i.e. a matrix with $n$
+    columns. For $BC$ to be defined, $C$ must be an $n \times p$
+    matrix, i.e. a matrix with $n$ rows. $BC$ will then be an $m
+    \times p$ matrix, so for $A(BC)$ to be defined, $A$ must be a
+    $q \times m$ matrix. $A(BC)$ is then a $q \times p$ matrix.
+
+    Therefore, since $A$ is a $q \times m$ matrix, $AB$ is
+    defined, since $B$ is an $m \times n$ matrix; $AB$ is then a
+    $q \times n$ matrix. In that case, $(AB)C$ is defined as
+    well, since $C$ is an $n \times p$ matrix; $(AB)C$ is then a
+    $q \times p$ matrix.
+
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        A_{11}
+          & \cdots
+          & A_{1m}\\
+        \vdots
+          & \ddots
+          & \vdots\\
+        A_{q1}
+          & \cdots
+          & A_{qm}
+      \end{bmatrix},\
+      B =
+      \begin{bmatrix}
+        B_{11}
+          & \cdots
+          & B_{1n}\\
+        \vdots
+          & \ddots
+          & \vdots\\
+        B_{m1}
+          & \cdots
+          & B_{mn}
+      \end{bmatrix},\
+      C =
+      \begin{bmatrix}
+        C_{11}
+          & \cdots
+          & C_{1p}\\
+        \vdots
+          & \ddots
+          & \vdots\\
+        C_{n1}
+          & \cdots
+          & C_{np}
+      \end{bmatrix}.
+    \end{align*}
+
+    \begin{align*}
+      BC =
+      \begin{bmatrix}
+        \sum_{s = 1}^{n} B_{1s}C_{s1}
+          & \cdots
+          & \sum_{s = 1}^{n} B_{1s}C_{sp}\\
+        \vdots
+          & \ddots
+          & \vdots\\
+        \sum_{s = 1}^{n} B_{ms}C_{s1}
+          & \cdots
+          & \sum_{s = 1}^{n} B_{ms}C_{sp}
+      \end{bmatrix},
+    \end{align*}
+    so if $BC_j,\ 1 \leq j \leq p$ is a column of $BC$,
+    \begin{align*}
+      A(BC)_j =&
+      \begin{bmatrix}
+        A_{11}(\sum_{s = 1}^{n} B_{1s}C_{sj})
+          + \ldots
+          + A_{1m}(\sum_{s = 1}^{n} B_{ms}C_{sj})\\
+        \vdots\\
+        A_{q1}(\sum_{s = 1}^{n} B_{1s}C_{sj})
+          + \ldots
+          + A_{qm}(\sum_{s = 1}^{n} B_{ms}C_{sj})
+      \end{bmatrix}\\
+      =&
+      \begin{bmatrix}
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{1r}B_{rs}C_{sj}\\
+        \vdots\\
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{qr}B_{rs}C_{sj}\\
+      \end{bmatrix}.
+    \end{align*}
+    Therefore
+    \begin{align*}
+      A(BC) =
+      \begin{bmatrix}
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{1r}B_{rs}C_{s1}
+          & \cdots
+          & \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{1r}B_{rs}C_{sp}\\
+        \vdots & \ddots & \vdots\\
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{qr}B_{rs}C_{s1}
+          & \cdots
+          & \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{qr}B_{rs}C_{sp}\\
+      \end{bmatrix}.
+    \end{align*}
+    Likewise,
+    \begin{align*}
+      AB =
+      \begin{bmatrix}
+        \sum_{r = 1}^{m} A_{1r}B_{r1}
+          & \cdots
+          & \sum_{r = 1}^{m} A_{1r}B_{rn}\\
+        \vdots
+          & \ddots
+          & \vdots\\
+        \sum_{r = 1}^{m} A_{qr}B_{r1}
+          & \cdots
+          & \sum_{r = 1}^{m} A_{qr}B_{rn}\\
+      \end{bmatrix},
+    \end{align*}
+    so if $C_j,\ 1 \leq j \leq p$ is a column of $C$,
+    \begin{align*}
+      (AB)C_j =&
+      \begin{bmatrix}
+        (\sum_{r = 1}^{m} A_{1r}B_{r1})C_{1j}
+          + \ldots
+          + (\sum_{r = 1}^{m} A_{1r}B_{rn})C_{nj}\\
+        \vdots\\
+        (\sum_{r = 1}^{m} A_{qr}B_{r1})C_{1j}
+          + \ldots
+          + (\sum_{r = 1}^{m} A_{qr}B_{rn})C_{nj}\\
+      \end{bmatrix}\\
+      =&
+      \begin{bmatrix}
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{1r}B_{rs}C_{sj}\\
+        \vdots\\
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{qr}B_{rs}C_{sj}\\
+      \end{bmatrix},
+    \end{align*}
+    and
+    \begin{align*}
+      (AB)C =&
+      \begin{bmatrix}
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{1r}B_{rs}C_{s1}
+          & \cdots
+          & \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{1r}B_{rs}C_{sp}\\
+        \vdots & \ddots & \vdots\\
+        \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{qr}B_{rs}C_{s1}
+          & \cdots
+          & \sum_{r = 1}^{m}\sum_{s = 1}^{n} A_{qr}B_{rs}C_{sp}\\
+      \end{bmatrix}\\
+      =&\ A(BC).
+    \end{align*}
+  \end{proof}
+\end{thm}
+
 \end{document}
