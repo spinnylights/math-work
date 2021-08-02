@@ -1220,4 +1220,64 @@
   0^{k,m}A$, while $A0^{n,p} = 0^{m,p}$.
 \end{comm}
 
+\begin{comm}
+  If $B$ is an $n \times p$ matrix, it can be convenient to
+  notate the columns of $B$ as $1 \times n$ matrices
+  $B_1,\ldots,B_p$, such that
+  \begin{align*}
+    B_j =
+    \begin{bmatrix}
+      B_{1j}\\
+      \vdots\\
+      B_{nj}
+    \end{bmatrix},\ 
+    1 \leq j \leq p.
+  \end{align*}
+
+  $B$ is then the succession of these columns:
+  \begin{align*}
+    B = [B_1,\ldots,B_p].
+  \end{align*}
+
+  The product matrix $AB$ is then formed from the $i$th row of
+  $A$ and the $j$th column of $B$, such that the $j$ column of
+  $AB$ is $AB_j$:
+  \begin{align*}
+    A =
+    \begin{bmatrix}
+      A_{11} & \ldots & A_{1n}\\
+      \vdots & \ddots & \vdots\\
+      A_{m1} & \ldots & A_{mn}\\
+    \end{bmatrix};
+  \end{align*}
+  \begin{align*}
+    B =
+    \begin{bmatrix}
+      B_{11} & \ldots & B_{1p}\\
+      \vdots & \ddots & \vdots\\
+      B_{n1} & \ldots & B_{np}\\
+    \end{bmatrix};
+  \end{align*}
+  \begin{align*}
+    AB =
+    \begin{bmatrix}
+      (A_{11}B_{11}\ +\ \ldots\ +\ A_{1n}B_{n1})\
+        & \cdots
+        & (A_{11}B_{1p}\ +\ \ldots\ +\ A_{1n}B_{np})\\
+      \vdots & \ddots & \vdots\\
+      (A_{m1}B_{11}\ +\ \ldots\ +\ A_{mn}B_{n1})\
+        & \cdots
+        & (A_{m1}B_{1p}\ +\ \ldots\ +\ A_{mn}B_{np})\\
+    \end{bmatrix};
+  \end{align*}
+  \begin{align*}
+    AB_j =
+    \begin{bmatrix}
+      (A_{11}B_{1j}\ +\ \ldots\ +\ A_{1n}B_{nj})\\
+      \vdots\\
+      (A_{m1}B_{1j}\ +\ \ldots\ +\ A_{mn}B_{nj})\\
+    \end{bmatrix}.
+  \end{align*}
+\end{comm}
+
 \end{document}
