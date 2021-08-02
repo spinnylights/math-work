@@ -10,6 +10,7 @@
 \usepackage{gensymb}
 \usepackage{enumitem}
 \usepackage{dirtytalk}
+\usepackage{bm}
 \title{Matrices}
 \author{Zoë Sparks}
 
@@ -1280,7 +1281,7 @@
   \end{align*}
 \end{comm}
 
-\begin{thm}
+\begin{thm} \label{thm:matmulassoc}
   If $A,\ B,\ C$ are matrices over the same field and the
   products $BC$ and $A(BC)$ are defined, then so are the products
   $AB$ and $(AB)C$, and
@@ -1438,5 +1439,15 @@
     \end{align*}
   \end{proof}
 \end{thm}
+
+\begin{defn}
+  If $A$ is an $n \times n$ (square) matrix, the product $AA$ is
+  defined; we denote this matrix by $\bm{A^2}$. Furthermore,
+  $A(AA) = (AA)A$ by theorem \ref{thm:matmulassoc}, so $AAA$ is
+  unambiguously defined; we denote this matrix by $\bm{A^3}$.
+  Following this logic, $AA\ldots A$ for $k$
+  $A$s is unambiguously defined, and we denote this matrix by
+  $\bm{A^k}$.
+\end{defn}
 
 \end{document}
