@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\title{Matrix multiplication (exercises)}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{enumerate}
+  \item
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        2 & -1 & 1\\
+        1 &  2 & 1\\
+      \end{bmatrix},\
+      B =
+      \begin{bmatrix}
+         3\\
+         1\\
+        -1\\
+      \end{bmatrix},\
+      C =
+      \begin{bmatrix}
+        1 & -1
+      \end{bmatrix}.
+    \end{align*}
+    We would like to know the value of $ABC$ and $CAB$.
+    \begin{align*}
+      AB =
+      \begin{bmatrix}
+        2 & -1 & 1\\
+        1 &  2 & 1\\
+      \end{bmatrix}
+      \begin{bmatrix}
+         3\\
+         1\\
+        -1\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        2(3) - 1(1) - 1(1)\\
+        1(3) + 2(1) - 1(1)\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        4\\
+        4\\
+      \end{bmatrix};
+    \end{align*}
+    \begin{align*}
+      ABC =
+      \begin{bmatrix}
+        4\\
+        4\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -1
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        4(1) & 4(-1)\\
+        4(1) & 4(-1)
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        4 & -4\\
+        4 & -4\\
+      \end{bmatrix}.
+    \end{align*}\\
+    \begin{align*}
+      CA =&
+      \begin{bmatrix}
+        1 & -1
+      \end{bmatrix}
+      \begin{bmatrix}
+        2 & -1 & 1\\
+        1 &  2 & 1\\
+      \end{bmatrix}\\
+      =&
+      \begin{bmatrix}
+        1(2) - 1(1) & 1(-1) - 1(2) & 1(1) - 1(1)
+      \end{bmatrix}\\
+      =&
+      \begin{bmatrix}
+        1 & -3 & 0
+      \end{bmatrix};
+    \end{align*}
+    \begin{align*}
+      CAB =
+      \begin{bmatrix}
+        1 & -3 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+         3\\
+         1\\
+        -1\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1(3) - 3(1) + 0(-1)
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0
+      \end{bmatrix}.
+    \end{align*}
+\end{enumerate}
+
+\end{document}
