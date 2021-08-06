@@ -669,6 +669,169 @@
         0 & 0 & 1\\
       \end{bmatrix}.
     \end{align*}
+
+  \item
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        1 & -1\\
+        2 &  2\\
+        1 &  0\\
+      \end{bmatrix},\
+      B =
+      \begin{bmatrix}
+        3  & 1\\
+        -4 & 4\\
+      \end{bmatrix}.
+    \end{align*}
+    We would like to know if there is a matrix $C$ such that $CA
+    = B$.
+
+    If such a matrix exists, it would be a $2 \times 3$ matrix,
+    since $A$ is $3 \times 2$ and $B$ is $2 \times 2$. Of note,
+    there cannot be a matrix $C'$ such that $AC' = B$, because
+    such a matrix would inevitably have $3$ rows.
+
+    What if we say
+    \begin{align*}
+      C =
+      \begin{bmatrix}
+        a_1 & b_1 & c_1\\
+        a_2 & b_2 & c_2\\
+      \end{bmatrix}
+    \end{align*}
+    and multiply?
+    \begin{align*}
+      \begin{bmatrix}
+        a_1 & b_1 & c_1\\
+        a_2 & b_2 & c_2\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -1\\
+        2 &  2\\
+        1 &  0\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        a_1 + 2b_1 + c_1 & -a_1 + 2b_1\\
+        a_2 + 2b_2 + c_2 & -a_2 + 2b_2\\
+      \end{bmatrix}.
+    \end{align*}
+    So what we're looking for are scalars such that
+    \begin{align*}
+      a_1 + 2b_1 + c_1 =& 3\\
+      -a_1 + 2b_1 =& 1
+    \end{align*}
+    and
+    \begin{align*}
+      a_2 + 2b_2 + c_2 =& -4\\
+      -a_2 + 2b_2 =& 4.
+    \end{align*}
+    We proceed:
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 2 & 1 & 3\\
+        -1 & 2 & 0 & 1
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 2 & 1 & 3\\
+        0 & 4 & 1 & 4
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & 2 & 1           & 3\\
+        0 & 1 & \frac{1}{4} & 1
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & \frac{1}{2} & 1\\
+        0 & 1 & \frac{1}{4} & 1
+      \end{bmatrix}.
+    \end{align*}
+    So in the first case, we have
+    \begin{align*}
+      a_1 =& -\frac{1}{2}c_1 + 1\\
+      b_1 =& -\frac{1}{4}c_1 + 1.
+    \end{align*}
+    In the second case,
+    \begin{align*}
+      \begin{bmatrix}
+        -4\\
+        4
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        -4\\
+        0
+      \end{bmatrix}
+    \end{align*}
+    (the other operations would be redundant). So we then have
+    \begin{align*}
+      a_2 =& -\frac{1}{2}c_2 - 4\\
+      b_2 =& -\frac{1}{4}c_2.
+    \end{align*}
+    Of course, this immediately makes me wonder what would happen
+    if we took $(c_1,c_2) = (0,0)$.
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 1 & 0\\
+        -4 & 0 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -1\\
+        2 &  2\\
+        1 &  0\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        3  & 1\\
+        -4 & 4
+      \end{bmatrix}.
+    \end{align*}
+    It works! Of course, I bet would also work if we took, say,
+    $(c_1,c_2) = (4,4)$.
+    \begin{align*}
+      \begin{bmatrix}
+        -1 &  0 & 4\\
+        -6 & -1 & 4
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -1\\
+        2 &  2\\
+        1 &  0\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        3  & 1\\
+        -4 & 4
+      \end{bmatrix}.
+    \end{align*}
+    Yep! After all, our calculations above indicate there is an
+    infinite number of matrices $C$ such that $CA = B$. This is
+    unsurprising by theorem 6.
+
+    The implications of this are rather interesting. Perhaps the
+    fact that $A$ is $3 \times 2$ and $B$ is $2 \times 2$
+    guarantees that there will be an infinite number of matrices
+    $C$ such that $CA = B$, as long as $A$ doesn't have an all-0
+    row or column? Even if it does, it might still work—probably
+    you can figure by acting as if $A$ didn't have the all-0 row
+    or column at all and mulling it over from there.
+
+    After all, in any field, for scalars $x$ and $y$, there is
+    some scalar $a$ such that $ax = y$ as long as $x \neq 0$. So,
+    I think this implies that if $A$ is an $m \times n$ matrix
+    where $m$ is the number of non-all-0 rows, $n$ is the number
+    of non-all-0 columns, and $m > n$, there is an infinite
+    number of $o \times m$ matrices $C$ such that $CA = B$ for
+    any given $o \times n$ matrix $B$. If $m \leq n$, I think
+    there will be one such matrix $C$. Of course, this is just
+    thinking off the cuff—I would need to prove these statements
+    to be sure.
 \end{enumerate}
 
 \end{document}
