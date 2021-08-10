@@ -1058,6 +1058,116 @@
         \end{bmatrix}.
       \end{align*}
     \end{comm}
+
+  \item
+    Given
+    \begin{align*}
+      C =
+      \begin{bmatrix}
+        C_{11} & C_{12}\\
+        C_{21} & C_{22}\\
+      \end{bmatrix}
+    \end{align*}
+    is a $2 \times 2$ matrix, we would like to prove that $2
+    \times 2$ matrices $A$ and $B$ such that $C = AB - BA$ can
+    be found if and only if $C_{11} + C_{22} = 0$.
+
+    If
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+    \end{align*}
+    and
+    \begin{align*}
+      B =
+      \begin{bmatrix}
+        B_{11} & B_{12}\\
+        B_{21} & B_{22}\\
+      \end{bmatrix},
+    \end{align*}
+    \begin{align*}
+      AB =
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        B_{11} & B_{12}\\
+        B_{21} & B_{22}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        (A_{11}B_{11} + A_{12}B_{21}) &
+        (A_{11}B_{12} + A_{12}B_{22})\\
+        (A_{21}B_{11} + A_{22}B_{21}) &
+        (A_{21}B_{12} + A_{22}B_{22})\\
+      \end{bmatrix}
+    \end{align*}
+    and
+    \begin{align*}
+      BA =
+      \begin{bmatrix}
+        B_{11} & B_{12}\\
+        B_{21} & B_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        (A_{11}B_{11} + A_{21}B_{12}) &
+        (A_{12}B_{11} + A_{22}B_{12})\\
+        (A_{11}B_{21} + A_{21}B_{22}) &
+        (A_{12}B_{21} + A_{22}B_{22})\\
+      \end{bmatrix}.
+    \end{align*}
+    So,
+    \begin{align*}
+      AB - BA =&\\
+      \begin{bmatrix}
+        (A_{11}B_{11} + A_{12}B_{21} - A_{11}B_{11} - A_{21}B_{12}) &
+        (A_{11}B_{12} + A_{12}B_{22} - A_{12}B_{11} - A_{22}B_{12})\\
+        (A_{21}B_{11} + A_{22}B_{21} - A_{11}B_{21} - A_{21}B_{22}) &
+        (A_{21}B_{12} + A_{22}B_{22} - A_{12}B_{21} - A_{22}B_{22})\\
+      \end{bmatrix}
+      =&\\
+      \begin{bmatrix}
+        [A_{12}B_{21} - A_{21}B_{12}] &
+        [B_{12}(A_{11} - A_{22}) + A_{12}(B_{22} - B_{11})]\\
+        [A_{21}(B_{11} - B_{22}) + B_{21}(A_{22} - A_{11})] &
+        [A_{21}B_{12} - A_{12}B_{21}]\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      [A_{12}B_{21} - A_{21}B_{12}]
+      + [A_{21}B_{12} - A_{12}B_{21}] =&\\
+      A_{12}B_{21} - A_{12}B_{21}
+      - A_{21}B_{12} + A_{21}B_{12} =&\\
+      0,
+    \end{align*}
+    so if
+    \begin{align*}
+      C = AB - BA =&\\
+      \begin{bmatrix}
+        C_{11} & C_{12}\\
+        C_{21} & C_{22}\\
+      \end{bmatrix}
+      =&\\
+      \begin{bmatrix}
+        [A_{12}B_{21} - A_{21}B_{12}] &
+        [B_{12}(A_{11} - A_{22}) + A_{12}(B_{22} - B_{11})]\\
+        [A_{21}(B_{11} - B_{22}) + B_{21}(A_{22} - A_{11})] &
+        [A_{21}B_{12} - A_{12}B_{21}]\\
+      \end{bmatrix},
+    \end{align*}
+    it must be the case that $C_{11} + C_{22} = 0$. Likewise if
+    $C_{11} + C_{22} = 0$, scalars can be found that satisfy the
+    needed relationship between $A$ and $B$, but otherwise it is
+    impossible, as $x - y - x + y = 0$ in any field.
 \end{enumerate}
 
 \end{document}
