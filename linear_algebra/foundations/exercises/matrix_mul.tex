@@ -854,6 +854,210 @@
     If we say that $B_{rj} = x_r$ for all $B_{ij}$ and $x_i$, $1
     \leq i \leq n$, clearly the columns of $C = AB$ are linear
     combinations of the columns of $A$.
+
+  \item
+    Given that $A$ and $B$ are $2 \times 2$ matrices such that
+    $AB = I$, we would like to prove that $BA = I$ as well.
+
+    We know that
+    \begin{align*}
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        B_{11}\\
+        B_{21}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1\\
+        0\\
+      \end{bmatrix}.
+    \end{align*}
+    So,
+    \begin{align*}
+      \begin{bmatrix}
+        A_{11} & A_{12} & 1\\
+        A_{21} & A_{22} & 0\\
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & \frac{A_{12}}{A_{11}} & \frac{1}{A_{11}}\\
+        A_{21} & A_{22} & 0\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{A_{12}}{A_{11}} & \frac{1}{A_{11}}\\
+        0 & A_{22} - \frac{A_{21}A_{12}}{A_{11}} & -\frac{A_{21}}{A_{11}}\\
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & \frac{A_{12}}{A_{11}} & \frac{1}{A_{11}}\\
+        0 & 1 & -\frac{A_{21}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 &
+          0 &
+          \frac{A_{22}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        0 &
+          1 &
+          -\frac{A_{21}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        \frac{A_{22}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        -\frac{A_{21}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \frac{A_{22}A_{11} - A_{21}A_{12}}
+             {A_{22}A_{11} - A_{21}A_{12}}\\
+        \frac{A_{22}A_{21} - A_{22}A_{21}}
+             {A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        1\\
+        0\\
+      \end{bmatrix}.
+    \end{align*}
+    Likewise,
+    \begin{align*}
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        B_{21}\\
+        B_{22}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0\\
+        1\\
+      \end{bmatrix},
+    \end{align*}
+    so
+    \begin{align*}
+      \begin{bmatrix}
+        A_{11} & A_{12} & 0\\
+        A_{21} & A_{22} & 1\\
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & \frac{A_{12}}{A_{11}} & 0\\
+        A_{21} & A_{22} & 1\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{A_{12}}{A_{11}} & 0\\
+        0 & \frac{A_{22}A_{11} - A_{21}A_{12}}{A_{11}} & 1\\
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        1 & \frac{A_{12}}{A_{11}} & 0\\
+        0 & 1 & \frac{A_{11}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 &
+          0 &
+          -\frac{A_{12}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        0 &
+          1 &
+          \frac{A_{11}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        -\frac{A_{12}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        \frac{A_{11}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \frac{A_{11}A_{12} - A_{11}A_{12}}
+             {A_{22}A_{11} - A_{21}A_{12}}\\
+        \frac{A_{22}A_{11} - A_{21}A_{12}}
+             {A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0\\
+        1\\
+      \end{bmatrix}.
+    \end{align*}
+    Therefore,
+    \begin{align*}
+      B =
+      \begin{bmatrix}
+        \frac{A_{22}}{A_{22}A_{11} - A_{21}A_{12}} &
+          -\frac{A_{12}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        -\frac{A_{21}}{A_{22}A_{11} - A_{21}A_{12}} &
+          \frac{A_{11}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        \frac{A_{22}}{A_{22}A_{11} - A_{21}A_{12}} &
+          -\frac{A_{12}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        -\frac{A_{21}}{A_{22}A_{11} - A_{21}A_{12}} &
+          \frac{A_{11}}{A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        A_{11} & A_{12}\\
+        A_{21} & A_{22}\\
+      \end{bmatrix}
+      =&\\
+      \begin{bmatrix}
+        \frac{A_{22}A_{11} - A_{21}A_{12}}
+             {A_{22}A_{11} - A_{21}A_{12}} &
+          \frac{A_{22}A_{12} - A_{22}A_{12}}
+               {A_{22}A_{11} - A_{21}A_{12}}\\
+        \frac{A_{21}A_{11} - A_{21}A_{11}}
+             {A_{22}A_{11} - A_{21}A_{12}} &
+          \frac{A_{22}A_{11} - A_{21}A_{12}}
+               {A_{22}A_{11} - A_{21}A_{12}}\\
+      \end{bmatrix}
+      =&\\
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+      \end{bmatrix},
+    \end{align*}
+    so $BA = I$.
+
+    \begin{comm}
+      We have found here that if $A$ is a $2 \times 2$ matrix and
+      $A_{22}A_{11} - A_{21}A_{12} \neq 0$,
+      \begin{align*}
+        A^{-1} =
+        \begin{bmatrix}
+          \frac{A_{22}}{A_{22}A_{11} - A_{21}A_{12}} &
+            -\frac{A_{12}}{A_{22}A_{11} - A_{21}A_{12}}\\
+          -\frac{A_{21}}{A_{22}A_{11} - A_{21}A_{12}} &
+            \frac{A_{11}}{A_{22}A_{11} - A_{21}A_{12}}\\
+        \end{bmatrix}.
+      \end{align*}
+    \end{comm}
 \end{enumerate}
 
 \end{document}
