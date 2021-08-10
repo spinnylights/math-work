@@ -832,6 +832,28 @@
     there will be one such matrix $C$. Of course, this is just
     thinking off the cuff—I would need to prove these statements
     to be sure.
+
+  \item
+    Given that $A$ is an $m \times n$ matrix and $B$ is an $n
+    \times k$ matrix, we would like to show that the columns of
+    $C = AB$ are linear combinations of the columns of $A$.
+
+    Of note, if $\alpha_1,\ldots,\alpha_n$ are the columns of
+    $A$ and $\gamma_1,\ldots,\gamma_n$ are the columns of $C$,
+    then
+    \begin{align*}
+      \gamma_i = \sum_{r = 1}^{n} B_{rj}\alpha_r.
+    \end{align*}
+
+    A linear combination of the columns of $A$ would be an
+    expression $x_1\alpha_1 + \ldots + x_n\alpha_n$ for scalars
+    $x_1,\ldots,x_n$, or
+    \begin{align*}
+      \sum_{r = 1}^{n} x_r\alpha_r.
+    \end{align*}
+    If we say that $B_{rj} = x_r$ for all $B_{ij}$ and $x_i$, $1
+    \leq i \leq n$, clearly the columns of $C = AB$ are linear
+    combinations of the columns of $A$.
 \end{enumerate}
 
 \end{document}
