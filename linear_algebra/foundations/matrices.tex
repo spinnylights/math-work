@@ -1693,4 +1693,27 @@
   \end{proof}
 \end{thm}
 
+\begin{cor}
+  A square matrix with either a left or right inverse is
+  invertible.
+
+  \begin{proof}
+    If $A$ is an $n \times n$ square matrix with a left inverse
+    $B$, then $BA = I$. This implies that, if $A_j$, $1 \leq j
+    \leq n$ is a column of $A$ and $I_j$ is likewise for $I$,
+    $BA_j = I_j$. By theorem \ref{thm:rowredeqrowredech}, there
+    is a row-reduced echelon matrix $R$ which is row-equivalent
+    to $B$. For $RA_j = I_j$ to have a solution
+    $A_{1j},\ldots,A_{nj}$ for every $I_j$, none of the rows in
+    $R$ can be entirely $0$, so $R = I$. Therefore $B$ is
+    row-equivalent to $I$, and thus $B$ is invertible.
+
+    This implies that $B^{-1}BA = B^{-1} = A$, and thus $A$ is
+    invertible by theorem \ref{thm:ifinvertsoinv}. If $A$ has a
+    right inverse and thus $AB = I$, the same argument from
+    theorem \ref{thm:rowredeqrowredech} implies that $A$ is
+    invertible in this case as well.
+  \end{proof}
+\end{cor}
+
 \end{document}
