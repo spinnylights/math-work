@@ -555,6 +555,168 @@
         -\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
       \end{bmatrix}.
     \end{align*}
+
+  \item
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        5 & 0 & 0\\
+        1 & 5 & 0\\
+        0 & 1 & 5
+      \end{bmatrix}.
+    \end{align*}
+    We would like to know for which $X$ there is a scalar $c$
+    such that $AX = cX$. We know that if $R$ is a row-reduced
+    echelon matrix that is row-equivalent to $A$, then $R = PA$
+    where $P$ is a $3 \times 3$ invertible matrix. The solutions
+    of $AX = cX$ are then the same as the solutions of $RX = PAX
+    = PcX$.
+    \begin{align*}
+      \begin{bmatrix}
+        5 & 0 & 0\\
+        1 & 5 & 0\\
+        0 & 1 & 5
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        1 & 5 & 0\\
+        0 & 1 & 5
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 5 & 0\\
+        0 & 1 & 5
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        -\frac{1}{5} & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 1 & 5
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        -\frac{1}{25} & \frac{1}{5} & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 5
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        -\frac{1}{25} & \frac{1}{5} & 0\\
+        \frac{1}{25} & -\frac{1}{5} & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        -\frac{1}{25} & \frac{1}{5} & 0\\
+        \frac{1}{125} & -\frac{1}{25} & \frac{1}{5}
+      \end{bmatrix}.
+    \end{align*}
+    Therefore $R = I$ and
+    \begin{align*}
+      P =
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        -\frac{1}{25} & \frac{1}{5} & 0\\
+        \frac{1}{125} & -\frac{1}{25} & \frac{1}{5}
+      \end{bmatrix}.
+    \end{align*}
+    If
+    \begin{align*}
+      cX =
+      \begin{bmatrix}
+        cx_1\\
+        cx_2\\
+        cx_3\\
+      \end{bmatrix},
+    \end{align*}
+    then
+    \begin{align*}
+      PcX =
+      \begin{bmatrix}
+        \frac{1}{5} & 0 & 0\\
+        -\frac{1}{25} & \frac{1}{5} & 0\\
+        \frac{1}{125} & -\frac{1}{25} & \frac{1}{5}
+      \end{bmatrix}
+      \begin{bmatrix}
+        cx_1\\
+        cx_2\\
+        cx_3\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \frac{1}{5}cx_1\\
+        -\frac{1}{25}cx_1+\frac{1}{5}cx_2\\
+        \frac{1}{125}cx_1-\frac{1}{25}cx_2+\frac{1}{5}cx_3\\
+      \end{bmatrix}.
+    \end{align*}
+    $RX = IX = X = PcX$. Since this implies that
+    \begin{align*}
+      x_1 =&\ \frac{1}{5}cx_1,
+    \end{align*}
+    $c$ has to be $5$ or $x_1$ has to be $0$. If we assume that
+    $c = 5$,
+    \begin{align*}
+      x_2 =&\ -\frac{1}{5}x_1 + x_2,
+    \end{align*}
+    which is only possible if $x_1 = 0$, so $x_1 = 0$. Then
+    \begin{align*}
+      x_2 =&\ \frac{1}{5}cx_2,
+    \end{align*}
+    which implies that $c$ has to be $5$ or $x_2$ has to be $0$.
+    If we assume that $c = 5$,
+    \begin{align*}
+      x_3 =&\ -\frac{1}{5}x_2 + x_3,
+    \end{align*}
+    which again is only possible if $x_2 = 0$, so $x_2 = 0$ as
+    well. Then
+    \begin{align*}
+      x_3 =&\ \frac{1}{5}cx_3,
+    \end{align*}
+    which is valid if $c = 5$ or if $x_3 = 0$.
+
+    Therefore, $AX = cX$ when $X = 0$ or when
+    \begin{align*}
+      c = 5,\ X =
+      \begin{bmatrix}
+        0\\
+        0\\
+        x_3\\
+      \end{bmatrix},
+    \end{align*}
+    where $x_3$ can take on any value in the field.
 \end{enumerate}
 
 \end{document}
