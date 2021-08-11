@@ -23,7 +23,11 @@ class Matrix
 
       neg = false
       col.map do |e|
-        if e.respond_to?(:denominator) && e.denominator == 1
+        if e.class == Complex && e.imaginary == 0
+          e = e.to_r
+        end
+
+        if e.class == Rational && e.denominator == 1
           e = e.to_i
         end
 
@@ -32,6 +36,11 @@ class Matrix
         if e[0] == '-'
           neg = true
         end
+
+        e.gsub!(/\/1([^0-9])/, '\1')
+        e.sub!(/(\+|\-)1i/, '\1i')
+        e.sub!(/^0(\+|\-)/, '\1')
+        e.sub!(/^\+/, '')
 
         if e.length > max_str_len
           max_str_len = e.length
