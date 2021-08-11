@@ -1525,4 +1525,26 @@
   \end{proof}
 \end{cor}
 
+\begin{defn}
+  If $A$ is an $n \times n$ matrix over a field, a matrix $B$
+  such that $BA = I$ is called a \textbf{left inverse} of $A$, a
+  likewise matrix $B$ such that $AB = I$ is called a
+  \textbf{right inverse} of $A$, and if $AB = BA = I$, $B$ is
+  called a \textbf{two-sided inverse} of $A$, and $A$ is said to
+  be \textbf{invertible}.
+
+  \begin{nlemma}
+    If $A$ has a left inverse $B$ and a right inverse $C$, then
+    $B = C$.
+    \begin{proof}
+      If $BA = I$, then $BAC = IC$. If $AC = I$, then $BAC =
+      B(AC) = BI = B$ and $IC = C$, so $B = C$.
+    \end{proof}
+  \end{nlemma}
+
+  As such, if $A$ has a left and right inverse, it is invertible
+  and has a unique two-sided inverse. We denote this two-sided
+  inverse by $A^{-1}$, and call it the \textbf{inverse} of $A$.
+\end{defn}
+
 \end{document}
