@@ -1654,4 +1654,43 @@
   \end{proof}
 \end{cor}
 
+\begin{thm} \label{thm:invonlytrivsoleveryequiv}
+  For an $n \times n$ matrix $A$, the following statements are
+  equivalent:
+
+  \begin{enumerate}
+    \item $A$ is invertible.
+    \item The homogeneous system $AX = 0$ has only the trivial
+      solution $X = 0$.
+    \item The system of equations $AX = Y$ has a solution $X$ for
+      each $n \times 1$ matrix $Y$.
+  \end{enumerate}
+
+  \begin{proof}
+    If $A$ is invertible, $A$ is row-equivalent to the $n \times
+    n$ identity matrix by theorem \ref{thm:invroweqelmatprod},
+    and thus $AX = 0$ has only the trivial solution $X = 0$ by
+    theorem \ref{thm:roweqtoidiffonlytriv}. Thus (1) implies (2).
+
+    If $A$ is invertible and $AX = Y$, $A^{-1}AX = X = A^{-1}Y$.
+    $A^{-1}Y$ is defined, as $A^{-1}$ is an $n \times n$ matrix
+    and $Y$ is an $n \times 1$ matrix. Therefore $AX = Y$ has the
+    solution $X = A^{-1}Y$ for each $n \times 1$ matrix $Y$ and
+    thus (1) implies (3).
+
+    By theorem \ref{thm:roweqtoidiffonlytriv}, if $AX = 0$ has
+    only the trivial solution $X = 0$, $A$ is row-equivalent to
+    the $n \times n$ identity matrix. This implies that $A$ is
+    invertible by theorem \ref{thm:invroweqelmatprod}, and thus
+    (2) implies (1), as well as (3) by proxy.
+
+    If $AX = Y$ has a solution $X$ for each $n \times 1$ matrix
+    $Y$, corollary \ref{cor:rowequivelmatprod} implies that $A$
+    is the product of elementary matrices, which by theorem
+    \ref{thm:invroweqelmatprod} implies that $A$ is invertible,
+    and thus that (3) implies (1). Then (3) implies (2) by proxy,
+    and thus (1), (2), and (3) are equivalent.
+  \end{proof}
+\end{thm}
+
 \end{document}
