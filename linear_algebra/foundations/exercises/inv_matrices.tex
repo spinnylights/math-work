@@ -347,6 +347,214 @@
         -\frac{1}{3}i & \frac{1}{5}+\frac{1}{15}i & \frac{3}{5}+\frac{1}{5}i
       \end{bmatrix}.
     \end{align*}
+
+  \item
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        2 & 5 & -1\\
+        4 & -1 & 2\\
+        6 & 4 & 1
+      \end{bmatrix}\ \text{and}\
+      B =
+      \begin{bmatrix}
+        1 & -1 & 2\\
+        3 & 2 & 4\\
+        0 & 1 & -2
+      \end{bmatrix}.
+    \end{align*}
+    We would like to determine if either is invertible and what
+    its inverse is if so.
+    \begin{align*}
+      \begin{bmatrix}
+        2 & 5 & -1\\
+        4 & -1 & 2\\
+        6 & 4 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{5}{2} & -\frac{1}{2}\\
+        4 & -1 & 2\\
+        6 & 4 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{2} & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{5}{2} & -\frac{1}{2}\\
+        0 & -11 & 4\\
+        6 & 4 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{2} & 0 & 0\\
+        -2 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{5}{2} & -\frac{1}{2}\\
+        0 & -11 & 4\\
+        0 & -11 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{2} & 0 & 0\\
+        -2 & 1 & 0\\
+        -3 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{5}{2} & -\frac{1}{2}\\
+        0 & -11 & 4\\
+        0 & 0 & 0
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{2} & 0 & 0\\
+        -2 & 1 & 0\\
+        -1 & -1 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{5}{2} & -\frac{1}{2}\\
+        0 & 1 & -\frac{4}{11}\\
+        0 & 0 & 0
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{2} & 0 & 0\\
+        \frac{2}{11} & -\frac{1}{11} & 0\\
+        -1 & -1 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & \frac{9}{22}\\
+        0 & 1 & -\frac{4}{11}\\
+        0 & 0 & 0
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{22} & \frac{5}{22} & 0\\
+        \frac{2}{11} & -\frac{1}{11} & 0\\
+        -1 & -1 & 1
+      \end{bmatrix},
+    \end{align*}
+    so $A$ is not invertible.
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2\\
+        3 & 2 & 4\\
+        0 & 1 & -2
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2\\
+        0 & 5 & -2\\
+        0 & 1 & -2
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        -3 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2\\
+        0 & 1 & -\frac{2}{5}\\
+        0 & 1 & -2
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        -\frac{3}{5} & \frac{1}{5} & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & -1 & 2\\
+        0 & 1 & -\frac{2}{5}\\
+        0 & 0 & -\frac{8}{5}
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        -\frac{3}{5} & \frac{1}{5} & 0\\
+        \frac{3}{5} & -\frac{1}{5} & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & \frac{8}{5}\\
+        0 & 1 & -\frac{2}{5}\\
+        0 & 0 & -\frac{8}{5}
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{2}{5} & \frac{1}{5} & 0\\
+        -\frac{3}{5} & \frac{1}{5} & 0\\
+        \frac{3}{5} & -\frac{1}{5} & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & -\frac{2}{5}\\
+        0 & 0 & -\frac{8}{5}
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 1\\
+        -\frac{3}{5} & \frac{1}{5} & 0\\
+        \frac{3}{5} & -\frac{1}{5} & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & -\frac{2}{5}\\
+        0 & 0 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 1\\
+        -\frac{3}{5} & \frac{1}{5} & 0\\
+        -\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 1\\
+        -\frac{3}{4} & \frac{1}{4} & -\frac{1}{4}\\
+        -\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
+      \end{bmatrix},
+    \end{align*}
+    so $B$ is invertible and its inverse is
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 1\\
+        -\frac{3}{4} & \frac{1}{4} & -\frac{1}{4}\\
+        -\frac{3}{8} & \frac{1}{8} & -\frac{5}{8}
+      \end{bmatrix}.
+    \end{align*}
 \end{enumerate}
 
 \end{document}
