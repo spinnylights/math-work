@@ -717,6 +717,165 @@
       \end{bmatrix},
     \end{align*}
     where $x_3$ can take on any value in the field.
+
+  \item
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        1 & 2 & 3 & 4\\
+        0 & 2 & 3 & 4\\
+        0 & 0 & 3 & 4\\
+        0 & 0 & 0 & 4
+      \end{bmatrix}.
+    \end{align*}
+    We would like to know if $A$ is invertible, and what $A^{-1}$
+    is if so.
+
+    $A$ seems obviously invertible at first glance, so let's find
+    the inverse.
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 2 & 3 & 4\\
+        0 & 2 & 3 & 4\\
+        0 & 0 & 3 & 4\\
+        0 & 0 & 0 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 2 & 3 & 4\\
+        0 & 0 & 3 & 4\\
+        0 & 0 & 0 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 2 & 0 & 0\\
+        0 & 0 & 3 & 4\\
+        0 & 0 & 0 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & 1 & -1 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 2 & 0 & 0\\
+        0 & 0 & 3 & 0\\
+        0 & 0 & 0 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & 1 & -1 & 0\\
+        0 & 0 & 1 & -1\\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 3 & 0\\
+        0 & 0 & 0 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+        0 & 0 & 1 & -1\\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 4
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+        0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+        0 & 0 & 0 & 1
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+        0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+        0 & 0 & 0 & \frac{1}{4}
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 2 & 3 & 4\\
+        0 & 2 & 3 & 4\\
+        0 & 0 & 3 & 4\\
+        0 & 0 & 0 & 4
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+        0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+        0 & 0 & 0 & \frac{1}{4}
+      \end{bmatrix}
+      =&\\
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+        0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+        0 & 0 & 0 & \frac{1}{4}
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 2 & 3 & 4\\
+        0 & 2 & 3 & 4\\
+        0 & 0 & 3 & 4\\
+        0 & 0 & 0 & 4
+      \end{bmatrix}
+      =&\\
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+      \end{bmatrix},
+    \end{align*}
+    so $A$ is invertible and
+    \begin{align*}
+      A^{-1} =
+      \begin{bmatrix}
+        1 & -1 & 0 & 0\\
+        0 & \frac{1}{2} & -\frac{1}{2} & 0\\
+        0 & 0 & \frac{1}{3} & -\frac{1}{3}\\
+        0 & 0 & 0 & \frac{1}{4}
+      \end{bmatrix}.
+    \end{align*}
 \end{enumerate}
 
 \end{document}
