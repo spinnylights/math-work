@@ -1547,4 +1547,27 @@
   inverse by $A^{-1}$, and call it the \textbf{inverse} of $A$.
 \end{defn}
 
+\begin{thm} \label{thm:ifinvertsoinv}
+  Let $A$ and $B$ be $n \times n$ matrices over the same field
+  $F$.
+  \begin{enumerate}
+    \item If $A$ is invertible, so is $A^{-1}$, and $(A^{-1})^{-1}
+      = A$.
+    \item If both $A$ and $B$ are invertible, so is $AB$, and
+      $(AB)^{-1} = B^{-1}A^{-1}$.
+  \end{enumerate}
+
+  \begin{proof}
+    If $A$ is invertible, $AA^{-1} = A^{-1}A = I$. Then
+    $A^{-1}AA^{-1}A = IA^{-1}A = A^{-1}A = I$ and
+    $AA^{-1}AA^{-1} = IAA^{-1} = AA^{-1} = I$, so $A^{-1}A =
+    AA^{-1} = I$, and thus $A^{-1}$ is invertible and
+    $(A^{-1})^{-1} = A$. This proves (1).
+
+    If both $A$ and $B$ are invertible, $ABB^{-1}A^{-1} = AA^{-1}
+    = B^{-1}A^{-1}AB = B^{-1}B = I$, so $AB$ is invertible and
+    $(AB)^{-1} = B^{-1}A^{-1}$. This proves (2).
+  \end{proof}
+\end{thm}
+
 \end{document}
