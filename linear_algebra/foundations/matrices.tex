@@ -1617,4 +1617,30 @@
   \end{proof}
 \end{thm}
 
+\begin{cor}
+  If $A$ is an invertible $n \times n$ matrix, there is a
+  sequence of elementary row operations that reduces $A$ to the
+  $n \times n$ identity matrix $I$, and that same set of
+  operations yields $A^{-1}$ when applied to $I$.
+
+  \begin{proof}
+    Since $A$ is a product of elementary matrices, theorem
+    \ref{thm:elrowelmat} implies that there is a sequence of
+    elementary row operations $e_1,\ldots,e_k$ such that\\
+    $e_k(\ldots e_1(I)\ldots) = A$. By theorem
+    \ref{thm:elrowinv}, there is then a sequence of elementary
+    row operations $e_k^{-1},\ldots,e_1^{-1}$ such that
+    $e_1^{-1}(\ldots e_k^{-1}(A)\ldots) = I$. Going the other way
+    by theorem \ref{thm:elrowelmat}, $e_1^{-1}(\ldots
+    e_k^{-1}(I)\ldots)$ is equivalent to taking the product of
+    $I$ and a sequence of elementary matrices
+    $E_1^{-1},\ldots,E_k^{-1}$, i.e. $E_1^{-1}\ldots E_k^{-1}I$.
+    Since $E_1^{-1}\ldots E_k^{-1}IA = e_1^{-1}(\ldots
+    e_k^{-1}(A)\ldots) = I$, and $AE_1^{-1}\ldots E_k^{-1}I =
+    e_k^{-1}(\ldots e_1(e_1^{-1}(\ldots
+    e_k^{-1}(I)\ldots)\ldots)\ldots) = I$, $e_1^{-1}(\ldots
+    e_k^{-1}(I)\ldots) = A^{-1}$.
+  \end{proof}
+\end{cor}
+
 \end{document}
