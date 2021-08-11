@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Invertible matrices (exercises)}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{enumerate}
+  \item We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        1  & 2  & 1 & 0\\
+        -1 & 0  & 3 & 5\\
+        1  & -2 & 1 & 1\\
+      \end{bmatrix}.
+    \end{align*}
+    We would like to find a row-reduced echelon matrix $R$ which
+    is row-equivalent to $A$ and an invertible $3 \times 3$
+    matrix $P$ such that $R = PA$.
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 2  & 1 & 0\\
+        -1 & 0  & 3 & 5\\
+        1  & -2 & 1 & 1\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 2  & 1 & 0\\
+        0  & 2  & 4 & 5\\
+        1  & -2 & 1 & 1\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        1 & 1 & 0\\
+        0 & 0 & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 2  & 1 & 0\\
+        0  & 2  & 4 & 5\\
+        0  & -4 & 0 & 1\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1  & 0 & 0\\
+        1  & 1 & 0\\
+        -1 & 0 & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & -3 & -5\\
+        0  & 2  & 4  & 5\\
+        0  & -4 & 0  & 1\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        0  & -1 & 0\\
+        1  & 1  & 0\\
+        -1 & 0  & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & -3 & -5\\
+        0  & 2  & 4  & 5\\
+        0  & 0  & 8  & 11\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        0  & -1 & 0\\
+        1  & 1  & 0\\
+        1  & 2  & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & -3 & -5\\
+        0  & 1  & 2  & \frac{5}{2}\\
+        0  & 0  & 8  & 11\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        0  & -1 & 0\\
+        \frac{1}{2} & \frac{1}{2} & 0\\
+        1 & 2  & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & -3 & -5\\
+        0  & 1  & 2  & \frac{5}{2}\\
+        0  & 0  & 1  & \frac{11}{8}\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        0  & -1 & 0\\
+        \frac{1}{2} & \frac{1}{2} & 0\\
+        \frac{1}{8} & \frac{1}{4} & \frac{1}{8}\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & -3 & -5\\
+        0  & 1  & 0  & -\frac{1}{4}\\
+        0  & 0  & 1  & \frac{11}{8}\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        0  & -1 & 0\\
+        \frac{1}{4} & 0 & -\frac{1}{4}\\
+        \frac{1}{8} & \frac{1}{4} & \frac{1}{8}\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & 0  & -\frac{7}{8}\\
+        0  & 1  & 0  & -\frac{1}{4}\\
+        0  & 0  & 1  & \frac{11}{8}\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{3}{8}  & -\frac{1}{4} & \frac{3}{8}\\
+        \frac{1}{4} & 0 & -\frac{1}{4}\\
+        \frac{1}{8} & \frac{1}{4} & \frac{1}{8}\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 0  & 0  & -\frac{7}{8}\\
+        0  & 1  & 0  & -\frac{1}{4}\\
+        0  & 0  & 1  & \frac{11}{8}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \frac{3}{8}  & -\frac{1}{4} & \frac{3}{8}\\
+        \frac{1}{4} & 0 & -\frac{1}{4}\\
+        \frac{1}{8} & \frac{1}{4} & \frac{1}{8}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        1  & 2  & 1 & 0\\
+        -1 & 0  & 3 & 5\\
+        1  & -2 & 1 & 1\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        \frac{3}{8}  & -\frac{1}{4} & \frac{3}{8}\\
+        \frac{1}{4} & 0 & -\frac{1}{4}\\
+        \frac{1}{8} & \frac{1}{4} & \frac{1}{8}\\
+      \end{bmatrix}
+    \end{align*}
+    is row-equivalent to $I$ as we have seen and is thus
+    invertible, so
+    \begin{align*}
+      R =
+      \begin{bmatrix}
+        1  & 0  & 0  & -\frac{7}{8}\\
+        0  & 1  & 0  & -\frac{1}{4}\\
+        0  & 0  & 1  & \frac{11}{8}\\
+      \end{bmatrix}\ \text{and}\
+      P =
+      \begin{bmatrix}
+        \frac{3}{8}  & -\frac{1}{4} & \frac{3}{8}\\
+        \frac{1}{4} & 0 & -\frac{1}{4}\\
+        \frac{1}{8} & \frac{1}{4} & \frac{1}{8}\\
+      \end{bmatrix}.
+    \end{align*}
+\end{enumerate}
+
+\end{document}
