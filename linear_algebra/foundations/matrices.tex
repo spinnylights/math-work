@@ -1570,4 +1570,19 @@
   \end{proof}
 \end{thm}
 
+\begin{thm} \label{thm:elmatsareinv}
+  Elementary matrices are invertible.
+
+  \begin{proof}
+    If $E = e(I)$ is an elementary matrix for some elementary row
+    operation $e$, we know by theorem \ref{thm:elrowinv} that
+    there is an elementary row operation $e^{-1}$ such that
+    $e^{-1}(e(I)) = I$. By theorem \ref{thm:elrowelmat}, there is
+    an elementary matrix $E' = e^{-1}(I)$ such that $E'E =
+    e^{-1}(E) = e^{-1}(e(I)) = I$. Likewise, $EE' = e(E') =
+    e(e^{-1}(I)) = I$, so $E' = E^{-1}$ and thus $E$ is
+    invertible.
+  \end{proof}
+\end{thm}
+
 \end{document}
