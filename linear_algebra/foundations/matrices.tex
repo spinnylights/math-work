@@ -1716,4 +1716,36 @@
   \end{proof}
 \end{cor}
 
+\begin{cor}
+  If $A = A_{1}A_{2}\cdots A_{k}$ where $A_{1},\ldots,A_{k}$ are
+  $n \times n$ (square) matrices, $A$ is invertible if and only
+  if every $A_j$, $1 \leq j \leq k$ is invertible.
+
+  \begin{proof}
+    If every $A_j$, $1 \leq j \leq k$ is invertible, there is a
+    product of their inverses $A_{k}^{-1}A_{k-1}^{-1}\cdots
+    A_{1}^{-1}$ such that $A_{k}^{-1}\cdots A_{1}^{-1}A_{1}\cdots
+    A_{k} = A_{1}\cdots A_{k}A_{k}^{-1}\cdots A_{1}^{-1} =
+    A_{k}^{-1}\cdots A_{1}^{-1}A = AA_{k}^{-1}\cdots A_{1}^{-1} =
+    I$. Therefore $A_{k}^{-1}\cdots A_{1}^{-1} = A^{-1}$ and thus
+    $A$ is invertible. Likewise, if $A = A_{1}A_{2}\cdots A_{k}$
+    is invertible, its inverse must be $A^{-1} =
+    A_{k}^{-1}A_{k-1}^{-1}\cdots A_{1}^{-1}$ by the same
+    argument, and therefore every $A_j$, $1 \leq j \leq k$ must
+    be invertible as well.
+
+    If there is some $A_p$, $1 \leq p \leq k$ that is not
+    invertible, the product $A^{-1} =
+    A_{k}^{-1}A_{k-1}^{-1}\cdots A_{1}^{-1}$ cannot be defined,
+    so $A$ is not invertible in this case. Likewise, if $A =
+    A_{1}A_{2}\cdots A_{k}$ is not invertible, it implies that
+    $A^{-1} = A_{k}^{-1}A_{k-1}^{-1}\cdots A_{1}^{-1}$ is not
+    defined, which is only possible if at least one of
+    $A_{1}^{-1},\ldots,A_k^{-1}$ is not defined. Therefore if $A$
+    is not invertible, at least one of
+    $A_{1}^{-1},\ldots,A_k^{-1}$ is not invertible, as well as
+    the converse.
+  \end{proof}
+\end{cor}
+
 \end{document}
