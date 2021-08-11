@@ -1585,4 +1585,36 @@
   \end{proof}
 \end{thm}
 
+\begin{thm} \label{thm:invroweqelmatprod}
+  If $A$ is an $n \times n$ matrix, the following statements are
+  equivalent.
+  \begin{enumerate}
+    \item $A$ is invertible.
+    \item $A$ is row-equivalent to the $n \times n$ identity
+      matrix.
+    \item $A$ is a product of elementary matrices.
+  \end{enumerate}
+
+  \begin{proof}
+    If $A$ is invertible, then $I = A^{-1}A$, where $I$ is the $n
+    \times n$ identity matrix. By corollary
+    \ref{cor:rowequivelmatprod}, $I$ is then row-equivalent to
+    $A$, and thus $A$ is row-equivalent to $I$ by corollary
+    \ref{cor:rowequivisequivrel}. Thus (1) implies (2), and (2)
+    implies (1) by the same argument in reverse. Likewise, $I =
+    AA^{-1}$, so $A$ is a product of elementary matrices by
+    corollary \ref{cor:rowequivelmatprod}. Thus (1) implies (3),
+    so (2) implies (3) as well by proxy.
+
+    If $A$ is a product of elementary matrices $E_1 \ldots E_n$,
+    theorem \ref{thm:elmatsareinv} implies that there is a
+    product of their inverses $E_n^{-1} \ldots E_1^{-1}$ such
+    that $I =\\ E_n^{-1} \ldots E_1^{-1}(E_1 \ldots E_n) = (E_1
+    \ldots E_n)E_n^{-1} \ldots E_1^{-1} = AA^{-1} = A^{-1}A$.
+    Thus $A$ is invertible, so (3) implies (1), and thus (3)
+    implies (2) as well by proxy. Therefore (1), (2), and (3) are
+    equivalent.
+  \end{proof}
+\end{thm}
+
 \end{document}
