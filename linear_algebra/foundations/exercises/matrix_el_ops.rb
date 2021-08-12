@@ -6,6 +6,10 @@ class Numeric
   def latex
     to_s
   end
+
+  def pprint
+    to_s
+  end
 end
 
 class Rational
@@ -26,6 +30,14 @@ class Rational
     end
 
     "#{start}{#{num}}{#{denom}}"
+  end
+
+  def pprint
+    if denominator == 1
+      to_i.to_s
+    else
+      to_s
+    end
   end
 end
 
@@ -59,6 +71,19 @@ class Complex
 
     "#{r}#{sep}#{i}"
   end
+
+  def pprint
+    if imaginary == 0
+      to_r.to_s
+    else
+      str = to_s
+      str.gsub!(/\/1([^0-9])/, '\1')
+      str.sub!(/(\+|\-)1i/, '\1i')
+      str.sub!(/^0(\+|\-)/, '\1')
+      str.sub!(/^\+/, '')
+      str
+    end
+  end
 end
 
 class Matrix
@@ -86,24 +111,11 @@ class Matrix
 
       neg = false
       col.map do |e|
-        if e.class == Complex && e.imaginary == 0
-          e = e.to_r
-        end
-
-        if e.class == Rational && e.denominator == 1
-          e = e.to_i
-        end
-
-        e = e.to_s
+        e = e.pprint
 
         if e[0] == '-'
           neg = true
         end
-
-        e.gsub!(/\/1([^0-9])/, '\1')
-        e.sub!(/(\+|\-)1i/, '\1i')
-        e.sub!(/^0(\+|\-)/, '\1')
-        e.sub!(/^\+/, '')
 
         if e.length > max_str_len
           max_str_len = e.length
