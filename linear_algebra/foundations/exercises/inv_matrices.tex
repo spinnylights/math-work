@@ -965,6 +965,84 @@
     system $AX = 0$ has a solution other than $X = 0$. By the
     same argument, this implies that $AB = 0$ as a whole has a
     solution other than $B = 0$.
+
+  \item
+    If
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        a & b\\
+        c & d\\
+      \end{bmatrix},
+    \end{align*}
+    we would like to prove, using elementary row operations, that
+    $A$ is invertible if and only if $(ad - bc) \neq 0$.
+    \begin{align*}
+      \begin{bmatrix}
+        a & b\\
+        c & d\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{b}{a}\\
+        c & d\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{a} & 0\\
+        0 & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{b}{a}\\
+        0 & \frac{ad - bc}{a}\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{a} & 0\\
+        -\frac{c}{a} & 1\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & \frac{b}{a}\\
+        0 & 1\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{1}{a} & 0\\
+        -\frac{c}{ad - bc}
+          & \frac{a}{ad - bc}\\
+      \end{bmatrix}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+      \end{bmatrix},\
+      \begin{bmatrix}
+        \frac{d}{ad - bc}
+          & -\frac{b}{ad - bc}\\
+        -\frac{c}{ad - bc}
+          & \frac{a}{ad - bc}\\
+      \end{bmatrix}.
+    \end{align*}
+    Therefore,
+    \begin{align*}
+      A^{-1} =
+      \begin{bmatrix}
+        \frac{d}{ad - bc}
+          & -\frac{b}{ad - bc}\\
+        -\frac{c}{ad - bc}
+          & \frac{a}{ad - bc}\\
+      \end{bmatrix}.
+    \end{align*}
+    Since the entries of $A^{-1}$ are only defined if $(ad - bc)
+    \neq 0$, $A$ is only invertible if this is the case.
+
 \end{enumerate}
 
 \end{document}
