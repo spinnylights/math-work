@@ -1258,6 +1258,97 @@
     entries on its main diagonal for there to be a set of
     elementary row operations that would map it to $I$.
 
-\end{enumerate}
+  \item
+    We would like to prove that if $A$ is an $m \times n$ matrix,
+    $B$ is an $n \times m$ matrix, and $n < m$, $AB$ is not
+    invertible.
 
+    Because $A$ is an $m \times n$ matrix where $n < m$, it is
+    row-equivalent to a row-reduced echelon matrix with at least
+    one all-$0$ row. This is because it has more rows than
+    columns, so even if every column in the row-reduced echelon
+    matrix has a $1$, at least one row will not. As a result,
+    $AB$ will be row-equivalent to a row-reduced echelon matrix
+    with at least one all-$0$ row as well.
+
+    If we denote the row-reduced echelon matrix to which $A$ is
+    row-equivalent as $R_a$, and the series of elementary row
+    operations that maps $R_a$ to $A$ as $e_a()$, then $AB =
+    e_a(R_a)B$. Since $e_a$ has an inverse $e_a^{-1}$ that is
+    also a set of elementary row operations, $e_a(R_a)$ is
+    row-equivalent to $e_a^{-1}(e_a(R_a)) = R_a$, and thus $AB$
+    is row-equivalent to $R_aB$. Because $R_a$ must have at least
+    one all-0 row as we have described, $R_aB$ must as well, and
+    thus $R_aB$ cannot be row-equivalent to $I$, which means $AB$
+    cannot be either. As such, $AB$ must not be invertible.
+
+    For example:
+
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0\\
+        0 & 1\\
+        0 & 0\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        b_{11} & b_{21} & b_{31}\\
+        b_{12} & b_{22} & b_{32}\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        b_{11} & b_{21} & b_{31}\\
+        b_{12} & b_{22} & b_{32}\\
+        0 & 0 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        b_{11} & b_{21} & b_{31}\\
+        b_{12} & b_{22} & b_{32}\\
+        0 & 0 & 0\\
+      \end{bmatrix}
+    \end{align*}
+    might be row-equivalent to
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 0\\
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 1 & 0\\
+        0 & 0 & 1\\
+        0 & 0 & 0\\
+      \end{bmatrix},
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 1 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+      \end{bmatrix},
+      \begin{bmatrix}
+        0 & 0 & 1\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+      \end{bmatrix},\ \text{or}\
+      \begin{bmatrix}
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+      \end{bmatrix},
+    \end{align*}
+    but not
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1\\
+      \end{bmatrix}.
+    \end{align*}
+
+\end{enumerate}
 \end{document}
