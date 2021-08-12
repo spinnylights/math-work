@@ -943,6 +943,28 @@
     \end{align*}
     Therefore, $C$ is not row-equivalent to the $2 \times 2$
     identity matrix by theorem 4, so $C$ is not invertible.
+
+  \item
+    If $A$ is an $n \times n$ matrix, we would like to prove that
+    \begin{enumerate}
+      \item if $A$ is invertible and $AB = 0$ for some $n \times
+        n$ matrix $B$, then $B = 0$, and
+      \item if $A$ is not invertible, then there exists an $n
+        \times n$ matrix $B$ such that $AB = 0$ but $B \neq 0$.
+    \end{enumerate}
+
+    By theorem 13, if $A$ is invertible, $AX = 0$, where $X$ is
+    an $n \times 1$ matrix, has only the trivial solution $X =
+    0$. For $AB = 0$, each individual column of $B$ can be taken
+    separately in an equation $AB_j = 0$, $1 \leq j \leq n$, to
+    find the values of $B$. By theorem 13, this can only result
+    in values of $0$ for each column of $B$, and thus $B = 0$ as
+    a whole.
+
+    Also by theorem 13, if $A$ is not invertible, the homogeneous
+    system $AX = 0$ has a solution other than $X = 0$. By the
+    same argument, this implies that $AB = 0$ as a whole has a
+    solution other than $B = 0$.
 \end{enumerate}
 
 \end{document}
