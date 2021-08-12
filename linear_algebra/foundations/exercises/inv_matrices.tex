@@ -1043,6 +1043,221 @@
     Since the entries of $A^{-1}$ are only defined if $(ad - bc)
     \neq 0$, $A$ is only invertible if this is the case.
 
+  \item
+    We would like to prove that an upper-triangular (square)
+    matrix $A$ is invertible if and only if every entry on its
+    main diagonal is different from $0$.
+
+    For $A$ to be invertible, it must be row-equivalent to $I$.
+    However, if $A$ has at least one $0$ entry on its main
+    diagonal, there is no set of elementary row operations that
+    would map $I$ to $A$.
+
+    $I$ has every entry on its main diagonal equal to $1$ and all
+    other entries equal to $0$. The only set of elementary row
+    operations that would map one of the entries on its main
+    diagonal to $0$ would be to add that entry's row to another
+    and then to subtract that row from the entry's row, or to
+    swap two of the rows. For example:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 1 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 0 & 0  & 0\\
+        0 & 0 & -1 & 0\\
+        0 & 1 & 1  & 0\\
+        0 & 0 & 0  & 1\\
+      \end{bmatrix}.
+    \end{align*}
+    However, this matrix is not upper-triangular. If we do one of
+    the upper rows:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1 & 1 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1  & 1 & 0 & 0\\
+        -1 & 0 & 0 & 0\\
+        0  & 0 & 1 & 0\\
+        0  & 0 & 0 & 1\\
+      \end{bmatrix},
+    \end{align*}
+    we can see that this matrix is not upper-triangular either.
+    Same if we swap:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(3)}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 0 & 1\\
+        0 & 0 & 1 & 0\\
+      \end{bmatrix};
+    \end{align*}
+    one row will end up with a non-$0$ entry below the main
+    diagonal no matter which two rows we pick.
+
+    To return the matrix to a state of upper-triangularity, we
+    would need to make all the entries on the main diagonal
+    non-$0$ again:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0  & 0\\
+        0 & 0 & -1 & 0\\
+        0 & 1 & 1  & 0\\
+        0 & 0 & 0  & 1\\
+      \end{bmatrix}
+      \xrightarrow{(3)}
+      \begin{bmatrix}
+        1 & 0 & 0  & 0\\
+        0 & 1 & 1  & 0\\
+        0 & 0 & -1 & 0\\
+        0 & 0 & 0  & 1\\
+      \end{bmatrix};
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1  & 1 & 0 & 0\\
+        -1 & 0 & 0 & 0\\
+        0  & 0 & 1 & 0\\
+        0  & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        1  & 1 & 0 & 0\\
+        0  & 1 & 0 & 0\\
+        0  & 0 & 1 & 0\\
+        0  & 0 & 0 & 1\\
+      \end{bmatrix};
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 0 & 1\\
+        0 & 0 & 1 & 0\\
+      \end{bmatrix}
+      \xrightarrow{(3)}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}.
+    \end{align*}
+    To have a route from $I$ to an upper-triangular matrix with a
+    $0$ on its main diagonal, we would need an elementary row
+    operation that allowed for multiplying a row by $0$. Since we
+    have no such operation available, $I$ cannot be
+    row-equivalent to such a matrix, and therefore such a matrix
+    cannot be invertible.
+
+    However, if every entry on the main diagonal of $A$ is
+    different from $0$, $A$ will always be row-equivalent to $I$.
+    $I$ can then be mapped to any such $A$ through a combination
+    of elementary row operations (1) and (2), because in each
+    column of $I$, there are zeroes above the main diagonal and
+    ones on the main diagonal. Each $1$ on the main diagonal can
+    be mapped to any scalar using (1):
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        a & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(1)}
+      \begin{bmatrix}
+        a & 0 & 0 & 0\\
+        0 & b & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+      \end{bmatrix}
+      \xrightarrow{(1)}\cdots
+    \end{align*}
+    The entries above the main diagonal can then be mapped to any
+    scalar using (2):
+    \begin{align*}
+      \begin{bmatrix}
+        a & 0 & 0 & 0\\
+        0 & b & 0 & 0\\
+        0 & 0 & c & 0\\
+        0 & 0 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+      \begin{bmatrix}
+        a & \frac{e}{b}b & 0 & 0\\
+        0 & b & 0 & 0\\
+        0 & 0 & c & 0\\
+        0 & 0 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{}
+      \begin{bmatrix}
+        a & e & 0 & 0\\
+        0 & b & 0 & 0\\
+        0 & 0 & c & 0\\
+        0 & 0 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{(2)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        a & e & 0 & 0\\
+        0 & b & \frac{f}{c}c & 0\\
+        0 & 0 & c & 0\\
+        0 & 0 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{}
+      \begin{bmatrix}
+        a & e & 0 & 0\\
+        0 & b & f & 0\\
+        0 & 0 & c & 0\\
+        0 & 0 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{(2)}\cdots
+    \end{align*}
+    So, if every entry on the main diagonal of $A$ is different
+    from $0$, $I$ will be row-equivalent to $A$, and thus $A$
+    will be invertible. Likewise, if $A$ is invertible, $A$ is
+    row-equivalent to $I$, and thus $A$ must have all non-$0$
+    entries on its main diagonal for there to be a set of
+    elementary row operations that would map it to $I$.
+
 \end{enumerate}
 
 \end{document}
