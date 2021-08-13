@@ -1350,5 +1350,204 @@
       \end{bmatrix}.
     \end{align*}
 
+  \item
+    We would like to prove that, if $A$ is an $m \times n$
+    matrix, we can, through a finite number of elementary row
+    and/or column operations, map $A$ to a matrix $R$ which is
+    both \say{row-reduced echelon} and \say{column-reduced
+    echelon}, i.e. such that $R_{ij} = 0$ if $i \neq j$, $R_{ii}
+    = 1$, $1 \leq i \leq r$, $R_{ii} = 0$ if $i > r$. We would
+    also like to show that $R = PAQ$, where $P$ is an invertible
+    $m \times m$ matrix and $Q$ is an invertible $n \times n$
+    matrix.
+
+    We know already that $A$ can be mapped via a finite number of
+    elementary row operations to a row-reduced echelon matrix by
+    theorems 4 and 5. We denote this matrix by $A_r$. The
+    following is true of $A_r$:
+
+    \begin{enumerate}
+      \item
+        in each of $A_r$'s rows, the first non-zero element is
+        $1$,
+      \item
+        for a column $c$ of $A_r$, if $c$ contains the first
+        non-zero element of a row, all the other elements in $c$
+        are $0$,
+      \item
+        every all-0 row of $R$ comes after every non-all-0 row,
+        and
+      \item
+        if rows $1,\ \ldots,\ r$ are the non-all-0 rows of $R$,
+        and $k_i,\ i = 1, \ldots,\ r$ are the indices of the
+        first non-0 entry of the corresponding row $i$, $k_1$ has
+        the lowest value, $k_2$ the next-lowest, etc.
+    \end{enumerate}
+
+    In addition to these, the following must also be true for
+    $R$:
+
+    \begin{enumerate}
+      \item
+        in each of $R$'s columns, the first non-zero element is
+        $1$,
+      \item
+        for a row $r$ of $R$, if $r$ contains the first non-zero
+        element of a column, all the other elements in $r$ are
+        $0$,
+      \item
+        every all-0 column of $R$ comes after every non-all-0
+        column, and
+      \item
+        if columns $1,\ \ldots,\ r$ are the non-all-0 columns of
+        $R$, and $k_i,\ i = 1, \ldots,\ r$ are the indices of the
+        first non-0 entry of the corresponding column $i$, $k_1$
+        has the lowest value, $k_2$ the next-lowest, etc.
+    \end{enumerate}
+
+    Here are the possible elementary column operations:
+
+    \begin{enumerate}
+        \item
+          multiplication of one column of $A_r$ by a non-zero
+          scalar $n$,
+        \item
+          replacement of the $c$th column of $A_r$ by column $c$
+          plus $n$ times column $d$, $n$ any scalar and $c \neq
+          d$, and
+        \item
+          interchange of two columns of $A_r$.
+    \end{enumerate}
+
+    We denote the row-reduced echelon criteria by $r_a$ through
+    $r_d$, the column-reduced echelon criteria by $c_a$ through
+    $c_d$, and the elementary column operations by $e_a$ through
+    $e_c$.
+
+    We know that $c_a$ must be true for those columns of $A_r$
+    that contain the first non-0 element of a row by $r_a$ and
+    $r_b$. If the last column of $A_r$ contains the first non-0
+    element of a row, $c_a$ is satisfied.
+
+    Otherwise, let $j$ be the index of the first column of $A_r$
+    for which $c_a$ is unsatisfied. This column must also not
+    satisfy $c_b$ by $r_a$. Let $i$ be the smallest index such
+    that $A_{ij} \neq 0$. We know that the first non-0 entry in
+    row $i$ is $1$ by $r_a$ and that the other entries in the
+    column of that first non-0 entry are $0$ by $r_b$. We denote
+    this first non-0 entry in $i$ by $i_1$.  We can add $-A_{ij}$
+    times the column of $i_1$ to column $j$ by $e_b$, which maps
+    $A_{ij}$ to $0$ and leaves the remaining entries in column
+    $j$ unaffected. This process can be repeated until all the
+    remaning non-0 entries in column $j$ are mapped to $0$. Then
+    column $j$ satisfies $c_a$ and $c_b$, since any entries in
+    $j$ that do not have a $1$ in their row are already $0$ by
+    $r_c$. This process can then be repeated for the remaining
+    columns of $A_r$ that do not satisfy $c_a$ and $c_b$.
+
+    This maps every column in $A_r$ that does not satisfy $c_a$
+    and $c_b$ to an all-0 column. By $r_d$, these columns must
+    all come after those columns that contain non-0 elements, so
+    this process also maps $A_r$ to a matrix that satisfies
+    $c_c$. Furthermore, the columns that contain non-0 elements
+    satisfy $c_d$ by $r_d$, so this process maps $A_r$ to $R$,
+    and therefore $A$ can be mapped to $R$ through a finite
+    number of elementary row and/or column operations.
+
+    Here is an example using a $2 \times 4$ matrix:
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & a & b\\
+        0 & 1 & c & d\\
+      \end{bmatrix}
+      \xrightarrow{(e_b)}
+      \begin{bmatrix}
+        1 & 0 & (a - a) & b\\
+        0 & 1 & (c - 0) & d\\
+      \end{bmatrix}
+      \xrightarrow{}
+      \begin{bmatrix}
+        1 & 0 & 0 & b\\
+        0 & 1 & c & d\\
+      \end{bmatrix}
+      \xrightarrow{(e_b)}
+    \end{align*}
+    \begin{align*}
+      \begin{bmatrix}
+        1 & 0 & 0 & b\\
+        0 & 1 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{(e_b)}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & d\\
+      \end{bmatrix}
+      \xrightarrow{(e_b)}
+      \begin{bmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+      \end{bmatrix}.
+    \end{align*}
+
+    Now, we already know that $A_r = PA$ where $P$ is an
+    invertible $m \times m$ matrix by corollary 12.2. If $R =
+    PAQ$, this implies that $R = A_rQ$.
+
+    We have shown that there is a finite number of elementary
+    column operations that maps $A_r$ to $R$; in particlar, $A_r$
+    can be mapped to $R$ through a finite number of applications
+    of $e_b$. If $c$ and $d$ are column indices and $n$ is a
+    scalar, $e_b$ can be more rigorously defined as
+    \begin{equation*}
+      e_b(A)_{ij} = A_{ij} \text{ if } j \neq c,\text{ }e(A)_{ic} =
+      A_{ic} + nA_{id}.
+    \end{equation*}
+    Now consider an $n \times n$ matrix $E = e_b(I)$ for some
+    application of $e_b$. We denote the Kronecker delta by
+    $\delta$. Then
+    \begin{align*}
+      E_{ij} =
+      \begin{cases}
+        \delta_{ij},\ j \neq c\\
+        \delta_{ic} + n\delta_{id},\ j = c.
+      \end{cases}
+    \end{align*}
+    Now consider the product $A_rE$:
+    \begin{align*}
+      (A_rE)_{ij} = \sum_{k = 1}^{n}A_{r_{ik}}E_{kj} =
+      \begin{cases}
+        A_{r_{ij}},\ j \neq c\\
+        A_{r_{ic}} + nA_{r_{id}},\ j = c.
+      \end{cases}
+    \end{align*}
+
+    For example, with $c = 1$ and $d = 0$:
+    \begin{align*}
+      \begin{bmatrix}
+        a_{11} & a_{12}\\
+        a_{21} & a_{22}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & n\\
+        0 & 1
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        a_{11} & na_{11} + a_{12}\\
+        a_{21} & a_{22}\\
+      \end{bmatrix}.
+    \end{align*}
+
+    Given this, we can see that $e_b(A_r) = A_rE$. We can
+    represent the repeated applications of $e_b$ that map $A_r$
+    to $R$ by $e_{b_1},\ldots,e_{b_k}$, such that $R =
+    e_{b_k}(\ldots e_{b_1}(A_r)\ldots)$. By what we have just
+    shown, this is equivalent to the product of $A_r$ and a
+    series of matrices $E_1,\ldots,E_k$, such that
+    $e_{b_k}(\ldots e_{b_1}(A_r)\ldots) = A_rE_1\cdots E_k$. If
+    we denote $E_1,\ldots,E_k$ by $Q$, we know by theorem 8 that
+    $A_rE_1\cdots E_k = A_r(E_1\cdots E_k) = A_rQ$. Since $A_r =
+    PA$, we then have that $R = PAQ$.
+
 \end{enumerate}
 \end{document}
