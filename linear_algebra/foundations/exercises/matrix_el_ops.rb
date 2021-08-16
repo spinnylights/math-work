@@ -113,26 +113,18 @@ class Matrix
       col.map do |e|
         e = e.pprint
 
-        if e[0] == '-'
-          neg = true
-        end
-
         if e.length > max_str_len
           max_str_len = e.length
         end
 
         e
       end.map do |e|
-        spacer = ' '
-
         if e.length < max_str_len
           diff = max_str_len - e.length
           e = ' '*diff + e
-        elsif neg && e[0] != '-'
-          spacer += ' '
         end
 
-        spacer + e
+        ' ' + e
       end
     end
 
