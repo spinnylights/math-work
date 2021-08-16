@@ -1549,5 +1549,440 @@
     $A_rE_1\cdots E_k = A_r(E_1\cdots E_k) = A_rQ$. Since $A_r =
     PA$, we then have that $R = PAQ$.
 
+  \item
+    We have
+    \begin{align*}
+      A =
+      \begin{bmatrix}
+        1 &
+        \frac{1}{2} &
+        \cdots &
+        \frac{1}{n}\\
+        \frac{1}{2} &
+        \frac{1}{3} &
+        \cdots &
+        \frac{1}{n + 1}\\
+        \vdots &
+        \vdots &
+        \ddots &
+        \vdots &\\
+        \frac{1}{n} &
+        \frac{1}{n + 1} &
+        \cdots &
+        \frac{1}{2n - 1}\\
+      \end{bmatrix}.
+    \end{align*}
+    We would like to see if $A$ is invertible, and if so, if
+    $A^{-1}$ has integer entries.
+
+    We can see that
+    \begin{align*}
+      A_{ij} = \frac{1}{i + j - 1}.
+    \end{align*}
+
+    Since $A_{11} = 1$, we can map the entries in column 1 other
+    than $A_{11}$ to 0 via
+    \begin{align*}
+      f_1(A_{ij}) =
+      \begin{cases}
+        A_{ij},\ i = 1\\
+        A_{ij} - A_{i1}A_{1j},\ i \neq 1
+      \end{cases}
+      =
+      \begin{cases}
+        \frac{1}{j},\ i = 1\\
+        \frac{1}{i + j - 1} - \frac{1}{ij},\ i \neq 1.
+      \end{cases}
+    \end{align*}
+    This is equivalent to repeated application of elementary row
+    operation (2). When $i \neq 1,\ j = 1$,
+    \begin{align*}
+      f_1(A_{ij}) = A_{i1} - A_{i1}A_{11} = A_{i1} - 1A_{i1} =
+      0,
+    \end{align*}
+    so $f_1$ fulfills its purpose.
+
+    We would then like to map $A_{22}$ to 1;
+    \begin{align*}
+      f_1(A_{22}) = \frac{1}{3} - \frac{1}{4} = \frac{1}{12}.
+    \end{align*}
+    As such, we can accomplish this via
+    \begin{align*}
+      f_2(A_{ij}) =
+      \begin{cases}
+        A_{ij}, i \neq 2\\
+        12A_{ij}, i = 2,
+      \end{cases}
+    \end{align*}
+    such that
+    \begin{align*}
+      f_2(f_1(A_{ij})) =
+      \begin{cases}
+        \frac{1}{j},\ i = 1\\
+        \frac{12}{1 + j} - \frac{12}{2j},\ i = 2\\
+        \frac{1}{i + j - 1} - \frac{1}{ij},\ i > 2.
+      \end{cases}
+    \end{align*}
+    Then
+    \begin{align*}
+      f_2(f_1(A_{22}))
+        = \frac{12}{2 + 2 - 1} - \frac{12}{2(2)}
+        = \frac{12}{3} - \frac{12}{4} = 4 - 3 = 1.
+    \end{align*}
+    This is equivalent to an application of elementary row
+    operation (1).
+
+    We now need to map the entries in column 2 other than
+    $A_{22}$ to 0. This can be done via a function $f_3$ such
+    that
+    \begin{align*}
+      f_3(A_{ij}) =
+      \begin{cases}
+        A_{2j}, i = 2\\
+        A_{ij} - A_{i2}A_{2j}, i \neq 2,
+      \end{cases}
+    \end{align*}
+    such that
+    \begin{align*}
+      f_3(f_2(f_1(A_{ij}))) =
+      \begin{cases}
+        \frac{12}{1 + j} - \frac{12}{2j},\ i = 2\\
+        (\frac{1}{i + j - 1} - \frac{1}{ij})
+          - (\frac{1}{i + 1} - \frac{1}{2i})(\frac{12}{1 + j} -
+          \frac{12}{2j}), i \neq 2.
+      \end{cases}
+    \end{align*}
+    When $i \neq 2$, $j = 2$,
+    \begin{align*}
+      f_3(f_2(f_1(A_{ij})))
+      =&\ (\frac{1}{i + 1} - \frac{1}{2i})
+          - (\frac{1}{i + 1} - \frac{1}{2i})(\frac{12}{3} -
+          \frac{12}{4})\\
+      =&\ (\frac{1}{i + 1}
+          - \frac{1}{i + 1})
+          + (\frac{1}{2i}
+          - \frac{1}{2i})\\
+      =&\ 0,
+    \end{align*}
+    so $f_3$ fulfills its purpose. As with $f_1$, $f_3$ is
+    equivalent to repeated applications of elementary row
+    operation (2).
+
+    We can see a pattern emerging here. If we imagine that our
+    sequence of functions starts with a function $f_0$ equivalent
+    to identity such that
+    \begin{align*}
+      f_0(A_{ij}) =
+      \begin{cases}
+        A_{ij}, i \neq 2\\
+        1A_{ij}, i = 2,
+      \end{cases}
+    \end{align*}
+    it seems quite likely that we will be able to map $A$ to $I$
+    using a finite sequence of elementary row operations via the
+    composition of functions
+    \begin{align*}
+      f_{2n-1} \circ f_{2n-2} \circ \ldots \circ f_{0},
+    \end{align*}
+    such that a given function $f_{k}$ in this sequence is
+    defined as
+    \begin{align*}
+      f_{k}(A)_{ij} =
+      \begin{cases}
+        \begin{cases}
+          A_{ij},
+        \end{cases} k = 0,\\
+        \begin{cases}
+          f_{k-1}(A)_{ij}, i \neq k'\\
+          f_{k-1}(A)_{ii}^{-1}f_{k-1}(A)_{ij}, i = k',\\
+          \text{where}\ k' = \frac{k}{2} + 1,
+        \end{cases} k\ \text{even}, k > 0,\\
+        \begin{cases}
+          f_{k-1}(A)_{ij},\ i = k'\\
+          f_{k-1}(A)_{ij} - f_{k-1}(A)_{ik'}f_{k-1}(A)_{k'j},\ i \neq k',\\
+          \text{where}\ k' = \frac{k - 1}{2} + 1,
+        \end{cases} k\ \text{odd}, k > 0.
+      \end{cases}
+    \end{align*}
+    (If $k$ takes on the sequence $0,\ 1,\ 2,\ 3,\ldots,\ 2n-2,\
+    2n-1$, $k'$ takes on the sequence $1,\ 1,\ 2,\ 2,\ldots,\ n,\
+    n$.)
+
+    Of course, there's nothing extremely specific to $A$ about
+    this composition of functions; one imagines it would map any
+    matrix to I provided that matrix is invertible and $A_{ii}$
+    is never $0$ for even $k$.
+
+    It would be nice to prove that this composition of functions
+    maps $A$ to $I$. Not only would it resolve half of what we
+    set out to discover, but since our composition consists
+    entirely of elementary row operations (1) and (2), we could
+    then apply it to $I$ and find $A^{-1}$, which would tell us
+    whether $A^{-1}$ has all-integer entries.
+
+    For notational convenience, let's say
+    \begin{align*}
+      f_{2n-1} \circ f_{2n-2} \circ \ldots \circ f_{0} = f.
+    \end{align*}
+
+    Since we defined $f$ recursively, it seems conceivable that
+    we could prove that $f(A) = I$ by induction.  The difficulty
+    with this is that every application of $f_k$ for odd $k$ maps
+    every row whose index is not $k'$ to a different row. By the
+    nature of elementary row operation (2), this has no impact on
+    entries in columns whose index is less than $k'$ because the
+    preceeding entries in row $k'$ will be $0$, but in the
+    ultimate case of $k' = n$ the entries in column $n$ other
+    than $A_{nn}$ will be determined by the composition of every
+    prior operation. As such, characterizing them based on $A$ is
+    not especially straightforward. In other words, although we
+    can easily describe $f_{k}$ abstractly, describing it
+    concretely from the definition of $A$ is not so easy.
+
+    To be rigorous, it's worth nothing that in these "concrete
+    defintions" we are being a bit glib with our notation.
+    Technically, our above definition of $f_k$ is correct, but
+    our definitions of parts of $f$ in terms of the definition of
+    $A_{ij}$ are not, exactly. This is because $A$ is a
+    \textit{function}; at the outset of our discussion of
+    matrices we defined a matrix as a function from pairs of
+    integers into a field. Therefore each $f_k$ is actually a
+    higher-order function which associates one matrix to another;
+    our "concrete" definitions show what scalars are mapped to by
+    this new function.
+
+    Anyway, let's see if we can characterize what happens
+    step-by-step to the point where a proof by induction is
+    possible.
+
+    First, there's a few important things about $A$ we should
+    note.
+
+    If $k + l > m + n$, $A_{kl} < A_{mn}$. This is because $i,j
+    \geq 1$, and if $1 < o < p$, $\frac{1}{p} < \frac{1}{o} < 1$.
+    So, if
+    \begin{align*}
+      k + l > m + n
+    \end{align*}
+    then
+    \begin{align*}
+      k + l - 1 > m + n - 1,
+    \end{align*}
+    and thus
+    \begin{align*}
+      \frac{1}{k + l - 1} < \frac{1}{m + n - 1},
+    \end{align*}
+    which is equivalent to $A_{kl} < A_{mn}$.
+
+    Also, if $k + l = m + n$, $A_{kl} = A_{mn}$. This is because
+    \begin{align*}
+      k + l = m + n,
+    \end{align*}
+    so
+    \begin{align*}
+      k + l - 1 = m + n - 1,
+    \end{align*}
+    and thus
+    \begin{align*}
+      \frac{1}{k + l - 1} = \frac{1}{m + n - 1},
+    \end{align*}
+    which is equivalent to $A_{kl} = A_{mn}$.
+
+    Also, if $i + j > 2$, then $A_{ij} < 1$. This is
+    because, if
+    \begin{align*}
+      i + j > 2,
+    \end{align*}
+    then
+    \begin{align*}
+      i + j - 1 > 2 - 1 = 1,
+    \end{align*}
+    so
+    \begin{align*}
+      \frac{1}{i + j - 1} < 1.
+    \end{align*}
+
+    Finally, $0 < A_{ij} \leq 1$ in all cases, because $i,j \geq
+    1$ and thus $i + j \geq 2$. $A_{11} = 1$ and otherwise
+    $A_{ij} < 1$ as we showed above, so $A_{ij} \leq 1$. Also,
+    since
+    \begin{align*}
+      i + j \geq 2 > 0,
+    \end{align*}
+    then
+    \begin{align*}
+      i + j - 1 \geq 1 > 0,
+    \end{align*}
+    so
+    \begin{align*}
+      0 < \frac{1}{i + j - 1} \leq 1,
+    \end{align*}
+    and thus $0 < A_{ij} \leq 1$.
+
+    Now. For notational convenience, let's say that
+    \begin{align*}
+      A_{0_{ij}} =&\ f_0(A)_{ij},\\
+      A_{1_{ij}} =&\ f_1(f_0(A)))_{ij},
+    \end{align*}
+    and so on. Our earlier definition of $f$ then gives us
+    \begin{align*}
+      A_{k_{ij}} =
+      \begin{cases}
+        \begin{cases}
+          A_{ij},
+        \end{cases} k = 0,\\
+        \begin{cases}
+          A_{k-1_{ij}}, i \neq k'\\
+          A_{k-1_{ii}}^{-1}A_{k-1_{ij}}, i = k',\\
+          \text{where}\ k' = \frac{k}{2} + 1,
+        \end{cases} k\ \text{even}, k > 0,\\
+        \begin{cases}
+          A_{k-1_{ij}},\ i = k'\\
+          A_{k-1_{ij}} - A_{k-1_{ik'}}A_{k-1_{k'j}},\ i \neq k',\\
+          \text{where}\ k' = \frac{k - 1}{2} + 1,
+        \end{cases} k\ \text{odd}, k > 0.
+      \end{cases}
+    \end{align*}
+
+    We will also use this notation for $I$, but with a slightly
+    different definition:
+    \begin{align*}
+      I_{k_{ij}} =
+      \begin{cases}
+        \begin{cases}
+          I_{ij},
+        \end{cases} k = 0,\\
+        \begin{cases}
+          I_{k-1_{ij}}, i \neq k'\\
+          A_{k-1_{ii}}^{-1}I_{k-1_{ij}}, i = k',\\
+          \text{where}\ k' = \frac{k}{2} + 1,
+        \end{cases} k\ \text{even}, k > 0,\\
+        \begin{cases}
+          I_{k-1_{ij}},\ i = k'\\
+          I_{k-1_{ij}} - A_{k-1_{ik'}}I_{k-1_{k'j}},\ i \neq k',\\
+          \text{where}\ k' = \frac{k - 1}{2} + 1,
+        \end{cases} k\ \text{odd}, k > 0.
+      \end{cases}
+    \end{align*}
+    This way, $I_{2n-1}$ should yield $A^{-1}$.
+
+    We know that for $A_1$, $A_{1_{11}} = 1$, and
+    otherwise $A_{1_{i1}} = 0$ for $1 < i \leq n$, as we showed
+    above. Furthermore, although $A_{1_{22}}$ is less than
+    $A_{0_{22}}$, $A_{1_{22}}$ is still greater than $0$.
+    $A_{1_{22}} = A_{0_{22}} - A_{0_{21}}A_{0_{12}}$, and since
+    $A_{0} = A$,
+    \begin{align*}
+       0 < A_{0_{21}} = A_{0_{12}} < A_{0_{22}} < 1.
+    \end{align*}
+    Since $0 \leq q < r < 1$ implies that $0 \leq q^{2} < r < 1$,
+    \begin{align*}
+      0 < A_{0_{21}}A_{0_{12}} < A_{0_{22}} < 1,
+    \end{align*}
+    and therefore
+    \begin{align*}
+      0 < A_{0_{22}} - A_{0_{21}}A_{0_{12}} = A_{1_{22}}.
+    \end{align*}
+    That means $A_{1_{22}}^{-1}$ exists, so $A_{2}$ is defined.
+
+    Also, $A_{0_{22}} = \frac{1}{2 + 2 - 1} = \frac{1}{3}$, and
+    $A_{0_{21}}A_{0_{12}} = \frac{1}{(2 + 1 - 1)(2 + 1 - 1)} =
+    \frac{1}{2(2)} = \frac{1}{4}$. $\frac{1}{3} - \frac{1}{4} =
+    \frac{4}{12} - \frac{3}{12} = \frac{1}{12} = A_{1_{22}}$, so
+    $A_{1_{22}}^{-1} = 12$, an integer.
+
+    $I_0 = I$, so $I_0$ has integer entries by definition. The
+    only difference between $I_0$ and $I_1$ is that $I_{1_{i1}} =
+    I_{0_{ij}} - A_{0_{i1}}I_{0_{1j}} = 0 - 1A_{0_{i1}} =
+    -A_{0_{i1}}$, because the entries $I_{0_{1j}}$, $j > 1$ are
+    all 0.
+
+    Now, in particular, $I_{1_{21}} = -\frac{1}{2 + 1 - 1} =
+    -\frac{1}{2}$, $I_{1_{22}} = 1$, and otherwise $I_{1_{2j}} =
+    0$, $j > 2$. The only difference between $I_1$ and $I_2$ is
+    that $I_{2_{2j}} = A_{1_{22}}^{-1}I_{1_{2j}} = 12I_{1_{2j}}$.
+    $I_{2_{21}} = 12I_{1_{21}} = -\frac{12}{2} = -6$, $I_{2_{22}}
+    = 12I_{1_{22}} = 12(1) = 12$, and otherwise $12I_{2_{2j}} =
+    12(0) = 0$ for $j > 2$. So, rows 1 and 2 of $I_2$ have
+    all-integer entries, as does the rest of $I_2$ aside from the
+    rest of column 1.
+
+    What about $A_2$? Since we showed that $A_{1_{22}}^{-1}$ is
+    defined, $A_{2_{22}} = 1$, which is all we're worried about
+    here.
+
+    Now, $A_{3_{ij}} = A_{2_{ij}} - A_{2_{i2}}A_{2_{2j}}$, unless
+    $i = 2$, in which case $A_{3_{ij}} = A_{2_{ij}}$. When $j =
+    2$, $A_{2_{22}} = 1$ as we just showed, so $A_{3_{i2}} =
+    A_{2_{i2}} - A_{2_{i2}} = 0$ (unless $i = 2$). At this point,
+    $A_{3_{11}} = A_{3_{22}} = 1$, and otherwise for $i,j \leq
+    2,\ i \neq j$, $A_{3_{ij}} = 0$, so in general for $i,j \leq
+    2,\ i \neq j$, $A_{3_{ij}} = I_{ij}$. So far, so good.
+
+    What about $A_{3_{33}}$? If $A_{3_{33}} = 0$, there's no
+    $A_4$, so we need to make sure that's not the case. We know
+    that $0 < A_{0_{33}} < 1$. $A_{1_{33}} = A_{0_{33}} -
+    A_{0_{31}}A_{0_{13}}$. $A_{0_{33}} = \frac{1}{5}$ and
+    $A_{0_{31}}A_{0_{13}} = \frac{1}{3^{2}} = \frac{1}{9}$;
+    $\frac{1}{5} - \frac{1}{9} = \frac{9}{45} - \frac{5}{45} =
+    \frac{4}{45} = A_{1_{33}} \neq 0$, so we're okay there.
+    $A_{2_{33}} = A_{1_{33}}$. $A_{3_{33}} = A_{2_{33}} -
+    A_{2_{32}}A_{2_{23}}$.
+
+    $A_{2_{32}} = A_{1_{32}}$. $A_{1_{32}} = A_{0_{32}} -
+    A_{0_{31}}A_{0_{12}} = \frac{1}{4} - \frac{1}{6} =
+    \frac{1}{12}$.  $A_{2_{23}} = A_{1_{22}}^{-1}A_{1_{23}}$.
+    $A_{1_{23}} = A_{0_{23}} - A_{0_{21}}A_{0_{13}} = \frac{1}{4}
+    - \frac{1}{6} = \frac{6}{24} - \frac{4}{24} = \frac{1}{12}$,
+    so $A_{2_{23}} = 12\frac{1}{12} = 1$. Therefore $A_{3_{33}} =
+    \frac{4}{45} - 1\frac{1}{12} = \frac{48}{540} -
+    \frac{45}{540} = \frac{3}{540} = \frac{1}{180}$. So, not only
+    is $A_{3_{33}}^{-1}$ defined, it's $180$, an integer.
+
+    $I_{2_{31}}$ is the only entry in row 3 of $I_2$ that is not
+    an integer; in particuar, it's $-\frac{1}{3}$. $I_{3_{31}} =
+    I_{2_{31}} - A_{2_{32}}I_{2_{21}}$. $I_{2_{21}} = 12I_{1_21}
+    = 12(-\frac{1}{2}) = -6$. So, $I_{2_{31}} -
+    A_{2_{32}}I_{2_{21}} = -\frac{1}{3} - \frac{1}{12}(-6) =
+    -\frac{1}{3} + \frac{1}{2} = \frac{1}{6} = I_{3_{31}}$. That
+    means that $I_{4_{31}} = 180\frac{1}{6} = 30$, an integer.
+
+    $I_{3_{32}} = I_{2_{32}} - A_{2_{32}}I_{2_{22}} = 0 -
+    \frac{1}{12}12 = -1$, so $I_{4_{32}} = -180$, also an
+    integer. $I_{4_{33}} = 180$ of course, and otherwise
+    $I_{4_{3j}} = 0$ for $j > 3$. One other thing to note is that
+    $I_{3_{12}} \neq I_{2_{12}}$ as all of column 2 was affected
+    aside from $I_{2_{22}}$, but $I_{3_{12}} = I_{2_{12}} -
+    A_{2_{12}}I_{2_{22}} = 0 - \frac{1}{2}(12) = -6$, also an
+    integer. Therefore, $I_{4_{ij}}$ has all-integer entries for
+    $i \leq 3$.
+
+    At this point, we have more than set up the first half of a
+    proof by induction for $A$ being invertible and $A^{-1}$
+    having integer entries. What remains is to show this: for odd
+    $k$, given that $A_{k_{ij}} = 1$ for $1 \leq i = j \leq k'$,
+    $A_{k_{ij}} = 0$ for $1 \leq i \neq j \leq k'$, and
+    $I_{k_{ij}}$ are integers for $1 \leq i \leq k'$, then
+    $A_{k+2_{ij}} = 1$ for $1 \leq i = j \leq k' + 1$,
+    $A_{k+2_{ij}} = 0$ for $1 \leq i \neq j \leq k' + 1$, and
+    $I_{k+2_{ij}}$ are integers for $1 \leq i \leq k' + 1$.
+
+    Since $k$ is odd, we know that $A_{k+1_{(k'+1)(k'+1)}}$ =
+    $A_{k_{(k'+1)(k'+1)}}^{-1}A_{k_{(k'+1)(k'+1)}}$, which will
+    be 1 as long as $A_{k_{(k'+1)(k'+1)}} \neq 0$.
+
+    We know that $0 < A_{0_{(k'+1)(k'+1)}} \leq 1$ by the
+    definition of $A$. We also know that as of $A_k$,
+    $A_{k_{(k'+1)(k'+1)}}$ will have been modified $k'-1$ times
+    via addition/subtraction by the entries above it in the same
+    column multiplied by an entry with the same row index as
+    that entry's column.
+
+    Well, okay, I have to put this problem aside for now if I'm
+    going to keep up with my own schedule for getting through
+    this book. I'd like to return to it later, especially since
+    it relates to the harmonic series which I have a natural
+    interest in.
+
 \end{enumerate}
 \end{document}
