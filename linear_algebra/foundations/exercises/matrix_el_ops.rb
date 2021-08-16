@@ -181,3 +181,31 @@ class Matrix
     el_op_proc(*op).call(self.class.identity(column_size))
   end
 end
+
+require 'symbolic'
+
+module Symbolic
+  def pprint
+    to_s
+  end
+
+  def latex
+    LatexPrinter.print(self)
+  end
+
+  class Printer
+    class << self
+      def rational(r)
+        r.pprint
+      end
+    end
+  end
+
+  class LatexPrinter < Printer
+    class << self
+      def rational(r)
+        r.latex
+      end
+    end
+  end
+end
