@@ -99,4 +99,86 @@
   define vector addition and scalar multiplication between them.
 \end{comm}
 
+\begin{exm}
+  \textbf{The \textit{n}-tuple space}, $F^n$. Let $F$ be any
+  field, and let $V$ be the set of all $n$-tuples $\alpha =
+  (x_1,x_2,\ldots,x_n)$ of scalars $x_i$ in $F$. If $\beta =
+  (y_1,y_2,\ldots,y_n)$ with $y_i$ in $F$, the sum of $\alpha$
+  and $\beta$ is defined as
+  \begin{align*}
+    \alpha + \beta = (x_1 + y_1,x_2 + y_2,\ldots,x_n + y_n),
+  \end{align*}
+  and the product of a scalar $c$ and a vector $\alpha$ is
+  defined by
+  \begin{align*}
+    c\alpha = (cx_1,cx_2,\ldots,cx_n).
+  \end{align*}
+\end{exm}
+
+\begin{exm}
+  \textbf{The space of} $m \times n$ \textbf{matrices}, $F^{m
+  \times n}$. Let $F$ be any field and let $m$ and $n$ be
+  positive integers. Let $F^{m \times n}$ be the set of all $m
+  \times n$ matrices over $F$. The sum of two vectors $A$ and $B$
+  in $F^{m \times n}$ is defined as
+  \begin{align*}
+    (A + B)_{ij} = A_{ij} + B_{ij},
+  \end{align*}
+  and the product of a scalar $c$ and the matrix $A$ is defined
+  by
+  \begin{align*}
+    (cA)_{ij} = cA_{ij}.
+  \end{align*}
+  Notably, $F^{1 \times n} = F^n$.
+\end{exm}
+
+\begin{exm}
+  \textbf{The space of functions from a set into a field.} Let
+  $F$ be any field and let $S$ be any non-empty set. Let $V$ be
+  the set of all functions from $S$ into $F$. Then the sum of two
+  vectors $f$ and $g$ in $V$ is defined as
+  \begin{align*}
+    (f + g)(s) = f(s) + g(s).
+  \end{align*}
+  The product of the scalar $c$ and the function (vector) $f$ is
+  the function $cf$, defined as
+  \begin{align*}
+    (cf)(s) = cf(s).
+  \end{align*}
+\end{exm}
+
+\begin{comm}
+  The two preceding examples are, in fact, special cases of this
+  one. An $n$-tuple of elements of $F$ can be treated as a
+  function from the set $S$ of integers $1,\ldots,n$ into $F$,
+  just as we earlier defined an $m \times n$ matrix over $F$ as a
+  function from the set $S$ of pairs of integers, $(i,j),\ 1 \leq
+  i \leq m,\ 1 \leq j \leq n$, into $F$.
+\end{comm}
+
+\begin{exm}
+  \textbf{The space of polynomial functions over a field $F$.}
+  Let $F$ be a field and let $V$ be the set of all functions $f$
+  from $F$ into $F$ which have a rule of the form
+  \begin{align*}
+    f(x) = c_0 + c_1x + \cdots + c_nx^n,
+  \end{align*}
+  where $c_0,c_1,\ldots,c_n$ are fixed scalars in $F$ with no
+  dependence on $x$. This sort of function is called a
+  \textbf{polynomial function on $F$}. Addition and scalar
+  multiplication can be defined for this vector space in the same
+  manner as the preceding example.
+\end{exm}
+
+\begin{exm}
+  The field $\mathbb{C}$ of complex numbers can be treated as a
+  vector space over the field $\mathbb{R}$ of real numbers. More
+  generally, we can let $F$ be the field of \textit{real} numbers
+  and $V$ be the set of $n$-tuples $\alpha = (x_1,\ldots,x_n)$
+  where $x_1,\ldots,x_n$ are \textit{complex} numbers, defining
+  vector addition and scalar multiplication as we did for the
+  $n$-tuple space $F^n$, which yields a different sort of vector
+  space than either $\mathbb{C}^n$ or $\mathbb{R}^n$.
+\end{exm}
+
 \end{document}
