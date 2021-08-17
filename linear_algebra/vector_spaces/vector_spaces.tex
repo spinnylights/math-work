@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Vector spaces}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{defn}
+  A \textbf{vector space}, also known as a linear space, consists
+  of:
+  \begin{enumerate}
+    \item
+      a field $F$ of scalars;
+    \item
+      a set $V$ of objects called \textbf{vectors};
+    \item
+      a rule or operation called \textbf{vector addition},
+      which associates each pair of vectors $\alpha,\ \beta$ in
+      $V$ with a vector $\alpha + \beta$ in $V$, called the sum
+      of $\alpha$ and $\beta$, and which fulfills the criteria
+      that
+      \begin{enumerate}
+        \item
+          vector addition is commutative: $\alpha + \beta = \beta
+          + \alpha$;
+        \item
+          vector addition is associative: $\alpha + (\beta +
+          \gamma) = (\alpha + \beta) + \gamma$;
+        \item
+          there is a unique vector $0$ in $V$ called the
+          \textbf{zero vector} and which is the additive identity
+          for vector addition, i.e. $\alpha + 0 = \alpha$ for all
+          $\alpha$ in $V$;
+        \item
+          for each vector $\alpha$ in $V$ there is a unique
+          vector $-\alpha$ in $V$ which is the additive inverse
+          of $\alpha$, i.e. $\alpha + (-\alpha) = 0$;
+      \end{enumerate}
+    \item
+      a rule or operation called \textbf{scalar multiplication},
+      which associates each scalar $c$ in $F$ and vector $\alpha$
+      in $V$ with a vector $c\alpha$ in $V$, called the product
+      of $c$ and $\alpha$, and which fulfills the criteria that
+      \begin{enumerate}
+        \item
+          $c(\alpha + \beta) = c\alpha + c\beta$;
+        \item
+           $(c_1 +c_2)\alpha = c_1\alpha + c_2\alpha$;
+        \item
+          $(c_1c_2)\alpha = c_1(c_2\alpha)$;
+        \item
+          $1\alpha = \alpha$ for every $\alpha$ in $V$.
+      \end{enumerate}
+  \end{enumerate}
+  Sometimes we will refer to a vector space simply as $V$ if
+  there is no chance of confusion about the specific vector space
+  under discussion. In some cases, we will need to specify the
+  field, in which case we will say that $V$ is a \textbf{vector
+  space over the field} $F$.
+\end{defn}
+
+\begin{comm}
+  It's important to note that a vector space is a
+  \textit{composite} object, consisting of a field $F$, a set $V$
+  of some kind of objects called \say{vectors,} and two
+  operations with certain properties. You may have certain
+  preconceived ideas about what constitutes a vector, but it's
+  worth putting those aside to an extent if so, as the vectors of
+  a given vector space may be quite different from what you
+  currently imagine. In particular, the elements of $V$ need have
+  no intrinsic relationship to $F$ aside from what's needed to
+  define vector addition and scalar multiplication between them.
+\end{comm}
+
+\end{document}
