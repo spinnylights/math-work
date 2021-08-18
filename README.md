@@ -1,4 +1,4 @@
-# Zoe's math work repo
+# Zoë's math work repo
 
 Here I keep text and images I've produced in the course of
 studying math: definitions and other notes, proofs I've worked
