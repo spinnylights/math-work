@@ -128,6 +128,23 @@
 
     Thus, our definitions of vector addition and scalar multiplication for $F^{n}$
     are proper by way of a vector space.
+
+  \item
+    Given a field $F$ and a vector space $V$ over it, we would like to verify that
+    \begin{align*}
+      (\alpha_1 + \alpha_2) + (\alpha_3 + \alpha_4) =
+      [\alpha_2 + (\alpha_3 + \alpha_1)] + \alpha_4
+    \end{align*}
+    for all vectors $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ in $V$.
+
+    By 3(a) and 3(b),
+    \begin{align*}
+      (\alpha_1 + \alpha_2) + (\alpha_3 + \alpha_4) &=
+      (\alpha_2 + \alpha_1) + (\alpha_3 + \alpha_4)\\
+      &= \alpha_2 + (\alpha_1 + \alpha_3) + \alpha_4\\
+      &= \alpha_2 + (\alpha_3 + \alpha_1) + \alpha_4\\
+      &= [\alpha_2 + (\alpha_3 + \alpha_1)] + \alpha_4.
+    \end{align*}
 \end{enumerate}
 
 \end{document}
