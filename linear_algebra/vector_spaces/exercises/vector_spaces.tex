@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Vector spaces (exercises)}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{enumerate}
+  \item
+    Given a field $F$, we would like to show that $F^n$ as we
+    defined in the first example of \say{Vector spaces} is indeed
+    a vector space over $F$.
+
+    If $\alpha = (x_1,x_2,\ldots,x_n)$ of scalars $x_i$ in $F$
+    and $\beta = (y_1,y_2,\ldots,y_n)$ with $y_i$ in $F$, we have
+    that
+    \begin{align*}
+      \alpha + \beta = (x_1+y_1,\ x_2+y_2,\ \ldots,\ x_n+y_n),
+    \end{align*}
+    and thus that
+    \begin{align*}
+      \beta + \alpha = (y_1+x_1,\ y_2+x_2,\ \ldots,\ y_n+x_n).
+    \end{align*}
+    Since addition in $F$ is associative,
+    \begin{align*}
+      (x_1+y_1,\ x_2+y_2,\ \ldots,\ x_n+y_n) = (y_1+x_1,\
+      y_2+x_2,\ \ldots,\ y_n+x_n),
+    \end{align*}
+    and thus
+    \begin{align*}
+      \alpha + \beta = \beta + \alpha.
+    \end{align*}
+
+    If $\gamma = (z_1,z_2,\ldots,z_n)$ of scalars $z_i$ in $F$,
+    then
+    \begin{align*}
+      (\alpha + \beta) + \gamma = [(x_1+y_1)+z_1,\
+      (x_2+y_2)+z_2,\ \ldots,\ (x_n+y_n)+z_n].
+    \end{align*}
+    Also,
+    \begin{align*}
+      \beta + \gamma = (y_1+z_1,\ y_2+z_2,\ \ldots,\ y_n+z_n),
+    \end{align*}
+    so
+    \begin{align*}
+      \alpha + (\beta + \gamma) = [x_1+(y_1+z_1),\
+      x_2+(y_2+z_2),\ \ldots,\ x_n+(y_n+z_n)].
+    \end{align*}
+    Since addition in $F$ is commutative,
+    \begin{align*}
+      [x_1+(y_1+z_1),\ x_2+(y_2+z_2),\ \ldots,\ x_n+(y_n+z_n)]
+      &=\\
+      [(x_1+y_1)+z_1,\ (x_2+y_2)+z_2,\ \ldots,\ (x_n+y_n)+z_n],
+    \end{align*}
+    and thus
+    \begin{align*}
+      \alpha + (\beta + \gamma) = (\alpha + \beta) + \gamma.
+    \end{align*}
+
+    The zero vector in $F^{n}$ is the vector $0 =
+    (p_1,p_2,\ldots,p_n)$ for which all $p_i = 0$. This is
+    because
+    \begin{align*}
+      \alpha + 0 &= (x_1+0,\ x_2+0,\ \ldots,\ x_n+0)\\
+                 &= (x_1,\ x_2,\ \ldots,\ x_n)\\
+                 &= \alpha.
+    \end{align*}
+
+    The additive inverse of $\alpha = (x_1,x_2,\ldots,x_n)$ is
+    the vector $-\alpha =\\ (-x_1,-x_2,\ldots,-x_n)$. This is
+    because
+    \begin{align*}
+      \alpha + (-\alpha) &= (x_1-x_1,\ x_2-x_2,\ \ldots,\ x_n-x_n)\\
+                         &= (0,0,\ldots,0)\\
+                         &= 0.
+    \end{align*}
+
+    For a scalar $c$, we have that
+    \begin{align*}
+      c\alpha = (cx_1,cx_2,\ldots,cx_3).
+    \end{align*}
+    Then
+    \begin{align*}
+      c(\alpha + \beta) &= [c(x_1+y_1),\ c(x_2+y_2),\ \ldots,\ c(x_n+y_n)]\\
+                        &= (cx_1+cy_1,\ cx_2+cy_2,\ \ldots,\ cx_n+cy_n)\\
+                        &= c\alpha + c\beta,\\\\
+      (c_1+c_2)\alpha &= [(c_1+c_2)x_1,\ (c_1+c_2)x_2,\ \ldots,\ (c_1+c_2)x_n]\\
+                      &= (c_1x_1+c_2x_1,\ c_1x_2+c_2x_2,\ \ldots,\ c_1x_n+c_2x_n)\\
+                      &= c_1\alpha + c_2\alpha,\\
+      \shortintertext{and}
+      (c_1c_2)\alpha &= [(c_1c_2)x_1,\ (c_1c_2)x_2,\ \ldots,\ (c_1c_2)x_n]\\
+                     &= [c_1(c_2x_1),\ c_1(c_2x_2),\ \ldots,\ c_1(c_2x_n)]\\
+                     &= c_1(c_2\alpha).
+    \end{align*}
+    Also, for every $\alpha$ in $V$, we have that
+    \begin{align*}
+      1\alpha &= (1x_1,\ 1x_2,\ \ldots,\ 1x_n)\\
+              &= (x_1,\ x_2,\ \ldots,\ x_n)\\
+              &= \alpha.
+    \end{align*}
+
+    Thus, our definitions of vector addition and scalar multiplication for $F^{n}$
+    are proper by way of a vector space.
+\end{enumerate}
+
+\end{document}
