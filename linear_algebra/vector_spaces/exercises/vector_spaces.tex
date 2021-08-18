@@ -158,6 +158,46 @@
             &= (c_1+c_3,c_2+c_3,-c_1+c_2+c_3)
     \end{align*}
     for scalars $c_1,c_2,c_3$ in $C$.
+
+  \item
+    Given $V$ as the set of all pairs $(x,y)$ of real numbers and $F$ as the field of
+    real numbers, we have
+    \begin{align*}
+      (x,y) + (x_1,y_1) &= (x + x_1,\ y + y_1)\\
+      c(x,y) &= (cx,y).
+    \end{align*}
+    We would like to determine if $V$, together with these operations, constitutes a
+    vector space over $F$.
+
+    This definition of vector addition is the same as we have for the 2-tuple space
+    $F^{2}$, and since the requirements for vector addition don't involve scalar
+    multiplication, we can be confident that this definition is sufficient for a
+    vector space. However, this definition of scalar multiplication varies, so let's
+    look there.
+
+    If $\alpha = (x_1,x_2)$ and $\beta = (y_1,y_2)$ are vectors in $V$ and
+    $c,c_1,c_2$ are scalars in $F$,
+    \begin{align*}
+      c(\alpha + \beta) &= c[(x_1,x_2) + (y_1,y_2)]\\
+                        &= c(x_1 + y_1,x_2 + y_2)\\
+                        &= [c(x_1 + y_1),x_2 + y_2]\\
+                        &= (cx_1 + cy_1,x_2 + y_2)\\
+                        &= (cx_1,x_2) + (cy_1,y_2)\\
+                        &= c(x_1,x_2) + c(y_1,y_2)\\
+                        &= c\alpha + c\beta.\\
+      \shortintertext{However,}
+      (c_1 + c_2)\alpha &= (c_1 + c_2)(x_1,x_2)\\
+                        &= [(c_1 + c_2)x_1,x_2]\\
+                        &= (c_1x_1 + c_2x_1,x_2)\\
+                        &= (c_1x_1 + c_2x_1,x_2 + 0)\\
+                        &= (c_1x_1,x_2) + (c_2x_1,0)\\
+                        &= c_1(x_1,x_2) + c_2(x_1,0)\\
+                        &= c_1\alpha + c_2(x_1,0)\\
+                        &\neq c_1\alpha + c_2\alpha,
+    \end{align*}
+    so this definition of scalar multiplication is not sufficient for $V$ to
+    constitute a vector space.
+
 \end{enumerate}
 
 \end{document}
