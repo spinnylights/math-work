@@ -319,6 +319,109 @@
     so 4(d) is satisfied.
 
     Thus $(R^{n},\oplus,\cdot)$ is a vector space.
+
+  \item
+    Given $V$ as the set of all complex-valued functions $f$ on the real line such
+    that (for all $t$ in $\mathbb{R}$)
+    \begin{align*}
+      f(-t) = \overline{f(t)},
+    \end{align*}
+    we would like to show that $V$, together with the operations
+    \begin{align*}
+      (f + g)(t) &= f(t) + g(t)\\
+      (cf)(t) &= cf(t)
+    \end{align*}
+    is a vector space over the field of \textit{real} numbers. We would also like to
+    give an example of a function in $V$ which is not real-valued.
+
+    We might as well do the latter first since it's relatively independent of the
+    rest of the problem: one such function is
+    \begin{align*}
+      f(t) &= it.\\
+      \shortintertext{For a real number $t$,}
+      f(-t) &= -it\\
+      \shortintertext{and}
+      \overline{f(t)} &= \overline{it} = -it,
+    \end{align*}
+    so $f(-t) = \overline{f(t)}$.
+
+    This function is arguably real-valued to the extent that $f(0) = -i0 = 0$, since
+    zero is a real number. However, if $f(t)$ has any nonzero multiple of $i$ that is
+    independent of $t$ on the right side of its definition, its sign will be flipped
+    when taking $\overline{f(t)}$, and thus the conjugate of $f(t)$ will not be equal
+    to $f(-t)$ since the sign of $t$ will make no difference in that regard. The same
+    occurs if we take the absolute value of $t$ and add $1$ or other such strategies;
+    if the codomain of $f(t)$ is such that $i$ is always positive, $\overline{f(t)}$
+    will always give negative $i$ and vice versa. As such, the sign of $i$
+    \textit{must} match the sign of $t$ in the codomain of $f$ for $f$ to fit the
+    criteria, and therefore $f(0) = 0$ must be permitted.
+
+    Now, let $f,g,h$ be vectors in $V$.
+
+    For 3(a), since addition in $\mathbb{C}$ is commutative,
+    \begin{align*}
+      (f + g)(t) &= f(t) + g(t)\\
+                 &= g(t) + f(t)\\
+                 &= (g + f)(t).
+    \end{align*}
+
+    For 3(b), since addition in $\mathbb{C}$ is associative,
+    \begin{align*}
+      [f + (g + h)](t) &= f(t) + (g + h)(t)\\
+                       &= f(t) + g(t) + h(t)\\
+                       &= (f + g)(t) + h(t)\\
+                       &= [(f + g) + h](t).
+    \end{align*}
+
+    For 3(c), the zero vector in $V$ is the function $p(t) = 0$:
+    \begin{align*}
+      (f + p)(t) &= f(t) + p(t)\\
+                 &= f(t) + 0\\
+                 &= f(t).
+    \end{align*}
+
+    For 3(d), the additive inverse of $f$ is the function $(-f)$ such that $(-f)(t) =
+    -f(t)$:
+    \begin{align*}
+      [f + (-f)](t) &= f(t) + (-f)(t)\\
+                    &= f(t) - f(t)\\
+                    &= 0\\
+                    &= p(t).
+    \end{align*}
+
+    Let $c,c_1,c_2$ be scalars in $\mathbb{R}$. Note that $\mathbb{R}$ is a subset of
+    $\mathbb{C}$.
+
+    For 4(a),
+    \begin{align*}
+      c[(f + g)(t)] &= c[f(t) + g(t)]\\
+                    &= cf(t) + cg(t)\\
+                    &= (cf)(t) + (cg)(t).
+    \end{align*}
+
+    For 4(b),
+    \begin{align*}
+      (c_1 + c_2)f(t) &= c_1f(t) + c_2f(t)\\
+                      &= (c_1f)(t) + (c_2f)(t).
+    \end{align*}
+
+    For 4(c),
+    \begin{align*}
+      (c_1c_2)f(t) &= c_1c_2f(t)\\
+                   &= c_1(c_2f)(t).
+    \end{align*}
+
+    For 4(d),
+    \begin{align*}
+      1f(t) = f(t),
+    \end{align*}
+    as $f(t)$ is a complex number and $1(x + iy) = x + iy$ for real numbers $x,y$.
+
+    Now, to return momentarily to $f(t) = it$, the additive inverse of $f(t)$ in $V$
+    is $(-f)(t) = -it$, as $[f + (-f)](t) = it - it = 0 = p(t)$. $(-f)(-t) = -(-it) =
+    it$, and $\overline{(-f)(t)} = \overline{-it} = it$ as well, so $-f$ is in $V$.
+    Aside from that, the membership of $f$ in $V$ follows immediately from $f(t)$
+    being a complex number.
 \end{enumerate}
 
 \end{document}
