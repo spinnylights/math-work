@@ -198,6 +198,127 @@
     so this definition of scalar multiplication is not sufficient for $V$ to
     constitute a vector space.
 
+  \item
+    On $R^{n}$, we have two operations
+    \begin{align*}
+      \alpha \oplus \beta &= \alpha - \beta\\
+      c \cdot \alpha &= -c\alpha,
+    \end{align*}
+    where $\alpha - \beta$ and $-c\alpha$ have their conventional definitions for the
+    $n$-tuple space $F^{n}$ over $R$. We would like to determine which of the axioms
+    for a vector space are satisfied by $(R^{n},\oplus,\cdot)$.
+
+    Let $\alpha = (x_1,x_2,\ldots,x_n),\ \beta = (y_1,y_2,\ldots,y_n),\ \gamma =
+    (z_1,z_2,\ldots,z_n)$ be vectors in $R^{n}$, such that $x_i,y_i,z_i$ are scalars
+    in $R$.
+
+    Note that, for 3(c), if the zero vector in $R^{n}$ is $0 = (p_1,p_2,\ldots,p_n)$
+    where $p_i = 0$ in $R$,
+    \begin{align*}
+      \alpha \oplus 0 &= \alpha - 0\\
+                      &= (x_1,x_2,\ldots,x_n) - 0\\
+                      &= (x_1-0,\ x_2-0,\ \ldots,\ x_n-0)\\
+                      &= (x_1,x_2,\ldots,x_n)\\
+                      &= \alpha,
+    \end{align*}
+    so 3(c) is satisfied.
+
+    Also, for 3(d), the additive inverse of $\alpha$ under these conditions is
+    $\alpha$ itself; if $\alpha \oplus \beta = \alpha - \beta = 0$, then $\alpha -
+    \beta + \beta = 0 + \beta$, so $\alpha = \beta$ and thus $\alpha \oplus \alpha =
+    0$.  $\alpha$ is unique in $F^{n}$, so 3(d) is satisfied. Significantly, this
+    implies that $\alpha = -\alpha$ here.
+
+    For 3(a),
+    \begin{align*}
+      \alpha \oplus \beta &= \alpha - \beta\\
+                          &= (x_1,x_2,\ldots,x_n) - (y_1,y_2,\ldots,y_n)\\
+                          &= (x_1-y_1,\ x_2-y_2,\ \ldots,\ x_n-y_n)\\
+                          &= (-y_1+x_1,\ -y_2+x_2,\ \ldots,\ -y_n+x_n)\\
+                          &= (-y_1,-y_2,\ldots,-y_n) + (x_1,x_2,\ldots,x_n)\\
+                          &= -(y_1,y_2,\ldots,y_n) - [-(x_1,x_2,\ldots,x_n)]\\
+                          &= -\beta \oplus -\alpha.\\
+                          &= \beta \oplus \alpha,
+    \end{align*}
+    so 3(a) is satisfied.
+
+    For 3(b),
+    \begin{align*}
+      \alpha \oplus (\beta \oplus \gamma) &= \alpha - (\beta - \gamma)\\
+      &= (x_1,x_2,\ldots,x_n) - [(y_1,y_2,\ldots,y_n) - (z_1,z_2,\ldots,z_n)]\\
+      &= (x_1,x_2,\ldots,x_n) - (y_1-z_1,\ y_2-z_2,\ \ldots,\ y_n-z_n)\\
+      &= [x_1-(y_1-z_1),\ x_2-(y_2-z_2),\ \ldots,\ x_n-(y_n-z_n)]\\
+      &= (x_1-y_1+z_1,\ x_2-y_2+z_2,\ \ldots,\ x_n-y_n+z_n)\\
+      &= [(x_1-y_1)+z_1,\ (x_2-y_2)+z_2,\ \ldots,\ (x_n-y_n)+z_n]\\
+      &= (x_1-y_1,\ x_2-y_2,\ \ldots,\ x_n-y_n) + (z_1,z_2,\ldots,z_n)\\
+      &= [(x_1,x_2,\ldots,x_n) - (y_1,y_2,\ldots,y_n)] + (z_1,z_2,\ldots,z_n)\\
+      &= [(x_1,x_2,\ldots,x_n) - (y_1,y_2,\ldots,y_n)] - [-(z_1,z_2,\ldots,z_n)]\\
+      &= (\alpha - \beta) - (-\gamma)\\
+      &= (\alpha \oplus \beta) \oplus -\gamma\\
+      &= (\alpha \oplus \beta) \oplus \gamma,
+    \end{align*}
+    so 3(b) is satisfied.
+
+    Let $c,c_1,c_2$ be scalars in $R$.
+
+    For 4(a),
+    \begin{align*}
+      c \cdot (\alpha \oplus \beta) &= -c(\alpha - \beta)\\
+      &= -c[(x_1,x_2,\ldots,x_n) - (y_1,y_2,\ldots,y_n)]\\
+      &= -c(x_1-y_1,\ x_2-y_2,\ \ldots,\ x_n-y_n)\\
+      &= [-c(x_1-y_1),\ -c(x_2-y_2),\ \ldots,\ -c(x_n-y_n)]\\
+      &= [-cx_1-(-cy_1),\ -cx_2-(-cy_2),\ \ldots,\ -cx_n-(-cy_n)]\\
+      &= (-cx_1+cy_1,\ -cx_2+cy_2,\ \ldots,\ -cx_n+cy_n)\\
+      &= (-cx_1,-cx_2,\ldots,-cx_n) + (cy_1,cy_2,\ldots,cy_n)\\
+      &= -c(x_1,x_2,\ldots,x_n) + c(y_1,y_2,\ldots,y_n)\\
+      &= -c(x_1,x_2,\ldots,x_n) - [-c(y_1,y_2,\ldots,y_n)]\\
+      &= -c\alpha \oplus -c\beta\\
+      &= (c \cdot \alpha) \oplus (c \cdot \beta),
+    \end{align*}
+    so 4(a) is satisfied.
+
+    For 4(b),
+    \begin{align*}
+      (c_1 + c_2) \cdot \alpha &= -(c_1 + c_2)\alpha\\
+      &= -(c_1 + c_2)(x_1,x_2,\ldots,x_n)\\
+      &= [-(c_1 + c_2)x_1,\ -(c_1 + c_2)x_2,\ \ldots,\ -(c_1 + c_2)x_n]\\
+      &= [-(c_1 + c_2)x_1,\ -(c_1 + c_2)x_2,\ \ldots,\ -(c_1 + c_2)x_n]\\
+      &= (-c_1x_1 - c_2x_1,\ -c_1x_2 - c_2x_2,\ \ldots,\ -c_1x_n - c_2x_n)\\
+      &= (-c_1x_1,-c_1x_2,\ldots,-c_1x_n) + (-c_2x_1,-c_2x_2,\ldots,-c_2x_n)\\
+      &= -c_1(x_1,x_2,\ldots,x_n) - c_2(x_1,x_2,\ldots,x_n)\\
+      &= -c_1\alpha - c_2\alpha\\
+      &= -c_1\alpha - [-(-c_2\alpha)]\\
+      &= (c_1 \cdot \alpha) - [-(c_2 \cdot \alpha)]\\
+      &= (c_1 \cdot \alpha) \oplus -(c_2 \cdot \alpha)\\
+      &= (c_1 \cdot \alpha) \oplus (c_2 \cdot \alpha),
+    \end{align*}
+    so 4(b) is satisfied.
+
+    For 4(c),
+    \begin{align*}
+      (c_1c_2)\alpha &= -(c_1c_2)\alpha\\
+                     &= -(c_1c_2)(x_1,x_2,\ldots,x_n)\\
+                     &= (-(c_1c_2)x_1,\ -(c_1c_2)x_2,\ \ldots,\ -(c_1c_2)x_n)\\
+                     &= (-c_1c_2x_1,\ -c_1c_2x_2,\ \ldots,\ -c_1c_2x_n)\\
+                     &= [(-1)c_1c_2x_1,\ (-1)c_1c_2x_2,\ \ldots,\ (-1)c_1c_2x_n]\\
+                     &= [c_1(-1)c_2x_1,\ c_1(-1)c_2x_2,\ \ldots,\ c_1(-1)c_2x_n]\\
+                     &= [c_1(-c_2x_1),\ c_1(-c_2x_2),\ \ldots,\ c_1(-c_2x_n)]\\
+                     &= c_1(-c_2x_1,\ -c_2x_2,\ \ldots,\ -c_2x_n)\\
+                     &= c_1[-c_2(x_1,x_2,\ldots,x_n)]\\
+                     &= c_1(-c_2\alpha)\\
+                     &= c_1(c_2 \cdot \alpha),
+    \end{align*}
+    so 4(c) is satisfied.
+
+    For 4(d),
+    \begin{align*}
+      1 \cdot \alpha &= -1\alpha\\
+                     &= -\alpha\\
+                     &= \alpha,
+    \end{align*}
+    so 4(d) is satisfied.
+
+    Thus $(R^{n},\oplus,\cdot)$ is a vector space.
 \end{enumerate}
 
 \end{document}
