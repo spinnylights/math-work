@@ -293,19 +293,19 @@
   \beta$ is again in $W$.
 
   \begin{proof}
-    Because $W$ is non-empty, it must contain some vector $\rho$. Since $\rho$ is in
-    $V$, there is an element $-\rho$ in $V$ such that $\rho + (-\rho) = 0$. But if
-    for any vectors $\alpha,\ \beta$ in $W$ and each scalar $c$ in $F$, $c\alpha +
-    \beta$ is in $W$, then $(-1)\rho + \rho = -\rho + \rho = 0$ is in $W$, so both
-    $(-\rho)$ and $0$ are in $W$. Then $1\alpha + \beta = \alpha + \beta$ is in $W$
-    and $c\alpha + 0 = c\alpha$ is in $W$, so $W$ is a subspace of $V$.
+    If $c\alpha + \beta$ is in $W$, then $1\alpha + \beta = \alpha + \beta$ is in
+    $W$. Beyond this, because $W$ is non-empty, it must contain some vector $\rho$.
+    Since $\rho$ is in $V$, there is an element $-\rho$ in $V$ such that $\rho +
+    (-\rho) = 0$. Then because $c\alpha + \beta$ is in $W$, $(-1)\rho + \rho = -\rho
+    + \rho = 0$ is in $W$, which implies that $c\alpha + 0 = c\alpha$ is in $W$.
+    Finally, because $c\alpha$ is in $W$, $(-1)\alpha = -\alpha$ is in $W$, and thus
+    $W$ is a subspace of $V$.
 
-    If $W$ is a subspace of $V$, $\alpha,\beta$ are in $W$, and $c$ is a scalar in
-    $F$, then naturally $c\alpha + \beta$ is in $W$ as vector addition and scalar
-    multiplication with elements of $W$ will remain in $W$. For the same reason, if
-    $W$ is not a subspace of $V$, $c\alpha + \beta$ cannot be guaranteed to be in
-    $W$, and if $c\alpha + \beta$ is not in $W$ despite $\alpha,\beta$ being in $W$,
-    $W$ cannot be a subspace of $V$ for the same reason.
+    If $W$ is a subspace of $V$, then naturally $c\alpha + \beta$ is in $W$, as
+    vector addition and scalar multiplication with elements of $W$ will remain in
+    $W$. For the same reason, if $W$ is not a subspace of $V$, $c\alpha + \beta$
+    cannot be guaranteed to be in $W$, and if $c\alpha + \beta$ is not in $W$ despite
+    $\alpha,\beta$ being in $W$, $W$ cannot be a subspace of $V$ for the same reason.
   \end{proof}
 \end{thm}
 
