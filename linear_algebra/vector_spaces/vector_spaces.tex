@@ -548,4 +548,41 @@
   by the row vectors of $A$ is called the \textbf{row space} of $A$.
 \end{defn}
 
+\begin{exm}
+  The subspace spanned by the vectors
+  \begin{align*}
+    \alpha_1 &= (1,2,0,3,0)\\
+    \alpha_2 &= (0,0,1,4,0)\\
+    \alpha_3 &= (0,0,0,0,1)
+  \end{align*}
+  as we considered above is the row space of the matrix
+  \begin{align*}
+    \begin{bmatrix}
+      1 & 2 & 0 & 3 & 0\\
+      0 & 0 & 1 & 4 & 0\\
+      0 & 0 & 0 & 0 & 1
+    \end{bmatrix},
+  \end{align*}
+  as well as the matrix
+  \begin{align*}
+    \begin{bmatrix}
+      1  & 2  & 0 & 3  & 0\\
+      0  & 0  & 1 & 4  & 0\\
+      0  & 0  & 0 & 0  & 1\\
+      -4 & -8 & 1 & -8 & 0
+    \end{bmatrix},
+  \end{align*}
+  as $-8 = 2(-4) = 3(-4) + 4(1)$.
+\end{exm}
+
+\begin{exm}
+  Let $V$ be the space of all polynomial functions over $F$, and let $S$ be the
+  subset of $V$ consisting of the polynomial functions $f_0,f_1,f_2,\ldots$ defined
+  by
+  \begin{align*}
+    f_n(x) = x^n,\ n = 0,1,2,\ldots.
+  \end{align*}
+  Then $V$ is the subspace spanned by $S$.
+\end{exm}
+
 \end{document}
