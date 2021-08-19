@@ -126,4 +126,23 @@
   $T$ have no members in common, $S \cap T$ is the empty set.
 \end{defn}
 
+\begin{exm}
+  If $t$ is in $\mathbb{R}$, we define a subset $S_t$ of $\mathbb{R}$ which consists
+  of all $x \nless t,\ x \in \mathbb{R}$. Then
+  \begin{enumerate}
+    \item
+      $S_{t_1} \cup S_{t_2} = S_t$, where $t$ is the smaller of $t_1$ and $t_2$,
+    \item
+      $S_{t_1} \cap S_{t_2} = S_t$, where $t$ is the larger of $t_1$ and $t_2$, and
+    \item
+      if $I$ is the unit interval, i.e. the set of all $t$ in $\mathbb{R}$ such that
+      $0 \leq t \leq 1$, then
+      \begin{align*}
+        \bigcup_{t \in I}S_t &= S_0\\
+        \shortintertext{and}
+        \bigcap_{t \in I}S_t &= S_1.
+      \end{align*}
+  \end{enumerate}
+\end{exm}
+
 \end{document}
