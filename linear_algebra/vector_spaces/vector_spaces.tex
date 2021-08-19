@@ -372,4 +372,21 @@
   itself is a subspace of $V$ called its \textbf{zero subspace}.
 \end{defn}
 
+\begin{thm}
+  If $V$ is a vector space over the field $F$, then the intersection of any
+  collection of subspaces of $V$ is itself a subspace of $V$.
+
+  \begin{proof}
+    Let $\{W_n\}$ be a set of subspaces of $V$. Because any subspace contains the
+    zero vector $0$, $0 \in \bigcap_{n}W_n$, so $\bigcap_{n}W_n$ is non-empty. Thus
+    let $\alpha,\beta$ be vectors in $\bigcap_{n}W_n$. Because the sum of vectors
+    within a subspace is itself within that subspace, $\alpha + \beta$ must be within
+    all of $W_n$ simultaneously, so $(\alpha + \beta) \in \bigcap_{n}W_n$. Because
+    the product of a scalar and a vector within a subspace is itself within that
+    subspace, if $c$ is a scalar in $F$, $c\alpha \in \bigcap_{n}W_n$. Therefore,
+    $(c\alpha + \beta) \in \bigcap_{n}W_n$, so $\bigcap_{n}W_n$ is a subspace of $V$
+    by theorem \ref{thm:subspcaplb}.
+  \end{proof}
+\end{thm}
+
 \end{document}
