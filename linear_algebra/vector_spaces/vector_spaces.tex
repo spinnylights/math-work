@@ -458,4 +458,83 @@
   $W$ is the subspace spanned by $\bigcup_{i = 1}^{k}W_i$.
 \end{comm}
 
+\begin{exm}
+  Let $F$ be a subfield of $\mathbb{C}$. Say we have
+  \begin{align*}
+    \alpha_1 &= (1,2,0,3,0)\\
+    \alpha_2 &= (0,0,1,4,0)\\
+    \alpha_3 &= (0,0,0,0,1).
+  \end{align*}
+  We denote the subspace spanned by $\alpha_1,\alpha_2,\alpha_3$ as $W$. Then a
+  vector $\alpha$ is in $W$ if and only if there are scalars $c_1,c_2,c_3 \in F$ such
+  that
+  \begin{align*}
+    \alpha &= c_1\alpha_1 + c_2\alpha_2 + c_3\alpha_3.
+  \end{align*}
+  Therefore $W$ consists of all the vectors $\alpha$ such that
+  \begin{align*}
+    \alpha &= (c_1,\ 2c_1,\ c_2,\ 3c_1+4c_2,\ c_3),
+  \end{align*}
+  where $c_1,c_2,c_3$ are arbitrary scalars in $F$. We can also describe $W$ as the
+  set of all 5-tuples
+  \begin{align*}
+    \alpha &= (x_1,x_2,x_3,x_4,x_5)
+  \end{align*}
+  where $x_i \in F$ and
+  \begin{align*}
+    x_2 &= 2x_1\\
+    x_4 &= 3x_1 + 4x_3.
+  \end{align*}
+  Therefore $(-3,-6,1,-5,2)$ is in $W$, while $(2,4,6,7,8)$ is not.
+\end{exm}
+
+\begin{exm}
+  Let $F$ be a subfield of $\mathbb{C}$, and let $V$ be the vector space of all $2
+  \times 2$ matrices over $F$. Let $W_1$ be the subset of $V$ consisting of all
+  matrices of the form
+  \begin{align*}
+    \begin{bmatrix}
+      x & y\\
+      z & 0
+    \end{bmatrix},
+  \end{align*}
+  where $x,y,z$ are arbitrary scalars in $F$. Finally, let $W_2$ be the subset of $V$
+  consisting of all matrices of the form
+  \begin{align*}
+    \begin{bmatrix}
+      x & 0\\
+      0 & y
+    \end{bmatrix},
+  \end{align*}
+  where $x$ and $y$ are arbitrary scalars in $F$. Then $W_1$ and $W_2$ are subspaces
+  of $V$, and also
+  \begin{align*}
+    V = W_1 + W_2,
+  \end{align*}
+  because
+  \begin{align*}
+    \begin{bmatrix}
+      a & b\\
+      c & d
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      a & b\\
+      c & 0
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      0 & 0\\
+      0 & d
+    \end{bmatrix}.
+  \end{align*}
+  However, the subspace $W_1 \cap W_2$ consists of all matrices of the form
+  \begin{align*}
+    \begin{bmatrix}
+      x & 0\\
+      0 & 0
+    \end{bmatrix}.
+  \end{align*}
+\end{exm}
+
 \end{document}
