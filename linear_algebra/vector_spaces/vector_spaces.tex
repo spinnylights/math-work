@@ -405,4 +405,32 @@
   $\alpha$ is the smallest subspace in $V$ which contains $\alpha$.
 \end{comm}
 
+\begin{thm}
+  The subspace $W$ spanned by a non-empty subset $S$ of a vector space $V$ over a
+  field $F$ is the set of all linear combinations of vectors in $S$.
+
+  \begin{proof}
+    A linear combination of vectors in $S$ is a vector $\sum_{n}c_n\alpha_n$ where
+    $c_n \in F,\ \alpha_n \in S$. Let $L$ be the set of all linear combinations of
+    vectors in $S$; then $L \in W$, because $S \in W$ and the vectors given by vector
+    addition and scalar multiplication of vectors in a subspace are also in that
+    subspace.
+
+    Consider vectors $\alpha,\beta \in L$. $\alpha = \sum_{o}c_o\gamma_o$ and $\beta
+    = \sum_{p}d_p\delta_p$, where $c_o,d_p \in F$ and $\gamma_o,\delta_p \in S$. A
+    vector $\epsilon = e\alpha + \beta,\ e \in F$ is then
+    \begin{align*}
+      e\sum_{o}c_o\gamma_o + \sum_{p}d_p\delta_p &=
+      \sum_{o}(ec_o)\gamma_o + \sum_{p}d_p\delta_p,
+    \end{align*}
+    which is itself a linear combination of vectors in $S$, so $\epsilon \in L$ and
+    thus $L$ is a subspace of $V$.
+
+    Therefore $L$ must be a subset of any subspace of $V$ that contains $S$. Since
+    $c\alpha + \beta,\ c \in F,\ \alpha,\beta \in S$ is a linear combination of
+    vectors in $S$ and thus is in $L$, this implies that $L$ is the interesction of
+    all subspaces of $V$ that contain $S$, and thus $W = L$.
+  \end{proof}
+\end{thm}
+
 \end{document}
