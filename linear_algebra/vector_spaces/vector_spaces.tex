@@ -271,10 +271,20 @@
     \item
       the $0$ vector is in $W$,
     \item
-      for each $\alpha$ in $W$ the vector $(-\alpha)$ is in $W$, and
+      for each $\alpha$ in $W$ and each scalar $c$ the vector $c\alpha$ is in $W$,
+      and
     \item
-      for each $\alpha$ in $W$ and each scalar $c$ the vector $c\alpha$ is in $W$.
+      for each $\alpha$ in $W$ the vector $(-\alpha)$ is in $W$.
   \end{enumerate}
+  The other axioms determine only the properties of vector addition and scalar
+  multiplication in $V$, as opposed to the necessary elements in $V$, and thus are
+  automatically satisfied for $W$ as long as the operations themselves stay within
+  $W$. For instance, if vector addition is associative and commutative with $V$, it
+  is with $W$ as well.
+
+  In practice, it's not necessary to check all of these properties separately to
+  prove that $W$ is a subspace of $V$. They imply a simpler method, as stated by the
+  following theorem.
 \end{comm}
 
 \begin{thm}
