@@ -309,4 +309,62 @@
   \end{proof}
 \end{thm}
 
+\begin{exm}
+  If $V$ is any vector space, $V$ is a subspace of $V$.
+\end{exm}
+
+\begin{exm}
+  In $F^{n}$, the set of $n$-tuples $(x_1,\ldots,x_n)$ with $x_1 = 0$ is a subspace.
+  However, the set of $n$-tuples with $x_1 = 1 + x_2$ is not a subspace ($n \geq 2$
+  of course).
+\end{exm}
+
+\begin{exm}
+  The space of polynomial functions over a field $F$ is a subspace of the space of
+  all functions from $F$ into $F$.
+\end{exm}
+
+\begin{exm}
+  The symmetric matrices form a subspace of the space of all $n \times n$ matrices
+  over $F$.
+\end{exm}
+
+\begin{exm}
+  The set of all Hermitian matrices is \textit{not} a subspace of the space of all $n
+  \times n$ complex matrices; if $A$ is a Hermitian matrix, its diagonal entries
+  $A_{11},A_{22},\ldots,$ are all real, but the diagonal entries of $iA$ generally
+  are not. That said, the set of $n \times n$ complex Hermitian matrices with the
+  usual operations is a vector space over the real numbers.
+\end{exm}
+
+\begin{exm}
+  If $A$ is an $m \times n$ matrix over $F$, the set of all $n \times 1$ (column)
+  matrices $X$ over $F$ such that $AX = 0$, i.e. the solution space of the system of
+  homogeneous linear equations $AX = 0$, is a subspace of all $n \times 1$ matrices
+  over $F$. This follows from the following lemma.
+
+  \begin{nlemma}
+    If $A$ is an $m \times n$ matrix over $F$, and $B$ and $C$ are $n \times p$
+    matrices over $F$, then
+    \begin{align*}
+      A(dB + C) = d(AB) + AC
+    \end{align*}
+    for each scalar $d$ in $F$.
+
+    \begin{proof}
+      \begin{align*}
+        [A(dB + C)]_{ij} &= \sum_{r = 1}^{n}A_{ir}(dB + C)_{rj}\\
+        &= \sum_{r = 1}^{n}A_{ir}(dB_{rj} + C_{rj})\\
+        &= \sum_{r = 1}^{n}(dA_{ir}B_{rj} + A_{ir}C_{rj})\\
+        &= \sum_{r = 1}^{n}dA_{ir}B_{rj} + \sum_{r = 1}^{n}A_{ir}C_{rj}\\
+        &= d\sum_{r = 1}^{n}A_{ir}B_{rj} + \sum_{r = 1}^{n}A_{ir}C_{rj}\\
+        &= d(AB)_{ij} + (AC)_{ij}.
+      \end{align*}
+    \end{proof}
+  \end{nlemma}
+
+  Because this is true, we know that $A(cX + Y) = 0$ if $AX = 0$, $AY = 0$, and $c$
+  is any scalar in $F$.
+\end{exm}
+
 \end{document}
