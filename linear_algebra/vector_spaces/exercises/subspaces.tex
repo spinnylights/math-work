@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Subspaces (exercises)}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{enumerate}
+  \item
+    We would like to determine which of the following sets of vectors $\alpha =
+    (a_1,\ldots,a_n)$ in $R^n$ are subspaces of $R^n (n \geq 3)$.
+    \begin{enumerate}
+      \item
+        The set of all $\alpha$ such that $a_1 \geq 0$ is not, because if $a_1 > 0$
+        and $c < 0$, then $ca_1 < 0$, so it's possible for $c\alpha =
+        (ca_1,\ldots,ca_n)$ to be outside the set.
+
+      \item
+        The set of all $\alpha$ such that $a_1 + 3a_2 = a_3$ is:
+        \begin{align*}
+          c(a_1,a_2,a_1 + 3a_2,\ldots,a_n) + (b_1,b_2,b_1 + 3b_2,\ldots,b_n) &=\\
+          (ca_1,ca_2,ca_1 + 3ca_2,\ldots,ca_n) + (b_1,b_2,b_1 + 3b_2,\ldots,b_n) &=\\
+          (ca_1+b_1,\ ca_2+b_2,\ ca_1+b_1 + 3ca_2+3b_2,\ \ldots,\ ca_n + b_n) &=\\
+          (ca_1+b_1,\ ca_2+b_2,\ (ca_1+b_1) + 3(ca_2+b_2),\ \ldots,\ ca_n + b_n).
+        \end{align*}
+
+      \item
+        The set of all $\alpha$ such that $a_2 = a_1^2$ is not:
+        \begin{align*}
+          c(a_1,a_1^2,\ldots,a_n) + (b_1,b_1^2,\ldots,b_n) &=\\
+          (ca_1,ca_1^2,\ldots,ca_n) + (b_1,b_1^2,\ldots,b_n) &=\\
+          (ca_1+b_1,ca_1^2+b_1^2,\ldots,ca_n+b_n).
+        \end{align*}
+        $(ca_1+b_1)^2 = ca_1^2 + 2ca_1b_1 + b_1^2 \neq ca_1^2+b_1^2$ (well, unless
+        $a,b = 0$).
+
+      \item
+        For the set of all $\alpha$ such that $a_1a_2 = 0$, we know by the definition
+        of a field that for any given vector in the set, either $a_1 = 0$, $a_2 = 0$,
+        or both. If one has $a_1 = 0,\ a_2 \neq 0$ and the other has $a_2 = 0,\ a_1
+        \neq 0$, then
+        \begin{align*}
+          c(a_1,0,\ldots,a_n) + (0,b_2,\ldots,b_n) &=\\
+          (ca_1,c0,\ldots,ca_n) + (0,b_2,\ldots,b_n) &=\\
+          (ca_1,0,\ldots,ca_n) + (0,b_2,\ldots,b_n) &=\\
+          (ca_1,b_2,\ldots,ca_n+b_n).
+        \end{align*}
+        So, this set is not.
+
+      \item
+        The set of all $\alpha$ such that $a_2$ is rational is not, because $R^n$ is
+        over the real numbers, and some real numbers are irrational. If $c$ is an
+        irrational real number, $ca_2$ will also be irrational unless $a_2 = 0$, so
+        $c\alpha$ will be outside the set for some values of $c$.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
