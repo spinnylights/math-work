@@ -80,6 +80,61 @@
         irrational real number, $ca_2$ will also be irrational unless $a_2 = 0$, so
         $c\alpha$ will be outside the set for some values of $c$.
     \end{enumerate}
+
+    \item
+      If $V$ is the real vector space of all functions $f$ from $R$ into $R$, we
+      would like to determine which of the following sets are subspaces of $V$. In
+      the following, let $f,g$ be members of the set in question and let $c$ be a
+      real number.
+      \begin{enumerate}
+        \item
+          The set of all $f$ such that $f(x^2) = f(x)^2$ is not. If
+          \begin{align*}
+            h(x) &= cf(x) + g(x),\\
+            \shortintertext{then}
+            h(x^2) &= cf(x^2) + g(x^2)\\
+            &= cf(x)^2 + g(x)^2,\\
+            \shortintertext{but}
+            h(x)^2 = (cf(x) + g(x))^2 &= c^2f(x)^2 + 2cf(x)g(x) + g(x)^2.
+          \end{align*}
+
+        \item
+          The set of all $f$ such that $f(0) = f(1)$ is. If
+          \begin{align*}
+            h(x) &= cf(x) + g(x),\\
+            \shortintertext{then}
+            h(0) &= cf(0) + g(0)\\
+            &= cf(1) + g(1)\\
+            \shortintertext{and}
+            h(1) &= cf(1) + g(1).
+          \end{align*}
+
+        \item
+          The set of all $f$ such that $f(3) = 1 + f(-5)$ is not. If
+          \begin{align*}
+            h(x) &= cf(x) + g(x),\\
+            \shortintertext{then}
+            h(3) &= cf(3) + g(3)\\
+            &= 1 + cf(-5) + 1 + g(-5)\\
+            &= 2 + cf(-5) + g(-5),
+            \shortintertext{but}
+            h(-5) &= cf(-5) + g(-5).
+          \end{align*}
+
+        \item
+          The set of all $f$ such that $f(-1) = 0$ is. If
+          \begin{align*}
+            h(x) &= cf(x) + g(x),\\
+            \shortintertext{then}
+            h(-1) &= cf(-1) + g(-1)\\
+            &= c0 + 0\\
+            &= 0.
+          \end{align*}
+
+        \item
+          The set of all continuous $f$ is, because if $f,g$ are continuous, $cf$ is
+          continuous and $f + g$ is continuous, so $cf + g$ is continuous.
+      \end{enumerate}
 \end{enumerate}
 
 \end{document}
