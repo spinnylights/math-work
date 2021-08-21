@@ -178,7 +178,7 @@ class Matrix
   end
 
   def el_op_mat(op)
-    el_op_proc(*op).call(self.class.identity(column_size))
+    el_op_proc(*op).call(self.class.identity(row_size))
   end
 end
 
