@@ -135,6 +135,95 @@
           The set of all continuous $f$ is, because if $f,g$ are continuous, $cf$ is
           continuous and $f + g$ is continuous, so $cf + g$ is continuous.
       \end{enumerate}
-\end{enumerate}
 
+    \item
+      We would like to determine if the vector $(3,-1,0,-1)$ is in the subspace of
+      $R^5$ spanned by the vectors $(2,-1,3,2)$, $(-1,1,1,-3)$, and $(1,1,9,-5)$.
+
+      The subspace of $R^5$ spanned by the vectors
+      \begin{alignat*}{7}
+        \alpha_1 &= (&2&,\ &-1&,\ &3&,\ &2&)\\
+        \alpha_2 &= (&-1&,\ &1&,\ &1&,\ &-3&)\\
+        \alpha_3 &= (&1&,\ &1&,\ &9&,\ &-5&)
+      \end{alignat*}
+      is the row space of the matrix
+      \begin{align*}
+        \begin{bmatrix}
+          2  & -1 & 3 & 2  & 0\\
+          -1 & 1  & 1 & -3 & 0\\
+          1  & 1  & 9 & -5 & 0\\
+        \end{bmatrix}.
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          2 & -1 & 3 & 2 & 0\\
+          -1 & 1 & 1 & -3 & 0\\
+          1 & 1 & 9 & -5 & 0
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 & -\frac{1}{2} & \frac{3}{2} & 1 & 0\\
+          -1 & 1 & 1 & -3 & 0\\
+          1 & 1 & 9 & -5 & 0
+        \end{bmatrix}
+        \xrightarrow{}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          1 & -\frac{1}{2} & \frac{3}{2} & 1 & 0\\
+          0 & \frac{1}{2} & \frac{5}{2} & -2 & 0\\
+          1 & 1 & 9 & -5 & 0
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 & -\frac{1}{2} & \frac{3}{2} & 1 & 0\\
+          0 & \frac{1}{2} & \frac{5}{2} & -2 & 0\\
+          0 & \frac{3}{2} & \frac{15}{2} & -6 & 0
+        \end{bmatrix}
+        \xrightarrow{}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          1 & -\frac{1}{2} & \frac{3}{2} & 1 & 0\\
+          0 & 1 & 5 & -4 & 0\\
+          0 & \frac{3}{2} & \frac{15}{2} & -6 & 0
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 & 0 & 4 & -1 & 0\\
+          0 & 1 & 5 & -4 & 0\\
+          0 & \frac{3}{2} & \frac{15}{2} & -6 & 0
+        \end{bmatrix}
+        \xrightarrow{}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          1 & 0 & 4 & -1 & 0\\
+          0 & 1 & 5 & -4 & 0\\
+          0 & 0 & 0 & 0 & 0
+        \end{bmatrix}.
+      \end{align*}
+
+      \begin{align*}
+        \alpha = (c_1,c_2,4c_1+5c_2,-c_1-4c_2,0).
+      \end{align*}
+
+      \begin{align*}
+        [2,\ -1,\ 4(2) + 5(-1), -2 -4(-1)] &=\\
+        (2,\ -1,\ 8 - 5, -2 +4) &=\\
+        (2,\ -1,\ 3, 2).\\\\
+        [-1,\ 1,\ 4(-1) + 5(1),-(-1) - 4(1)] &=\\
+        (-1,\ 1,\ -4 + 5,\ 1 - 4) &=\\
+        (-1,\ 1,\ 1,\ -3).\\\\
+        [1,\ 1,\ 4(1) + 5(1),\ -(1) - 4(1)] &=\\
+        (1,\ 1,\ 4 + 5,\ -1 - 4) &=\\
+        (1,\ 1,\ 9,\ -5).\\\\
+        [3,\ -1,\ 4(3) + 5(-1),\ -(3) -4(-1)] &=\\
+        (3,\ -1,\ 12 - 5,\ -3 +4) &=\\
+        (3,\ -1,\ 7,\ 1).
+      \end{align*}
+
+      So, $(3,-1,0,-1)$ is not in the subspace, although $(3,-1,7,1)$ is.
+
+  \end{enumerate}
 \end{document}
