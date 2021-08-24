@@ -225,5 +225,119 @@
 
       So, $(3,-1,0,-1)$ is not in the subspace, although $(3,-1,7,1)$ is.
 
+    \item
+      If $W$ is the set of all $(x_1,x_2,x_3,x_4,x_5)$ in $R^5$ which satisfy
+      \begin{alignat*}{12}
+        2x_1&\ -\ &  x_2\ & +\ & \frac{4}{3}x_3\ & -\ &  x_4\ &  \ &     \ & =\ & 0&\\
+         x_1&   \ &     \ & +\ & \frac{2}{3}x_3\ &  \ &     \ & -\ &  x_5\ & =\ & 0&\\
+        9x_1&\ -\ & 3x_2\ & +\ &           6x_3\ & -\ & 3x_4\ & -\ & 3x_5\ & =\ & 0&,
+      \end{alignat*}
+      we would like to find a finite set of vectors $S$ which spans $W$.
+
+      In other words, we would like to find a finite set of vectors $S$ such that $W$ is
+      the intersection of all the subspaces of $R^5$ that contain $S$. Another way of
+      putting this is that $S$ should be such that $W$ is the smallest subspace of
+      $R^5$ which contains $S$.
+
+      Further, we know by theorem 3 that $S$ should be such that $W$ is the set of
+      all linear combinations of $S$. Let $A$ be the matrix of coefficients of the
+      system which defines $W$, i.e.
+      \begin{align*}
+        A =
+        \begin{bmatrix}
+          2 & -1 & \frac{4}{3} &  -1 &  0 \\
+          1 &  0 & \frac{2}{3} &   0 & -1 \\
+          9 & -3 &           6 &  -3 & -3.
+        \end{bmatrix}
+      \end{align*}
+      By theorem 2 of \say{Matrices,} we know that if a matrix $B$ is row-equivalent to
+      $A$, then $AX = 0$ and $BX = 0$ have the same solutions, i.e. they define the
+      same set of vectors in $R^5$. Since $A$ is row-equivalent to a row-reduced
+      echelon matrix by theorem 5 of \say{Matrices,} we can find $S$ more easily by
+      row-reducing $A$.
+
+      \begin{align*}
+        \begin{bmatrix}
+          2 & -1 & \frac{4}{3} & -1 & 0\\
+          1 & 0 & \frac{2}{3} & 0 & -1\\
+          9 & -3 & 6 & -3 & -3
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 & 0 & \frac{2}{3} & 0 & -1\\
+          2 & -1 & \frac{4}{3} & -1 & 0\\
+          9 & -3 & 6 & -3 & -3
+        \end{bmatrix}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          1 & 0 & \frac{2}{3} & 0 & -1\\
+          0 & -1 & 0 & -1 & 2\\
+          9 & -3 & 6 & -3 & -3
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 & 0 & \frac{2}{3} & 0 & -1\\
+          0 & -1 & 0 & -1 & 2\\
+          0 & -3 & 0 & -3 & 6
+        \end{bmatrix}
+      \end{align*}
+      \begin{align*}
+        \begin{bmatrix}
+          1 & 0 & \frac{2}{3} & 0 & -1\\
+          0 & 1 & 0 & 1 & -2\\
+          0 & -3 & 0 & -3 & 6
+        \end{bmatrix}
+        \xrightarrow{}
+        \begin{bmatrix}
+          1 & 0 & \frac{2}{3} & 0 & -1\\
+          0 & 1 & 0 & 1 & -2\\
+          0 & 0 & 0 & 0 & 0
+        \end{bmatrix}.
+      \end{align*}
+
+      So, $W$ is also the set of all $(x_1,x_2,x_3,x_4,x_5)$ in $R^5$ which satisfy
+      \begin{alignat*}{12}
+         x_1&   \ &     \ & +\ & \frac{2}{3}x_3\ &  \ &     \ & -\ &  x_5\ & =\ & 0&\\
+            &   \ &  x_2\ &  \ &               \ & +\ &  x_4\ & -\ & 2x_5\ & =\ & 0&,
+      \end{alignat*}
+      or in other words,
+      \begin{align*}
+        x_1 =& -\frac{2}{3}x_3 + x_5\\
+        x_2 =& -x_4 + 2x_5.
+      \end{align*}
+      Even more concisely, $W$ is the set of all vectors in $R^5$ with the structure
+      $(-\frac{2}{3}x_3 + x_5,\ -x_4 + 2x_5,\ x_3,\ x_4,\ x_5)$. Then a finite set of
+      vectors which spans $W$ is
+      \begin{alignat*}{9}
+        \alpha_1 =&\ (&\ -\frac{2}{3},&\ \ \ \ \ 0,&\ 1,&\ 0,&\ 0&\ )&,\\
+        \alpha_2 =&\ (&\            0,&\ -1,&\ 0,&\ 1,&\ 0&\ )&,\\
+        \alpha_3 =&\ (&\            1,&\ \ \ \ \ 2,&\ 0,&\ 0,&\ 1&\ )&.
+      \end{alignat*}
+
+      For proof, let $S$ be this set, i.e. $S = \{ \alpha_1, \alpha_2, \alpha_3 \}$.
+      Let $C$ be a linear combination of $S$; then $C = c_1\alpha_1 + c_2\alpha_2 +
+      c_3\alpha_3 = (-\frac{2}{3}c_1 + c_3,\ -c_2 + 2c_3,\ c_1,\ c_2,\ c_3)$. Thus
+      the set of all $C$ is $W$, so $S$ spans $W$.
+
+      As an addendum,
+      \begin{align*}
+        2x_1 - x_2 + \frac{4}{3}x_3 - x_4 =&\\
+        2(-\frac{2}{3}c_1 + c_3) - (-c_2 + 2c_3) + \frac{4}{3}c_1 - c_2 =&\\
+        -\frac{4}{3}c_1 + 2c_3 + c_2 - 2c_3 + \frac{4}{3}c_1 - c_2 =&\\
+        (\frac{4}{3}c_1 - \frac{4}{3}c_1) + (2c_3 - 2c_3) + (c_2 - c_2) =&\\
+        0.\ \ \ &\\\\
+        x_1 + \frac{2}{3}x_3 - x_5 =&\\
+        (-\frac{2}{3}c_1 + c_3) + \frac{2}{3}c_1 - c_3 =&\\
+        (\frac{2}{3}c_1 - \frac{2}{3}c_1) + (c_3 - c_3) =&\\
+        0.\ \ \ &\\\\
+        9x_1 - 3x_2 + 6x_3 - 3x_4 - 3x_5 =&\\
+        9(-\frac{2}{3}c_1 + c_3) - 3(-c_2 + 2c_3) + 6c_1 - 3c_2 - 3c_3 =&\\
+        -6c_1 + 9c_3 + 3c_2 - 6c_3 + 6c_1 - 3c_2 - 3c_3 =&\\
+        (6c_1 - 6c_1) + (3c_2 - 3c_2) + (9c_3 - 6c_3 - 3c_3) =&\\
+        (6c_1 - 6c_1) + (3c_2 - 3c_2) + (9c_3 - 9c_3) =&\\
+        0.\ \ \ &
+      \end{align*}
+
   \end{enumerate}
 \end{document}
