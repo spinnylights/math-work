@@ -144,14 +144,27 @@ class Matrix
   end
 
   class << self
-    def latex_ops(ops, *mats)
-      m = mats
+    def latex_ops(ops, mat, extra_indent=0)
+      ops.unshift([[0,0], 1])
 
-      tex = latex_iter('', m)
+      ops_slices = []
+      ops.each_slice(2) do |ops|
+        ops_slices.push(ops)
+      end
 
-      ops.each do |op|
-        mats.map! {|mat| mat.el_op(op)}
-        tex = latex_iter(tex, mats)
+      tex = ''
+
+      ops_slices.each_with_index do |ops, i|
+        mat_block = []
+        ops.each do |op|
+          mat = mat.el_op(op)
+          mat_block.push(mat)
+        end
+        tex = latex_iter(tex, mat_block, i == ops_slices.length - 1)
+      end
+
+      if extra_indent > 0
+        tex = tex.lines.map {|l| ' '*extra_indent + l}.join
       end
 
       tex
@@ -159,14 +172,19 @@ class Matrix
 
     private
 
-    def latex_iter(tex, melons)
+    def latex_iter(tex, melons, last=false)
       indent = ' '*2
 
       tex += "\\begin{align*}\n"
-      matstr = melons
-      matstr = matstr.map {|m| m.latex.rstrip}
-      matstr = matstr.map {|lat| lat.lines.map {|l| indent + l}.join}
-      tex += matstr.join(",\\\n") + "\n"
+      melons.each_with_index do |m,i|
+        tex += m.latex.rstrip.lines.map {|l| indent + l}.join
+        if i < melons.length - 1
+          tex += "\n" + indent + "\\xrightarrow{}"
+        elsif last
+          tex += "."
+        end
+        tex += "\n"
+      end
       tex += "\\end{align*}\n"
     end
   end
