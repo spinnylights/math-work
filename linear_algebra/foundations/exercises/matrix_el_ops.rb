@@ -86,13 +86,76 @@ class Complex
   end
 end
 
+class ElOpAbstract
+  def el_mat(row_size)
+    yield(Matrix.identity(row_size))
+  end
+end
+
+class ElOpMul < ElOpAbstract
+  attr_reader :row, :scalar
+  def initialize(row:, scalar:)
+    @row    = row
+    @scalar = scalar
+  end
+
+  def el_mat(row_size)
+    super do |m|
+      m[row,row] = scalar
+      m
+    end
+  end
+end
+
+class ElOpAdd < ElOpAbstract
+  attr_reader :from, :to, :scalar
+  def initialize(from:, to:, scalar:)
+    @from   = from
+    @to     = to
+    @scalar = scalar
+  end
+
+  def el_mat(row_size)
+    super do |m|
+      m[to,from] = scalar
+      m
+    end
+  end
+end
+
+class ElOpInter < ElOpAbstract
+  attr_reader :row_1, :row_2
+  def initialize(row_1, row_2)
+    @row_1 = row_1
+    @row_2 = row_2
+  end
+
+  def el_mat(row_size)
+    super do |m|
+      m[row_1,row_1] = 0
+      m[row_1,row_2] = 1
+      m[row_2,row_2] = 0
+      m[row_2,row_1] = 1
+      m
+    end
+  end
+end
+
+class ElOpNoop < ElOpAbstract
+  def el_mat(row_size)
+    super do |m|
+      m
+    end
+  end
+end
+
 class Matrix
   def columns
     @rows.transpose
   end
 
   def el_op(op, mat=self)
-    el_op_mat(op) * mat
+    op.el_mat(row_size) * mat
   end
 
   def el_ops(ops)
@@ -145,7 +208,7 @@ class Matrix
 
   class << self
     def latex_ops(ops, mat, extra_indent=0)
-      ops.unshift([[0,0], 1])
+      ops.unshift(ElOpNoop.new)
 
       ops_slices = []
       ops.each_slice(2) do |ops|
