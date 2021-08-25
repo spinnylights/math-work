@@ -364,5 +364,36 @@
           and $A,B = I$. Thus the set of all invertible $A$ in $V$ is not a subspace
           of $V$.
 
+        \item
+          \textbf{All non-invertible $A$.} The set of all non-invertible $A$ is not a
+          subspace of $V$ either, for similar reasons to the set of invertible $A$.
+          Again, we proceed by contradiction. Assume that for any non-invertible
+          $A,B$ in $V$, $A + B$ is non-invertible. Take the case where $n = 2$, and
+          let
+          \begin{align*}
+            A =
+            \begin{bmatrix}
+              1 & 0\\
+              0 & 0
+            \end{bmatrix},\
+            B =
+            \begin{bmatrix}
+              0 & 0\\
+              0 & 1
+            \end{bmatrix}.
+          \end{align*}
+          Neither $A$ nor $B$ is invertible, as there is no series of elementary row
+          operations that will map $A_{22}$ or $B_{11}$ to $1$. Multiplication of row
+          $A_{2}$ or $B_{1}$ by a non-zero scalar will have no effect as those rows
+          are all-zero, and adding row $A_{1}$ or $B_{2}$ multiplied by a non-zero
+          scalar to their respective other rows will not change the value of $A_{22}$
+          or $B_{11}$, nor will swapping rows in either.
+
+          However, $A + B = I$, and $I$ is invertible as we touched on in the first
+          problem. This condradicts our initial assumption, and thus even if $cA$ and
+          $B$ are non-invertible, $cA + B$ may be, i.e. if $A,B$ are as defined above
+          and $c = 1$. Therefore the set of all non-invertible matrices in $V$ is not
+          a subspace of $V$.
+
   \end{enumerate}
 \end{document}
