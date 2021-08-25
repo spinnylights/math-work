@@ -348,8 +348,11 @@
     matrices over $F$, then
     \begin{align*}
       A(dB + C) = d(AB) + AC
+      \shortintertext{and}
+      (dB + C)A = d(BA) + CA
     \end{align*}
-    for each scalar $d$ in $F$.
+    for each scalar $d$ in $F$. (The second statement is not strictly necessary for
+    this situation but this is a convenient place to show both.)
 
     \begin{proof}
       \begin{align*}
@@ -359,6 +362,15 @@
         &= \sum_{r = 1}^{n}dA_{ir}B_{rj} + \sum_{r = 1}^{n}A_{ir}C_{rj}\\
         &= d\sum_{r = 1}^{n}A_{ir}B_{rj} + \sum_{r = 1}^{n}A_{ir}C_{rj}\\
         &= d(AB)_{ij} + (AC)_{ij}.
+      \end{align*}
+
+      \begin{align*}
+        [(dB + C)A]_{ij} &= \sum_{r = 1}^{n}(dB + C)_{ir}A_{rj}\\
+        &= \sum_{r = 1}^{n}(dB_{ir} + C_{ir})A_{rj}\\
+        &= \sum_{r = 1}^{n}(dB_{ir}A_{rj} + C_{ir}A_{rj})\\
+        &= \sum_{r = 1}^{n}dB_{ir}A_{rj} + \sum_{r = 1}^{n}C_{ir}A_{rj}\\
+        &= d\sum_{r = 1}^{n}B_{ir}A_{rj} + \sum_{r = 1}^{n}C_{ir}A_{rj}\\
+        &= d(BA)_{ij} + (CA)_{ij}.
       \end{align*}
     \end{proof}
   \end{nlemma}
