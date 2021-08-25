@@ -406,5 +406,32 @@
           $A$ in $V$ such that $AB = BA$ for some fixed matrix $B$ in $V$ is a subset
           of $V$.
 
+        \item
+          \textbf{All $A$ such that $A^2 = A$.} If $A,B$ are matrices in $V$ such
+          that $A^2 = A$ and $B^2 = B$, what we would like to determine is whether
+          $cA + B = (cA + B)^2$ for any scalar $c$ in $F$.
+          \begin{align*}
+            [(cA + B)^2]_{ij}
+            &= \sum_{r = 1}^{n}(cA + B)_{ir}(cA + B)_{rj}\\
+            &= \sum_{r = 1}^{n}(cA_{ir} + B_{ir})(cA_{rj} + B_{rj})\\
+            &= \sum_{r = 1}^{n}(c^2A_{ir}A_{rj}
+              + cB_{ir}A_{rj} + cA_{ir}B_{rj} + B_{ir}B_{rj})\\
+            &= \sum_{r = 1}^{n}c^2A_{ir}A_{rj} +
+              \sum_{r = 1}^{n} cB_{ir}A_{rj} +
+              \sum_{r = 1}^{n} cA_{ir}B_{rj} +
+              \sum_{r = 1}^{n} B_{ir}B_{rj}\\
+            &= c^2\sum_{r = 1}^{n}A_{ir}A_{rj} +
+              c\sum_{r = 1}^{n} B_{ir}A_{rj} +
+              c\sum_{r = 1}^{n} A_{ir}B_{rj} +
+              \sum_{r = 1}^{n} B_{ir}B_{rj}\\
+            &= (c^2A^2 + cBA + cAB + B^2)_{ij}.
+          \end{align*}
+          Since $A^2 = A$ and $B^2 = B$ in this case, $(cA + B)^2 = c^2A + cBA + cAB
+          + B$. This is not necessarily equal to $cA + B$. For instance, $I^2 = I$,
+          so if $A,B = I$ and $c = 2$, $(cA + B)^2 = 4I + 2I + 2I + I = 9I$. However
+          $2I + I = 3I$, so $cA + B \neq (cA + B)^2$ in this case. Thus the set of
+          all $A$ in $V$ such that $A^2 = A$ is not a subspace of $V$.
+        \end{enumerate}
+
   \end{enumerate}
 \end{document}
