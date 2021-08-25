@@ -339,5 +339,30 @@
         0.\ \ \ &
       \end{align*}
 
+    \item
+      If $F$ is a field, $n$ is a positive integer $(n \geq 2)$, and $V$ is then the
+      vector space of all $n \times n$ matrices over $F$, we would like to determine
+      which of the following sets of matrices $A$ in $V$ are subspaces of $V$.
+      \begin{enumerate}
+        \item
+          \textbf{All invertible $A$.} The set of all invertible $A$ is not a
+          subspace of $V$, because the sum of two invertible matrices is not
+          necessarily invertible. We proceed by contradiction. Assume that, for any
+          invertible $n \times n$ matrices $A$ and $B$, $A + B$ is invertible. By
+          theorem 12, an invertible $n \times n$ matrix is row-equivalent to the $n
+          \times n$ identity matrix. Consider $I$ and $-I$; $I$ is plainly
+          row-equivalent to itself, and $-I$ is row-equivalent to $I$ by repeated
+          application of elementary row operation 1 to each of its rows using the
+          scalar $-1$. Therefore, both $I$ and $-I$ are invertible. Another way of
+          putting this is that $II = I$, and $-I(-I) = I$, so both $I$ and $-I$ are
+          their own inverses respectively.
+
+          However, $I - I = 0$. There is no matrix $N$ in $V$ such that $N0 = I$,
+          because $N0 = 0$ for all $N$. Therefore $I - I = 0$ is not invertible,
+          which contradicts our initial assumption. So, even if both $cA$ and $B$ are
+          invertible, the sum $cA + B$ may not be, i.e. in the case where $c = -1$
+          and $A,B = I$. Thus the set of all invertible $A$ in $V$ is not a subspace
+          of $V$.
+
   \end{enumerate}
 \end{document}
