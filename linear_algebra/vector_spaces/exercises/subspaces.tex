@@ -461,6 +461,182 @@
               in $R^2$ by the choice of $C$, including multiplies of $A$; $C = (0,0)$
               must be permitted or $cA + C$ could not define a subspace by
               definition. Therefore the only subspaces in $R^2$ are those described.
+            \item
+              We would like to attempt to describe the subspaces of $R^3$. We know
+              that $R^3$ itself and the zero subspace are two of them. The spaces of
+              all scalar multiples of some fixed vector in $R^3$ are likely
+              candidates as well (still a straight line through the origin in
+              geometric terms). Let $A = (\alpha_1,\alpha_2,\alpha_3),\ B =
+              (d\alpha_1,d\alpha_2,d\alpha_3),\ A,B \in R^3$. Then $cA + B =
+              (c\alpha_1+d\alpha_1,c\alpha_2+d\alpha_2,c\alpha_3+d\alpha_3) =
+              [(c+d)\alpha_1,(c+d)\alpha_2,(c+d)\alpha_3]$, so the spaces of all
+              scalar multiples of some fixed vector in $R^3$ are indeed subspaces of
+              $R^3$ as well.
+
+              The space spanned by two vectors $A,B$ in $R^3$ such that $A,B \neq 0$
+              and $cA \neq B$ for any scalar $c \in \mathbb{R}$ is also a subspace of
+              $R^3$; $e(cA + dB) + (fA + gB) = ecA + edB + fA + gB = (ec + f)A + (ed
+              + g)B$.  Although this pattern of proof would work for any number of
+              vectors in $R^3$, the set of sums of three or more vectors that all fit
+              these criteria is equivalent to $R^3$ as a whole, whereas with only two
+              vectors a distinct subspace is defined. Consider:
+
+              \begin{align*}
+                \begin{bmatrix}
+                  c\alpha_1 & c\alpha_2 & c\alpha_3\\
+                  d\beta_1 & d\beta_2 & d\beta_3
+                \end{bmatrix}
+                \xrightarrow{}
+                \begin{bmatrix}
+                  1 & \frac{\alpha_2}{\alpha_1} & \frac{\alpha_3}{\alpha_1}\\
+                  d\beta_1 & d\beta_2 & d\beta_3
+                \end{bmatrix}
+                \xrightarrow{}
+              \end{align*}
+              \begin{align*}
+                \begin{bmatrix}
+                  1 & \frac{\alpha_2}{\alpha_1} & \frac{\alpha_3}{\alpha_1}\\
+                  \beta_1 & \beta_2 & \beta_3
+                \end{bmatrix}
+                \xrightarrow{}
+                \begin{bmatrix}
+                  1 & \frac{\alpha_2}{\alpha_1} & \frac{\alpha_3}{\alpha_1}\\
+                  0 & \frac{\beta_2\alpha_1 - \beta_1\alpha_2}{\alpha_1} & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}{\alpha_1}
+                \end{bmatrix}
+                \xrightarrow{}
+              \end{align*}
+              \begin{align*}
+                \begin{bmatrix}
+                  1 & \frac{\alpha_2}{\alpha_1} & \frac{\alpha_3}{\alpha_1}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}{\beta_2\alpha_1 - \beta_1\alpha_2}
+                \end{bmatrix}
+                \xrightarrow{}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}
+                               {\beta_2\alpha_1 - \beta_1\alpha_2}
+                \end{bmatrix}.
+              \end{align*}
+
+              This assumes that $\alpha_1 \neq 0$. Also, if $\beta_2 = 0$, it assumes
+              that $\beta_1,\alpha_2 \neq 0$. In other words, the two possibilities
+              with the maximum number of zeroes are:
+              \begin{alignat*}{11}
+                A &=&\ (&\alpha_1&,\ &        0&,\ & 0&)&\\
+                B &=&\ (&       0&,\ &  \beta_2&,\ & 0&)&
+                \shortintertext{and}
+                A &=&\ (&\alpha_1&,\ & \alpha_2&,\ & 0&)&\\
+                B &=&\ (& \beta_1&,\ &        0&,\ & 0&)&.
+              \end{alignat*}
+              This is consistent with the requirement that $A,B \neq 0$ and $cA \neq
+              B$. In the second case, if $\alpha_2 = 0$, then $\beta_1 = x\alpha_1$
+              for some scalar $x \in \mathbb{R}$, so then $B = xA$. If $\alpha_1 =
+              0$, this is equivalent to the first case, as we can see by then
+              switching the roles of $A$ and $B$. Also, if we have a situation in
+              practice like
+              \begin{alignat*}{11}
+                A &=&\ (&0&,\ \alpha_2&,\ & \alpha_3&)&\\
+                B &=&\ (&0&,\  \beta_2&,\ &        0&)&
+              \end{alignat*}
+              we can "change perspective" and call $\alpha_2,\beta_2$ as
+              $\alpha_1,\beta_1$ and $\alpha_3$ as $\alpha_2$, or similar.
+
+              The important thing is this: we can see from the row-reduction process
+              above that any vector in this subspace is defined by only \textit{two}
+              real numbers, say $x_1,x_2$, with the third real number in the vector
+              being equal to
+              \begin{align*}
+                \frac{(\beta_2\alpha_3-\beta_3\alpha_2)x_1
+                      + (\beta_3\alpha_1 -\beta_1\alpha_3)x_2}
+                     {\beta_2\alpha_1-\beta_1\alpha_2}.
+              \end{align*}
+              This is in contrast to the space of $R^3$ as a whole in which all three
+              real numbers are free, and therefore the subspace spanned by two
+              vectors that fulfill our criteria is distinct from it.
+
+              However, if we consider the subspace spanned by three such vectors:
+
+              \begin{align*}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}
+                               {\beta_2\alpha_1 - \beta_1\alpha_2}\\
+                  e\gamma_1 & e\gamma_2 & e\gamma_3
+                \end{bmatrix}
+                \xrightarrow{}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}
+                               {\beta_2\alpha_1 - \beta_1\alpha_2}\\
+                  \gamma_1 & \gamma_2 & \gamma_3
+                \end{bmatrix}
+                \xrightarrow{}
+              \end{align*}
+              \begin{align*}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}
+                               {\beta_2\alpha_1 - \beta_1\alpha_2}\\
+                  0 & \gamma_2 & \gamma_3
+                            - \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                                   {\beta_2\alpha_1-\beta_1\alpha_2}\gamma_1
+                \end{bmatrix}
+                \xrightarrow{}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}
+                               {\beta_2\alpha_1 - \beta_1\alpha_2}\\
+                  0 & 0 & \gamma_3
+                          - \frac{(\beta_2\alpha_3-\beta_3\alpha_2)\gamma_1 +
+                                  (\beta_3\alpha_1 -\beta_1\alpha_3)\gamma_2}
+                                 {\beta_2\alpha_1-\beta_1\alpha_2}
+                \end{bmatrix}
+                \xrightarrow{}
+              \end{align*}
+              \begin{align*}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & \frac{\beta_3\alpha_1 -\beta_1\alpha_3}
+                               {\beta_2\alpha_1 - \beta_1\alpha_2}\\
+                  0 & 0 & 1
+                \end{bmatrix}
+                \xrightarrow{}
+                \begin{bmatrix}
+                  1 & 0 & \frac{\beta_2\alpha_3-\beta_3\alpha_2}
+                               {\beta_2\alpha_1-\beta_1\alpha_2}\\
+                  0 & 1 & 0\\
+                  0 & 0 & 1
+                \end{bmatrix}
+                \xrightarrow{}
+              \end{align*}
+              \begin{align*}
+                \begin{bmatrix}
+                  1 & 0 & 0\\
+                  0 & 1 & 0\\
+                  0 & 0 & 1
+                \end{bmatrix},
+              \end{align*}
+
+              we can see that it is equivalent to $R^3$ as a whole, provided that the
+              third vector is outside the subspace spanned by the first two. (If we call the
+              third vector $C = (\gamma_1,\gamma_2,\gamma_3)$, we can see that $C$
+              must be such that $\gamma_3 \neq
+              \frac{(\beta_2\alpha_3-\beta_3\alpha_2)\gamma_1 + (\beta_3\alpha_1
+              -\beta_1\alpha_3)\gamma_2} {\beta_2\alpha_1-\beta_1\alpha_2}$ provided
+              $A$ and $B$ are as before, which is equivalent to saying that it must
+              be outside the subspace spanned by $A$ and $B$ alone.)
+
+              Therefore the subspaces of $R^3$ are the zero subspace, the subspace
+              spanned by one non-$0$ vector in $R^3$, the subspace spanned by two
+              vectors in $R^3$ that are not linear combinations of each other, and
+              $R^3$ as a whole.
+
           \end{enumerate}
 
   \end{enumerate}
