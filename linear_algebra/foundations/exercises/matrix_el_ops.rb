@@ -241,10 +241,10 @@ class Matrix
       tex += "\\begin{align*}\n"
       melons.each_with_index do |m,i|
         tex += m.latex.rstrip.lines.map {|l| indent + l}.join
-        if i < melons.length - 1
-          tex += "\n" + indent + "\\xrightarrow{}"
-        elsif last
+        if last && i == melons.length - 1
           tex += "."
+        else
+          tex += "\n" + indent + "\\xrightarrow{}"
         end
         tex += "\n"
       end
