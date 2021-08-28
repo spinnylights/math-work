@@ -664,5 +664,31 @@
       implies that at least one of $W_1$ and $W_2$ has no elements that are not
       present in the other, i.e. that it is contained in the other.
 
+    \item
+      If $V$ is the vector space of all functions from $R$ into $R$, $V_e$ is the
+      subset of even functions ($f(-x) = f(x)$), and $V_o$ is the subset of odd
+      functions ($f(-x) = -f(x)$), we would like to prove the following.
+      \begin{enumerate}
+        \item
+          \textbf{$V_e$ and $V_o$ are subspaces of $V$.} Let $g_e$ and $h_e$ be even
+          functions, and let $g_o$ and $h_o$ be odd functions. Then
+          \begin{align*}
+            (cg_e + h_e)(-x) &=
+            (cg_e)(-x) + h_e(-x)\\
+            &= cg_e(-x) + h_e(-x)\\
+            &= cg_e(x) + h_e(x)\\
+            &= (cg_e)(x) + h_e(x)\\
+            &= (cg_e + h_e)(x)
+            \shortintertext{and}
+            (cg_o + h_o)(-x) &=
+            (cg_o)(-x) + h_o(-x)\\
+            &= cg_o(-x) + h_o(-x)\\
+            &= c(-g_o)(x) + (-h_o)(x)\\
+            &= (-cg_o)(x) + (-h_o)(x)\\
+            &= (-cg_o - h_o)(x)\\
+            &= -(cg_o + h_o)(x).
+          \end{align*}
+      \end{enumerate}
+
   \end{enumerate}
 \end{document}
