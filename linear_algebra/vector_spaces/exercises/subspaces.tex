@@ -636,8 +636,31 @@
               spanned by one non-$0$ vector in $R^3$, the subspace spanned by two
               vectors in $R^3$ that are not linear combinations of each other, and
               $R^3$ as a whole.
-
           \end{enumerate}
+
+    \item
+      If $W_1$ and $W_2$ are subspaces of a vector space $V$ over a field $F$ such
+      that $W_1 \cup W_2$ is also a subspace, we would like to prove that one of the
+      subspaces $W_i$ is contained in the other.
+
+      We proceed by contradiction. Let $W_1 \cup W_2$ be a subspace, and let $X_1
+      \subset W_1$ and $X_2 \subset W_2$ be non-empty sets such that $X_1,X_2
+      \not\subset W_1 \cap W_2$. By theorem 2, $W_1 \cap W_2$ is a subspace. Because
+      $W_1 \cup W_2$ is a subspace, $c\alpha_1 + d\alpha_2$ where $\alpha_1 \in X_1,\
+      \alpha_2 \in X_2,\ c,d \in F$ must be in $W_1 \cup W_2$. However, we know that
+      $X_1$ and $X_2$ have no elements in common by definition, and by theorem 1 we
+      know that if a vector $\gamma$ is not in $W_1$, then for a vector $\alpha$ in
+      $W_1$, $c\gamma + \alpha$ must not be in $W_1$ for at least some values of $c$
+      and $\alpha$; likewise for $W_2$. This contradicts the notion that $W_1 \cup
+      W_2$ is a subspace, as it contains $X_1$ and $X_2$ together.
+
+      Therefore if $X_1$ and $X_2$ really are both not included in $W_1 \cap W_2$,
+      $W_1 \cup W_2$ is not a subspace. If $W_1 \cup W_2$ is a subspace, then at
+      least one of $X_1$ and $X_2$ must be included in $W_1 \cap W_2$. In other
+      words, at least one of $W_1$ and $W_2$ must be included in $W_1 \cap W_2$ in
+      its entirety, so that $W_1 \cap W_2$ and $W_1 \cup W_2$ are the same set. This
+      implies that at least one of $W_1$ and $W_2$ has no elements that are not
+      present in the other, i.e. that it is contained in the other.
 
   \end{enumerate}
 \end{document}
