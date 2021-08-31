@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Functions}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{defn}
+  A \textbf{function} is a composite object consisting of:
+  \begin{enumerate}
+    \item
+      a set $X$, called the \textbf{domain} of the function,
+    \item
+      a set $Y$, called the \textbf{co-domain} of the function, and
+    \item
+      a rule (or correspondence) $f$, which associates each element $x$ in $X$ with a
+      single element $f(x)$ in $Y$.
+  \end{enumerate}
+
+  If $(X,Y,f)$ is a function, we may say that \textbf{$f$ is a function from $X$ into
+  $Y$}. This is imprecise, because $f$ is actually the rule of the function, not the
+  function itself. However, it makes speaking about functions much easier if we use
+  the same symbol for the rule and its function. So, if we say that $f$ is a function
+  from $X$ into $Y$, that $X$ is the domain of $f$, and that $Y$ is the co-domain of
+  $f$, we mean all together that $(X,Y,f)$ is a function by the above definition.
+
+  A function $f$ can also be defined as
+  \begin{enumerate}
+    \item
+      a set of ordered pairs of objects $(a,b)$ such that if $(a,b)$ and $(a,c)$ are
+      in $f$, $b = c$, and
+    \item
+      a set $Y$ such that if $(a,b) \in f$, $b \in Y$.
+  \end{enumerate}
+  Then if $(a,b) \in f$ we say that $f(a) = b$. This is equivalent to the above
+  formulation; $X$ (the domain of $f$) is then the set of all $a$ such that $(a,b)
+  \in f$.
+
+  A function may also be called a \textbf{transformation}, \textbf{operator},
+  \textbf{mapping}, or another similar term when this is more expressive than simply
+  saying \say{function.}
+\end{defn}
+
+\end{document}
