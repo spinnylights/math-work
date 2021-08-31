@@ -200,4 +200,69 @@
   e^x = x$, and $f(f^{-1}(y)) = e^{\ln y} = y$.
 \end{exm}
 
+\begin{defn}
+  Let $X,Y,X_0,Y_0$ be sets, let $f$ be a function from $X$ into $Y$, and let $f_0$
+  be a function from $X_0$ into $Y_0$. We say that $f_0$ is a \textbf{restriction} of
+  $f$ (or a restriction of $f$ to $X_0$) if
+  \begin{enumerate}
+    \item
+      $X_0 \subset X$, and
+    \item
+      $f_0(x) = f(x)$, $x \in X_0$.
+  \end{enumerate}
+  If this is true, then clearly $Y_0 \subset Y$.
+
+  Given a set $X_0 \subset X$, there is an obvious way to define $f_0$—that is, to
+  say $f_0(x) = f(x)$ for each $x \in X_0$. The reason we don't call this function
+  \textit{the} restriction of $f$ to $X_0$ is to give ourselves freedom in defining
+  the co-domain of $f$ as well as the domain.
+\end{defn}
+
+\begin{exm}
+  Let $X = \mathbb{R}$ and let $f:X \to X$ be the function such that $f(x) = x^2$;
+  then $f$ is not invertible. However, let $X_0 = \{x \in \mathbb{R}: x \geq 0\}$,
+  and let $f_0:X_0 \to X_0$ be such that $f_0(x) = x^2$. Then $f_0$ is a restriction
+  of $f$ to $X_0$, and while $f$ is neither 1:1 nor onto, $f_0$ is both. In other
+  words, each non-negative real number is the square of exactly one non-negative real
+  number. $f_0^{-1}: X_0 \to X_0$ is defined by $f_0^{-1}(x) = \sqrt{x}$.
+\end{exm}
+
+\begin{exm}
+  Let $f: \mathbb{R} \to \mathbb{R}$ be defined by $f(x) = x^3 + x^2 + 1$. $f$ is
+  onto as its range is all of $\mathbb{R}$. However, it is not 1:1; for instance,
+  $f(-1) = f(0)$. But if $X_0 = \{x \in \mathbb{R}: x \geq 0\}$ again, then $f$ is
+  1:1 on $X_0$;
+  \begin{align*}
+    f'(x) &= \lim_{h \to 0}\frac{f(x + h) - f(x)}{h}\\
+    &= \lim_{h \to 0}\frac{(x + h)^3 + (x + h)^2 + 1 - x^3 - x^2 - 1}{h}\\
+    &= \lim_{h \to 0}\frac{x^3 + 3hx^2 + 3xh^2 + h^3 + x^2 + 2xh + h^2 + 1 - x^3 - x^2 - 1}{h}\\
+    &= \lim_{h \to 0}\frac{(x^3 - x^3) + 3hx^2 + 3xh^2 + h^3 + (x^2 - x^2) + 2xh + h^2 + (1 - 1)}{h}\\
+    &= \lim_{h \to 0}\frac{3hx^2 + 3xh^2 + h^3 + 2xh + h^2}{h}\\
+    &= \lim_{h \to 0}\frac{h^3 + h^2 + 3hx^2 + 3xh^2 + 2xh}{h}\\
+    &= \lim_{h \to 0}h^2 + h + 3hx^2 + 3xh + 2x\\
+    &= 2x.
+  \end{align*}
+  Since $f'(x) = 2x > 0$ for $x > 0$, $f$ is increasing for $x > 0$, and therefore
+  $f$ is 1:1 for $x \geq 0$, i.e. $x \in X_0$. As such, $f: X_0 \to X_0$ such that
+  $f(x) = x^3 + x^2 + 1$ ranges over $\{y \in \mathbb{R}: y \geq 1\}$, as $f(0) = 0^3
+  + 0^2 + 1 = 1$. Therefore if we let $Y_0 = \{y \in \mathbb{R}: y \geq 1\}$ and say
+  that $f_0: X_0 \to Y_0$ has the same rule as $f$, $f_0$ is then both 1:1 and onto,
+  and thus it has an inverse function $f_0^{-1}: Y_0 \to X_0$. The precise statement
+  of $f_0^{-1}$ is hairy, however.
+\end{exm}
+
+\begin{exm}
+  Let $f: \mathbb{R} \to \mathbb{R}$ be defined by $f(x) = \sin x$, i.e. let $f$ be
+  the sine function. $f$ is not onto, because it ranges over $\{y: -1 \leq y \leq
+  1\}$. Furthermore, since $f(x + 2\pi) = f(x)$, $f$ is not 1:1. However, if we let
+  $X_0 = \{x: -\pi/2 \leq x \leq \pi/2\}$, then $f$ is 1:1 on $X_0$, and if we let
+  $Y_0 = \{y: -1 \leq y \leq 1\}$ and let $f_0: X_0 \to Y_0$ be defined by $f_0(x) =
+  \sin x$, then $f_0$ is both 1:1 and onto. In other words, over the interval from
+  $-\pi/2$ to $\pi/2$, the sine function takes on each value from $-1$ to $1$ exactly
+  once. $f_0^{-1}$ is naturally the inverse sine function:
+  \begin{align*}
+    f_0^{-1}(x) = \sin^{-1} x = \arcsin x.
+  \end{align*}
+\end{exm}
+
 \end{document}
