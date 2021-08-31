@@ -151,4 +151,53 @@
   regardless of the value of $X$.
 \end{defn}
 
+\begin{defn}
+  Let $X$ and $Y$ be sets, and let $f$ be a function from $X$ into $Y$. We call $f$
+  \textbf{invertible} if there is a function $g$ from $Y$ into $X$ such that
+  \begin{enumerate}
+    \item
+      $g \circ f$ is the identity function on $X$, and
+    \item
+      $f \circ g$ is the identity function on $Y$.
+  \end{enumerate}
+
+  Naturally, such a function $g$ only exists if $f$ is 1:1. In particular, $g$ can be
+  defined as follows: if an object $y \in Y$ is in the range of $f$, i.e. such that
+  $f(x) = y$ for some $x$, then $g(y) = x$. (Because $f$ is 1:1, $x$ will always be
+  unique by definition). If $y$ is not in the range of $f$, then $g(y)$ can be any
+  element of $X$.
+
+  If $f$ is both 1:1 and onto, then $y$ will always be in the range of $f$. In this
+  case, we call $g$ the \textbf{inverse} of $f$, and conventionally denote it as
+  $f^{-1}$. Then
+  \begin{enumerate}
+    \item
+      $f^{-1}(f(x)) = x$ for each $x$ in $X$, and
+    \item
+      $f(f^{-1}(y)) = y$ for each $y$ in $Y$.
+  \end{enumerate}
+\end{defn}
+
+\begin{exm}
+  If $X = Y = \mathbb{R}$ and $f(x) = x^2$, then $f$ is not invertible, because it's
+  neither 1:1 nor onto.
+\end{exm}
+
+\begin{exm}
+  If $X = Y$ is the Euclidean plane, and $f$ is \say{rotation through $90\degree$,}
+  then $f$ is both 1:1 and onto; $f^{-1}$ is then \say{rotation through
+  $-90\degree$,} or \say{rotation through $270\degree$.}
+\end{exm}
+
+\begin{exm}
+  If $X$ is the plane, $Y$ is the $x_1$-axis, and $f((x_1,x_2)) = (x_1,0)$, then $f$
+  is not invertible. Although it is onto, it is not 1:1.
+\end{exm}
+
+\begin{exm}
+  If $X = \mathbb{R}$, $Y = \{b \in \mathbb{R}: b > 0\}$, and $f(x) = e^x$, then $f$
+  is invertible. $f^{-1}$ is then the natural logarithm function; $f^{-1}(f(x)) = \ln
+  e^x = x$, and $f(f^{-1}(y)) = e^{\ln y} = y$.
+\end{exm}
+
 \end{document}
