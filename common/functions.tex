@@ -74,4 +74,46 @@
   pairs $(a,b)$ as defined above, the range of $f$ is the set of all $b$ in $f$.
 \end{defn}
 
+\begin{defn}
+  If the range of a function $f$ from $X$ into $Y$ is all of $Y$, $f$ is said to be
+  \textbf{a function from $X$ onto $Y$}, or simply \textbf{onto}. Then the range of
+  $f$ is often denoted $f(X)$. If $f$ is described as a set of ordered pairs $(a,b)$,
+  then if $f$ is onto, $Y = \{(a,b) \in f:\ b\}$.
+\end{defn}
+
+\begin{exm}
+  Let $X = Y = \mathbb{R}$. Let $f$ be the function from $X$ into $Y$ such that $f(x)
+  = x^2$. Then the range of $f$ is the set of all non-negative real numbers, so $f$
+  is not onto.
+\end{exm}
+
+\begin{exm}
+  Let $X$ be the Euclidean plane, and let $Y = X$. Let $f$ be defined such that, if
+  $P$ is a point in the plane, then $f(P)$ is the point obtained by rotating $P$
+  $90\degree$ counterclockwise about the origin. Then the range of $f$ is all of $Y$,
+  so $f$ is onto.
+\end{exm}
+
+\begin{exm}
+  Let $X$ again be the Euclidean plane, and let a coordinate system be defined for
+  $X$ as in analytic geometry, such that two parallel lines are used to identity
+  points of $X$ as pairs of numbers $(x_1,x_2)$. Let $Y$ be the $x_1$-axis (i.e. the
+  set of all points $(x_1,x_2)$ where $x_2 = 0$). Then if $P$ is a point in $X$, let
+  $f(P)$ be the point given by projecting $P$ onto the $x_1$-axis via a line parallel
+  to the $x_2$-axis, i.e. $f((x_1,x_2)) = (x_1,0)$. Then the range of $f$ is all of
+  $Y$, so $f$ is onto.
+\end{exm}
+
+\begin{exm}
+  Let $X = \mathbb{R}$, and let $Y = \{b \in \mathbb{R}:\ b > 0\}$. Let $f$ be a
+  function from $X$ into $Y$ such that $f(x) = e^x$. Then $f$ is a function from $X$
+  onto $Y$.
+\end{exm}
+
+\begin{exm}
+  Let $X = \{a \in \mathbb{R}:\ a > 0\}$, and let $Y = \mathbb{R}$. Let $f$ be the
+  natural logarithm function, i.e. $f(x) = \ln x$. Then $f$ is onto, i.e. every real
+  number is the natural logarithm of some positive real number.
+\end{exm}
+
 \end{document}
