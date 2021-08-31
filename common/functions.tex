@@ -116,4 +116,23 @@
   number is the natural logarithm of some positive real number.
 \end{exm}
 
+\begin{defn}
+  Let $X$, $Y$, and $Z$ be sets. Let $f$ be a function from $X$ into $Y$, and let $g$
+  be a function from $Y$ into $Z$. Then there is a function associated with $f$ and
+  $g$ denoted $g \circ f$ such that
+  \begin{align*}
+    (g \circ f)(x) = g(f(x)).
+  \end{align*}
+  This function is known as the \textbf{composition} of $g$ and $f$. Sometimes it's
+  denoted simply by $gf$, although this notation can be confusing.
+\end{defn}
+
+\begin{exm}
+  Let $X = Y = Z = \mathbb{R}$. Let $f,g,h$ be functions from $X$ into $X$ such that
+  \begin{align*}
+    f(x) = x^2,\ g(x) = e^x,\ h(x) = e^{x^2};
+  \end{align*}
+  then $h = g \circ f$.
+\end{exm}
+
 \end{document}
