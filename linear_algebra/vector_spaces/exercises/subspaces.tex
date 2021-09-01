@@ -689,6 +689,61 @@
             &= (-cg_o - h_o)(x)\\
             &= -(cg_o + h_o)(x).
           \end{align*}
+
+        \item
+          \textbf{$V_e + V_o = V$.} The vector space $V_e + V_o$ contains all the
+          linear combinations of the elements of $V_e$ and $V_o$. If we consider some
+          $x \in \mathbb{R}$ and a function $f: \mathbb{R} \to \mathbb{R}$, then
+          $f(x) = y$ for some $y \in \mathbb{R}$. If $f$ is even, we can obtain $f$
+          through the sum of some set of even functions $f_{e_1},\cdots,f_{e_n}$ such
+          that there is some $f_{e_i},\ 1 \leq i \leq n$ where $f(x) = f_{e_i}(x)$
+          for any $x \in \mathbb{R}$, since the sum of even functions is even. The
+          same is true if $f$ is odd regarding some set of odd functions
+          $f_{o_1},\cdots,f_{o_n}$, since the sum of odd functions is odd. Both of
+          these statements follow from $V_e$ and $V_o$ being vector spaces.
+
+          Now consider a function $f: \mathbb{R} \to \mathbb{R}$ that is the sum of
+          an even and an odd function, i.e.
+          \begin{align*}
+            f(-x) &= (g_e + g_o)(-x).
+            \shortintertext{Then}
+            f(-x) &= g_e(-x) + g_o(-x)\\
+            &= g_e(x) - g_o(x),\\
+            \shortintertext{so}
+            f(-x) + g_o(x) &= g_e(x)
+            \shortintertext{and}
+            f(-x) - g_e(x) &= - g_o(x);\\
+            -f(-x) + g_e(x) &= g_o(x).
+            \shortintertext{Then}
+            f(-x) &= f(-x) + g_o(x) - [-f_x(-x) + g_e(x)]\\
+            &= f(-x) + g_o(x) + f_x(-x) - g_e(x)\\
+            &= [f(-x) + f_x(-x)] + g_o(x) - g_e(x)\\
+            &= 2f(-x) + g_o(x) - g_e(x),
+            \shortintertext{so}
+            -f(-x) &= g_o(x) - g_e(x);\\
+            f(-x) &= g_e(x) - g_o(x)\\
+            &= (g_e - g_o)(x).
+          \end{align*}
+          Thus $(g_e + g_o)(-x) = (g_e - g_o)(x)$, and so if $f(x) = (g_e + g_o)(x)$
+          then $f(x) = (g_e - g_o)(-x)$.
+
+          Now consider a function $f: \mathbb{R} \to \mathbb{R}$ that is neither even
+          nor odd. For $x \in \mathbb{R},\ x \geq 0$, we know that there is an even
+          function $g_e$ and an odd function $g_o$ such that $f(x) = (g_e + g_o)(x)$,
+          since any real number can be expressed as the sum of two others and any
+          even or odd function can be expressed as the sum of some (potentially
+          infinite) number of even or odd functions respectively. Then $f(-x) = (g_e
+          + g_o)(-x) = g_e(-x) + g_o(-x) = g_e(x) - g_o(x)$. If $g_o(x)$ is positive,
+          then $g_o(-x) = -g_o(x)$ is negative, so $g_e(x) + g_o(x) \neq g_e(x) -
+          g_o(x)$ unless $g_o(x) = 0$, and $g_e(x) + g_o(x) \neq -(g_e + g_o)(x) =
+          -g_e(x) - g_o(x)$ unless both $g_e(x)$ and $g_o(x)$ are $0$. Therefore if
+          $f(x) \neq 0$, it is possible to have $f(x) \neq f(-x) \neq -f(x)$, so
+          $f(x) = (g_e + g_o)(x)$ is consistent with $f$ being neither even nor odd,
+          and thus there is some $g_e$ and $g_o$ the sum of which will cover the
+          whole range of $f$.
+
+          Therefore $V_e + V_o$ contains every function from $\mathbb{R}$ into
+          $\mathbb{R}$ that is odd, even, or neither, and thus $V_e + V_o = V$.
       \end{enumerate}
 
   \end{enumerate}
