@@ -752,5 +752,28 @@
           \to \mathbb{R}$ such that $f_0(x) = 0$.
       \end{enumerate}
 
+    \item
+      If $W_1$ and $W_2$ are subspaces of a vector space $V$ such that $W_1 + W_2 =
+      V$ and $W_1 \cap W_2 = \{0\}$, we would like to prove that for each vector
+      $\alpha \in V$ there are \textit{unique} vectors $\alpha_1 \in W_1$ and
+      $\alpha_2 \in W_2$ such that $\alpha = \alpha_1 + \alpha_2$.
+
+      If $\alpha = 0$, then $\alpha = \alpha_1 + \alpha_2$ where $\alpha_1 = \alpha_2
+      = 0$. If $\alpha \in W_1$, then $\alpha = \alpha_1 + \alpha_2$ where $\alpha_1
+      = \alpha$ and $\alpha_2 = 0$, and if $\alpha \in W_2$, then $\alpha = \alpha_1
+      + \alpha_2$ where $\alpha_1 = 0$ and $\alpha_2 = \alpha$. $0$ is unique in $V$
+      by the definition of a vector space and $W_1$ and $W_2$ have no elements in
+      common otherwise, so $\alpha_1$ and $\alpha_2$ are unique in these cases.
+
+      If $\alpha \notin W_1,W_2$, then $\alpha$ is nevertheless a linear combination
+      of vectors in $W_1$ and $W_2$. Since $W_1$ and $W_2$ are vector spaces, $\alpha
+      = \alpha_1 + \alpha_2$ where $\alpha_1 = \sum_{i = 1}^{m}c_i\alpha_{1i},\
+      \alpha_{1i} \in W_1$ and $\alpha_2 = \sum_{j = 1}^{n}c_j\alpha_{2j},\
+      \alpha_{2j} \in W_2$ for some set of scalars $\{c_1,\ldots,c_{i+j}\} \in
+      \mathbb{R}$. Since $\alpha \notin W_1,W_2$, and $W_1 \cap W_2 = \{0\}$,
+      $\alpha_1 \neq \alpha_2 \neq 0$, so $\alpha_1$ and $\alpha_2$ are unique.
+
+      Therefore for all $\alpha \in V$, $\alpha = \alpha_1 + \alpha_2$, where
+      $\alpha_1 \in W_1$, $\alpha_2 \in W_2$, and $\alpha_1,\alpha_2$ are unique.
   \end{enumerate}
 \end{document}
