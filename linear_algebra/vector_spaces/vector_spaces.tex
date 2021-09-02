@@ -597,4 +597,61 @@
   Then $V$ is the subspace spanned by $S$.
 \end{exm}
 
+\begin{defn}
+  If $V$ is a vector space over a field $F$, we say that a subset $S$ of $V$ is
+  \textbf{linearly dependent} (or simply \textbf{dependent}) if there are distinct
+  vectors $\alpha_1,\alpha_2,\ldots,\alpha_n$ in $S$ and scalars $c_1,c_2,\ldots,c_n$
+  in $F$ such that
+  \begin{enumerate}
+    \item
+      at least one of the scalars $c_1,c_2,\ldots,c_n$ is not $0$, and
+    \item
+      $c_1\alpha_1 + c_2\alpha_2 + \cdots + c_n\alpha_n = 0$.
+  \end{enumerate}
+
+  If a set is not linearly dependent, we say that it is \textbf{linearly
+  independent}. If the set $S$ contains finitely many vectors
+  $\alpha_1,\alpha_2,\ldots,\alpha_n$, we sometimes say that
+  $\alpha_1,\alpha_2,\ldots,\alpha_n$ are (in)dependent, instead of saying that $S$
+  is (in)dependent.
+\end{defn}
+
+\begin{exm}
+  Let $F$ be a subfield of $\mathbb{C}$. In the space of $F^3$, the vectors
+  \begin{alignat*}{8}
+    \alpha_1 &=&\ &(&\ 3,&\ 0,&\ -3)&\\
+    \alpha_2 &=&\ &(&-1,&\ 1,&\ \ 2)&\\
+    \alpha_3 &=&\ &(&\ 4,&\ 2,&\ -2)&\\
+    \alpha_4 &=&\ &(&\ 2,&\ 1,&\ \ 1)&
+  \end{alignat*}
+  are linearly dependent, as
+  \begin{align*}
+    2\alpha_1 + 2\alpha_2 - \alpha_3 + 0\alpha_4 = 0.
+  \end{align*}
+  However, the vectors
+  \begin{alignat*}{8}
+    \epsilon_1 &=&\ &(&1,&\ 0,&\ 0)&\\
+    \epsilon_2 &=&\ &(&0,&\ 1,&\ 0)&\\
+    \epsilon_3 &=&\ &(&0,&\ 0,&\ 1)&
+  \end{alignat*}
+  are linearly independent.
+\end{exm}
+
+\begin{comm}
+  This definition has some straightforward consequences.
+
+  \begin{enumerate}
+    \item
+      Any set which contains a linearly dependent set is itself dependent.
+    \item
+      Any set which contains the zero vector is dependent, as $1 \cdot 0 = 0$.
+    \item
+      Any subset of a linearly independent set is itself independent.
+    \item
+      A set $S$ of vectors is independent if and only if, for each set of vectors
+      $\alpha_1,\ldots,\alpha_n \in S$, if $c_1\alpha_1 + \cdots + c_n\alpha_n = 0$,
+      then every $c_i = 0$.
+  \end{enumerate}
+\end{comm}
+
 \end{document}
