@@ -654,4 +654,135 @@
   \end{enumerate}
 \end{comm}
 
+\begin{defn}
+  Let $V$ be a vector space. If $S$ is a linearly independent set of vectors in $V$
+  which spans $V$, we say that $S$ is a \textbf{basis} for $V$. If $S$ is finite, we
+  say that $V$ is \textbf{finite-dimensional}.
+
+  Let $F$ be a field. For a space $F^n,\ n \in \mathbb{N}^+$, let $S =
+  \{\epsilon_1,\epsilon_2,\ldots,\epsilon_n\}$ be a subset of the vectors in $F^n$
+  defined by
+  \begin{alignat*}{9}
+    \epsilon_1 &=&\ &(&1,&\ 0,&\ \ldots,&\ 0)&\\
+    \epsilon_2 &=&\ &(&0,&\ 1,&\ \ldots,&\ 0)&\\
+    \vdots & &\ & &\vdots &\ \vdots\ \vdots&\vdots\ \vdots &\ \vdots &\\
+    \epsilon_n &=&\ &(&0,&\ 0,&\ \ldots,&\ 1)&.
+  \end{alignat*}
+  For scalars $x_1,x_2,\ldots,x_n \in F$, let $\alpha = x_1\epsilon_1 + x_2\epsilon_2
+  + \ldots + x_n\epsilon_n$. Then
+  \begin{align*}
+    \alpha = (x_1,x_2,\ldots,x_n).
+  \end{align*}
+  Thus $S$ spans $F^n$. $S$ is also linearly independent, because if $\alpha = 0$, it
+  implies that $x_1,x_2,\ldots,x_n = 0$. Therefore $S$ is a basis for $F^n$; in
+  particular, we call $S$ the \textbf{standard basis} of $F^n$.
+\end{defn}
+
+\begin{exm}
+  If $P$ is an invertible $n \times n$ matrix with entries in a field $F$, the
+  columns $P_1,\ldots,P_n$ of $P$ form a basis for the space of column matrices $F^{n
+  \times 1}$.
+
+  If $X$ is an $n \times 1$ (column) matrix with entries $x_1,\ldots,x_n \in F$, i.e.
+  $X \in F^{n \times 1}$, then
+  \begin{align*}
+    PX = x_1P_1 + \cdots + x_nP_n.
+  \end{align*}
+  Since $P$ is invertible, $PX = 0$ has only the trivial solution $X = 0$ by theorem
+  13 of \say{Matrices,} and therefore the set of vectors $\{P_1,\ldots,P_n\}$ is
+  linearly independent. Furthermore, for any matrix $Y \in F^{n \times 1}$, $PZ = Y$
+  for the matrix $Z = P^{-1}Y$, and thus $\{P_1,\ldots,P_n\}$ spans $F^{n \times 1}$;
+  if $Z = P^{-1}Y = \{z_1,\ldots,z_n\}$, then
+  \begin{align*}
+    Y = z_1P_1 + \cdots + z_nP_n.
+  \end{align*}
+  Therefore $\{P_1,\ldots,P_n\}$ is a basis for $F^{n \times 1}$.
+\end{exm}
+
+\begin{exm}
+  Let $A$ be an $m \times n$ matrix and $X$ be an $n \times 1$ matrix, both over a
+  field $F$. Let $S \subset F^{n \times 1}$ be the solution space for the homogeneous
+  system $AX = 0$. Let $R$ be a row-reduced echelon matrix which is row-equivalent to
+  $A$. Then $S$ is also the solution space for $RX = 0$ by theorems 2 and 5 of
+  \say{Matrices.} Let $r$ be the number of non-all-zero rows of $R$. Since $R$ is
+  row-reduced, $r \leq \min(m,n)$. Thus $RX = 0$ expresses the value of $r$ of the
+  unknowns in $X$ in terms of the other $n - r$ unknowns in $X$.
+
+  Suppose the leading non-zero ($1$) entries in $R$ occur in columns
+  $R_{k_1},\ldots,R_{k_r}$ of $R$ for some set of indices $k_1,\ldots,k_r$. Let $J$
+  be the set of the remaining $n - r$ indices, i.e.
+  \begin{align*}
+    J = \{1,\ldots,n\} - \{k_1,\ldots,k_r\}.
+  \end{align*}
+  Then the system $RX = 0$ can be expressed as
+  \begin{alignat*}{7}
+    x_{k_1} &+&\ \sum_J c_{1j}x_j &=&\ 0&\\
+    \vdots\  & &\ \vdots\ \ \ \ \ & &\ \vdots\ &\\
+    x_{k_r} &+&\ \sum_J c_{rj}x_j &=&\ 0&
+  \end{alignat*}
+  where the $c_{ij}$ are scalars in $F$.
+
+  A solution for $RX = 0$, i.e. a vector $\sigma \in S$, can be found by assigning
+  arbitary values from $F$ to the $x_j$s with $j \in J$ and computing the
+  corresponding values of $x_{k_1},\ldots,x_{k_r}$. Therefore let $\sigma_j,\ j \in
+  J$ be the solution found by assigning $x_j = 1$ and $x_i = 0$ for all $i \neq j,\ i
+  \in J$. Let $B$ be the set of $n - r$ such vectors $\{j \in J: \sigma_j\}$.
+
+  Because the vector $\sigma_j \in B,\ j \in J$ has a $1$ in row $j$ and zeroes in
+  the rows indexed by the other elements of $J$, $B$ is linearly independent.
+  Furthermore, if $\tau = \{t_1,\ldots,t_n\} \in S$, there is a vector
+  \begin{align*}
+    \upsilon = \sum_J t_j\sigma_j \in S.
+  \end{align*}
+  $\upsilon$ is then a solution to $RX = 0$ such that, if $X = \{x_1,\ldots,x_n\}$,
+  $x_j = t_j$ for each $j \in J$. Because a solution to $RX = 0$ is fully described
+  by those $x_j$, we have that $\upsilon = \tau$, and thus $\tau$ is within the span
+  of $B$. Therefore $B$ spans $S$. Thus, $B$ is a basis for $S$, i.e. for the
+  solution space of $RX = 0$.
+\end{exm}
+
+\begin{exm}
+  Let $F$ be a subfield of $\mathbb{C}$ and let $V$ be the space of polynomial
+  functions over $F$. Let $S$ be the subset of $V$ of functions
+  \begin{align*}
+    f_k(x) = x^k,\ k = 0,1,2,\ldots.
+  \end{align*}
+
+  As we mentioned earlier, $S$ spans $V$, as a polynomial function $g$ of degree $n$
+  in $F$ is defined by
+  \begin{align*}
+    g(x) &= c_0 + c_1x^1 + \cdots + c_nx^n\\
+    &= c_0f_0(x) + c_1f_1(x) + \cdots + c_nf_n(x)
+  \end{align*}
+  for some set of scalars $c_i \in F$ and functions $f_i \in S$, and thus $g$ is a
+  linear combination of functions in
+  $S$.
+
+  Now let $N = \{f_i \in S: f_0,\ldots,f_n\}$ for some $n \in \mathbb{N}$, i.e. such
+  that $N$ is an arbitrary finite subset of $S$. Suppose that
+  \begin{align*}
+    c_0f_0 + c_1f_1 + \cdots + c_nf_n = 0
+  \end{align*}
+  for some set of scalars $c_i \in F$. Then
+  \begin{align*}
+    c_0 + c_1x + \cdots + c_nx^n = 0
+  \end{align*}
+  for all $x \in F$, which implies that every $x \in F$ is a root of the polynomial
+  $f(x) = c_0 + c_1x + \cdots + c_nx^n$. This is only possible if every
+  $c_0,\ldots,c_n = 0$, as an $n$th degree polynomial with complex coefficients has
+  at most $n$ roots. Thus $N$ is linearly independent, i.e. any finite subset of $S$
+  is independent, so $S$ is independent. Therefore $S$ is a basis for $V$.
+
+  $S$ is then an example of an infinite basis for $V$. We might then wonder if $V$ is
+  not finite-dimensional, given that we have defined a vector space with a finite
+  basis as finite-dimensional. This question then amounts to whether or not $V$ also
+  has a finite basis. To answer this question, take some finite set of polynomial
+  functions $G = \{g_i \in V: g_1,\ldots,g_r\}$. For any function $g_i \in G$,
+  $g_i(x)$ will have some largest power $k$ of $x$ that appears with a non-zero
+  coefficient.  Let $k$ then be the largest power that appears in
+  $\{g_1(x),\ldots,g_r(x)\}$. There is then a function $f_{k+1} \in S$ defined by
+  $f_{k+1}(x) = x^{k+1}$ that is outside the span of $G$, and thus $G$ must not span
+  $V$ as $S$ is a subset of $V$.  Therefore $V$ is not finite-dimensional.
+\end{exm}
+
 \end{document}
