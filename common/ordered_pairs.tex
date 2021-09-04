@@ -42,4 +42,27 @@
   \textit{second element}.
 \end{defn}
 
+\begin{thm}
+  If $(a,b) = (c,d)$, then $a = c$ and $b = d$.
+
+  \begin{proof}
+    First, consider the case in which $a = b$. Then $(a,b) = \{\{a\},\{a,b\}\} =
+    \{\{a\},\{a,a\}\} = \{\{a\},\{a\}\} = \{\{a\}\}$. If $\{\{a\}\} =
+    \{\{c\},\{c,d\}\}$, this implies that $\{a\} = \{c\} = \{c,d\}$. Therefore $a = c
+    = d = b$.
+
+    Now consider the case in which $a \neq b$. Then $\{a\} \neq \{a,b\}$, so
+    $\{\{a\},\{a,b\}\}$ has two distinct elements. This implies that
+    $\{\{c\},\{c,d\}\}$ has two distinct elements, and thus that $c \neq d$. Then
+    $\{a\} \neq \{c,d\}$ because $\{a\}$ has only one element whereas
+    $\{c,d\}$ has two; therefore $\{a\} = \{c\}$ is the only possibility, and thus $a
+    = c$.
+
+    Likewise, $\{a,b\} \neq \{c\}$ by the same logic, so $\{a,b\} = \{c,d\}$. Since
+    we know that $a = c$, it must then be the case that $a \neq d$. Furthermore,
+    since $a \neq b$, then $b \neq c$. Thus if $\{a,b\} = \{c,d\}$ and $a = c$, it
+    must be the case that $b = d$.
+  \end{proof}
+\end{thm}
+
 \end{document}
