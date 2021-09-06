@@ -196,4 +196,53 @@
   is an equivalence relation.
 \end{defn}
 
+\begin{defn}
+  If $S$ is a set, we say that
+  \begin{enumerate}
+    \item
+      $S$ is \textbf{finite} if $S = \emptyset$ or $S \sim J_n$, where $J_n =
+      \{1,2,\ldots,n\}$ for some $n \in \mathbb{N}+$;
+    \item
+      $S$ is \textbf{infinite} if $S$ is not finite;
+    \item
+      $S$ is \textbf{countable}, \textbf{enumerable}, or \textbf{denumerable} if $S
+      \sim \mathbb{N}^+$;
+    \item
+      $S$ is \textbf{uncountable} if $S$ is neither finite nor countable;
+    \item
+      $S$ is \textbf{at most countable} if $S$ is finite or countable.
+  \end{enumerate}
+\end{defn}
+
+\begin{comm}
+  If $S$ and $T$ are finite sets, then clearly $S \sim T$ if and only if $S$ and $T$
+  contain the same number of elements. This strategy is difficult to apply if $S$ and
+  $T$ are infinite, but the notion of 1:1 correspondence can still be used in that
+  case.
+\end{comm}
+
+\begin{exm}
+  $\mathbb{Z}$ is countable. Casually,
+  \begin{align*}
+    \mathbb{Z}:&\ \ \ 0,1,-1,2,-2,3,-3,\ldots\\
+    \mathbb{N}^+:&\ \ \ 1,2,3,4,5,6,7,\ldots
+  \end{align*}
+  More rigorously, a function $f: \mathbb{N}^+ \to \mathbb{Z}$ which sets up a 1:1
+  correspondence between $\mathbb{Z}$ and $\mathbb{N}^+$ is given by
+  \begin{align*}
+    f(n) =
+    \begin{cases}
+      \frac{n}{2},\ \ \ \ \ \ n\ \text{even}\\
+      -\frac{n-1}{2},\ n\ \text{odd}.
+    \end{cases}
+  \end{align*}
+\end{exm}
+
+\begin{comm}
+  A finite set cannot be equivalent to one of its proper subsets, clearly. However,
+  an infinite set can; after all, $\mathbb{N}^+$ is a proper subset of $\mathbb{Z}$.
+  In fact, an infinite set could be defined as a set that is equivalent to one of its
+  proper subsets.
+\end{comm}
+
 \end{document}
