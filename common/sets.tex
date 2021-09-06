@@ -150,4 +150,42 @@
   \end{enumerate}
 \end{exm}
 
+\begin{defn}
+  Let $S$ be a set. An \textbf{order} on $S$ is a relation, represented by $<$, for
+  which both of these properties hold.
+  \begin{enumerate}
+    \item
+      If $x,y \in S$, then one and only one of
+      \begin{align*}
+        x < y,\ \ \ x = y,\ \ \ y < x
+      \end{align*}
+      is true.
+    \item
+      If $x,y,z \in S$, $x < y$, and $y < z$, then $x < z$.
+  \end{enumerate}
+
+  If $x < y$, we say that $x$ is \textbf{less than} $y$, \textbf{smaller than} $y$,
+  or that $x$ \textbf{precedes} $y$.
+
+  If $x < y$, we may also write $y > x$ to represent the same relation.
+
+  If we write $x \leq y$, this indicates that either $x < y$ or $x = y$, but without
+  specifying which of the two is true. $x \leq y$ is the negation of $x > y$.
+
+  If $S$ has an order defined in it, then we say that $S$ is an \textbf{ordered set}.
+\end{defn}
+
+\begin{exm}
+  $\mathbb{Q}$ is an ordered set if the relation $r < s$ is defined to mean $s - r
+  \in \mathbb{Q}$ is positive, i.e. that $s - r > 0$.
+\end{exm}
+
+\begin{defn}
+  Let $S$ be an ordered set, and let $E \subset S$. If there is some $\beta \in S$
+  such that $x \leq \beta$ for every $x \in E$, $E$ is then said to be
+  \textbf{bounded above}, and $\beta$ is then called an \textbf{upper bound} of $E$.
+  If $x \geq \beta$ for every $x \in E$, $E$ is then said to be \textbf{bounded
+  below}, and $\beta$ is then called a \textbf{lower bound} of $E$.
+\end{defn}
+
 \end{document}
