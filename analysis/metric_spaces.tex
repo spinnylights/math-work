@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Metric spaces}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{defn}
+  Let $X$ be a set. A \textit{metric}, or \textit{distance function}, on $X$ is a
+  function
+  \begin{align*}
+    d: X \times X \to \mathbb{R}
+  \end{align*}
+  with the following properties:
+  \begin{enumerate}
+    \item
+      $d(x,y) \geq 0$ for all $x,y \in X$, and $d(x,y) = 0$ if and only if $x = y$,
+    \item
+      $d(x,y) = d(y,x)$ for all $x,y \in X$, and
+    \item
+      $d(x,y) + d(y,z) \geq d(x,z)$ for all $x,y,z \in X$.
+  \end{enumerate}
+  If a metric $d$ exists for $X$, then $X$ together with that metric is called a
+  \textit{metric space}. The elements of $X$ are then often referred to as
+  \textit{points}.
+\end{defn}
+
+\begin{exm}
+  The euclidean spaces $R^k$, such as the real line $R^1$ or the complex plane $R^2$,
+  are metric spaces in concert with the metric defined by
+  \begin{align*}
+    d(x,y) = |x - y|\ \ \ \ \ \ (x,y \in R^k).
+  \end{align*}
+\end{exm}
+
+\begin{comm}
+  Every subset $Y$ of a metric space $X$ is itself a metric space with the metric of
+  $X$; if $p,q,r \in Y$, they are in $X$ as well, so the conditions for the metric of
+  $X$ will still hold for $p,q,r$.
+\end{comm}
+
+\end{document}
