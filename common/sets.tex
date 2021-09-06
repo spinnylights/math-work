@@ -245,4 +245,24 @@
   proper subsets.
 \end{comm}
 
+\begin{thm}
+  Every infinite subset of a countable set $S$ is countable.
+
+  \begin{proof}
+    Let $E \subset S$ be infinite. Consider a sequence $\{x_n\}$ of elements $x \in
+    S$. Because $E \subset S$, there is some $i \in \mathbb{N}^+$ such that $x_i$ is
+    the first element in $\{x_n\}$ that is contained in $E$. Let $p_1 = i$. We can define a sequence
+    $\{x_{p_k}\},\ x \in \{x_n\}$ of elements in $E$ by selecting $x_i,\ldots,x_{k-1},\
+    (k = 2,3,4,\ldots)$ such that $p_k$ is the smallest index of an element in $E$
+    greater than $p_{k-1}$. Then a function $f: \mathbb{N}^+ \to E$ defined by $f(k)
+    = x_{p_k}$ for $x \in \{x_n\}$ creates a 1:1 correspondence from $\mathbb{N}^+$
+    to $E$, so $E$ is countable.
+  \end{proof}
+\end{thm}
+
+\begin{comm}
+  This theorem shows that countability of sets is the \say{smallest} form of infinity
+  in a sense, as an uncountable set cannot be a subset of a countable set.
+\end{comm}
+
 \end{document}
