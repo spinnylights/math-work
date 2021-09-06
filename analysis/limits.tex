@@ -47,4 +47,28 @@
   If $\{p_n\}$ does not converge, it is said to \textbf{diverge}.
 \end{defn}
 
+\begin{defn}
+  Let $X$ and $Y$ be metric spaces, and let $E \subset X$. Let $f$ be a function that
+  maps $E$ into $Y$, and let $p$ be a limit point of $E$. Now suppose there is a
+  point $q \in Y$ such that, for every $\epsilon > 0$, there exists a $\delta > 0$
+  such that
+  \begin{align*}
+    d_Y(f(x),q) < \epsilon
+  \end{align*}
+  for all points $x \in E$ for which
+  \begin{align*}
+    0 < d_X(x,p) < \delta.
+  \end{align*}
+  If this is the case, we write $f(x) \to q$ as $x \to p$, or
+  \begin{align*}
+    \lim_{x \to p} f(x) = q.
+  \end{align*}
+  We can also say that \textbf{$f$ approaches the limit $q$ near $p$}.
+\end{defn}
+
+\begin{comm}
+  In the above definition, note that $p \in X$, but $p$ is not necessarily in $E$.
+  Also, even if $p \in E$, it may be the case that $f(p) \neq \lim_{x \to p} f(x)$.
+\end{comm}
+
 \end{document}
