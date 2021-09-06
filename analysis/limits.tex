@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{xfrac}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\title{Limits}
+\author{Zoë Sparks}
+
+\begin{document}
+
+\theoremstyle{definition}
+
+\sisetup{quotient-mode=fraction}
+\newtheorem{thm}{Theorem}
+\newtheorem*{nthm}{Theorem}
+\newtheorem{sthm}{}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+\newtheorem*{nlemma}{Lemma}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem*{prop}{Property}
+\newtheorem*{defn}{Definition}
+\newtheorem*{comm}{Comment}
+\newtheorem*{exm}{Example}
+
+\maketitle
+
+\begin{defn}
+  Let $X$ be a metric space with a metric $d$. A sequence $\{p_n\}$ in $X$ is said to
+  \textbf{converge} if there is a point $q \in X$ such that, for every $\epsilon > 0
+  \in \mathbb{R}$, there is a corresponding integer $N$ such that if $n \geq N$, then
+  $d(p_n,q) < \epsilon$. If this is the case, we also say that $\{p_n\}$
+  \textbf{converges to} $q$, or that $q$ is the \textbf{limit} of $\{p_n\}$.
+
+  If $q$ is the limit of $\{p_n\}$, we write $p_n \to p$, or
+  \begin{align*}
+    \lim_{n \to \infty} p_n = p.
+  \end{align*}
+
+  If $\{p_n\}$ does not converge, it is said to \textbf{diverge}.
+\end{defn}
+
+\end{document}
