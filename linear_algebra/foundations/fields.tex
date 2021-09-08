@@ -121,6 +121,32 @@
   \end{proof}
 \end{thm}
 
+\begin{thm}
+  The axioms for mulitplication imply that
+  \begin{enumerate}
+    \item
+      if $x \neq 0$ and $xy = xz$, then $y = z$,
+    \item
+      if $x \neq 0$ and $xy = x$ then $y = 1$,
+    \item
+      if $x \neq 0$ and $xy = 1$ then $y = 1/x$, and
+    \item
+      if $x \neq 0$ then $1/(1/x) = x$.
+  \end{enumerate}
+
+  \begin{proof}
+    Let $F$ be a field such that $x,y \in F$, and let $x \neq 0$. Let $a = xy$ and $b
+    = xz$; then $a,b \in F$ and $a = b$, so $a/x,\ b/x \in F$ and $a/x = b/x$. Then
+    $(xy)/x = (xz)/x$, so $y \cdot x/x = z \cdot x/x$, thus $y \cdot 1 = z \cdot 1$
+    and thus $y = z$.
+
+    Letting $z = 0$ in (1) gives $xy = x0$, which implies $y = 0$ by (1).  Likewise,
+    letting $z = 1/x$ in (1) gives $xy = x(1/x) = 1$, which implies $y = 1/x$ by (1).
+    Last, letting $x = 1/x$ in (3) gives $y = 1/(1/x)$, and if $1/x \cdot 1/(1/x) =
+    1$, then $x \cdot 1/x \cdot 1/(1/x) = x \cdot 1 = 1 \cdot 1/(1/x) = 1/(1/x) = x$.
+  \end{proof}
+\end{thm}
+
 \begin{defn}
   A \textbf{subfield} of the field $F$ is a set $G \subseteq F$
   such that $G$ is a field under the same definitions of addition
