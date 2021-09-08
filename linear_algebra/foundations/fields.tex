@@ -96,6 +96,31 @@
   \end{align*}
 \end{comm}
 
+\begin{thm}
+  The axioms for addition imply that
+  \begin{enumerate}
+    \item
+      if $x + y = x + z$ then $y = z$,
+    \item
+      if $x + y = x$ then $y = 0$,
+    \item
+      if $x + y = 0 $ then $y = -x$, and
+    \item
+      $-(-x) = x$.
+  \end{enumerate}
+
+  \begin{proof}
+    Let $F$ be a field such that $x,y \in F$. Let $a = x + y$ and $b = x + z$; then
+    $a,b \in F$ and $a = b$, so $a-x,\ b-x \in F$ and $a - x = b - x$. Then $x + y -
+    x = x + z - x$, so $x - x + y = x - x + z$, thus $0 + y = 0 + z$ and thus $y = z$.
+
+    Letting $z = 0$ in (1) gives $x + y = x + 0$, which implies $y = 0$ by (1).
+    Likewise, letting $z = -x$ in (1) gives $x + y = x - x = 0$, which implies $y =
+    -x$ by (1). Last, letting $x = -x$ in (3) gives $y = -(-x)$, and if $-x - (-x) =
+    0$, then $x - x - (-x) = x = -(-x)$.
+  \end{proof}
+\end{thm}
+
 \begin{defn}
   A \textbf{subfield} of the field $F$ is a set $G \subseteq F$
   such that $G$ is a field under the same definitions of addition
