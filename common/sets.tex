@@ -189,6 +189,109 @@
 \end{defn}
 
 \begin{defn}
+  Let $S$ be an ordered set, $E \subset S$, and $E$ be bounded above. Let $\alpha \in
+  S$ have the following properties:
+  \begin{enumerate}
+    \item
+      $\alpha$ is an upper bound of $E$, and
+    \item
+      if $\gamma < \alpha$ then $\gamma$ is not an upper bound of $E$.
+  \end{enumerate}
+  Then we call $\alpha$ the \textbf{least upper bound} of $E$, or the
+  \textbf{supremum} of $E$, and we write
+  \begin{align*}
+    \alpha = \sup E.
+  \end{align*}
+
+  If
+  \begin{enumerate}
+    \item
+      $\alpha$ is a lower bound of $E$, and
+    \item
+      if $\beta > \alpha$ then $\beta$ is not a lower bound of $E$,
+  \end{enumerate}
+  then we call $\alpha$ the \textbf{greatest lower bound} of $E$, or the
+  \textbf{infimum} of $E$, and we write
+  \begin{align*}
+    \alpha = \inf E.
+  \end{align*}
+\end{defn}
+
+\begin{exm}
+  Let $P = \{p \in \mathbb{Q}: p > 0\}$. Let $S = \{p \in P: p^2 < 2\}$, and let $T =
+  \{p \in P: p^2 > 2\}$. Then $S$ is bounded above; as $S$ and $T$ are both subsets
+  of $P$, every member of $T$ is an upper bound of $S$ by their definitions.
+  Likewise, $T$ is bounded below, with every member of $S$ being a lower bound of
+  $T$.
+
+  Let $f$ be a function over $P$ defined as $f(x) = x - \frac{x^2 - 2}{x + 2}$; then
+  $f: P \to P$, i.e. $f(x)$ is always
+  positive:
+  \begin{align*}
+    x - \frac{x^2 - 2}{x + 2} &= \frac{x(x +2)}{x + 2} - \frac{x^2 - 2}{x + 2}\\
+    &= \frac{x^2 + 2x}{x + 2} - \frac{x^2 - 2}{x + 2}\\
+    &= \frac{x^2 + 2x - (x^2 - 2)}{x + 2}\\
+    &= \frac{x^2 + 2x - x^2 + 2}{x + 2}\\
+    &= \frac{2x + 2}{x + 2}.
+  \end{align*}
+  $x$ is always positive by definition, so $\frac{2x + 2}{x + 2}$ is as well.
+
+  Furthermore, note that
+  \begin{align*}
+    f(x)^2 - 2 &= \left(\frac{2x + 2}{x + 2}\right)^2 - 2\\
+    &= \frac{(2x + 2)^2}{(x + 2)^2} - 2\\
+    &= \frac{(2x + 2)^2}{(x + 2)^2} - \frac{2(x + 2)^2}{(x + 2)^2}\\
+    &= \frac{(4x^2 + 8x + 4) - 2(x^2 + 4x + 4)}{(x + 2)^2}\\
+    &= \frac{4x^2 + 8x + 4 - 2x^2 - 8x - 8}{(x + 2)^2}\\
+    &= \frac{(4x^2 - 2x^2) + (8x - 8x) + (4 - 8)}{(x + 2)^2}\\
+    &= \frac{2x^2 - 4}{(x + 2)^2}\\
+    &= \frac{2(x^2 - 2)}{(x + 2)^2}.
+  \end{align*}
+
+  If $p \in S$, we know that $p^2 - 2 < 0$. That implies that $\frac{2(p^2 - 2)}{(p +
+  2)^2} < 0$, so $f(p)^2 - 2 < 0$, i.e. $f(p)^2 < 2$, and thus $f(p) \in S$ (remember
+  that $f(p)$ is always positive). Also, $f(p) > p$; if $p^2 - 2$ is negative,
+  $\frac{p^2 - 2}{p + 2}$ is negative, so $-\frac{p^2 - 2}{p + 2}$ is positive, and
+  so is $p - \frac{p^2 - 2}{p + 2} = f(p)$.
+
+  Therefore, $S$ has no largest member; if $p \in S$, there is a number $f(p) \in S$
+  such that $f(p) > p$. Another way of putting this is to say that $S$ has no least
+  upper bound, or no supremum, despite being bounded above.
+
+  If $p \in T$, then $p^2 - 2 > 0$, which implies that $\frac{2(p^2 - 2)}{(p + 2)^2}$
+  is positive. That implies that $\frac{2(p^2 - 2)}{(p + 2)^2} = f(p)^2 - 2 > 0$, so
+  $f(p)^2 > 2$, and so $f(p) \in T$. Also, $f(p) < p$; if $p^2 - 2$ is positive,
+  $\frac{p^2 - 2}{p + 2}$ is positive, so $p - \frac{p^2 - 2}{p + 2} = f(p) < p$.
+
+  Therefore, $T$ has no smallest member; if $p \in T$, there is a number $f(p) \in T$
+  such that $f(p) < p$. Another way of putting this is to say that $T$ has no
+  greatest lower bound, or no infimum, despite being bounded below.
+
+  As a side note, this shows that even beyond the fact that $\sqrt{2} \notin
+  \mathbb{Q}$, there is also no $p \in \mathbb{Q}$ such that $p$ is "as close as
+  possible" to $\sqrt{2}$, either from above or from below.
+\end{exm}
+
+\begin{exm}
+  If $\alpha = \sup E$ exists, $\alpha$ is not necessarily a member of $E$, although
+  it may be. As an example, let $E_1 = \{r \in \mathbb{Q}: r < 0\}$, and let $E_2 =
+  \{r \in \mathbb{Q}: r \leq 0\}$. Then
+  \begin{align*}
+    \sup E_1 = \sup E_2 = 0,
+  \end{align*}
+  and although $0 \in E_2$, $0 \notin E_1$.
+\end{exm}
+
+\begin{exm}
+  Let $E = \{n \in \mathbb{N}^+: \frac{1}{n}\}$. Then $\sup E = 1$, which is in $E$
+  ($1 = \frac{1}{1}$).  However, $\inf E = 0$, which is not in $E$. This is because,
+  if $p \in E$, there is a number $q \in E$ such that if $p = \frac{1}{n}$ for some
+  $n \in \mathbb{N}^+$, $q = \frac{1}{n + 1}$, and therefore $q < p$. However, there
+  is no $n \in \mathbb{N}^+$ such that $\frac{1}{n} = 0$, so $q$ will always be
+  greater than $0$, no matter how close it is.
+\end{exm}
+
+\begin{defn}
   If $S$ and $T$ are sets, and there exists a 1:1 mapping of $S$ onto $T$, we say
   that $S$ and $T$ can be put into \textbf{1:1 correspondence}, that $S$ and $T$ have
   the same \textbf{cardinal number}, or that $S$ and $T$ are \textbf{equivalent}. If
