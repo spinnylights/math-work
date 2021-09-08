@@ -301,6 +301,32 @@
   As shown above, $\mathbb{Q}$ does not have the least-upper-bound property.
 \end{exm}
 
+\begin{thm}
+  Let $S$ be an ordered set with the least-upper-bound property, $B \subset S$, $B
+  \neq \emptyset$, and $B$ be bounded below. Let $L$ be the set of all lower bounds
+  of $B$. Then
+  \begin{align*}
+    \alpha = \sup L
+  \end{align*}
+  exists in $S$, and $\alpha = \inf B$, i.e. $\inf B$ exists is $S$.
+
+  \begin{proof}
+    Because $B$ is bounded below, $L$ is not empty. Furthermore, if $y \in L$, $y
+    \leq x$ for every $x \in B$, and therefore $L$ is bounded above by the members of
+    $B$. Also, $y \in S$ by the definition of an upper bound, so $L \subset S$. Since
+    $S$ has the least-upper-bound property, $\alpha = \sup L$ is then in $S$.
+
+    If $y < \alpha$ for some $y \in S$, then $y \notin B$, because $y$ is then not an
+    upper bound of $L$, and the members of $B$ are all upper bounds of $L$. Therefore
+    $\alpha \leq x$ for every $x \in B$, so $\alpha$ is a lower bound of $B$, i.e.
+    $\alpha \in L$.
+
+    Since $\alpha \leq x$ for every $x \in B$, it follows that if some $x \in B$ is
+    such that $x > \alpha$, then $x \notin L$, because $y \leq \alpha$ for every $y
+    \in L$. Therefore $x$ is not a lower bound of $B$, and thus $\alpha = \inf B$.
+  \end{proof}
+\end{thm}
+
 \begin{defn}
   If $S$ and $T$ are sets, and there exists a 1:1 mapping of $S$ onto $T$, we say
   that $S$ and $T$ can be put into \textbf{1:1 correspondence}, that $S$ and $T$ have
