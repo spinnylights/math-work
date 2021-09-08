@@ -147,6 +147,34 @@
   \end{proof}
 \end{thm}
 
+\begin{thm}
+  Let $F$ be a field. The field axioms imply that, for any $x,y \in F$,
+  \begin{enumerate}
+    \item
+      $0x = 0$,
+    \item
+      if $x \neq 0$ and $y \neq 0$ then $xy \neq 0$,
+    \item
+      $(-x)y = -(xy) = x(-y)$, and
+    \item
+      $(-x)(-y) = xy$.
+  \end{enumerate}
+
+  \begin{proof}
+    $0x = [x + (-x)]x = xx + (-xx) = 0$, which proves (1).
+
+    If $x \neq 0$ and $y \neq 0$, there exist elements $1/x \in F$ and $1/y \in F$
+    such that $x \cdot (1/x) = 1$ and $y \cdot (1/y) = 1$. Then $x(1/x)y(1/y) = 1(1)
+    = 1 = xy(1/x)(1/y)$. By (1), $0 \cdot (1/x)(1/y) = 0$, and $1 \neq 0$, so $xy
+    \neq 0$.
+
+    $(-x)y + xy = y(-x) + yx = y(-x + x) = y0 = 0$. Therefore $(-x)y = -(xy)$.
+    Likewise $x(-y) + xy = x(-y + y) = x0 = 0$, so $(-x)y = -(xy) = x(-y)$.
+
+    If $(-x)y = -(xy)$, then $(-x)(-y) = -[x(-y)] = -[-(xy)] = xy$.
+  \end{proof}
+\end{thm}
+
 \begin{defn}
   A \textbf{subfield} of the field $F$ is a set $G \subseteq F$
   such that $G$ is a field under the same definitions of addition
