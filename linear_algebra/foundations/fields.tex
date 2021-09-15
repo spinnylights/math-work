@@ -246,7 +246,7 @@
       If $x,y \in \mathbb{R}$ and $x > 0$, there is a positive integer $n$ such that
       $nx > y$. In other words, $\mathbb{R}$ is archimedean.
     \item
-      If $x,y \in \mathbb{R}$ and $x > y$, there is a $p \in \mathbb{Q}$ such that $x
+      If $x,y \in \mathbb{R}$ and $x < y$, there is a $p \in \mathbb{Q}$ such that $x
       < p < y$. In other words, $\mathbb{Q}$ is dense in $\mathbb{R}$.
   \end{enumerate}
 
@@ -265,12 +265,25 @@
         which is contradictory, and thus (1) must be true.
 
       \item
-        
+        Since $x < y$, $y - x > 0$. As such, there is some positive integer $n$ such
+        that $n(y - x) > 1$ by (1).  Also by (1), there are positive integers $m_1$
+        and $m_2$ such that $m_1 > nx$ and $m_2 > -nx$; $nx$, $-nx$, and $1$ are real
+        numbers and $m_1,m_2$ are positive, so $1m_1 > nx$ exists and so on. If $m_2
+        > -nx$, then $-m_2 < nx$, so we then have $-m_2 < nx < m_1$.
+
+        Consider an integer $m$ such that $-m_2 \leq m - 1 \leq nx < m \leq m_1$.
+        Then $m \leq nx + 1$. Furthermore, if $n(y - x) > 1$, then $ny - nx > 1$, so
+        $ny > nx + 1$. Therefore $nx < m \leq nx + 1 < ny$.
+
+        Since $n > 0$ by definition, we then have $x < \frac{m}{n} \leq x +
+        \frac{1}{n} < y$, i.e. $x < \frac{m}{n} < y$. Since $m$ and $n$ are integers,
+        $\frac{m}{n} \in \mathbb{Q}$. We can thus say $p = \frac{m}{n}$; in full,
+        this proves (2).
     \end{enumerate}
   \end{proof}
 \end{thm}
 
-\begixm}
+\begin{exm}
   The field $\mathbb{R}$ is a subfield of $\mathbb{C}$.
 
   We can represent a real number $x$ as a complex number $(x +
