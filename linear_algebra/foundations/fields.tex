@@ -243,7 +243,7 @@
   \
   \begin{enumerate}
     \item
-      If $x,y \in \mathbb{R}$ and $x > 0$, there is an $n \in \mathbb{N}^+$ such that
+      If $x,y \in \mathbb{R}$ and $x > 0$, there is a positive integer $n$ such that
       $nx > y$. In other words, $\mathbb{R}$ is archimedean.
     \item
       If $x,y \in \mathbb{R}$ and $x > y$, there is a $p \in \mathbb{Q}$ such that $x
@@ -254,14 +254,15 @@
     \
     \begin{enumerate}
       \item
-        Let $A = \{n \in \mathbb{N}^+: nx\}$. $A \subset \mathbb{R}$ and $A$ is not
-        empty (e.g. $1x = x \in A$). Assume (1) is false; then $y$ is an upper bound
-        of $A$. Because $\mathbb{R}$ has the least-upper-bound property, there is
-        then some $\alpha = \sup A \in \mathbb{R}$. Since $x < 0$, $\alpha - x <
-        \alpha$, so $\alpha - x$ is not an upper bound of $A$. As such, $\alpha - x <
-        mx$ for some $m \in \mathbb{N}^+$. But then $\alpha - x + x = \alpha < mx + x
-        = (m + 1)x$, which implies that $\alpha$ is not an upper bound of $A$. This
-        is contradictory, and thus (1) must be true.
+        Let $A = \{n \in \mathbb{Z}^+,\ x \in \mathbb{R}^+: nx\}$. Then $A \subset
+        \mathbb{R}$ and $A$ is not empty (e.g. $1x = x \in A$). Assume (1) is false;
+        then some $y \in \mathbb{R}$ is an upper bound of $A$. Because $\mathbb{R}$
+        has the least-upper-bound property, there is then some $\alpha = \sup A \in
+        \mathbb{R}$. Since $x > 0$, $\alpha - x < \alpha$, so $\alpha - x$ is not an
+        upper bound of $A$. As such, $\alpha - x < mx$ for some $m \in \mathbb{Z}^+$.
+        But then $\alpha - x + x = \alpha < mx + x = (m + 1)x = px$, where $p = m +
+        1$ and thus $p > 0$. This implies that $\alpha$ is not an upper bound of $A$,
+        which is contradictory, and thus (1) must be true.
 
       \item
         
