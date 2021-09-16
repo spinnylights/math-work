@@ -336,6 +336,27 @@
   \end{proof}
 \end{thm}
 
+\begin{cor}
+  If $a$ and $b$ are positive real numbers and $n$ is a positive integer, then
+  \begin{align*}
+    (ab)^{1/n} = a^{1/n}b^{1/n}.
+  \end{align*}
+
+  \begin{proof}
+    Let $\alpha = a^{1/n}$ and $\beta = b^{1/n}$. Because multiplication in a field
+    is commutative, we have
+    \begin{align*}
+      ab = \alpha^n\beta^n = \alpha \cdots \alpha \cdot \beta \cdots \beta =
+      \alpha\beta \cdots \alpha\beta = (\alpha\beta)^n.
+    \end{align*}
+    By theorem \ref{thm:uniqrealroots}, there is only one real $x$ such that $ab =
+    x^n$. Therefore if $ab = (\alpha\beta)^n$,
+    \begin{align*}
+      (ab)^{1/n} = (\alpha\beta)^{n/n} = \alpha\beta = a^{1/n}b^{1/n}.
+    \end{align*}
+  \end{proof}
+\end{cor}
+
 \begin{exm}
   The field $\mathbb{R}$ is a subfield of $\mathbb{C}$.
 
