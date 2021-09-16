@@ -283,6 +283,59 @@
   \end{proof}
 \end{thm}
 
+\begin{thm}
+  For every real $x > 0$ and every integer $n > 0$ there is one and only one positive
+  real $y$ such that $y^n = x$. ($y$ is generally written as $\sqrt[n]{x}$ or
+  $x^{1/n}$.)
+
+  \begin{proof}
+    Let $y_1,y_2 \in \mathbb{R}$ such that $0 < y_1 < y_2$; then $y_1^n < y_2^n$.
+    This implies that if $y^n = x$ and $z^n = x$ for positive real numbers $y,z$,
+    then $y = z$, i.e. there can only be one such $y$ at most.
+
+    Let $E = \{t \in \mathbb{R}: 0 < t^n < x\}$. If $t = \frac{x}{1 + x}$, then $0
+    < t < 1$, and then $0 < t^n \leq t < x$. Thus $t \in E$, so $E$ is not empty.
+
+    If $t > 1 + x$, then $x < t \leq t^n$, and thus $t \notin E$. Therefore $1 + x$
+    is an upper bound of $E$. By theorem \ref{thm:rlubsubq}, there is thus a positive
+    real number $y = \sup E$.
+
+    $y^n = x$. We will prove this by contradiction, showing that the inequalities
+    $y^n < x$ and $y^n > x$ are both contradictory.
+
+    Consider the identity $b^n - a^n = (b - a)(b^{n - 1} + b^{n - 2}a + \cdots +
+    ba^{n - 2} + a^{n - 1})$. This implies that
+    \begin{align*}
+      b^n - a^n < (b - a)nb^{n-1}\ \ \text{when}\ 0 < a < b.
+    \end{align*}
+
+    Assume $y^x < x$. Let $h$ be such that $0 < h < 1$ and
+    \begin{align*}
+      h < \frac{x - y^n}{n(y + 1)^{n-1}}.
+    \end{align*}
+    Let $a = y$, $b = y + h$. Then
+    \begin{align*}
+      (y + h)^n - y^n < hn(y + h)^{n - 1} < hn(y + 1)^{n - 1} < x - y^n.
+    \end{align*}
+    Thus $(y + h)^n < x$, and $y + h \in E$. But $y + h > y$, which contradicts the
+    fact that $y$ is an upper bound of $E$.
+
+    Now assume $y^n > x$. Let
+    \begin{align*}
+      k = \frac{y^n - x}{ny^{n-1}};
+    \end{align*}
+    then $0 < k < y$. If $t \leq y - k$, then
+    \begin{align*}
+      y^n - t^n \leq y^n - (y - k)^n < kny^{n - 1} = y^n - x.
+    \end{align*}
+    Therefore $t^n > x$, so $t \notin E$. This implies that $y - k$ is an upper bound
+    of $E$. However, $y - k < y$, so this contradicts the fact that $y$ is the least
+    upper bound of $E$.
+
+    The only possibility left is that $y^n = x$, which completes the proof.
+  \end{proof}
+\end{thm}
+
 \begin{exm}
   The field $\mathbb{R}$ is a subfield of $\mathbb{C}$.
 
