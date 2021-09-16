@@ -357,6 +357,28 @@
   \end{proof}
 \end{cor}
 
+\begin{comm}
+  This is a brief discussion of decimals as they relate to real numbers.
+
+  Let $x > 0$ be real, and let $n_0$ be the largest integer such that $n_0 \leq x$.
+  (This is possible by theorem \ref{thm:rarchqdenseinr}.1.) Now choose integers
+  $n_1,\cdots,n_{k-1}$, and then let $n_k$ be the largest integer such that
+  \begin{align*}
+    n_0 + \frac{n_1}{10} + \cdots + \frac{n_k}{10^k} \leq x.
+  \end{align*}
+
+  Let $E$ be the set of all such numbers
+  \begin{align*}
+    n_0 + \frac{n_1}{10} + \cdots + \frac{n_k}{10^k}\ \ (k = 0,1,2,\ldots)
+  \end{align*}
+  $\leq x$; then $x = \sup E$. The decimal expansion of $x$ is then
+  \begin{align*}
+    n_0\ .\ n_1n_2n_3\cdots.
+  \end{align*}
+  Because $E$ is bounded above, this represents the decimal expansion of $\sup E$
+  even if it is infinite.
+\end{comm}
+
 \begin{exm}
   The field $\mathbb{R}$ is a subfield of $\mathbb{C}$.
 
