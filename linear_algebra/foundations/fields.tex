@@ -567,10 +567,23 @@
     $y^n < x$ and $y^n > x$ are both contradictory.
 
     Consider the identity $b^n - a^n = (b - a)(b^{n - 1} + b^{n - 2}a + \cdots +
-    ba^{n - 2} + a^{n - 1})$. This implies that
+    ba^{n - 2} + a^{n - 1})$. If $0 < a < b$, we then have $a^n < b^n$ for any
+    integer $n > 0$. In that case,
     \begin{align*}
-      b^n - a^n < (b - a)nb^{n-1}\ \ \text{when}\ 0 < a < b.
+      b^{n - 1} + b^{n - 2}a + \cdots + ba^{n - 2} + a^{n - 1}
+      &\leq b^{n - 1} + b^{n - 2}b + \cdots + bb^{n - 2} + b^{n - 1}\\
+      &= b^{n - 1} + b^{n - 1} + \cdots + b^{n - 1} + b^{n - 1}\\
+      &= nb^{n - 1}.
     \end{align*}
+    If it seems less-than-obvious that there are $n$ terms in $b^{n - 1} + b^{n - 2}a
+    + \cdots + ba^{n - 2} + a^{n - 1}$, note that the coefficients range from
+    $b^0$ to $b^{n - 1}$ and from $a^0$ to $a^{n - 1}$.
+
+    This implies that
+    \begin{align*}
+      b^n - a^n \leq (b - a)nb^{n-1}
+    \end{align*}
+    when $0 < a < b$. If $n > 1$, then $b^n - a^n < (b - a)nb^{n-1}$.
 
     Assume $y^x < x$. Let $h$ be such that $0 < h < 1$ and
     \begin{align*}
