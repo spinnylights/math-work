@@ -239,7 +239,268 @@
   $x \neq 0$) are also in $G$.
 \end{comm}
 
-\begin{thm}
+\begin{thm} \label{thm:rlubsubq}
+  There exists an ordered field $\mathbb{R}$ which has the least-upper-bound
+  property, and which contains $\mathbb{Q}$ as a subfield.
+
+  \begin{proof}
+    This proof follows the strategy of Richard Dedekind, a German mathematician who
+    lived primarily during the 19th century. This method of constructing the real
+    numbers is perhaps what he is best known for; he published his version in 1872.
+
+    In the following discussion, we define \say{$\subset$} to mean \say{is a proper
+    subset of,} and \say{$\subseteq$} to mean \say{is a subset of.} In other words,
+    if $\alpha \subset \beta$, then $\alpha \neq \beta$, while if $\alpha \subseteq
+    \beta$, it is possible that $\alpha = \beta$.
+
+    We define $\mathbb{R}$ to be a set of objects called \textit{cuts}, and we define
+    a cut to be a set $\alpha \subset \mathbb{Q}$ with the following properties.
+    \begin{enumerate}
+      \item
+        $\alpha \neq \emptyset$ and $\alpha \neq \mathbb{Q}$ (the latter is implied
+        by $\alpha \subset \mathbb{Q}$ but it's good to remember).
+      \item
+        If $p \in \alpha$, $q \in \mathbb{Q}$, and $q < p$, then $q \in \alpha$.
+      \item
+        If $p \in \alpha$, then $p < r$ for some $r \in \alpha$.
+    \end{enumerate}
+
+    Throughout this discussion, $p,q,r,\ldots$ will denote members of $\mathbb{Q}$,
+    and $\alpha,\beta,\gamma,\ldots$ will denote cuts.
+
+    (3) implies that $\alpha$ has no largest member. (2) implies the following:
+    \begin{itemize}
+      \item
+        If $p \in \alpha$ and $q \notin \alpha$, then $p < q$; otherwise $\alpha$
+        would be equal to $\mathbb{Q}$.
+      \item
+        If $r \notin \alpha$ and $r < s$, then $s \notin \alpha$.
+    \end{itemize}
+
+    We define \say{$\alpha < \beta$} to mean $\alpha \subset \beta$. This fulfills
+    the criteria for an order. If $\alpha < \beta$ and $\beta < \gamma$, then $\alpha
+    < \gamma$, because a proper subset of a proper subset of a set is a proper subset
+    of that set. Also, at most one of
+    \begin{align*}
+      \alpha < \beta,\ \ \alpha = \beta,\ \ \beta < \alpha
+    \end{align*}
+    can hold for any pair $\alpha,\beta$. If $\alpha \nless \beta$ and $\alpha \neq
+    \beta$, $\alpha$ is not a subset of $\beta$, so there is some $p \in \alpha$ such
+    that $p \notin \beta$. If $q \in \beta$, then $q < p$, so $q \in \alpha$ by (2).
+    Therefore, $\beta \subset \alpha$, and since $\beta \neq \alpha$, $\beta <
+    \alpha$. This implies that if two of the above relations do not hold, the other
+    one does. Thus, with this order, $\mathbb{R}$ is an ordered set.
+
+    We will now show that $\mathbb{R}$ has the least-upper-bound property.
+
+    Let $A \subset \mathbb{R}$ be such that $A \neq \emptyset$. Let $\beta \in
+    \mathbb{R}$ be an upper bound of $A$. Let $\gamma$ be the union of all $\alpha
+    \in A$, i.e. $p \in \gamma$ if and only if $p \in \alpha$ for some $\alpha \in
+    A$. Then $\gamma \in \mathbb{R}$ and $\gamma = \sup A$, as we will show.
+
+    Since $A$ is not empty, there exists some $\alpha_0 \in A$ that is itself not
+    empty. Since $\alpha_0 \subseteq \gamma$, $\gamma$ is not empty. Also, $\gamma
+    \subseteq \beta$, as $\alpha \subseteq \beta$ for every $\alpha \in A$ by our
+    order for $\mathbb{R}$. Therefore $\gamma \neq \mathbb{Q}$, and thus $\gamma$
+    satisfies property (1). Now let $p \in \gamma$; then $p \in \alpha_1$ for some
+    $\alpha_1 \in A$. Let $q \in \mathbb{Q}$; if $q < p$, then $q \in \alpha_1$, and
+    so $q \in \gamma$. This proves (2). Now let $r \in \alpha_1$ be such that $r >
+    p$; then $r \in \gamma$ as $\alpha_1 \subseteq \gamma$, so $\gamma$ satisfies
+    (3). Therefore $\gamma \in \mathbb{R}$.
+
+    Now let $\delta < \gamma$; there is then some $s \in \gamma$ such that $s \notin
+    \delta$. Since $s \in \gamma$, $s \in \alpha$ for some $\alpha \in A$. As such,
+    $\delta < \alpha$, so $\delta$ is not an upper bound of $A$. Therefore $\alpha
+    \leq \gamma$ for every $\alpha \in A$, i.e. $\gamma = \sup A$.
+
+    This proves that $\mathbb{R}$ has the least-upper-bound property.
+
+    If $\alpha \in \mathbb{R}$ and $\beta \in \mathbb{R}$, we define $\alpha + \beta
+    = \{r \in \alpha,\ s \in \beta: r + s\}$. Before proceeding further, we must
+    assure ourselves that this definition of addition in $\mathbb{R}$ satisfies the
+    axioms of addition for a field.
+
+    We define $0^* = \{p \in \mathbb{Q}: p < 0\}$. $0^*$ is clearly in $\mathbb{R}$;
+    it is neither empty nor $\mathbb{Q}$, if $p \in 0^*$ and $q \in \mathbb{Q}$ such
+    that $q < p$ then $q < 0$ and therefore $q \in 0^*$, and if $p = -\frac{n}{m}$
+    where $n,m \in \mathbb{N}^+$, there is a number $r = -\frac{n}{2m}$ so that $r
+    \in 0^*$ and $p < r < 0$.
+
+    Now we need to show that $\alpha + \beta \in \mathbb{R}$.
+
+    $\alpha + \beta \neq \emptyset$ because $\alpha,\beta \neq \emptyset$ by
+    definition. Now let $r' \notin \alpha, s' \notin \beta$. Then $r' + s' > r + s$
+    for all $r \in \alpha, s \in \beta$, as $r' > r$ and $s' > s$ for any $r \in
+    \alpha, s \in \beta$. Then $r' + s' \notin \alpha + \beta$, so $\alpha + \beta
+    \neq \mathbb{Q}$. Therefore $\alpha + \beta$ satisfies (1).
+
+    Let $p \in \alpha + \beta$; then $p = r + s$ for some $r \in \alpha,\ s \in
+    \beta$. If $q < p$, then $q < r + s$, so $q - s < r$ and thus $q - s \in \alpha$.
+    Since $q = (q - s) + s$, $q \in \alpha + \beta$. Therefore $\alpha + \beta$
+    satisfies (2). Now let $t \in \alpha$ such that $t > r$; then $p < t + s \in
+    \alpha + \beta$, so $\alpha + \beta$ satisfies (3).
+
+    Therefore $\alpha + \beta \in \mathbb{R}$.
+
+    Because $\alpha + \beta$ is the set of all $r + s$ with $r \in \alpha,\ s \in
+    \beta$, and $\beta + \alpha$ is the set of all $s + r$ defined likewise, $\alpha
+    + \beta = \beta + \alpha$, as $r + s = s + r$ for all $r,s \in \mathbb{Q}$.
+    Therefore addition in $\mathbb{R}$ is commutative.
+
+    Likewise, because $(\alpha + \beta) + \gamma$ is the set of all $(r + s) + t$
+    with $r \in \alpha,\ s \in \beta,\ t \in \gamma$, $\alpha + (\beta + \gamma)$
+    is the set of all $r + (s + t)$ defined likewise, and $(r + s) + t = r + (s + t)$
+    for all $r,s,t \in \mathbb{Q}$, addition in $\mathbb{R}$ is associative.
+
+    Let $r \in \alpha$ and $s \in 0^*$. Then $r + s < r$, so $r + s \in \alpha$, and
+    therefore $\alpha + 0^* \subseteq \alpha$. Now let $p \in \alpha$ such that $r >
+    p$; then $p - r \in 0^*$, so $p = r + (p - r) \in \alpha + 0^*$. Therefore
+    $\alpha \subseteq \alpha + 0^*$. Since $\alpha + 0^* \subseteq \alpha$ and
+    $\alpha \subseteq \alpha + 0^*$, the only possibility is that $\alpha + 0^* =
+    \alpha$.
+
+    Let $\alpha \in \mathbb{R}$. Let $\beta$ be the set of all $p$ such that there is
+    some $r > 0$ for which $-p - r \notin \alpha$; in other words, for which some
+    rational number smaller that $-p$ is not in $\alpha$. Then $\beta \in \mathbb{R}$
+    and $\alpha + \beta = 0^*$, as we will now show.
+
+    Just in case you worry that this definition contradicts our definition of an
+    element in $\mathbb{R}$, consider that if $\alpha < 0^*$, there is some $q < 0$
+    such that $q \notin \alpha$, and then $-2q > 0$ and $-q - (-2q) = q \notin
+    \alpha$ so $q \in \beta$. Likewise if $\alpha > 0^*$, there is some $q > 0$ such
+    that $q \notin \alpha$, and then $-(-2q) - q = q \notin \alpha$, so $-2q \in
+    \beta$. It works out either way.
+
+    Anyway, let $s \notin \alpha$ and $p = -s - 1$. Then $-p -1 \notin \alpha$, as
+    $-p = s + 1$ so $-p - 1 = s$, and so $p \in \beta$. Therefore $\beta \neq
+    \emptyset$. If $q \in \alpha$, then $-q \notin \beta$, and thus $\beta \neq
+    \mathbb{Q}$. Therefore $\beta$ satisfies (1).
+
+    Let $p \in \beta$ and $r > 0$; then $-p -r \notin \alpha$. Let $q < p$; then $-q
+    - r > -p - r$, so $-q - r \notin \alpha$. Therefore $q \in \beta$, so (2) holds
+    for $\beta$. Now let $t = p + (r/2)$; then $t > p$, and $-t - (r/2) = -p - r
+    \notin \alpha$, so $t \in \beta$. Therefore $\beta$ satisfies (3).
+
+    Thus $\beta \in \mathbb{R}$.
+
+    If $r \in \alpha$ and $s \in \beta$, then $-s \notin \alpha$, so $r < -s$, and
+    thus $r + s < 0$. Therefore $\alpha + \beta \subseteq 0^*$.
+
+    Let $v \in 0^*$ and $w = -v/2$. Then $w > 0$, and there is some integer $n$ such
+    that $nw \in \alpha$ but $(n + 1)w \notin \alpha$. (This is because $\mathbb{Q}$
+    is archimedean, i.e. there is no $q \in \mathbb{Q}$ such that $|q| \geq x$ for
+    all $x \in \mathbb{Q}$.) Let $p = -(n + 2)w$; then
+    \begin{align*}
+      -p - w &= -[-(n + 2)w] - w\\
+      &= nw + 2w - w\\
+      &= nw + w\\
+      &= (n + 1)w\\
+      &\notin \alpha,
+    \end{align*}
+    so $p \in \beta$. If $w = -v/2$, then $v = -2w$;
+    \begin{align*}
+      nw + p &= nw - (n + 2)w\\
+      &= nw - nw - 2w\\
+      &= -2w\\
+      &= v,
+    \end{align*}
+    and $nw + p$ i.e.  $v \in \alpha + \beta$, so $0^* \subseteq \alpha + \beta$.
+
+    Therefore $0^* \subseteq \alpha + \beta$ and $\alpha + \beta \subseteq 0^*$, so
+    $\alpha + \beta = 0^*$. As such, we will denote this $\beta$ by $-\alpha$.
+
+    We have shown that $\mathbb{R}$ as defined satisfies the field axioms for
+    addition. We can also show that if $\alpha,\beta,\gamma \in \mathbb{R}$ and
+    $\beta < \gamma$, then $\alpha + \beta < \alpha + \gamma$; if $\alpha + \beta =
+    \alpha + \gamma$, we would have $\beta = \gamma$ by theorem
+    \ref{thm:fieldaxforadd}. This fulfills half of a proof that $\mathbb{R}$ is an
+    ordered field. Also, if $\alpha > 0^*$, then $-\alpha < 0^*$; $-\alpha + 0^* <
+    -\alpha + \alpha$ under our definitions.
+
+    We now move on to multiplication. The fact that products of negative rationals
+    are positive complicates multiplication in comparison to addition, so we start
+    first with $\mathbb{R}^+$, i.e. the set of all $\alpha \in \mathbb{R}$ such that
+    $\alpha > 0^*$.
+
+    If $\alpha \in \mathbb{R}^+$ and $\beta \in \mathbb{R}^+$, we define
+    $\alpha\beta$ to be the set of all $p$ such that $p \leq rs$ for all $r \in
+    \alpha,\ s \in \beta$ such that $r,s > 0$.
+
+    We define $1^* = \{q \in \mathbb{Q}: q < 1\}$. Clearly $1^*$ is neither empty nor
+    $\mathbb{Q}$. If $p \in 1^*$ i.e. $p < 1$, and $p > q$ for some $q \in
+    \mathbb{Q}$, then $q < p < 1$, so $q \in 1^*$.
+
+    If $p < 1$, then $p = n/m$ where $n,m \in \mathbb{N}$, $m \neq 0$, and $|n| <
+    |m|$ Let $r \in \mathbb{Q}$ be such that $r = a/b$, where $a = |n| + 1$ and $b =
+    |m| + 1$. If $|n| < |m|$, then $|n| + 1 < |m| + 1$, so $r < 1$. $|n|(|m| + 1) =
+    |n||m| + |n|$ and $|m|(|n| + 1) = |n||m| + |m|$; $|n||m| + |n| < |n||m| + |m|$,
+    so $|n| < \frac{|n||m| + |m|}{|m| + 1}$ and therefore $\frac{|n|}{|m|} <
+    \frac{|n| + 1}{|m| + 1}$. Since $n/m \leq |n|/|m|$, $p < r$, and since $|n| + 1 <
+    |m| + 1$, $r \in 1^*$.
+
+    Therefore $1^* \in \mathbb{R}$.
+
+    $\alpha\beta \neq \emptyset$ because $\alpha,\beta \neq \emptyset$. Since
+    $\alpha,\beta \neq \mathbb{Q}$, there is some $r' \notin \alpha$ and $s' \notin
+    \beta$ such that $rs < r's'$. Then if $t = r's'$, $t \notin \alpha\beta$, so
+    $\alpha\beta \neq \mathbb{Q}$. This satisfies (1).
+
+    If $p \in \alpha\beta$, $q < p$ for some $q \in \mathbb{Q}$. Then $q < rs$ for
+    some $r \in \alpha,\ s \in \beta$ and therefore $q \in \alpha\beta$. This
+    satisfies (2). Let $t \in \alpha$ be such that $t > r$; then $ts \in \alpha\beta$
+    and $q < t$, which satisfies (3).
+
+    Therefore $\alpha\beta \in \mathbb{R}$.
+
+    Since $\alpha\beta = \{p \in \mathbb{Q},\ r \in \alpha,\ s \in \beta,\ r,s > 0: p
+    \leq rs\}$ and $\beta\alpha = \{p \in \mathbb{Q},\ r \in \alpha,\ s \in \beta,\ r,s > 0: p
+    \leq sr\}$, $\alpha\beta = \beta\alpha$, i.e. because multiplication in
+    $\mathbb{Q}$ is commutative. Likewise if $\gamma \in \mathbb{R}^+$,
+    $(\alpha\beta)\gamma = \{p \in \mathbb{Q},\ r \in \alpha,\ s \in \beta,\ t \in
+    \gamma,\ r,s,t > 0: p \leq (rs)t = rst\}$ and $\alpha(\beta\gamma) = \{p \in
+    \mathbb{Q},\ r \in \alpha,\ s \in \beta,\ t \in \gamma,\ r,s,t > 0: p \leq r(st)
+    = rst\}$, $(\alpha\beta)\gamma = \alpha(\beta\gamma)$, i.e. because
+    multiplication in $\mathbb{Q}$ is associative.
+
+    $1^* \neq 0^*$ because there are elements $p \in 1^*$ such that $0 < p < 1$.
+    Since every $q \in 0^*$ is such that $q < 0 < 1$, $0^* < 1^*$, so $0^* \neq 1^*$.
+
+    Let $r \in \alpha$ and $s \in 1^*$. Then $rs < r$, since $r > 0$ and $s < 1$.
+    Therefore $rs \in \alpha$, so $1^*\alpha \subseteq \alpha$. Now let $p \in
+    \alpha$ such that $r > p$; then $p/r \in 1^*$, so $p = r \cdot p/r \in
+    1^*\alpha$. Therefore $\alpha \subseteq 1^*\alpha$, and thus $1^*\alpha =
+    \alpha$.
+
+    Fix $\alpha \in \mathbb{R}^+$, and let $\beta$ be the set of all $q$ such that,
+    for some rational number $r > 0$, $q^{-1} - r \notin \alpha$. Let $s \notin
+    \alpha$, and let $t = \frac{1}{s + 1}$. Then $t^{-1} - 1 \notin \alpha$, so $t
+    \in \beta$ and thus $\beta$ is not empty. Now let $u \in \alpha$ be such that $u
+    > 0$. Then $u^{-1} > 0$, and $u^{-1} - u^{-1} = 0 \in \alpha$, so therefore $u
+    \notin \beta$, and as such $\beta \neq \mathbb{Q}$. As such, $\beta$ satisfies
+    (1).
+
+    Now let $p \in \beta$ be such that $p > 0$, and let $q < p$ for some $q > 0$.
+    Since $p$ is in $\beta$, we know that $p^{-1} - r \notin \alpha$ for some $r >
+    0$. Let $s$ then be such that $p^{-1} - s \notin \alpha$. Since $q < p$, $q^{-1}
+    > p^{-1}$, so then $q^{-1} - s > p^{-1} - s$, and therefore $q^{-1} - s \notin
+    \alpha$, so $q \in \beta$. As such, $\beta$ satisfies (2). Let $a = p^{-1} - s$;
+    then $a \notin \alpha$ and $p = \frac{1}{a + s}$. Let $t = \frac{1}{a +
+    \frac{s}{2}}$; then $t > p$, and $t^{-1} - \frac{s}{2} = a + \frac{s}{2} -
+    \frac{s}{2} = a$. Since $a \notin \alpha$ by definition, $t \in \beta$. Thus
+    $\beta$ satisfies (3), and therefore $\beta \in \mathbb{R}$.
+
+    Let $u \in \alpha$ and $v \in \beta$ such that $u,v > 0$. Then $v^{-1} \notin
+    \alpha$, so $u < v^{-1}$ and therefore $uv < 1$; thus $\alpha\beta \subseteq
+    1^*$.
+
+    Now let $w \in 1^*$ be such that $w > 0$,
+
+    Actually I'm going to put this aside for now as it's taking \textit{forever} and
+    the book suggests you can get to this material \say{whenever the time seems
+    ripe.} I will come back to it as I'd like to finish what I've started—goodness
+    gracious though!
+  \end{proof}
+\end{thm}
   \
   \begin{enumerate}
     \item
