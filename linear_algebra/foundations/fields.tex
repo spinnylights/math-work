@@ -668,6 +668,22 @@
   Therefore $x \leq |x|$ as we would hope.
 \end{defn}
 
+\begin{thm}
+  For all $x,y \in \mathbb{R}$, $|x + y| \leq |x| + |y|$. This is known as the
+  \textbf{triangle inequality}.
+
+  \begin{proof}
+    We know that $x \leq |x|$ and $-x \leq |x|$. Then
+    \begin{align*}
+      x + y &\leq |x| + y \leq |x| + |y|
+      \shortintertext{and}
+      -x - y &\leq |x| - y \leq |x| + |y|.
+    \end{align*}
+    If $x + y < 0$, then $|x + y| = -(x + y) = -x - y$; otherwise $|x + y| = x + y$.
+    In either case, we have shown that $|x + y| \leq |x| + |y|$.
+  \end{proof}
+\end{thm}
+
 \begin{exm}
   The field $\mathbb{R}$ is a subfield of $\mathbb{C}$.
 
