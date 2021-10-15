@@ -219,4 +219,24 @@
   rational number.
 \end{comm}
 
+\begin{thm}
+  \textbf{($\bm{\epsilon}$-principle)} Let $a,b \in \mathbb{R}$. If for each
+  $\epsilon > 0$, $a \leq b + \epsilon$, then $a \leq b$. Let $x,y \in \mathbb{R}$.
+  If for each $\epsilon > 0$, $|x - y| \leq \epsilon$, then $x = y$.
+
+  \begin{proof}
+    We know by the definition of a cut that if $a,b \in \mathbb{R}$, either $a \leq
+    b$ or $a > b$. Likewise if $x,y \in \mathbb{R}$, then either $x = y$ or $x \neq
+    y$.
+
+    If $a > b$ and $a \leq b + \epsilon$ for all $\epsilon > 0$, picking $\epsilon$
+    such that $0 < \epsilon < a - b$ results in the contradiction $\epsilon < a - b
+    \leq \epsilon$. Thus $a \leq b$.
+
+    If $x \neq y$, then $|x - y| > 0$. If $|x - y| \leq \epsilon$ for all $\epsilon >
+    0$, picking $\epsilon$ such that $0 < \epsilon < |x - y|$ results in the
+    contradiction $\epsilon < |x - y| \leq \epsilon$. Thus $x = y$.
+  \end{proof}
+\end{thm}
+
 \end{document}
