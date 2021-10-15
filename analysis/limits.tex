@@ -172,4 +172,51 @@
   \end{align*}
 \end{defn}
 
+\begin{thm}
+  For $a,b \in \mathbb{R}$, the interval $(a,b)$, no matter how small, contains both
+  rational and irrational numbers.
+
+  \begin{proof}
+    We know that $\sqrt{2}$ is irrational. Therefore, $1/\sqrt{2}$ is irrational.
+    $1/\sqrt{2}$ is contained in the interval $(0,1)$. This interval also contains
+    the rational number $1/2$. Therefore $(0,1)$ contains a rational and an
+    irrational number. We can find other examples of both rational and irrational
+    numbers in $(0,1)$ in a similar manner.
+
+    Now consider $a,b \in \mathbb{R}$ such that $a < b$. $a$ and $b$ can be
+    represented as cuts $A|A'$ and $B|B'$. Since both $A$ and $B$ are sets of
+    rational numbers and $B$ has elements greater than $\sup A$, we can take rational
+    numbers $p,q \in B$ such that $p,q \notin A$. If we take them such that $p < q$,
+    then the interval $(a,b)$ contains the interval $(p,q)$ by the definition of a cut.
+
+    We define a function $f$ by $f(x) = p + (q - p)x$. This function sends $0$ to $p$
+    and $1$ to $q$:
+    \begin{align*}
+      f(0) &= p + (q - p)0 = p\\
+      f(1) &= p + (q - p)1 = q.
+    \end{align*}
+
+    Furthermore, since $p < q$, we have $q - p > 0$. Therefore if $x > 0$, $p + (q -
+    p)x > p$. Also, if $x < 1$, $p + (q - p)x < q$, as $p + (q - p)1 = q$. So, if $x
+    \in (0,1)$, then $f(x) \in (p,q)$. Also, since $q - p$ is the distance from $p$
+    to $q$, and $1 - 0$ is the distance from $0$ to $1$, $(q - p)x$ maps $x$ to the
+    number as far from $p$ to $q$ as $x$ is from $0$ to $1$; in other words, $f$ maps
+    $(0,1)$ onto $(p,q)$ in a manner that preserves distances.
+
+    Now say we have a rational number $r \in \mathbb{R}$. Since $p$ and $q$ are
+    rational, $f(r)$ is rational as well. Likewise, if we have an irrational number
+    $s \in \mathbb{R}$, $f(s)$ is clearly irrational. Therefore $f$ sends rational
+    numbers in $(0,1)$ to rational numbers in $(p,q)$, and likewise sends irrational
+    numbers in $(0,1)$ to irrational numbers in $(p,q)$. Thus $(p,q)$ must contain
+    both rational and irrational numbers, and so $(a,b)$ must as well as it contains
+    $(p,q)$.
+  \end{proof}
+\end{thm}
+
+\begin{comm}
+  This theorem demonstrates that, in the real numbers, between any two rational
+  numbers lies an irrational number, and between any two irrational numbers lies a
+  rational number.
+\end{comm}
+
 \end{document}
