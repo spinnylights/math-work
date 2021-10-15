@@ -91,4 +91,61 @@
   converges.
 \end{defn}
 
+\begin{thm}
+  $\mathbb{R}^1$ is complete.
+
+  \begin{proof}
+    Let $A = \{a_n\}$ be a Cauchy sequence in $\mathbb{R}^1$. Suppose we take
+    $\epsilon = 1$; then there is some $N_1 \in \mathbb{N}$ such that $|a_n - a_m| <
+    1$ when $a_n,a_m \geq N_1$. As such, $|a_n - a_{N_1}| < 1$ for $a_n \geq N_1$.
+
+    Consider the sequence $a_1,a_2,\ldots,a_{N_1 - 1},a_{N_1},a_{N_1} - 1, a_{N_1} +
+    1$. This sequence is finite, and thus bounded, as the real numbers are infinite;
+    say all of $A$'s elements fall within the interval $[-M,M]$. Because any element
+    $a_n$ of $A$ where $n \geq N_1$ is such that $|a_n - a_{N_1}| < |a_{N_1} -
+    (a_{N_1} + 1)| = |a_{N_1} - (a_{N_1} - 1)| = 1$, we know that $[-M,M]$ contains
+    $A$, so $A$ is bounded as well.
+
+    Now consider a set $S$ of elements in $[-M,M]$. We say that a real number $s$ is
+    in $S$ if there are infinitely many $n \in \mathbb{N}$ such that $a_n \geq s$.
+    $-M$ is clearly in $S$ because every element of $A$ is greater than or equal to
+    $-M$. Also, $S$ is bounded above by $M$. By the least-upper-bound property of
+    $\mathbb{R}$, we know then that $S$ has a least upper bound $b \in \mathbb{R}$.
+    Since any real number greater than $b$ is such that there are not an infinite
+    number of elements of $A$ greater than it, it seems likely that $A$ converges to
+    $b$.
+
+    To prove this, we have to show that, given any $\epsilon > 0$, there is some $N
+    \in \mathbb{N}$ such that for all $n \geq N$, $|a_n - b| < \epsilon$. Say we have
+    some such $\epsilon > 0$. Since $A$ is a Cauchy sequence, there is some $N_2 \in
+    \mathbb{N}$ such that, for $n,m \geq N_2$, $|a_n - a_m| < \frac{\epsilon}{2}$.
+    Since $b = \sup S$ and $\frac{\epsilon}{2} > 0$, we know that $b +
+    \frac{\epsilon}{2} \notin S$.
+
+    This implies that there is not an infinite quantity of $a_n$ such that $a_n > b +
+    \frac{\epsilon}{2}$. In other words, there is some $N_3 \geq N_2$ such that, for
+    all $n \geq N_3$, $a_n \leq b + \frac{\epsilon}{2}$. Also, since $b = \sup S$,
+    the smaller number $b - \frac{\epsilon}{2}$ is not an upper bound of $S$. Rather,
+    there is some $s \in S$ such that $s > b - \frac{\epsilon}{2}$, which implies
+    that there are infinitely many $a_n \in A$ such that $a_n \geq s > b -
+    \frac{\epsilon}{2}$. For instance, there is some $N \geq N_3$ such that $a_N > b
+    - \frac{\epsilon}{2}$. Since $N \geq N_3$, we have $a_N \leq b +
+    \frac{\epsilon}{2}$. All together,
+
+    \begin{align*}
+      a_N \in \left( b - \frac{\epsilon}{2}, b + \frac{\epsilon}{2} \right].
+    \end{align*}
+
+    $N \geq N_2$, since $N \geq N_3$ and $N_3 \geq N_2$. Also, $b \geq a_{N_2}$ as $b
+    = \sup A$. If we take $a_n \geq b - \frac{\epsilon}{2}$ (which we showed there
+    are infinitely many of), we then have
+
+    \begin{align*}
+      |a_n - b| \leq |a_n - a_N| + |a_N - b| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+    \end{align*}
+
+    Therefore $\lim_{n \to \infty} a_n = b$, so $\mathbb{R}^1$ converges.
+  \end{proof}
+\end{thm}
+
 \end{document}
