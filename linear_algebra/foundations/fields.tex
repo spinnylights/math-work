@@ -554,7 +554,8 @@
   \begin{proof}
     Let $y_1,y_2 \in \mathbb{R}$ such that $0 < y_1 < y_2$; then $y_1^n < y_2^n$.
     This implies that if $y^n = x$ and $z^n = x$ for positive real numbers $y,z$,
-    then $y = z$, i.e. there can only be one such $y$ at most.
+    then $y = z$, i.e. there can only be one such $y$ at most. Therefore our goal is
+    to show that $y^n = x$ exists for all integers $n > 0$.
 
     Let $E = \{t \in \mathbb{R}: 0 < t^n < x\}$. If $t = \frac{x}{1 + x}$, then $0
     < t < 1$, and then $0 < t^n \leq t < x$. Thus $t \in E$, so $E$ is not empty.
@@ -563,8 +564,12 @@
     is an upper bound of $E$. By theorem \ref{thm:rlubsubq}, there is thus a positive
     real number $y = \sup E$.
 
-    $y^n = x$. We will prove this by contradiction, showing that the inequalities
-    $y^n < x$ and $y^n > x$ are both contradictory.
+    We assert that $y^n = x$. We will prove this by contradiction, showing that the
+    inequalities $y^n < x$ and $y^n > x$ are both contradictory.
+
+    Assuming that $y^n < x$, we would like to find some $h > 0$ such that $(y + h)^n
+    < x$. That would imply that $y + h \in E$; since $y + h > y$, this would
+    contradict our assumption that $y = \sup E$.
 
     Consider the identity $b^n - a^n = (b - a)(b^{n - 1} + b^{n - 2}a + \cdots +
     ba^{n - 2} + a^{n - 1})$. If $0 < a < b$, we then have $a^n < b^n$ for any
@@ -575,41 +580,55 @@
       &= b^{n - 1} + b^{n - 1} + \cdots + b^{n - 1} + b^{n - 1}\\
       &= nb^{n - 1}.
     \end{align*}
-    If it seems less-than-obvious that there are $n$ terms in $b^{n - 1} + b^{n - 2}a
+    (If it seems less-than-obvious that there are $n$ terms in $b^{n - 1} + b^{n - 2}a
     + \cdots + ba^{n - 2} + a^{n - 1}$, note that the coefficients range from
-    $b^0$ to $b^{n - 1}$ and from $a^0$ to $a^{n - 1}$.
+    $b^0$ to $b^{n - 1}$ and from $a^0$ to $a^{n - 1}$.)
 
     This implies that
     \begin{align*}
       b^n - a^n \leq (b - a)nb^{n-1}
     \end{align*}
-    when $0 < a < b$. If $n > 1$, then $b^n - a^n < (b - a)nb^{n-1}$.
+    when $0 < a < b$.
 
-    Assume $y^n < x$ (where $y = \sup E$ and $n > 0$ is an integer, as before).
-    Choose $h \in \mathbb{R}$ such that $0 < h < 1$ and
+    If we put $a = y$ and $b = y + h$ for some real number $h > 0$, we then have $(y
+    + h)^n - y^n \leq ((y + h) - y)n(y + h)^{n-1} = hn(y + h)^{n-1}$. To be
+    satisfactory, $h$ must also be such that $(y + h)^n < x$, i.e. $(y + h)^n - y^n <
+    x - y^n$. If a suitable $h$ exists, it can be as small as we need it to be as
+    long as it's positive, so we say hypothetically that $(y + h)^n - y^n \leq hn(y +
+    h)^{n-1} < x - y^n$.
+
+    In theory, we could try to isolate $h$ in the expression $hn(y + h)^{n-1} < x -
+    y^n$ to get its value. However, this is made difficult by the fact that it
+    appears twice on the left side of the inequality. Since again $h$ can be as small
+    as we need it to be as long as it does its job, we say that $0 < h < 1$, so that
+    $hn(y + h)^{n-1} < hn(y + 1)^{n-1}$. Then $hn(y + 1)^{n-1} < x - y^n$, so
     \begin{align*}
       h < \frac{x - y^n}{n(y + 1)^{n-1}}.
     \end{align*}
-    Let $a = y$, $b = y + h$. Then
-    \begin{align*}
-      (y + h)^n - y^n < hn(y + h)^{n - 1} < hn(y + 1)^{n - 1} < x - y^n.
-    \end{align*}
-    Thus $(y + h)^n < x$, and $y + h \in E$. But $y + h > y$, which contradicts the
-    fact that $y$ is an upper bound of $E$.
 
-    Now assume $y^n > x$. Let
-    \begin{align*}
-      k = \frac{y^n - x}{ny^{n-1}};
-    \end{align*}
-    then $0 < k < y$. If $t \leq y - k$, then
-    \begin{align*}
-      y^n - t^n \leq y^n - (y - k)^n < kny^{n - 1} = y^n - x.
-    \end{align*}
-    Therefore $t^n > x$, so $t \notin E$. This implies that $y - k$ is an upper bound
-    of $E$. However, $y - k < y$, so this contradicts the fact that $y$ is the least
-    upper bound of $E$.
+    As long as we pick $h > 0$ which satisfies this inequality, we then have that $(y
+    + h)^n - y^n \leq hn(y + h)^{n-1} < hn(y + 1)^{n-1} < x - y^n$. Then $(y + h)^n <
+    x$, so $y + h \in E$. Since $y + h > y$, this contradicts our assumption that $y
+    = \sup E$, and therefore it must be the case that $y^n \nless x$.
 
-    The only possibility left is that $y^n = x$, which completes the proof.
+    Now assume that $y^n > x$. We would then like to find some real number $k$ such
+    that $0 < k < y$ and $(y - k)^n > x$. This would imply that $y - k$ was an upper
+    bound of $E$; since $y - k < y$, this would contradict our assumption that $y =
+    \sup E$.
+
+    If $y^n > (y - k)^n > x$, then $y^n - (y - k)^n < y^n - x$. Since $0 < y - k < y$, we
+    have furthermore that $y^n - (y - k)^n < kny^{n-1}$. Say $k$ is such that $y^n -
+    x = kny^{n-1}$; then $k$ satisfies both inequalities and
+    \begin{align*}
+      k = \frac{y^n - x}{ny^{n-1}}.
+    \end{align*}
+
+    Take $t \geq y - k$. Then $y^n - t^n \leq y^n - (y - k)^n < kny^{n-1} = y^n - x$;
+    this implies that $t^n > x$ and thus that $t \notin E$, which implies that $y -
+    k$ is an upper bound of $E$. However, $y - k < y$, so this contradicts our
+    assumption that $y = \sup E$. Thus, $y^n \ngtr x$.
+
+    The only remaining possibility is that $y^n = x$, which completes our proof.
   \end{proof}
 \end{thm}
 
