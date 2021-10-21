@@ -559,7 +559,7 @@
     Let $E = \{t \in \mathbb{R}: 0 < t^n < x\}$. If $t = \frac{x}{1 + x}$, then $0
     < t < 1$, and then $0 < t^n \leq t < x$. Thus $t \in E$, so $E$ is not empty.
 
-    If $t > 1 + x$, then $x < t \leq t^n$, and thus $t \notin E$. Therefore $1 + x$
+    If $u > 1 + x$, then $x < u \leq u^n$, and thus $u \notin E$. Therefore $1 + x$
     is an upper bound of $E$. By theorem \ref{thm:rlubsubq}, there is thus a positive
     real number $y = \sup E$.
 
@@ -585,7 +585,8 @@
     \end{align*}
     when $0 < a < b$. If $n > 1$, then $b^n - a^n < (b - a)nb^{n-1}$.
 
-    Assume $y^x < x$. Let $h$ be such that $0 < h < 1$ and
+    Assume $y^n < x$ (where $y = \sup E$ and $n > 0$ is an integer, as before).
+    Choose $h \in \mathbb{R}$ such that $0 < h < 1$ and
     \begin{align*}
       h < \frac{x - y^n}{n(y + 1)^{n-1}}.
     \end{align*}
