@@ -760,6 +760,65 @@
   We denote the set of all complex numbers by $\mathbb{C}$.
 \end{defn}
 
+\begin{thm}
+  $\mathbb{C}$, together with our definitions of addition and multiplication for
+  complex numbers and our additive and multiplicative identities, forms a field.
+
+  \begin{proof}
+    We let $x = (a,b)$, $y = (c,d)$, and $z = (e,f)$, where $x,y,z \in \mathbb{C}$.
+
+    \begin{enumerate}
+      \item
+        $x + y = (a + c, b + d) = (c + a, d + b) = y + x.$
+      \item
+        $x + (y + z) = (a + (c + e), b + (d + f)) = ((a + c) + e, (b + d) + f) = (x +
+        y) + z.$
+      \item
+        $x + (0,0) = (a + 0, b + 0) = (a,c) = x.$
+      \item
+        $x + (-x) = (a + (-a), b + (-b)) = (0,0).$
+      \item
+        $xy = (ac - bd, ad + bc) = (ca - db, da + cb) = yx.$
+      \item
+        \begin{align*}
+          x(yz) &= (a,b) \cdot (ce - df,\ cf + de)\\
+          &= [a(ce - df) - b(cf + de),\ a(cf + de) + b(ce - df)]\\
+          &= (ace - adf - bcf - bde,\ acf + ade + bce - bdf)\\
+          &= (ace - bde - adf - bcf,\ acf - bdf + ade + bce)\\
+          &= [e(ac - bd) - f(ad + bc),\ e(ad + bc) + f(ac - bd)]\\
+          &= (e,f) \cdot (ac - bd, ad + bc)\\
+          &= (ac - bd, ad + bc) \cdot (e,f)\\
+          &= (xy)z.
+        \end{align*}
+      \item
+        $x \cdot (1,0) = (1a - 0b, 0a + 1b) = (a,b) = x.$
+      \item
+        \begin{align*}
+          xx^{-1} &= (a,b) \cdot
+          \left(\frac{a}{a^{2} + b^{2}},-\frac{b}{a^{2} + b^{2}}\right)\\
+          &=
+          \left(\frac{a^{2}}{a^{2} + b^{2}}
+                - \left(-\frac{b^2}{a^{2} + b^{2}}\right),
+                -\frac{ab}{a^{2} + b^{2}} + \frac{ab}{a^{2} + b^{2}}
+          \right)\\
+          &=
+          \left(\frac{a^{2} + b^{2}}{a^{2} + b^{2}},
+                \frac{ab - ab}{a^{2} + b^{2}}
+          \right)\\
+          &= (1, 0).
+        \end{align*}
+      \item
+        \begin{align*}
+          x(y + z) &= (a,b) \cdot (c + e,\ d + f)\\
+          &= [a(c + e) - b(d + f),\ a(d + f) + b(c + e)]\\
+          &= (ac + ae - bd - bf,\ ad + af + bc + be)\\
+          &= [(ac - bd) + (ae - bf),\ (ad + bc) + (af + be)]\\
+          &= (ac - bd,\ ad + bc) + (ae - bf),\ af + be)\\
+          &= xy + xz.
+        \end{align*}
+    \end{enumerate}
+  \end{proof}
+\end{thm}
 
 
 \begin{thm}
