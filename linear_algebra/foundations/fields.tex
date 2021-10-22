@@ -960,6 +960,51 @@
   $\bm{\overline{z}}$.
 \end{defn}
 
+\begin{thm}
+  Let $z,w \in \mathbb{C}$; then
+  \begin{enumerate}
+    \item
+      $\overline{z + w} = \overline{z} + \overline{w}$,
+    \item
+      $\overline{zw} = \overline{z} \cdot \overline{w}$,
+    \item
+      $z + \overline{z} = 2\operatorname{Re}(z)$ and $z - \overline{z} =
+      2i\operatorname{Im}(z)$, and
+    \item
+      $z\overline{z}$ is both real and positive when $z \neq 0$.
+  \end{enumerate}
+
+  \begin{proof}
+    Let $z = a + bi$ and $w = c + di$.
+    \begin{enumerate}
+      \item
+        \begin{align*}
+          \overline{z + w} &= \overline{(a + c) + (b + d)i}\\
+          &= (a + c) - (b + d)i\\
+          &= a + c - bi - di\\
+          &= (a - bi) + (c - di)\\
+          &= \overline{z} + \overline{w}.
+        \end{align*}
+      \item
+        \begin{align*}
+          \overline{zw} &= \overline{(ac - bd) + (ad + bc)i}\\
+          &= (ac - bd) - (ad + bc)i\\
+          &= (a - bi) \cdot (c - di)\\
+          &= \overline{z} \cdot \overline{w}.
+        \end{align*}
+      \item
+        $z + \overline{z} = a + bi + a - bi = 2a = 2\operatorname{Re}(z)$. $z -
+        \overline{z} = a + bi - (a - bi) = a + bi - a + bi = 2bi =
+        2i\operatorname{Im}(z)$.
+      \item
+        If $z = 0$, then $z\overline{z} = 0$. Otherwise, $z\overline{z} = [a(a) -
+        b(-b)] + [a(-b) + b(a)]i = (a^2 + b^2) + 0i = a^2 + b^2$. If $r$ is a real
+        number such that $r \neq 0$, then $r^2 > 0$, so $a^2 + b^2 = z\overline{z} >
+        0$.
+    \end{enumerate}
+  \end{proof}
+\end{thm}
+
 \begin{defn}
   A \textbf{scalar} is an element of a field.
 \end{defn}
